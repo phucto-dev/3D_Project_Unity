@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
@@ -8,10 +9,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _walkSpeed = 2f;
     [SerializeField] private float _runSpeed = 5f;
     [SerializeField] private float _sprintSpeed = 8f;
+    [SerializeField] private float _rollSpeed = 5;
+    [SerializeField] private float _rollDuration = 0.96f;
     [SerializeField] private float _jumpForce = 8f;
     [SerializeField] private float _rotationSpeed = 15f;
     [SerializeField] private float _acceleration = 15f;
     [SerializeField] private float _deceleration = 25f;
+    [SerializeField] private float _standTime = 0.80f;
 
     [Header("Ref")]
     [SerializeField] private Rigidbody rb;
@@ -22,6 +26,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform _groundCheckPoint;
     [SerializeField] private float _groundCheckRadius;
     [SerializeField] private LayerMask _groundLayer;
+
+    [Header("Animator Hashes")]
+    private readonly int _animMove = Animator.StringToHash("IsMoving");
+    private readonly int _animHorizontal = Animator.StringToHash("Horizontal");
+    private readonly int _animGround = Animator.StringToHash("IsGround");
+    private readonly int _animVerticalVelocity = Animator.StringToHash("VerticalVelocity");
+    private readonly int _animJump = Animator.StringToHash("Jump");
+    private readonly int _animRoll = Animator.StringToHash("Roll");
 
     private PlayerInput _inputSystem;
     private InputAction _moveAction;
@@ -36,9 +48,16 @@ public class PlayerMovement : MonoBehaviour
     private float _currentSpeed;
     private bool _jumpFlag;
     private bool _isMoving;
+    private bool _moveable;
     private bool _isSprinting;
     private bool _isWalking;
     private bool _isGrounded;
+    private bool _isRolling;
+    private bool _isLanding;
+    private Vector3 _rollDir;
+    private float _fallVelocityY;
+    private float _landVelocityBaseValue = -5f;
+    private float _startStandTime;
 
     private void Awake()
     {
@@ -72,6 +91,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         if (animator != null) animator.SetBool("IsLockOnCamera", false);
+        _isLanding = true;
+        _moveable = true;
     }
 
     private void Update()
@@ -88,6 +109,13 @@ public class PlayerMovement : MonoBehaviour
     {
         speedManager();
         CheckGrounded();
+        StandAfterHardLand();
+        if (_isRolling)
+        {
+            Rolling();
+            return;
+        }
+        if (!_moveable) return;
         Movement();
         Jump();
     }
@@ -102,6 +130,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void speedManager()
     {
+        if (!_isMoving)
+        {
+            _speed = 0f;
+            return;
+        }
+
         if (_isSprinting) _speed = _sprintSpeed;
         else if (_isWalking) _speed = _walkSpeed;
         else _speed = _runSpeed;
@@ -131,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (_isGrounded)
             {
+                animator.SetTrigger(_animJump);
                 rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
                 rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
             }
@@ -160,13 +195,20 @@ public class PlayerMovement : MonoBehaviour
     }
     private void AnimationProcess()
     {
-        animator.SetBool("IsMoving", _currentSpeed > 0.01f);
+        // Moving
+        animator.SetBool(_animMove, _currentSpeed > 0.01f);
         float inputMagnitude = _moveInput.magnitude;
-        Debug.Log(inputMagnitude);
+        //Debug.Log(inputMagnitude);
         float horizontal = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * inputMagnitude;
         float vertical = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * _moveInput.y;
-        animator.SetFloat("Horizontal", horizontal, 0.1f, Time.deltaTime);
+        animator.SetFloat(_animHorizontal, horizontal, 0.1f, Time.deltaTime);
         //animator.SetFloat("Vertical", vertical, 0.1f, Time.deltaTime);
+
+        // Landing
+        animator.SetBool(_animGround, _isGrounded);
+
+        // Falling
+        animator.SetFloat(_animVerticalVelocity, _fallVelocityY);
     }
     private void HandleJumpInput(InputAction.CallbackContext ctx)
     {
@@ -176,7 +218,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (ctx.interaction is TapInteraction)
         {
-             animator.SetTrigger("Roll");
+            if (_isRolling || !_isGrounded) return;
+            animator.SetTrigger(_animRoll);
+            StartCoroutine(RollRoutine());
         }
         else if (ctx.interaction is HoldInteraction)
         {
@@ -198,5 +242,52 @@ public class PlayerMovement : MonoBehaviour
     private void CheckGrounded()
     {
         _isGrounded = Physics.CheckSphere(_groundCheckPoint.position, _groundCheckRadius, _groundLayer);
+        if (!_isGrounded) _fallVelocityY = rb.linearVelocity.y;
+    }
+    private void Rolling()
+    {
+        rb.linearVelocity = new Vector3(_rollDir.x * _rollSpeed, rb.linearVelocity.y, _rollDir.z * _rollSpeed);
+    }
+    private IEnumerator RollRoutine()
+    {
+        _isRolling = true;
+
+        if (_calculatedMoveDir != Vector3.zero)
+        {
+            _rollDir = _calculatedMoveDir;
+        }
+        else
+        {
+            _rollDir = transform.forward;
+        }
+
+        yield return new WaitForSeconds(_rollDuration);
+
+        _isRolling = false;
+    }
+    private void StandAfterHardLand()
+    {
+        if (!_moveable)
+        {
+            if (Time.time - _startStandTime >= _standTime)
+            {
+                _moveable = true;
+                _fallVelocityY = 0;
+            }
+            return;
+        }
+        if (_isGrounded)
+        {
+            if (_fallVelocityY < _landVelocityBaseValue)
+            {
+                _startStandTime = Time.time;
+                _moveable = false;
+            }
+            else
+            {
+                if (_fallVelocityY == 0) return;
+                _fallVelocityY = 0;
+            }
+        }
     }
 }
