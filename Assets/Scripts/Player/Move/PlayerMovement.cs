@@ -40,6 +40,9 @@ public class PlayerMovement : MonoBehaviour
     private InputAction _jumpAction;
     private InputAction _sprintAction;
     private InputAction _walkToggleAction;
+    private InputAction _lockOnCameraAction;
+
+    private PlayerCamManager playerCamManager;
 
     private Vector3 _calculatedMoveDir;
     private Quaternion _targetRotation;
@@ -58,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
     private float _fallVelocityY;
     private float _landVelocityBaseValue = -5f;
     private float _startStandTime;
+    private bool _isCameraLockOn;
 
     private void Awake()
     {
@@ -72,7 +76,10 @@ public class PlayerMovement : MonoBehaviour
             _jumpAction = _inputSystem.actions["Jump"];
             _sprintAction = _inputSystem.actions["Sprint"];
             _walkToggleAction = _inputSystem.actions["WalkToggle"];
+            _lockOnCameraAction = _inputSystem.actions["TargetLock"];
         }
+        playerCamManager = GetComponentInChildren<PlayerCamManager>();
+
     }
 
     private void OnEnable()
@@ -289,5 +296,10 @@ public class PlayerMovement : MonoBehaviour
                 _fallVelocityY = 0;
             }
         }
+    }
+
+    private void StatusCamInfo()
+    {
+
     }
 }
