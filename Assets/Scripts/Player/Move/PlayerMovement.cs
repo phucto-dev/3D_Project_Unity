@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Animator Hashes")]
     private readonly int _animMove = Animator.StringToHash("IsMoving");
     private readonly int _animHorizontal = Animator.StringToHash("Horizontal");
+    private readonly int _animVertical = Animator.StringToHash("Vertical");
     private readonly int _animGround = Animator.StringToHash("IsGround");
     private readonly int _animVerticalVelocity = Animator.StringToHash("VerticalVelocity");
     private readonly int _animJump = Animator.StringToHash("Jump");
@@ -61,7 +63,8 @@ public class PlayerMovement : MonoBehaviour
     private float _fallVelocityY;
     private float _landVelocityBaseValue = -5f;
     private float _startStandTime;
-    private bool _isCameraLockOn;
+    private bool _isCameraLockOn = false;
+    private Transform _targetLockOn;
 
     private void Awake()
     {
@@ -79,17 +82,18 @@ public class PlayerMovement : MonoBehaviour
             _lockOnCameraAction = _inputSystem.actions["TargetLock"];
         }
         playerCamManager = GetComponentInChildren<PlayerCamManager>();
-
     }
 
     private void OnEnable()
     {
+        if (playerCamManager != null) playerCamManager.SentLockOnTarget += HandleLockOnCam;
         _jumpAction.performed += HandleJumpInput;
         _sprintAction.performed += HandleSprintOrRoll;
         _sprintAction.canceled += HandleSprintStop;
     }
     private void OnDisable()
     {
+        if (playerCamManager != null) playerCamManager.SentLockOnTarget -= HandleLockOnCam;
         _jumpAction.performed -= HandleJumpInput;
         _sprintAction.performed -= HandleSprintOrRoll;
         _sprintAction.canceled -= HandleSprintStop;
@@ -181,6 +185,30 @@ public class PlayerMovement : MonoBehaviour
     }
     private void RotateCharacter()
     {
+        if (_isCameraLockOn && _targetLockOn != null)
+        {
+            Vector3 directionToTarget = _targetLockOn.position - transform.position;
+
+            directionToTarget.y = 0f;
+
+            if (directionToTarget != Vector3.zero)
+            {
+                _targetRotation = Quaternion.LookRotation(directionToTarget);
+            }
+
+            CalculateMoveDirection();
+            return;
+        }
+
+        CalculateMoveDirection();
+        if (_calculatedMoveDir != Vector3.zero)
+        {
+            _targetRotation = Quaternion.LookRotation(_calculatedMoveDir);
+        }
+        //Debug.Log("_calculatedMoveDir " + _calculatedMoveDir + "_targetRotation " + _targetRotation);
+    }
+    private void CalculateMoveDirection()
+    {
         if (_moveInput == Vector2.zero)
         {
             _calculatedMoveDir = Vector3.zero;
@@ -196,20 +224,26 @@ public class PlayerMovement : MonoBehaviour
         camRight.Normalize();
 
         _calculatedMoveDir = (camForward * _moveInput.y + camRight * _moveInput.x).normalized;
-
-        _targetRotation = Quaternion.LookRotation(_calculatedMoveDir);
-        //Debug.Log("_calculatedMoveDir " + _calculatedMoveDir + "_targetRotation " + _targetRotation);
     }
+
     private void AnimationProcess()
     {
         // Moving
         animator.SetBool(_animMove, _currentSpeed > 0.01f);
-        float inputMagnitude = _moveInput.magnitude;
-        //Debug.Log(inputMagnitude);
-        float horizontal = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * inputMagnitude;
-        float vertical = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * _moveInput.y;
-        animator.SetFloat(_animHorizontal, horizontal, 0.1f, Time.deltaTime);
-        //animator.SetFloat("Vertical", vertical, 0.1f, Time.deltaTime);
+        if (_isCameraLockOn)
+        {
+            float horizontal = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * _moveInput.x;
+            float vertical = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * _moveInput.y;
+            animator.SetFloat(_animHorizontal, horizontal, 0.1f, Time.deltaTime);
+            animator.SetFloat(_animVertical, vertical, 0.1f, Time.deltaTime);
+        }
+        else
+        {
+            float inputMagnitude = _moveInput.magnitude;
+            //Debug.Log(inputMagnitude);
+            float horizontal = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * inputMagnitude;
+            animator.SetFloat(_animHorizontal, horizontal, 0.1f, Time.deltaTime);
+        }
 
         // Landing
         animator.SetBool(_animGround, _isGrounded);
@@ -298,8 +332,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void StatusCamInfo()
+    private void HandleLockOnCam(Transform target)
     {
+        if (target == null)
+        {
+            _isCameraLockOn = false;
+            _targetLockOn = null;
+            animator.SetBool("IsLockOnCamera", false);
+            return;
+        }
 
+        _isCameraLockOn = true;
+        _targetLockOn = target;
+        animator.SetBool("IsLockOnCamera", true);
     }
 }
