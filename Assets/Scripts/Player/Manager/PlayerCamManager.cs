@@ -8,8 +8,10 @@ public class PlayerCamManager : MonoBehaviour
 {
     [Header("Camera")]
     [SerializeField] private CinemachineCamera _lockOnCamera;
+    [SerializeField] private Transform _camLockOnPivot;
     [SerializeField] private float _lockOnRadius = 15f;
     [SerializeField] private float _lockOnRadiusOffset = 2f;
+    [SerializeField] private float _camRotationSpeed = 15f;
 
     [Header("Settings")]
     [SerializeField] private LayerMask _enemyLayer;
@@ -47,8 +49,22 @@ public class PlayerCamManager : MonoBehaviour
             float distance = Vector3.Distance(transform.position, _currentTarget.position);
             if (distance > _lockOnRadius + _lockOnRadiusOffset || !_currentTarget.gameObject.activeInHierarchy)
             {
-                ClearTarget();
+                SentLockOnTarget?.Invoke(ClearTarget());
+                return;
             }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!IsLockedOn || _currentTarget == null) return;
+        if (_camLockOnPivot != null)
+        {
+            Vector3 dirToEnemy = _currentTarget.position - _camLockOnPivot.position;
+            dirToEnemy.y += 1.0f;
+            Quaternion targetCamRotation = Quaternion.LookRotation(dirToEnemy);
+
+            _camLockOnPivot.rotation = Quaternion.Slerp(_camLockOnPivot.rotation, targetCamRotation, _camRotationSpeed * Time.deltaTime);
         }
     }
 
@@ -74,7 +90,7 @@ public class PlayerCamManager : MonoBehaviour
 
     private Transform FindLockOnTarget()
     {
-        _detecionRange = new Vector3(transform.position.x, transform.position.y, transform.position.z + _lockOnRadiusOffset);
+        _detecionRange = transform.position + transform.forward * _lockOnRadiusOffset;
         Collider[] targets = Physics.OverlapSphere(_detecionRange, _lockOnRadius, _enemyLayer);
 
         if (targets.Length == 0) return null;
@@ -118,7 +134,7 @@ public class PlayerCamManager : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        _detecionRange = new Vector3(transform.position.x, transform.position.y, transform.position.z + _lockOnRadiusOffset);
+        _detecionRange = transform.position + transform.forward * _lockOnRadiusOffset;
         Gizmos.DrawWireSphere(_detecionRange, _lockOnRadius);
     }
 

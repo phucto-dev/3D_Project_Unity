@@ -228,6 +228,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void AnimationProcess()
     {
+        if (_isRolling) return;
         // Moving
         animator.SetBool(_animMove, _currentSpeed > 0.01f);
         if (_isCameraLockOn)

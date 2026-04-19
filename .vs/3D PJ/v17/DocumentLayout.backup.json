@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\PHUC\\3D PJ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\testscript\\testshaderchangebybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscript\\testshaderchangebybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\player\\manager\\playercammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\manager\\playercammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\player\\manager\\playercammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\manager\\playercammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\testscript\\testshaderchangebybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscript\\testshaderchangebybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\constant\\tag\\tagconstant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,32 +26,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "TestShaderChangeByButton.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\TestScript\\TestShaderChangeByButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TestScript\\TestShaderChangeByButton.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\TestScript\\TestShaderChangeByButton.cs",
               "RelativeToolTip": "Assets\\Scripts\\TestScript\\TestShaderChangeByButton.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBEAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T13:23:39.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T13:23:39.194Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "PlayerCamManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerCamManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Manager\\PlayerCamManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerCamManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\Manager\\PlayerCamManager.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwCUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAADwvzkAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T08:39:56.23Z"
+              "WhenOpened": "2026-04-17T08:39:56.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
+              "ViewState": "AgIAANsAAAAAAAAAAAAcwOgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T05:02:25.945Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -64,19 +77,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-17T08:01:06.807Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PlayerMovement.cs",
-              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
-              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
-              "ViewState": "AgIAAMoAAAAAAAAAAAA0wNgAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T05:02:25.945Z",
-              "EditorCaption": ""
             }
           ]
         }
