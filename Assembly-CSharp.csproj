@@ -61,11 +61,14 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.5f2\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Manager\NavMesh\AgentToDistanceTest.cs" />
     <Compile Include="Assets\Scripts\Player\Move\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Enemies\StateManager\EnemyStateManager.cs" />
     <Compile Include="Assets\Scripts\Constant\Tag\TagConstant.cs" />
     <Compile Include="Assets\Scripts\Player\Manager\PlayerCamManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestShaderChangeByButton.cs" />
+    <Compile Include="Assets\Scripts\Manager\CursorManager\CursorManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

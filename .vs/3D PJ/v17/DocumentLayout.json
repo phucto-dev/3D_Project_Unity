@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\PHUC\\3D PJ\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\enemies\\statemanager\\enemystatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemies\\statemanager\\enemystatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\manager\\navmesh\\agenttodistancetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\navmesh\\agenttodistancetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\player\\manager\\playercammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\player\\manager\\playercammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\manager\\playercammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -26,11 +34,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "EnemyStateManager.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Enemies\\StateManager\\EnemyStateManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemies\\StateManager\\EnemyStateManager.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Enemies\\StateManager\\EnemyStateManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemies\\StateManager\\EnemyStateManager.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAuwCsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T14:11:00.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AgentToDistanceTest.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\NavMesh\\AgentToDistanceTest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\NavMesh\\AgentToDistanceTest.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\NavMesh\\AgentToDistanceTest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\NavMesh\\AgentToDistanceTest.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T13:21:17.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "TestShaderChangeByButton.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\TestScript\\TestShaderChangeByButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TestScript\\TestShaderChangeByButton.cs",
@@ -42,33 +76,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "PlayerCamManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerCamManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Manager\\PlayerCamManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerCamManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\Manager\\PlayerCamManager.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAADwvzkAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAADwvz8AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T08:39:56.23Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T08:39:56.23Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
-              "ViewState": "AgIAAOQAAAAAAAAAAAAgwPIAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAYwPQAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T05:02:25.945Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T05:02:25.945Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "TagConstant.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Constant\\Tag\\TagConstant.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Constant\\Tag\\TagConstant.cs",
