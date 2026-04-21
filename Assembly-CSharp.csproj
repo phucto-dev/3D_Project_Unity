@@ -61,8 +61,13 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.5f2\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GameData\Stats\BaseStats.cs" />
     <Compile Include="Assets\Scripts\Manager\NavMesh\AgentToDistanceTest.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Vision\EnemyVision.cs" />
+    <Compile Include="Assets\Scripts\Extension\CooldownTimer\CooldownTimer.cs" />
     <Compile Include="Assets\Scripts\Player\Move\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\GameData\Enemies\Stats\EnemyStats.cs" />
+    <Compile Include="Assets\Scripts\GameData\Enemies\Config\EnemyBrainConfig.cs" />
     <Compile Include="Assets\Scripts\Enemies\StateManager\EnemyStateManager.cs" />
     <Compile Include="Assets\Scripts\Constant\Tag\TagConstant.cs" />
     <Compile Include="Assets\Scripts\Player\Manager\PlayerCamManager.cs" />
