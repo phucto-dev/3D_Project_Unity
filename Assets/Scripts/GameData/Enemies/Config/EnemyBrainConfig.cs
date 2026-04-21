@@ -8,6 +8,8 @@ public class EnemyBrainConfig : ScriptableObject
     public float SightRange => _sightRange;
     [SerializeField] private Vector3 _sightOffset = new Vector3(0, 1.5f, 0);
     public Vector3 SightOffset => _sightOffset;
+    [SerializeField] private float _sightDelay = 0.2f;
+    public float SightDelay => _sightDelay;
     [SerializeField, Range(0, 360)] private float _fieldOfViewAngle = 110f;
     public float FieldOfViewAngle => _fieldOfViewAngle;
 

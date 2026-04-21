@@ -15,20 +15,14 @@ public class EnemyVision : MonoBehaviour
 
     // Transfer Human Angle to Machine Angle
     private float _cosThreshold;
-    private bool _seePlayer;
-    private float _timeStart;
-    private float _timeDelay;
 
     private void Start()
     {
         // Just a random recipe AI gen which change Angle of 0 (Human) to 1 (Machine) or 90 to 0
         _cosThreshold = Mathf.Cos(_brainConfig.FieldOfViewAngle * 0.5f * Mathf.Deg2Rad);
     }
+
     public bool CanSeePlayer()
-    {
-        return false;
-    }
-    public bool CanSeePlayerChecker()
     {
         if (PlayerTarget == null) return false;
 

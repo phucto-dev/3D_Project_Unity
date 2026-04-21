@@ -12,6 +12,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80e0a8a4f639354ea851633f58fa878, type: 3}
   m_Name: EnemyStats
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
+  _maxHealth:
+    baseValue: 50
+    minValue: 0
+    maxValue: 9999
+  _healthRegen:
+    baseValue: 0
+    minValue: 0
+    maxValue: 9999
+  _attackPower:
+    baseValue: 10
+    minValue: 0
+    maxValue: 9999
+  _attackSpeed:
+    baseValue: 1
+    minValue: 0.1
+    maxValue: 5
+  _critRate:
+    baseValue: 0.05
+    minValue: 0
+    maxValue: 1
+  _critDamage:
+    baseValue: 1.5
+    minValue: 1
+    maxValue: 5
+  _defense:
+    baseValue: 5
+    minValue: 0
+    maxValue: 9999
+  _poise:
+    baseValue: 50
+    minValue: 0
+    maxValue: 9999
+  _movementSpeed:
+    baseValue: 5
+    minValue: 1
+    maxValue: 20
   rank: 0
   faction: 1
   xpYield: 50

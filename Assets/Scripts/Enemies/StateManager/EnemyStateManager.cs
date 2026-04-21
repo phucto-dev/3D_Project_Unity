@@ -20,11 +20,13 @@ public class EnemyStateManager : MonoBehaviour
 
     private IEnemyState _currentState;
     private EnemyVision _vision;
+    private CooldownTimer _delayTimer;
 
     private void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
         _vision = GetComponent<EnemyVision>();
+        _delayTimer = new CooldownTimer(_brainConfig.SightDelay);
         if (Agent == null) return;
         if (_vision == null)
         {
@@ -38,6 +40,7 @@ public class EnemyStateManager : MonoBehaviour
 
     private void Update()
     {
+        CheckSawPlayer();
         _currentState.UpdateState(this);
     }
 
@@ -48,9 +51,12 @@ public class EnemyStateManager : MonoBehaviour
         _currentState.EnterState(this);
     }
 
-    public void SetPlayer(Transform player)
+    private void CheckSawPlayer()
     {
-        Player = player;
+        if (_delayTimer.Tick())
+        {
+            SeePlayer = _vision.CanSeePlayer();
+        }
     }
 
     public EnemyBrainConfig GetBrainConfig() => _brainConfig;
@@ -69,7 +75,7 @@ public class PatrolState : IEnemyState
     public void UpdateState(EnemyStateManager enemy)
     {
         if (enemy.Player == null) return;
-        if (Vector3.Distance(enemy.transform.position, enemy.Player.position) < enemy.GetBrainConfig().PatrolRadius)
+        if (enemy.SeePlayer)
         {
             enemy.ChangeState(new ChaseState());
             return;
@@ -120,10 +126,8 @@ public class ChaseState: IEnemyState
     {
         if (enemy.Player == null) return;
 
-        float distanceToPlayer = Vector3.Distance(enemy.transform.position, enemy.Player.position);
-        if (distanceToPlayer > enemy.GetBrainConfig().LimitChaseRange)
+        if (!enemy.SeePlayer)
         {
-            enemy.SetPlayer(null);
             enemy.ChangeState(new PatrolState());
             return;
         }
