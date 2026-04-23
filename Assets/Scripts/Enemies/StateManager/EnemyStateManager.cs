@@ -16,7 +16,7 @@ public class EnemyStateManager : MonoBehaviour
     public bool SeePlayer { get; private set; }
 
     [Header("Brain Config")]
-    [SerializeField] private EnemyBrainConfig _brainConfig;
+    [SerializeField] private EnemyBrainConfigSO _brainConfig;
 
     private IEnemyState _currentState;
     private EnemyVision _vision;
@@ -59,7 +59,7 @@ public class EnemyStateManager : MonoBehaviour
         }
     }
 
-    public EnemyBrainConfig GetBrainConfig() => _brainConfig;
+    public EnemyBrainConfigSO GetBrainConfig() => _brainConfig;
 
 }
 

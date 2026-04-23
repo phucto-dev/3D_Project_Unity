@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyVision : MonoBehaviour
 {
     [Header("--- VISION SETTINGS ---")]
-    [SerializeField] private EnemyBrainConfig _brainConfig;
+    [SerializeField] private EnemyBrainConfigSO _brainConfig;
 
     [Header("--- TARGET ---")]
     public Transform PlayerTarget;

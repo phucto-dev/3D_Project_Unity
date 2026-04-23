@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     private InputAction _lockOnCameraAction;
 
     private PlayerCamManager playerCamManager;
+    private PlayerAttack _playerAttack;
 
     private Vector3 _calculatedMoveDir;
     private Quaternion _targetRotation;
@@ -65,10 +66,13 @@ public class PlayerMovement : MonoBehaviour
     private float _startStandTime;
     private bool _isCameraLockOn = false;
     private Transform _targetLockOn;
+    private bool _isAttacking;
 
     private void Awake()
     {
         _inputSystem = GetComponent<PlayerInput>();
+        _playerAttack = GetComponent<PlayerAttack>();
+
         if (animator == null)
         {
             animator = GetComponentInChildren<Animator>();
@@ -104,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
         if (animator != null) animator.SetBool("IsLockOnCamera", false);
         _isLanding = true;
         _moveable = true;
+        _isAttacking = false;
     }
 
     private void Update()
@@ -121,12 +126,14 @@ public class PlayerMovement : MonoBehaviour
         speedManager();
         CheckGrounded();
         StandAfterHardLand();
+        CheckAttacking();
         if (_isRolling)
         {
             Rolling();
             return;
         }
         if (!_moveable) return;
+        if (_isAttacking) return;
         Movement();
         Jump();
     }
@@ -261,6 +268,15 @@ public class PlayerMovement : MonoBehaviour
         if (ctx.interaction is TapInteraction)
         {
             if (_isRolling || !_isGrounded) return;
+            if (_playerAttack != null)
+            {
+                _playerAttack.ResetCombatState();
+                RotateCharacter();
+                if (_calculatedMoveDir != Vector3.zero)
+                {
+                    rb.MoveRotation(_targetRotation);
+                }
+            }
             animator.SetTrigger(_animRoll);
             StartCoroutine(RollRoutine());
         }
@@ -347,4 +363,24 @@ public class PlayerMovement : MonoBehaviour
         _targetLockOn = target;
         animator.SetBool("IsLockOnCamera", true);
     }
+
+    private void CheckAttacking()
+    {
+        if (_playerAttack == null) return;
+        //if (!_isMoving) return;
+        //if (!_jumpFlag) return;
+        //if (!_isRolling) return;
+        if (_playerAttack.GetCurrentAttackNode() != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+            _isAttacking = true;
+        }
+        else
+        {
+            _isAttacking = false;
+        }
+    }
+
+    public bool GetRollInfo() => _isRolling;
+    public bool GetIsGround() => _isGrounded;
 }
