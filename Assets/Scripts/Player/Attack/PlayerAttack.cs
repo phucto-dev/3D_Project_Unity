@@ -11,6 +11,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private AttackNodeSO _entryHeavyAttack;
     [SerializeField] private Animator _animator;
 
+    [Header("Animator Hashes")]
+    private readonly int _animRecovery = Animator.StringToHash("Recovery");
+
     private PlayerInput _inputSystem;
     private InputAction _attackAction;
 
@@ -108,6 +111,7 @@ public class PlayerAttack : MonoBehaviour
         _currentAttackNode = targetNode;
         _isComboWindowOpen = false;
         _bufferedAttackNode = null;
+        _animator.SetBool(_animRecovery, false);
         _animator.CrossFadeInFixedTime(targetNode.AnimStateName, targetNode.TransitionDuaration);
     }
 
@@ -122,7 +126,18 @@ public class PlayerAttack : MonoBehaviour
     {
         _isComboWindowOpen = true;
     }
-
+    public void RecoveryAnimAndEndState()
+    {
+        if (_currentAttackNode == null) return;
+        if (_currentAttackNode.HasRecoveryAnim)
+        {
+            _animator.SetBool(_animRecovery, true);
+        }
+        else
+        {
+            ResetCombatState();
+        }
+    }
     public void ResetCombatState()
     {
         _currentAttackNode = null;

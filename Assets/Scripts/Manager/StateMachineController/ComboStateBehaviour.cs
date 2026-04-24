@@ -13,8 +13,6 @@ public class ComboStateBehaviour : StateMachineBehaviour
     {
         _playerAttack = animator.GetComponentInParent<PlayerAttack>();
         _hasTransitioned = false;
-        if (_playerAttack == null) return;
-
     }
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -31,7 +29,7 @@ public class ComboStateBehaviour : StateMachineBehaviour
         }
         if (stateInfo.normalizedTime >= _closeComboWindowTime)
         {
-            _playerAttack.ResetCombatState();
+            _playerAttack.RecoveryAnimAndEndState();
         }
     }
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

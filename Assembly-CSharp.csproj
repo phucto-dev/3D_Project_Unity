@@ -62,12 +62,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\TestScript\AddForce.cs" />
+    <Compile Include="Assets\AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherUnsheatheBowSMB.cs" />
+    <Compile Include="Assets\AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherArrow.cs" />
+    <Compile Include="Assets\AssetPackages\DoubleL\Demo\DemoCameraController.cs" />
+    <Compile Include="Assets\AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherController.cs" />
+    <Compile Include="Assets\Scripts\Manager\StateMachineController\RecoverStateBehaviour.cs" />
     <Compile Include="Assets\Scripts\GameData\Items\Weapon\Melee\WeaponDataSO.cs" />
     <Compile Include="Assets\Scripts\Manager\NavMesh\AgentToDistanceTest.cs" />
     <Compile Include="Assets\Scripts\Enemies\Vision\EnemyVision.cs" />
+    <Compile Include="Assets\AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherTriggerSMB.cs" />
     <Compile Include="Assets\Scripts\Extension\CooldownTimer\CooldownTimer.cs" />
     <Compile Include="Assets\Scripts\Player\Move\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\GameData\Enemies\Stats\EnemyStatsSO.cs" />
+    <Compile Include="Assets\AssetPackages\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
     <Compile Include="Assets\Scripts\Player\Attack\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\StateManager\EnemyStateManager.cs" />
     <Compile Include="Assets\Scripts\Constant\Tag\TagConstant.cs" />
@@ -75,10 +82,12 @@
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\GameData\Stats\BaseStatsSO.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Attack\AttackNodeSO.cs" />
+    <Compile Include="Assets\AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherBowSMB.cs" />
     <Compile Include="Assets\Scripts\Manager\StateMachineController\ComboStateBehaviour.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestShaderChangeByButton.cs" />
     <Compile Include="Assets\Scripts\GameData\Enemies\Config\EnemyBrainConfigSO.cs" />
     <Compile Include="Assets\Scripts\Manager\CursorManager\CursorManager.cs" />
+    <Compile Include="Assets\AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherGetArrowSMB.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

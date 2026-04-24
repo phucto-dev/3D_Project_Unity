@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackNodeSO
   AnimStateName: Attack_Light_Phase_Entry
   TransitionDuaration: 0
-  NextLightAttack: {fileID: 11400000, guid: a6e07dafe350c45469df219f5b9a1a58, type: 2}
+  NextLightAttack: {fileID: 11400000, guid: ec47c8f60e7eb464f86a26bb65b51f3e, type: 2}
   NextHeavyAttack: {fileID: 0}
   NextAttack: {fileID: 0}
   DamageMultiplier: 1

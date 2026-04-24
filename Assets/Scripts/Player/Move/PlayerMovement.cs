@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _isCameraLockOn = false;
     private Transform _targetLockOn;
     private bool _isAttacking;
+    private Vector2 _lastMoveDir;
 
     private void Awake()
     {
@@ -153,10 +154,18 @@ public class PlayerMovement : MonoBehaviour
             _speed = 0f;
             return;
         }
-
-        if (_isSprinting) _speed = _sprintSpeed;
-        else if (_isWalking) _speed = _walkSpeed;
-        else _speed = _runSpeed;
+        if (_isCameraLockOn)
+        {
+            if (_isSprinting) _speed = _runSpeed;
+            else if (_isWalking) _speed = _walkSpeed;
+            else _speed = _walkSpeed;
+        }
+        else
+        {
+            if (_isSprinting) _speed = _sprintSpeed;
+            else if (_isWalking) _speed = _walkSpeed;
+            else _speed = _runSpeed;
+        }
     }
     private void Movement()
     {
@@ -238,20 +247,41 @@ public class PlayerMovement : MonoBehaviour
         if (_isRolling) return;
         // Moving
         animator.SetBool(_animMove, _currentSpeed > 0.01f);
+
+        if (_moveInput.magnitude > 0.01f)
+        {
+            _lastMoveDir = _moveInput.normalized;
+        }
+        float targetAnimValue = _isSprinting ? 3f : (_isWalking ? 1f : 2f);
+        float speedRatio = (_speed > 0.01f) ? (_currentSpeed / _speed) : 0f;
+        float currentAnimMagnitude = speedRatio * targetAnimValue;
+
         if (_isCameraLockOn)
         {
-            float horizontal = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * _moveInput.x;
-            float vertical = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * _moveInput.y;
-            animator.SetFloat(_animHorizontal, horizontal, 0.1f, Time.deltaTime);
-            animator.SetFloat(_animVertical, vertical, 0.1f, Time.deltaTime);
+            float horizontal = _lastMoveDir.x * currentAnimMagnitude;
+            float vertical = _lastMoveDir.y * currentAnimMagnitude;
+
+            animator.SetFloat(_animHorizontal, horizontal, 0.2f, Time.deltaTime);
+            animator.SetFloat(_animVertical, vertical, 0.2f, Time.deltaTime);
         }
         else
         {
-            float inputMagnitude = _moveInput.magnitude;
-            //Debug.Log(inputMagnitude);
-            float horizontal = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * inputMagnitude;
-            animator.SetFloat(_animHorizontal, horizontal, 0.1f, Time.deltaTime);
+            animator.SetFloat(_animHorizontal, currentAnimMagnitude, 0.2f, Time.deltaTime);
         }
+        //if (_isCameraLockOn)
+        //{
+        //    float horizontal = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * _moveInput.x;
+        //    float vertical = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * _moveInput.y;
+        //    animator.SetFloat(_animHorizontal, horizontal, 0.1f, Time.deltaTime);
+        //    animator.SetFloat(_animVertical, vertical, 0.1f, Time.deltaTime);
+        //}
+        //else
+        //{
+        //    float inputMagnitude = _moveInput.magnitude;
+        //    //Debug.Log(inputMagnitude);
+        //    float horizontal = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * inputMagnitude;
+        //    animator.SetFloat(_animHorizontal, horizontal, 0.1f, Time.deltaTime);
+        //}
 
         // Landing
         animator.SetBool(_animGround, _isGrounded);
