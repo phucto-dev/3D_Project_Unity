@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
@@ -10,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private AttackNodeSO _entryLightAttack;
     [SerializeField] private AttackNodeSO _entryHeavyAttack;
     [SerializeField] private Animator _animator;
+    [SerializeField] private float _blendTimeBetweenLayers = 0.2f;
 
     [Header("Animator Hashes")]
     private readonly int _animRecovery = Animator.StringToHash("Recovery");
@@ -23,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
     private AttackNodeSO _bufferedAttackNode;
 
     private PlayerMovement _playerMovement;
+    private Coroutine _fadeLayerCoroutine;
 
     private void Awake()
     {
@@ -62,6 +65,10 @@ public class PlayerAttack : MonoBehaviour
         {
             if (_playerMovement.GetRollInfo()) return;
             if (!_playerMovement.GetIsGround()) return;
+        }
+        if (_fadeLayerCoroutine != null)
+        {
+            StopCoroutine(_fadeLayerCoroutine);
         }
         if (ctx.interaction is HoldInteraction)
         {
@@ -142,7 +149,33 @@ public class PlayerAttack : MonoBehaviour
     {
         _currentAttackNode = null;
         _isComboWindowOpen = false;
+
+        if (_fadeLayerCoroutine != null)
+        {
+            StopCoroutine(_fadeLayerCoroutine);
+        }
+
+        _fadeLayerCoroutine = StartCoroutine(FadeOutAttackLayer(_blendTimeBetweenLayers));
+    }
+
+    private IEnumerator FadeOutAttackLayer(float fadeDuration)
+    {
+        float startWeight = _animator.GetLayerWeight(_attackLayerIndex);
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float percent = elapsedTime / fadeDuration;
+
+            float currentWeight = Mathf.Lerp(startWeight, 0f, percent);
+            _animator.SetLayerWeight(_attackLayerIndex, currentWeight);
+
+            yield return null;
+        }
+
         _animator.SetLayerWeight(_attackLayerIndex, 0f);
+        _fadeLayerCoroutine = null;
     }
 
     public void ClearEquip()

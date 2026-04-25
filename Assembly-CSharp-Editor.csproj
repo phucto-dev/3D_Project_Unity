@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
-    <Compile Include="Assets\AssetPackages\Blink\Art\Characters\LowPoly\Editor\MaterialTilingOffset.cs" />
+    <Compile Include="Assets\_AssetPackages\Blink\Art\Characters\LowPoly\Editor\MaterialTilingOffset.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Lib\Editor\Localization\cm-help.zh-Hans.txt" />

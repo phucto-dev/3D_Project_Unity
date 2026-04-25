@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\PHUC\\3D PJ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\player\\attack\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\attack\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\manager\\statemachinecontroller\\combostatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\statemachinecontroller\\combostatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\manager\\statemachinecontroller\\recoverstatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\statemachinecontroller\\recoverstatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\enemies\\statemanager\\enemystatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemies\\statemanager\\enemystatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gamedata\\stats\\basestatsso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedata\\stats\\basestatsso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\manager\\statemachinecontroller\\combostatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\statemachinecontroller\\combostatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\player\\attack\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\attack\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\manager\\statemachinecontroller\\recoverstatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\statemachinecontroller\\recoverstatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gamedata\\player\\attack\\attacknodeso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\enemies\\statemanager\\enemystatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemies\\statemanager\\enemystatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gamedata\\items\\weapon\\melee\\weapondataso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,71 +78,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "RecoverStateBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\StateMachineController\\RecoverStateBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\StateMachineController\\RecoverStateBehaviour.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\StateMachineController\\RecoverStateBehaviour.cs",
               "RelativeToolTip": "Assets\\Scripts\\Manager\\StateMachineController\\RecoverStateBehaviour.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAQwBEAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T16:34:49.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-24T16:34:49.217Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ComboStateBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\StateMachineController\\ComboStateBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\StateMachineController\\ComboStateBehaviour.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\StateMachineController\\ComboStateBehaviour.cs",
               "RelativeToolTip": "Assets\\Scripts\\Manager\\StateMachineController\\ComboStateBehaviour.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwB8AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwB8AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T13:45:34.026Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T13:45:34.026Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "BaseStatsSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Stats\\BaseStatsSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Stats\\BaseStatsSO.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Stats\\BaseStatsSO.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameData\\Stats\\BaseStatsSO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T09:28:15.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T09:28:15.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "PlayerAttack.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Attack\\PlayerAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Attack\\PlayerAttack.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Attack\\PlayerAttack.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\Attack\\PlayerAttack.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAUwIgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAswKQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T14:16:09.84Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-22T14:16:09.84Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "EnemyStateManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Enemies\\StateManager\\EnemyStateManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemies\\StateManager\\EnemyStateManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Enemies\\StateManager\\EnemyStateManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Enemies\\StateManager\\EnemyStateManager.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAkwGUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAwwCEAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T14:11:00.329Z"
+              "WhenOpened": "2026-04-20T14:11:00.329Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -158,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AttackNodeSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Player\\Attack\\AttackNodeSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Player\\Attack\\AttackNodeSO.cs",
@@ -166,8 +163,7 @@
               "RelativeToolTip": "Assets\\Scripts\\GameData\\Player\\Attack\\AttackNodeSO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T09:30:27.913Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T09:30:27.913Z"
             },
             {
               "$type": "Document",
@@ -183,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
