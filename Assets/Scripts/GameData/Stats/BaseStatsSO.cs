@@ -59,6 +59,9 @@ public class BaseStatsSO : ScriptableObject
 
     [Header("--- MOBILITY ---")]
     [SerializeField]
-    private StatData _movementSpeed = new StatData(5f, 1f, 20f);
-    public StatData MovementSpeed => _movementSpeed;
+    private StatData _walkSpeed = new StatData(2f, 1f, 20f);
+    public StatData WalkSpeed => _walkSpeed;
+    [SerializeField]
+    private StatData _runSpeed = new StatData(6f, 1f, 20f);
+    public StatData RunSpeed => _runSpeed;
 }

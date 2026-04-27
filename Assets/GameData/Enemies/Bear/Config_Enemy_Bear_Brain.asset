@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2147ca2ee19ed4fb4d4fa145828210, type: 3}
+  m_Name: Config_Enemy_Bear_Brain
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBrainConfigSO
+  _sightRange: 15
+  _sightOffset: {x: 0, y: 1.5, z: 0}
+  _sightDelay: 0.2
+  _fieldOfViewAngle: 110
+  _patrolRadius: 10
+  _waitTimeAtWaypoint: 2
+  _attackRange: 2
+  _limitChaseRange: 30
+  _attackCooldown: 1.5

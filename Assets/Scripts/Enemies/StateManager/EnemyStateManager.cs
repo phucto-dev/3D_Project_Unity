@@ -10,22 +10,28 @@ public interface IEnemyState
 
 public class EnemyStateManager : MonoBehaviour
 {
-    [Header("Ref")]
+    [Header("--- REF ---")]
     public NavMeshAgent Agent { get; private set; }
     public Transform Player { get; private set; }
     public bool SeePlayer { get; private set; }
 
-    [Header("Brain Config")]
+    [Header("--- BRAIN CONFIG ---")]
     [SerializeField] private EnemyBrainConfigSO _brainConfig;
+
+    [Header("--- STATS ---")]
+    [SerializeField] private EnemyStats _stats;
 
     private IEnemyState _currentState;
     private EnemyVision _vision;
     private CooldownTimer _delayTimer;
 
-    private void Start()
+    private void Awake()
     {
         Agent = GetComponent<NavMeshAgent>();
         _vision = GetComponent<EnemyVision>();
+    }
+    private void Start()
+    {
         _delayTimer = new CooldownTimer(_brainConfig.SightDelay);
         if (Agent == null) return;
         if (_vision == null)
@@ -33,7 +39,7 @@ public class EnemyStateManager : MonoBehaviour
             Debug.Log("EnemyStateManager: _vision null");
             return;
         }
-        Player = _vision.PlayerTarget;
+        Player = _vision.Player.PlayerTransform;
         SeePlayer = _vision.CanSeePlayer();
         ChangeState(new PatrolState());
     }
@@ -58,8 +64,15 @@ public class EnemyStateManager : MonoBehaviour
             SeePlayer = _vision.CanSeePlayer();
         }
     }
+    public void SetupAgent(float speed, float angularSpeed = 80f, float acceleration = 4f)
+    {
+        Agent.speed = speed;
+        Agent.angularSpeed = angularSpeed;
+        Agent.acceleration = acceleration;
+    }
 
     public EnemyBrainConfigSO GetBrainConfig() => _brainConfig;
+    public EnemyStats GetStats() => _stats;
 
 }
 
@@ -67,8 +80,11 @@ public class PatrolState : IEnemyState
 {
     private CooldownTimer _waitTimer = new CooldownTimer(2f); // 2f = Time delay 4 each destination. 
     private bool _isWaiting = false;
+    private float _speed;
     public void EnterState(EnemyStateManager enemy)
     {
+        _speed = enemy.GetStats().WalkSpeed.BaseValue;
+        enemy.SetupAgent(_speed);
         FindNewPatrolPoint(enemy);
     }
 
@@ -117,9 +133,11 @@ public class PatrolState : IEnemyState
 public class ChaseState: IEnemyState
 {
     private CooldownTimer _pathUpdateTimer = new CooldownTimer(0.2f);
+    private float _speed;
     public void EnterState(EnemyStateManager enemy)
     {
-        
+        _speed = enemy.GetStats().RunSpeed.BaseValue;
+        enemy.SetupAgent(_speed);
     }
 
     public void UpdateState(EnemyStateManager enemy)

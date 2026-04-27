@@ -9,7 +9,7 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] private EnemyBrainConfigSO _brainConfig;
 
     [Header("--- TARGET ---")]
-    public Transform PlayerTarget;
+    public PlayerInfo Player;
     public LayerMask TargetLayer;
     public LayerMask ObstacleLayer;
 
@@ -24,16 +24,16 @@ public class EnemyVision : MonoBehaviour
 
     public bool CanSeePlayer()
     {
-        if (PlayerTarget == null) return false;
+        if (Player == null) return false;
 
-        float distanceToTarget = Vector3.Distance(transform.position, PlayerTarget.position);
+        float distanceToTarget = Vector3.Distance(transform.position, Player.PlayerTransform.position);
         if (distanceToTarget > _brainConfig.SightRange) return false;
 
-        Vector3 directionToTarget = (PlayerTarget.position - transform.position).normalized;
+        Vector3 directionToTarget = (Player.PlayerTransform.position - transform.position).normalized;
         if (Vector3.Dot(transform.forward, directionToTarget) < _cosThreshold) return false;
 
         Vector3 origin = transform.position + _brainConfig.SightOffset;
-        Vector3 targetPos = PlayerTarget.position + _brainConfig.SightOffset;
+        Vector3 targetPos = Player.PlayerTransform.position + _brainConfig.SightOffset;
         Vector3 dir = (targetPos - origin).normalized;
         
         if (!Physics.Raycast(origin, dir, distanceToTarget, ObstacleLayer))
@@ -46,6 +46,7 @@ public class EnemyVision : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        if (Player == null) return;
         // Chặn lỗi văng NullReference nếu cấu hình chưa được gán
         if (_brainConfig == null) return;
 
@@ -69,9 +70,9 @@ public class EnemyVision : MonoBehaviour
         Gizmos.DrawLine(eyePosition, eyePosition + leftBoundary * _brainConfig.SightRange);
 
         // 3. VẼ ĐƯỜNG NỐI ĐẾN PLAYER ĐỂ DEBUG (Xanh = Thấy, Đỏ = Mù)
-        if (PlayerTarget != null)
+        if (Player.PlayerTransform != null)
         {
-            Vector3 targetPos = PlayerTarget.position + _brainConfig.SightOffset;
+            Vector3 targetPos = Player.PlayerTransform.position + _brainConfig.SightOffset;
 
             if (CanSeePlayer())
             {
