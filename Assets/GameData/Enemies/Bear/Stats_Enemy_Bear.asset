@@ -24,10 +24,14 @@ MonoBehaviour:
     baseValue: 10
     minValue: 0
     maxValue: 9999
-  _attackSpeed:
+  _haste:
     baseValue: 1
     minValue: 0.1
-    maxValue: 5
+    maxValue: 99
+  _delayPerAttack:
+    baseValue: 2
+    minValue: 0.1
+    maxValue: 99
   _critRate:
     baseValue: 0.05
     minValue: 0
@@ -36,6 +40,10 @@ MonoBehaviour:
     baseValue: 1.5
     minValue: 1
     maxValue: 5
+  _attackRange:
+    baseValue: 2.5
+    minValue: 1
+    maxValue: 99
   _defense:
     baseValue: 5
     minValue: 0
@@ -45,13 +53,14 @@ MonoBehaviour:
     minValue: 0
     maxValue: 9999
   _walkSpeed:
-    baseValue: 2
+    baseValue: 0.5
     minValue: 1
     maxValue: 20
   _runSpeed:
     baseValue: 6
     minValue: 1
     maxValue: 20
+  _numberOfAttack: 2
   rank: 0
   faction: 1
   xpYield: 50

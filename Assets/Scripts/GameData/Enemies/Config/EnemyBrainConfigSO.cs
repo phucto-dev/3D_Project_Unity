@@ -26,4 +26,6 @@ public class EnemyBrainConfigSO : ScriptableObject
     public float LimitChaseRange => _limitChaseRange;
     [SerializeField] private float _attackCooldown = 1.5f;
     public float AttackCooldown => _attackCooldown;
+    [SerializeField] private float _turnSpeed = 8f;
+    public float TurnSpeed => _turnSpeed;
 }

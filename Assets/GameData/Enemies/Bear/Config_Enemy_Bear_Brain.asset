@@ -18,6 +18,6 @@ MonoBehaviour:
   _fieldOfViewAngle: 110
   _patrolRadius: 10
   _waitTimeAtWaypoint: 2
-  _attackRange: 2
-  _limitChaseRange: 30
+  _attackRange: 2.5
+  _limitChaseRange: 25
   _attackCooldown: 1.5

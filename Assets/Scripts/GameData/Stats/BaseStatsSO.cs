@@ -36,9 +36,13 @@ public class BaseStatsSO : ScriptableObject
     private StatData _attackPower = new StatData(10f);
     public StatData AttackPower => _attackPower;
 
-    [SerializeField, Tooltip("Attack per second)")]
-    private StatData _attackSpeed = new StatData(1f, 0.1f, 5f);
-    public StatData AttackSpeed => _attackSpeed;
+    [SerializeField, Tooltip("Frequency Of Attack)")]
+    private StatData _haste = new StatData(1f, 0.1f, 99f);
+    public StatData Haste => _haste;
+
+    [SerializeField, Tooltip("Measure by Second)")]
+    private StatData _delayPerAttack = new StatData(1f, 0.1f, 99f);
+    public StatData DelayPerAttack => _delayPerAttack;
 
     [SerializeField, Tooltip("Critical Rate (0.0 - 1.0)")]
     private StatData _critRate = new StatData(0.05f, 0f, 1f);
@@ -47,6 +51,11 @@ public class BaseStatsSO : ScriptableObject
     [SerializeField, Tooltip("Critical Damage (1.5 = 150%)")]
     private StatData _critDamage = new StatData(1.5f, 1f, 5f);
     public StatData CritDamage => _critDamage;
+
+    [SerializeField]
+    private StatData _attackRange = new StatData(2.5f, 1f, 99f);
+    public StatData AttackRange => _attackRange;
+    
 
     [Header("--- DEFENSE ---")]
     [SerializeField]

@@ -15,6 +15,8 @@ public class EnemyVision : MonoBehaviour
 
     // Transfer Human Angle to Machine Angle
     private float _cosThreshold;
+    private bool _seePlayer;
+    private float _distanceToTarget;
 
     private void Start()
     {
@@ -26,8 +28,15 @@ public class EnemyVision : MonoBehaviour
     {
         if (Player == null) return false;
 
-        float distanceToTarget = Vector3.Distance(transform.position, Player.PlayerTransform.position);
-        if (distanceToTarget > _brainConfig.SightRange) return false;
+        _distanceToTarget = Vector3.Distance(transform.position, Player.PlayerTransform.position);
+        if (!_seePlayer) _seePlayer = CheckPlayerOnSightRange();
+        else _seePlayer = CheckChasingPlayer();
+        return _seePlayer;
+    }
+
+    private bool CheckPlayerOnSightRange()
+    {
+        if (_distanceToTarget > _brainConfig.SightRange) return false;
 
         Vector3 directionToTarget = (Player.PlayerTransform.position - transform.position).normalized;
         if (Vector3.Dot(transform.forward, directionToTarget) < _cosThreshold) return false;
@@ -35,12 +44,17 @@ public class EnemyVision : MonoBehaviour
         Vector3 origin = transform.position + _brainConfig.SightOffset;
         Vector3 targetPos = Player.PlayerTransform.position + _brainConfig.SightOffset;
         Vector3 dir = (targetPos - origin).normalized;
-        
-        if (!Physics.Raycast(origin, dir, distanceToTarget, ObstacleLayer))
+
+        if (!Physics.Raycast(origin, dir, _distanceToTarget, ObstacleLayer))
         {
             return true;
         }
 
+        return false;
+    }
+    private bool CheckChasingPlayer()
+    {
+        if (_distanceToTarget <= _brainConfig.LimitChaseRange) return true;
         return false;
     }
 
@@ -51,7 +65,12 @@ public class EnemyVision : MonoBehaviour
         if (_brainConfig == null) return;
 
         Vector3 eyePosition = transform.position + _brainConfig.SightOffset;
-
+        // Attack Range
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(eyePosition, _brainConfig.AttackRange);
+        // Limit Chase Range
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(eyePosition, _brainConfig.LimitChaseRange);
         // 1. VẼ VÒNG TRÒN BÁN KÍNH TẦM NHÌN (Màu trắng)
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(eyePosition, _brainConfig.SightRange);
