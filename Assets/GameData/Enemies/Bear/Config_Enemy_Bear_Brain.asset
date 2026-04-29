@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Config_Enemy_Bear_Brain
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBrainConfigSO
   _sightRange: 15
-  _sightOffset: {x: 0, y: 1.5, z: 0}
+  _sightOffset: {x: 0, y: 1, z: 0}
   _sightDelay: 0.2
   _fieldOfViewAngle: 110
   _patrolRadius: 10
@@ -21,3 +21,4 @@ MonoBehaviour:
   _attackRange: 2.5
   _limitChaseRange: 25
   _attackCooldown: 1.5
+  _turnSpeed: 8

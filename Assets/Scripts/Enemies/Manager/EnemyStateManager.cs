@@ -182,6 +182,8 @@ public class ChaseState: IEnemyState
 
         if (_offset.sqrMagnitude <= enemy.GetStats().AttackRange.BaseValue * enemy.GetStats().AttackRange.BaseValue)
         {
+            enemy.Agent.updateRotation = false; //
+
             Vector3 dirToPlayer = _offset.normalized;
             dirToPlayer.y = 0;
 
@@ -192,6 +194,10 @@ public class ChaseState: IEnemyState
             {
                 enemy.ChangeState(new AttackState());
             }
+        }
+        else
+        {
+            enemy.Agent.updateRotation = true; //
         }
     }
 }
@@ -206,23 +212,28 @@ public class AttackState : IEnemyState
     {
         _actuallCooldown = enemy.GetStats().DelayPerAttack.BaseValue / enemy.GetStats().Haste.BaseValue;
         enemy.GetACController().EnableCombatAnim();
+        enemy.Agent.updateRotation = false; //
     }
     public void UpdateState(EnemyStateManager enemy)
     {
         _offset = enemy.Player.position - enemy.transform.position;
 
-        if (_offset.sqrMagnitude > enemy.GetStats().AttackRange.BaseValue * enemy.GetStats().AttackRange.BaseValue)
+        if (_offset.sqrMagnitude > enemy.GetStats().AttackRange.BaseValue * enemy.GetStats().AttackRange.BaseValue + 0.5f)
         {
             enemy.ChangeState(new ChaseState());
         }
         else
         {
+            Vector3 dirToPlayer = _offset.normalized;
+            dirToPlayer.y = 0;
+            enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, Quaternion.LookRotation(dirToPlayer), Time.deltaTime * enemy.GetBrainConfig().TurnSpeed);
             TriggerRandomAtack(enemy);
         }
     }
     public void ExitState(EnemyStateManager enemy)
     {
         enemy.GetACController().DisableCombatAnim();
+        enemy.Agent.updateRotation = true; //
     }
     private void TriggerRandomAtack(EnemyStateManager enemy)
     {
