@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d5d20e7a5c5cd4ea80bff294b74086, type: 3}
   m_Name: Config_Drop_Item_Test
   m_EditorClassIdentifier: Assembly-CSharp::LootAnimConfigSO
-  DropSpeed: 10
+  DropSpeed: 5
   DropRadius: 3
   Speed: 2
   Acceleration: 20

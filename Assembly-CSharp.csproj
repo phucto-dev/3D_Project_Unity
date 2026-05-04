@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\GameData\Enemies\Config\EnemyBrainConfigSO.cs" />
     <Compile Include="Assets\Scripts\Manager\CursorManager\CursorManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\Combat\EnemyAttack.cs" />
+    <Compile Include="Assets\Scripts\Weapon\Melee\MeleeTracer.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Stats\PlayerStatsSO.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ce8c8eafcd134418b128b1bf1ac2ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComboStateBehaviour
+  _startAttackTime: 0.1
   _openComboWindowTime: 0.5
   _transitionToNextAttack: 0.9
   _closeComboWindowTime: 0.95
@@ -240,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ce8c8eafcd134418b128b1bf1ac2ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComboStateBehaviour
+  _startAttackTime: 0.1
   _openComboWindowTime: 0.5
   _transitionToNextAttack: 0.9
   _closeComboWindowTime: 0.95
@@ -437,6 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ce8c8eafcd134418b128b1bf1ac2ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComboStateBehaviour
+  _startAttackTime: 0.1
   _openComboWindowTime: 0.5
   _transitionToNextAttack: 0.9
   _closeComboWindowTime: 0.95
@@ -644,6 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ce8c8eafcd134418b128b1bf1ac2ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComboStateBehaviour
+  _startAttackTime: 0.1
   _openComboWindowTime: 0.5
   _transitionToNextAttack: 0.9
   _closeComboWindowTime: 0.95
@@ -896,6 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ce8c8eafcd134418b128b1bf1ac2ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComboStateBehaviour
+  _startAttackTime: 0.1
   _openComboWindowTime: 0.5
   _transitionToNextAttack: 0.9
   _closeComboWindowTime: 0.95
@@ -1707,6 +1712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ce8c8eafcd134418b128b1bf1ac2ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComboStateBehaviour
+  _startAttackTime: 0.1
   _openComboWindowTime: 0.5
   _transitionToNextAttack: 0.9
   _closeComboWindowTime: 0.95
