@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\TestScript\AddForce.cs" />
+    <Compile Include="Assets\Scripts\GameData\Items\DropItems\LootAnimConfigSO.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Manager\PlayerManager.cs" />
     <Compile Include="Assets\_AssetPackages\DoubleL\Demo\DemoCameraController.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
@@ -75,10 +76,12 @@
     <Compile Include="Assets\Scripts\Player\Move\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\GameData\Enemies\Stats\EnemyStatsSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherArrow.cs" />
+    <Compile Include="Assets\Scripts\GameSystems\ItemSystem\LootDropSystem.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherController.cs" />
     <Compile Include="Assets\Scripts\Player\Attack\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Info\PlayerInfo.cs" />
     <Compile Include="Assets\Scripts\Constant\Tag\TagConstant.cs" />
+    <Compile Include="Assets\Scripts\GameSystems\ItemSystem\LootMagnetSystem.cs" />
     <Compile Include="Assets\Scripts\Player\Manager\PlayerCamManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Enemies\Manager\EnemyStateManager.cs" />

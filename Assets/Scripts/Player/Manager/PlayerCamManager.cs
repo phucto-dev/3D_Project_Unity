@@ -17,7 +17,7 @@ public class PlayerCamManager : MonoBehaviour
     [SerializeField] private LayerMask _enemyLayer;
     public bool IsLockedOn { get; private set; }
 
-    private const string _enemyTag = TagConstant.Enemy_Tag;
+    private const string _enemyTag = TagConstant.TagEnemy;
     private Vector3 _detecionRange;
     public event Action<Transform> SentLockOnTarget;
     private Transform _currentTarget;
