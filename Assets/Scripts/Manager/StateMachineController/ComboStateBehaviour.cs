@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class ComboStateBehaviour : StateMachineBehaviour
 {
-    [SerializeField, Range(0f, 1f)] private float _startAttackTime = 0.1f;
     [SerializeField, Range(0f, 1f)] private float _openComboWindowTime = 0.5f;
     [SerializeField, Range(0f, 1f)] private float _transitionToNextAttack = 0.9f;
     [SerializeField, Range(0f, 1f)] private float _closeComboWindowTime = 0.95f;
@@ -18,22 +17,20 @@ public class ComboStateBehaviour : StateMachineBehaviour
         _tracer = animator.GetComponentInChildren<MeleeTracer>();
         _hasTransitioned = false;
         _isAttacking = false;
+        //
+        if (!_isAttacking)
+        {
+            if (_tracer != null)
+            {
+                _tracer.StartSwing();
+            }
+            _isAttacking = true;
+        }
     }
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (_playerAttack == null) return;
         if (animator.IsInTransition(layerIndex)) return;
-        if (stateInfo.normalizedTime <= _startAttackTime)
-        {
-            if (!_isAttacking)
-            {
-                if (_tracer != null)
-                {
-                    _tracer.StartSwing();
-                }
-                _isAttacking = true;
-            }
-        }
         if (stateInfo.normalizedTime >= _openComboWindowTime)
         {
             _playerAttack.OpenComboWindow();

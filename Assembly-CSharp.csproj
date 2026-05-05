@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\TestScript\AddForce.cs" />
+    <Compile Include="Assets\Scripts\Manager\StatManager\EntityStatsManager.cs" />
     <Compile Include="Assets\Scripts\GameData\Items\DropItems\LootAnimConfigSO.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Manager\PlayerManager.cs" />
     <Compile Include="Assets\_AssetPackages\DoubleL\Demo\DemoCameraController.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Assets\Scripts\Manager\StateMachineController\RecoverStateBehaviour.cs" />
     <Compile Include="Assets\Scripts\GameData\Items\Weapon\Melee\WeaponDataSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherBowSMB.cs" />
+    <Compile Include="Assets\Scripts\Manager\StatManager\PlayerStatsManager.cs" />
     <Compile Include="Assets\Scripts\Manager\NavMesh\AgentToDistanceTest.cs" />
     <Compile Include="Assets\Scripts\Enemies\Vision\EnemyVision.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherUnsheatheBowSMB.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Assets\Scripts\GameSystems\HealthSystem\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Attack\AttackNodeSO.cs" />
     <Compile Include="Assets\Scripts\Manager\StateMachineController\ComboStateBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Manager\StatManager\Stat.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherTriggerSMB.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestShaderChangeByButton.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherGetArrowSMB.cs" />
@@ -98,6 +101,7 @@
     <Compile Include="Assets\Scripts\Enemies\Combat\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Weapon\Melee\MeleeTracer.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Stats\PlayerStatsSO.cs" />
+    <Compile Include="Assets\Scripts\Manager\StatManager\EnemyStatsManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

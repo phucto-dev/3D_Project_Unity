@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stats_Enemy_Bear
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
   _maxHealth:
-    baseValue: 0
+    baseValue: 100
     minValue: 0
     maxValue: 9999
   _healthRegen:

@@ -4,20 +4,25 @@ public class EnemyAttack : MonoBehaviour
 {
     [Header("--- REF ---")]
     public Transform attackPoint;
-    public EnemyStats Stats;
     public LayerMask PlayerLayer;
 
     [Header("--- ANGLE ---")]
     private float _attackAngle = 90f;
 
     private DmgInfo _dmgInfo;
+    private EnemyStatsManager _stats;
+
+    private void Awake()
+    {
+        _stats = GetComponentInParent<EnemyStatsManager>();
+    }
 
     private void Start()
     {
-        if (Stats == null) return;
+        if (_stats == null) return;
         _dmgInfo = new DmgInfo
         {
-            Amount = Stats.AttackPower.BaseValue,
+            Amount = _stats.AttackPower.GetValue(),
             Dealer = this.transform,
             IsCritical = false
         };
@@ -26,8 +31,8 @@ public class EnemyAttack : MonoBehaviour
     public void TriggerAttackHitBox()
     {
         if (attackPoint == null) return;
-        if (Stats == null) return;
-        Collider[] hits = Physics.OverlapSphere(attackPoint.position, Stats.AttackRange.BaseValue, PlayerLayer);
+        if (_stats == null) return;
+        Collider[] hits = Physics.OverlapSphere(attackPoint.position, _stats.AttackRange.GetValue(), PlayerLayer);
 
         foreach (Collider hit in hits)
         {
@@ -63,16 +68,16 @@ public class EnemyAttack : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null) return;
-        if (Stats == null) return;
+        if (_stats == null) return;
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPoint.position, Stats.AttackRange.BaseValue);
+        Gizmos.DrawWireSphere(attackPoint.position, _stats.AttackRange.GetValue());
 
         Vector3 forward = transform.forward;
         Vector3 leftBoundary = Quaternion.Euler(0, -_attackAngle / 2f, 0) * forward;
         Vector3 rightBoundary = Quaternion.Euler(0, _attackAngle / 2f, 0) * forward;
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(attackPoint.position, leftBoundary * Stats.AttackRange.BaseValue);
-        Gizmos.DrawRay(attackPoint.position, rightBoundary * Stats.AttackRange.BaseValue);
+        Gizmos.DrawRay(attackPoint.position, leftBoundary * _stats.AttackRange.GetValue());
+        Gizmos.DrawRay(attackPoint.position, rightBoundary * _stats.AttackRange.GetValue());
     }
 }

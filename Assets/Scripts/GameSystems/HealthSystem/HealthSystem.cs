@@ -9,9 +9,6 @@ public struct DmgInfo
 }
 public class HealthSystem : MonoBehaviour
 {
-    [Header("--- BASE STATS ---")]
-    [SerializeField] private BaseStatsSO _stats;
-
     [Header("--- DO NOT EDIT ---")]
     [field: SerializeField] public float CurrentHealth { get; private set; }
     [field: SerializeField] public float MaxHealth { get; private set; }
@@ -19,12 +16,20 @@ public class HealthSystem : MonoBehaviour
     public event Action<float> OnHealthChanged;
     public event Action<DmgInfo> OnTakeDmg;
     public event Action OnDeath;
+
+    private EntityStatsManager _stats;
+
+    private void Awake()
+    {
+        _stats = GetComponentInParent<EntityStatsManager>();
+    }
+
     private void Start()
     {
         if (_stats == null) return;
 
-        MaxHealth = _stats.MaxHealth.BaseValue;
-        CurrentHealth = _stats.MaxHealth.BaseValue;
+        MaxHealth = _stats.MaxHealth.GetValue();
+        CurrentHealth = _stats.MaxHealth.GetValue();
     }
     public void TakeDmg(DmgInfo dmgInfo)
     {

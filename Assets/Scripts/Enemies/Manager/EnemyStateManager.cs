@@ -18,9 +18,7 @@ public class EnemyStateManager : MonoBehaviour
     [Header("--- BRAIN CONFIG ---")]
     [SerializeField] private EnemyBrainConfigSO _brainConfig;
 
-    [Header("--- STATS ---")]
-    [SerializeField] private EnemyStats _stats;
-
+    private EnemyStatsManager _stats;
     private IEnemyState _currentState;
     private EnemyVision _vision;
     private EnemyAnimationManager _animManager;
@@ -31,6 +29,7 @@ public class EnemyStateManager : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         _vision = GetComponent<EnemyVision>();
         _animManager = GetComponent<EnemyAnimationManager>();
+        _stats = GetComponent<EnemyStatsManager>();
     }
     private void Start()
     {
@@ -42,7 +41,7 @@ public class EnemyStateManager : MonoBehaviour
             return;
         }
         Player = _vision.Player.PlayerTransform;
-        Agent.stoppingDistance = _stats.AttackRange.BaseValue;
+        Agent.stoppingDistance = _stats.AttackRange.GetValue();
         SeePlayer = _vision.CanSeePlayer();
         ChangeState(new PatrolState());
     }
@@ -75,7 +74,7 @@ public class EnemyStateManager : MonoBehaviour
     }
 
     public EnemyBrainConfigSO GetBrainConfig() => _brainConfig;
-    public EnemyStats GetStats() => _stats;
+    public EnemyStatsManager GetStats() => _stats;
     public EnemyAnimationManager GetACController() => _animManager;
 
 }
@@ -87,7 +86,7 @@ public class PatrolState : IEnemyState
     private float _speed;
     public void EnterState(EnemyStateManager enemy)
     {
-        _speed = enemy.GetStats().WalkSpeed.BaseValue;
+        _speed = enemy.GetStats().WalkSpeed.GetValue();
         enemy.SetupAgent(_speed);
         FindNewPatrolPoint(enemy);
         if (enemy.GetACController() != null) enemy.GetACController().EnableMovingAnim();
@@ -142,7 +141,7 @@ public class ChaseState: IEnemyState
     private Vector3 _offset;
     public void EnterState(EnemyStateManager enemy)
     {
-        _speed = enemy.GetStats().RunSpeed.BaseValue;
+        _speed = enemy.GetStats().RunSpeed.GetValue();
         enemy.SetupAgent(_speed);
         if (enemy.GetACController() != null) enemy.GetACController().EnableMovingAnim();
     }
@@ -180,7 +179,7 @@ public class ChaseState: IEnemyState
     {
         _offset = enemy.Player.position - enemy.transform.position;
 
-        if (_offset.sqrMagnitude <= enemy.GetStats().AttackRange.BaseValue * enemy.GetStats().AttackRange.BaseValue)
+        if (_offset.sqrMagnitude <= enemy.GetStats().AttackRange.GetValue() * enemy.GetStats().AttackRange.GetValue())
         {
             enemy.Agent.updateRotation = false; //
 
@@ -210,7 +209,7 @@ public class AttackState : IEnemyState
     private float _actuallCooldown;
     public void EnterState(EnemyStateManager enemy)
     {
-        _actuallCooldown = enemy.GetStats().DelayPerAttack.BaseValue / enemy.GetStats().Haste.BaseValue;
+        _actuallCooldown = enemy.GetStats().DelayPerAttack.GetValue() / enemy.GetStats().Haste.GetValue();
         enemy.GetACController().EnableCombatAnim();
         enemy.Agent.updateRotation = false; //
     }
@@ -218,7 +217,7 @@ public class AttackState : IEnemyState
     {
         _offset = enemy.Player.position - enemy.transform.position;
 
-        if (_offset.sqrMagnitude > enemy.GetStats().AttackRange.BaseValue * enemy.GetStats().AttackRange.BaseValue + 0.5f)
+        if (_offset.sqrMagnitude > enemy.GetStats().AttackRange.GetValue() * enemy.GetStats().AttackRange.GetValue() + 0.5f)
         {
             enemy.ChangeState(new ChaseState());
         }
@@ -239,10 +238,10 @@ public class AttackState : IEnemyState
     {
         if (Time.time < _lastAttackTime + _actuallCooldown) return;
         _lastAttackTime = Time.time;
-        int randomAttackIndex = Random.Range(1, enemy.GetStats().NumberOfAttack + 1);
+        int randomAttackIndex = Random.Range(1, (int)enemy.GetStats().QuantityOfAttack.GetValue() + 1);
         string attackStateName = "Attack_" + randomAttackIndex;
 
-        enemy.GetACController().DoARandomAttack(attackStateName, enemy.GetStats().Haste.BaseValue);
+        enemy.GetACController().DoARandomAttack(attackStateName, enemy.GetStats().Haste.GetValue());
     }
 }
 

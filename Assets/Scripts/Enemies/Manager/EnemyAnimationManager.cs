@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class EnemyAnimationManager : MonoBehaviour
 {
-    [Header("--- STATS ---")]
-    [SerializeField] private EnemyStats _stats;
-
     private Animator _animator;
     private EnemyStateManager _stateManager;
+    private EnemyStatsManager _stats;
 
     [Header("Animator Hashes")]
     private readonly int _animVelocity = Animator.StringToHash("Velocity");
@@ -23,12 +21,13 @@ public class EnemyAnimationManager : MonoBehaviour
     {
         _animator = GetComponentInChildren<Animator>();
         _stateManager = GetComponent<EnemyStateManager>();
+        _stats = GetComponent<EnemyStatsManager>();
     }
     private void Start()
     {
         if (_stats == null) return;
-        _walkSpeed = _stats.WalkSpeed.BaseValue;
-        _runSpeed = _stats.RunSpeed.BaseValue;
+        _walkSpeed = _stats.WalkSpeed.GetValue();
+        _runSpeed = _stats.RunSpeed.GetValue();
     }
     private void Update()
     {
