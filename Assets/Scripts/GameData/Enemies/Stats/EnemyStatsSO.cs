@@ -6,7 +6,15 @@ public class EnemyStats : BaseStatsSO
     [Header("--- ATTACK INFO ---")]
     [SerializeField]
     private int _numberOfAttack;
+
+    [Header("--- HURT INFO ---")]
+    [SerializeField]
+    private int _quantityOfHurt;
+    [SerializeField]
+    private StatData _hurtDelay = new StatData(2f);
+    public StatData HurtDelay => _hurtDelay;
     public int NumberOfAttack => _numberOfAttack;
+    public int QuantityOfHurt => _quantityOfHurt;
 
     [Header("--- ENEMY IDENTITY ---")]
     [SerializeField, Tooltip("Minion, Elite, Boss")]

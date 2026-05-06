@@ -23,6 +23,9 @@ public class EnemyStateManager : MonoBehaviour
     private EnemyVision _vision;
     private EnemyAnimationManager _animManager;
     private CooldownTimer _delayTimer;
+    private HealthSystem _healthSystem;
+
+    private bool _isBeingHit;
 
     private void Awake()
     {
@@ -30,7 +33,22 @@ public class EnemyStateManager : MonoBehaviour
         _vision = GetComponent<EnemyVision>();
         _animManager = GetComponent<EnemyAnimationManager>();
         _stats = GetComponent<EnemyStatsManager>();
+        _healthSystem = GetComponentInChildren<HealthSystem>();
     }
+    private void OnEnable()
+    {
+        if (_healthSystem == null) return;
+        _healthSystem.OnTakeDmg += BeingHit;
+        _healthSystem.OnDeath += IsDeath;
+    }
+
+    private void OnDisable()
+    {
+        if (_healthSystem == null) return;
+        _healthSystem.OnTakeDmg -= BeingHit;
+        _healthSystem.OnDeath -= IsDeath;
+    }
+
     private void Start()
     {
         _delayTimer = new CooldownTimer(_brainConfig.SightDelay);
@@ -57,6 +75,16 @@ public class EnemyStateManager : MonoBehaviour
         _currentState?.ExitState(this);
         _currentState = newState;
         _currentState.EnterState(this);
+    }
+
+    private void BeingHit(DmgInfo dmgInfo)
+    {
+        ChangeState(new HurtState());
+    }
+
+    private void IsDeath()
+    {
+        ChangeState(new DieState());
     }
 
     private void CheckSawPlayer()
@@ -242,6 +270,69 @@ public class AttackState : IEnemyState
         string attackStateName = "Attack_" + randomAttackIndex;
 
         enemy.GetACController().DoARandomAttack(attackStateName, enemy.GetStats().Haste.GetValue());
+    }
+}
+
+public class HurtState : IEnemyState
+{
+    private float _lastTimeHurt;
+    private float _actuallCooldown;
+    private bool _isHurtOnce;
+    private AnimatorStateInfo _stateInfo;
+    public void EnterState(EnemyStateManager enemy)
+    {
+        _actuallCooldown = enemy.GetStats().HurtDelay.GetValue();
+        _isHurtOnce = false;
+    }
+
+    public void UpdateState(EnemyStateManager enemy)
+    {
+        TriggerRandomHurt(enemy);
+    }
+
+    public void ExitState(EnemyStateManager enemy)
+    {
+
+    }
+
+    private void TriggerRandomHurt(EnemyStateManager enemy)
+    {
+        if (!_isHurtOnce)
+        {
+            //if (Time.time < _lastTimeHurt + _actuallCooldown) return;
+            //_lastTimeHurt = Time.time;
+            int randomHurtIndex = Random.Range(1, (int)enemy.GetStats().QuantityOfHurt.GetValue() + 1);
+            string attackStateName = "Hurt_" + randomHurtIndex;
+            enemy.GetACController().DoTargetAnim(attackStateName);
+            _isHurtOnce = true;
+        }
+        else
+        {
+            _stateInfo = enemy.GetACController().GetStateInfo();
+            if (_stateInfo.normalizedTime >= 1.0f)
+            {
+                enemy.ChangeState(new AttackState());
+            }
+        }
+    }
+}
+
+public class DieState: IEnemyState
+{
+    private bool _isDeath;
+    public void EnterState(EnemyStateManager enemy)
+    {
+        _isDeath = false;
+    }
+    public void UpdateState(EnemyStateManager enemy)
+    {
+        if (_isDeath) return;
+        enemy.GetACController().DoTargetAnim("Death");
+        _isDeath = true;
+    }
+    public void ExitState(EnemyStateManager enemy)
+    {
+
     }
 }
 

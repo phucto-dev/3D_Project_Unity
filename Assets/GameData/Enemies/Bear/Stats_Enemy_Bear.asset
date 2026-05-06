@@ -61,6 +61,11 @@ MonoBehaviour:
     minValue: 1
     maxValue: 20
   _numberOfAttack: 2
+  _quantityOfHurt: 1
+  _hurtDelay:
+    baseValue: 2
+    minValue: 0
+    maxValue: 9999
   rank: 0
   faction: 1
   xpYield: 50

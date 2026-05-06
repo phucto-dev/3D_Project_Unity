@@ -54,6 +54,7 @@ public class EnemyAnimationManager : MonoBehaviour
         }
         _animator.SetFloat(_animVelocity, blendValue);
     }
+    public AnimatorStateInfo GetStateInfo() => _animator.GetCurrentAnimatorStateInfo(0);
     public void EnableMovingAnim()
     {
         _animator.SetBool(_animMove, true);
@@ -74,6 +75,10 @@ public class EnemyAnimationManager : MonoBehaviour
     public void DoARandomAttack(string name, float haste)
     {
         _animator.SetFloat(_animHaste, haste);
+        _animator.CrossFade(name, 0.1f);
+    }
+    public void DoTargetAnim(string name)
+    {
         _animator.CrossFade(name, 0.1f);
     }
 }
