@@ -14,6 +14,10 @@ public class EntityStatsManager : MonoBehaviour
     public Stat AttackRange;
     public Stat DelayPerAttack;
     public Stat Haste;
+    public Stat Poise;
+    public Stat PoiseDamage;
+
+    private float _currentPoise;
 
     protected virtual void Awake()
     {
@@ -25,6 +29,21 @@ public class EntityStatsManager : MonoBehaviour
         AttackRange = new Stat(_baseStatsSO.AttackRange.BaseValue);
         DelayPerAttack = new Stat(_baseStatsSO.DelayPerAttack.BaseValue);
         Haste = new Stat(_baseStatsSO.Haste.BaseValue);
+        Poise = new Stat(_baseStatsSO.Poise.BaseValue);
+        PoiseDamage = new Stat(_baseStatsSO.PoiseDamage.BaseValue);
+
+        _currentPoise = Poise.GetValue();
+    }
+
+    public bool IsRunOutPoise(float poiseDmg)
+    {
+        if (!_baseStatsSO.IsAffectbyPoise) return false;
+        _currentPoise -= poiseDmg;
+        return _currentPoise <= 0;
+    }
+    public void RecoverPoise()
+    {
+        _currentPoise = Poise.GetValue();
     }
 
 }

@@ -79,7 +79,15 @@ public class EnemyStateManager : MonoBehaviour
 
     private void BeingHit(DmgInfo dmgInfo)
     {
-        ChangeState(new HurtState());
+        if (!_stats.IsRunOutPoise(dmgInfo.PoiseDamage))
+        {
+            if (_currentState == new ChaseState() || _currentState == new AttackState()) return;
+            else ChangeState(new AttackState());
+        }
+        else
+        {
+            ChangeState(new HurtState());
+        }
     }
 
     private void IsDeath()
@@ -237,6 +245,7 @@ public class AttackState : IEnemyState
     private float _actuallCooldown;
     public void EnterState(EnemyStateManager enemy)
     {
+        Debug.Log("Enter ne ku");
         _actuallCooldown = enemy.GetStats().DelayPerAttack.GetValue() / enemy.GetStats().Haste.GetValue();
         enemy.GetACController().EnableCombatAnim();
         enemy.Agent.updateRotation = false; //
@@ -281,6 +290,7 @@ public class HurtState : IEnemyState
     private AnimatorStateInfo _stateInfo;
     public void EnterState(EnemyStateManager enemy)
     {
+        enemy.GetACController().EnableCombatAnim(); // Should enable here to lock in combat mode.
         _actuallCooldown = enemy.GetStats().HurtDelay.GetValue();
         _isHurtOnce = false;
     }
@@ -292,15 +302,13 @@ public class HurtState : IEnemyState
 
     public void ExitState(EnemyStateManager enemy)
     {
-
+        enemy.GetStats().RecoverPoise();
     }
 
     private void TriggerRandomHurt(EnemyStateManager enemy)
     {
         if (!_isHurtOnce)
         {
-            //if (Time.time < _lastTimeHurt + _actuallCooldown) return;
-            //_lastTimeHurt = Time.time;
             int randomHurtIndex = Random.Range(1, (int)enemy.GetStats().QuantityOfHurt.GetValue() + 1);
             string attackStateName = "Hurt_" + randomHurtIndex;
             enemy.GetACController().DoTargetAnim(attackStateName);
@@ -312,6 +320,7 @@ public class HurtState : IEnemyState
             if (_stateInfo.normalizedTime >= 1.0f)
             {
                 enemy.ChangeState(new AttackState());
+                Debug.Log("Doi ne ku");
             }
         }
     }

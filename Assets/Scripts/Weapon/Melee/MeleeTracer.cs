@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class MeleeTracer : MonoBehaviour
 {
-    [Header("--- TRACER SETTINGS")]
+    [Header("--- WEAPON STATS ---")]
+    public WeaponDataSO _weaponStats;
+
+    [Header("--- TRACER SETTINGS ---")]
     [SerializeField] private Transform[] _damagePoints;
     [SerializeField] private float _hitboxRadius;
     [SerializeField] private LayerMask _enemyLayer;
@@ -26,6 +29,7 @@ public class MeleeTracer : MonoBehaviour
         _dmgInfo = new DmgInfo
         {
             Amount = _stats.AttackPower.GetValue(),
+            PoiseDamage = _stats.PoiseDamage.GetValue(),
             Dealer = _stats.transform,
             IsCritical = false
         };
@@ -34,6 +38,7 @@ public class MeleeTracer : MonoBehaviour
     public void StartSwing()
     {
         _isAttacking = true;
+        CalDamageInfo();
         int i = 0;
         foreach (Transform damagePoint in _damagePoints)
         {
@@ -84,5 +89,12 @@ public class MeleeTracer : MonoBehaviour
         {
             enemyHealth.TakeDmg(_dmgInfo);
         }
+    }
+
+    private void CalDamageInfo()
+    {
+        if (_weaponStats == null) return;
+        _dmgInfo.Amount = _stats.AttackPower.GetValue() + _weaponStats.BaseDamage;
+        _dmgInfo.PoiseDamage = _stats.PoiseDamage.GetValue() + _weaponStats.PoiseDamage;
     }
 }

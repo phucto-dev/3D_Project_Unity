@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RecoverStateBehaviour : StateMachineBehaviour
 {
+    [SerializeField, Range(0f, 1f)] private float _openComboWindowTimeInRecovering = 0.55f;
     private PlayerAttack _playerAttack;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -12,7 +13,10 @@ public class RecoverStateBehaviour : StateMachineBehaviour
     {
         if (_playerAttack == null) return;
         if (animator.IsInTransition(layerIndex)) return;
-
+        if (stateInfo.normalizedTime <= _openComboWindowTimeInRecovering)
+        {
+            _playerAttack.TryExecuteBufferedAttack();
+        }
         if (stateInfo.normalizedTime >= 0.95f)
         {
             _playerAttack.ResetCombatState();

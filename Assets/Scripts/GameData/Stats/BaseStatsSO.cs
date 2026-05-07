@@ -55,12 +55,20 @@ public class BaseStatsSO : ScriptableObject
     [SerializeField]
     private StatData _attackRange = new StatData(2.5f, 1f, 99f);
     public StatData AttackRange => _attackRange;
-    
+
+    [SerializeField, Tooltip("Poise Damge to stun entity for a moment")]
+    private StatData _poiseDamage = new StatData(10f);
+    public StatData PoiseDamage => _poiseDamage;
+
 
     [Header("--- DEFENSE ---")]
     [SerializeField]
     private StatData _defense = new StatData(5f);
     public StatData Defense => _defense;
+
+    [SerializeField]
+    private bool _isAffectbyPoise = true; // default true
+    public bool IsAffectbyPoise => _isAffectbyPoise;
 
     [SerializeField, Tooltip("Stun Meter/Stagger")]
     private StatData _poise = new StatData(50f);

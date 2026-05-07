@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5f39830eaf5324092959a49ba91c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeTracer
+  _weaponStats: {fileID: 11400000, guid: 425bb08d30fbd2f43a51671d74b6a26b, type: 2}
   _damagePoints:
   - {fileID: 1394805012799596044}
   - {fileID: 120911662465465467}

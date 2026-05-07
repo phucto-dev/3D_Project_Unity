@@ -5,6 +5,7 @@ public struct DmgInfo
 {
     public float Amount;
     public Transform Dealer;
+    public float PoiseDamage;
     public bool IsCritical;
 }
 public class HealthSystem : MonoBehaviour
