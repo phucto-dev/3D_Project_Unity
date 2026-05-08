@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\TestScript\AddForce.cs" />
     <Compile Include="Assets\Scripts\Manager\StatManager\EntityStatsManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\GameManager\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameData\Items\DropItems\LootAnimConfigSO.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Manager\PlayerManager.cs" />
     <Compile Include="Assets\_AssetPackages\DoubleL\Demo\DemoCameraController.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Assets\Scripts\GameData\Player\Attack\AttackNodeSO.cs" />
     <Compile Include="Assets\Scripts\Manager\StateMachineController\ComboStateBehaviour.cs" />
     <Compile Include="Assets\Scripts\Manager\StatManager\Stat.cs" />
+    <Compile Include="Assets\Scripts\Manager\GameManager\HitStopManager.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherTriggerSMB.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestShaderChangeByButton.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherGetArrowSMB.cs" />

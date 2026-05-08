@@ -16,10 +16,17 @@ public class MeleeTracer : MonoBehaviour
     private HealthSystem enemyHealth;
     private DmgInfo _dmgInfo;
     private PlayerStatsManager _stats;
+    private PlayerAttack _playerAttack;
+    private Animator _animator;
 
     private void Awake()
     {
         _stats = GetComponentInParent<PlayerStatsManager>();
+        _playerAttack = GetComponentInParent<PlayerAttack>();
+        if (_playerAttack != null)
+        {
+            _animator = _playerAttack.GetComponentInChildren<Animator>();
+        }
     }
 
     private void Start()
@@ -88,6 +95,9 @@ public class MeleeTracer : MonoBehaviour
         if (enemyHealth != null)
         {
             enemyHealth.TakeDmg(_dmgInfo);
+            Animator enemyAnimator = enemyCollider.transform.parent.GetComponentInChildren<Animator>();
+            Debug.Log("enemy Anim: " + enemyAnimator.name);
+            HitStopManager.Instance.TriggerHitStop(_weaponStats.HitStopDuration, _animator, enemyAnimator);
         }
     }
 

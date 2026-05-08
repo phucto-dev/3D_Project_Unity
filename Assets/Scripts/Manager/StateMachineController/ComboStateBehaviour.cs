@@ -8,6 +8,7 @@ public class ComboStateBehaviour : StateMachineBehaviour
 
     private PlayerAttack _playerAttack;
     private MeleeTracer _tracer;
+    private float _swingTiming = 0f;
     private bool _hasTransitioned;
     private bool _isAttacking;
 
@@ -17,20 +18,27 @@ public class ComboStateBehaviour : StateMachineBehaviour
         _tracer = animator.GetComponentInChildren<MeleeTracer>();
         _hasTransitioned = false;
         _isAttacking = false;
-        //
-        if (!_isAttacking)
+
+        if (_playerAttack != null)
         {
-            if (_tracer != null)
-            {
-                _tracer.StartSwing();
-            }
-            _isAttacking = true;
+            _swingTiming = _playerAttack.GetCurrentAttackNode().SwingTiming;
         }
     }
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (_playerAttack == null) return;
         if (animator.IsInTransition(layerIndex)) return;
+        if (stateInfo.normalizedTime >= _swingTiming)
+        {
+            if (!_isAttacking)
+            {
+                if (_tracer != null)
+                {
+                    _tracer.StartSwing();
+                }
+                _isAttacking = true;
+            }
+        }
         if (stateInfo.normalizedTime >= _openComboWindowTime)
         {
             _playerAttack.OpenComboWindow();

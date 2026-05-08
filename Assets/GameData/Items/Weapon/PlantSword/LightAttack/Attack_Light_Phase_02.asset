@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackNodeSO
   AnimStateName: Attack_Light_Phase_02
   TransitionDuaration: 0.1
+  HasRecoveryAnim: 0
+  SwingTiming: 0.3
   NextLightAttack: {fileID: 0}
   NextHeavyAttack: {fileID: 0}
   NextAttack: {fileID: 0}

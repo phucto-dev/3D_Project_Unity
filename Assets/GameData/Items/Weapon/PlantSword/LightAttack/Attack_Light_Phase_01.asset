@@ -15,6 +15,7 @@ MonoBehaviour:
   AnimStateName: Attack_Light_Phase_01
   TransitionDuaration: 0.1
   HasRecoveryAnim: 1
+  SwingTiming: 0.3
   NextLightAttack: {fileID: 11400000, guid: 0b69130e96ea0044b8712009465a6eca, type: 2}
   NextHeavyAttack: {fileID: 0}
   NextAttack: {fileID: 0}

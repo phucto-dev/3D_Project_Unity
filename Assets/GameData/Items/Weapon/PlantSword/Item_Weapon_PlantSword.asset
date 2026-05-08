@@ -20,6 +20,8 @@ MonoBehaviour:
   EntryHeavyAttack: {fileID: 11400000, guid: 964cb832077b3e142b3c3ed4f5205a16, type: 2}
   BaseDamage: 20
   AttackRange: 1.5
+  PoiseDamage: 5
+  HitStopDuration: 0.09
   OverrideController: {fileID: 22100000, guid: 50855511de499084ab8a1bfd037c37a6, type: 2}
   HitVFXPrefab: {fileID: 0}
   WeaponTrail: {fileID: 0}

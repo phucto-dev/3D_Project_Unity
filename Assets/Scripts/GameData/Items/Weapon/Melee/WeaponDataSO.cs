@@ -16,6 +16,7 @@ public class WeaponDataSO : ScriptableObject
     public float BaseDamage = 20f;
     public float AttackRange = 1.5f;
     public float PoiseDamage = 5f;
+    public float HitStopDuration = 0.08f;
 
     [Header("--- ANIMATION ---")]
     public AnimatorOverrideController OverrideController;
