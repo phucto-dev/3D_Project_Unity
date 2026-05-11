@@ -86,6 +86,7 @@ public class EnemyStateManager : MonoBehaviour
         }
         else
         {
+            if (_currentState == new HurtState()) return;
             ChangeState(new HurtState());
         }
     }
@@ -245,10 +246,10 @@ public class AttackState : IEnemyState
     private float _actuallCooldown;
     public void EnterState(EnemyStateManager enemy)
     {
-        Debug.Log("Enter ne ku");
         _actuallCooldown = enemy.GetStats().DelayPerAttack.GetValue() / enemy.GetStats().Haste.GetValue();
         enemy.GetACController().EnableCombatAnim();
         enemy.Agent.updateRotation = false; //
+        enemy.Agent.velocity = Vector3.zero;
     }
     public void UpdateState(EnemyStateManager enemy)
     {
@@ -320,7 +321,6 @@ public class HurtState : IEnemyState
             if (_stateInfo.normalizedTime >= 1.0f)
             {
                 enemy.ChangeState(new AttackState());
-                Debug.Log("Doi ne ku");
             }
         }
     }

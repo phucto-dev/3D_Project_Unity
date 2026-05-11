@@ -135,6 +135,20 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &-7708518267008819784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d11a476ca541d741992a832894f1a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RollStateBehaviour
+  _iframeStartTime: 0.05
+  _iframeEndTime: 0.36
 --- !u!1102 &-7687390439242153059
 AnimatorState:
   serializedVersion: 6
@@ -157,6 +171,32 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -1862932125039169580, guid: 7befc695d1e633a4aa6943b44aa5c9c2, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-7482787520561700500
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Death
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7160605529220437193, guid: 6d63f48bf2bc2e64a9295d5b1a4b44bf, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -255,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab5217bb27258b4d9f7cb17bb64c44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecoverStateBehaviour
+  _openComboWindowTimeInRecovering: 0.55
 --- !u!1102 &-6468899978378441312
 AnimatorState:
   serializedVersion: 6
@@ -304,6 +345,32 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -1665424970679415873, guid: 7593128404f726548964f394a5d15132, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-5308424385603640425
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpellCast
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -6453055994092711997, guid: afb2e0e8e5b867f49ad94f4e813c3570, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -494,6 +561,20 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &-3156883298033423611
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d11a476ca541d741992a832894f1a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RollStateBehaviour
+  _iframeStartTime: 0
+  _iframeEndTime: 0
 --- !u!1102 &-2812966331938402856
 AnimatorState:
   serializedVersion: 6
@@ -506,7 +587,8 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6147590779058165887}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -7708518267008819784}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -611,16 +693,31 @@ AnimatorStateMachine:
     m_Position: {x: 780, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5389920339747059108}
-    m_Position: {x: 410, y: -10, z: 0}
+    m_Position: {x: 690, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5393743511457908776}
-    m_Position: {x: 410, y: -130, z: 0}
+    m_Position: {x: 690, y: -150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4077700140701073777}
-    m_Position: {x: 410, y: -70, z: 0}
+    m_Position: {x: 690, y: -90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2812966331938402856}
     m_Position: {x: 390, y: 340, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 5840795672115069362}
+    m_Position: {x: 250, y: -130, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -5308424385603640425}
+    m_Position: {x: 379.35965, y: -310.81467, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 6053919890727188207}
+    m_Position: {x: 389.35965, y: -300.81467, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -570987321175871925}
+    m_Position: {x: 399.35965, y: -290.81467, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -7482787520561700500}
+    m_Position: {x: 281.49142, y: -314.24866, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1040028648232969269}
@@ -769,6 +866,32 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &-570987321175871925
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpellCast_Start
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -7662812442750014524, guid: afb2e0e8e5b867f49ad94f4e813c3570, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &-7525382057148383
 AnimatorState:
   serializedVersion: 6
@@ -936,6 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab5217bb27258b4d9f7cb17bb64c44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecoverStateBehaviour
+  _openComboWindowTimeInRecovering: 0.55
 --- !u!1101 &556525946339232413
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -973,6 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab5217bb27258b4d9f7cb17bb64c44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecoverStateBehaviour
+  _openComboWindowTimeInRecovering: 0.55
 --- !u!1101 &1040028648232969269
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1013,7 +1138,8 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -945088122047551579}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 4971719627636024507}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1283,6 +1409,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab5217bb27258b4d9f7cb17bb64c44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecoverStateBehaviour
+  _openComboWindowTimeInRecovering: 0.55
+--- !u!1101 &4627434738754640105
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -4243631757804044045}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.625
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &4837782875804633422
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1361,6 +1510,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &4971719627636024507
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d11a476ca541d741992a832894f1a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RollStateBehaviour
+  _iframeStartTime: 0
+  _iframeEndTime: 0.36
 --- !u!1101 &5069601712134188390
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1412,6 +1575,33 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &5840795672115069362
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hurt
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: 4627434738754640105}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -7880898593064695190, guid: 83e28e7ec15604e4e936c71d31a7ebad, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!114 &5923858349890308339
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1424,6 +1614,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab5217bb27258b4d9f7cb17bb64c44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecoverStateBehaviour
+  _openComboWindowTimeInRecovering: 0.55
+--- !u!1102 &6053919890727188207
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpellCast_End
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 6571473395271613878, guid: afb2e0e8e5b867f49ad94f4e813c3570, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &6147590779058165887
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1722,6 +1939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab5217bb27258b4d9f7cb17bb64c44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecoverStateBehaviour
+  _openComboWindowTimeInRecovering: 0.55
 --- !u!1102 &8585116435708091945
 AnimatorState:
   serializedVersion: 6

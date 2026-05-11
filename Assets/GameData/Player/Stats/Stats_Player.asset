@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stats_Player
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatsSO
   _maxHealth:
-    baseValue: 90
+    baseValue: 9000
     minValue: 0
     maxValue: 9999
   _healthRegen:
@@ -44,12 +44,17 @@ MonoBehaviour:
     baseValue: 2.5
     minValue: 1
     maxValue: 99
+  _poiseDamage:
+    baseValue: 10
+    minValue: 0
+    maxValue: 9999
   _defense:
     baseValue: 5
     minValue: 0
     maxValue: 9999
+  _isAffectbyPoise: 1
   _poise:
-    baseValue: 50
+    baseValue: 10
     minValue: 0
     maxValue: 9999
   _walkSpeed:

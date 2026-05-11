@@ -19,6 +19,8 @@ public class HealthSystem : MonoBehaviour
     public event Action OnDeath;
 
     private EntityStatsManager _stats;
+    private int _invincibilitySourcesCount = 0;
+    public bool IsInvincible => _invincibilitySourcesCount > 0;
 
     private void Awake()
     {
@@ -34,6 +36,11 @@ public class HealthSystem : MonoBehaviour
     }
     public void TakeDmg(DmgInfo dmgInfo)
     {
+        if (IsInvincible)
+        {
+            Debug.Log("Dodge: " + _invincibilitySourcesCount);
+            return;
+        }
         if (CurrentHealth <= 0) return;
         CurrentHealth -= dmgInfo.Amount;
         OnTakeDmg?.Invoke(dmgInfo);
@@ -44,5 +51,15 @@ public class HealthSystem : MonoBehaviour
             OnDeath?.Invoke();
         }
     }
-    
+    public void AddInvincibility()
+    {
+        _invincibilitySourcesCount++;
+    }
+
+    public void RemoveInvincibility()
+    {
+        _invincibilitySourcesCount--;
+
+        if (_invincibilitySourcesCount < 0) _invincibilitySourcesCount = 0;
+    }
 }

@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     private PlayerCamManager playerCamManager;
     private PlayerAttack _playerAttack;
+    private PlayerManager _playerManager;
 
     private Vector3 _calculatedMoveDir;
     private Quaternion _targetRotation;
@@ -59,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _isWalking;
     private bool _isGrounded;
     private bool _isRolling;
+    private Coroutine _rollCoroutine;
     private bool _isLanding;
     private Vector3 _rollDir;
     private float _fallVelocityY;
@@ -68,11 +70,13 @@ public class PlayerMovement : MonoBehaviour
     private Transform _targetLockOn;
     private bool _isAttacking;
     private Vector2 _lastMoveDir;
+    private bool _isStun = false;
 
     private void Awake()
     {
         _inputSystem = GetComponent<PlayerInput>();
         _playerAttack = GetComponent<PlayerAttack>();
+        _playerManager = GetComponent<PlayerManager>();
 
         if (animator == null)
         {
@@ -92,6 +96,11 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         if (playerCamManager != null) playerCamManager.SentLockOnTarget += HandleLockOnCam;
+        if (_playerManager != null)
+        {
+            _playerManager.BeingHit += EnableBeStun;
+            _playerManager.DoneBeingHit += DisableBeStun;
+        }
         _jumpAction.performed += HandleJumpInput;
         _sprintAction.performed += HandleSprintOrRoll;
         _sprintAction.canceled += HandleSprintStop;
@@ -99,6 +108,11 @@ public class PlayerMovement : MonoBehaviour
     private void OnDisable()
     {
         if (playerCamManager != null) playerCamManager.SentLockOnTarget -= HandleLockOnCam;
+        if (_playerManager != null)
+        {
+            _playerManager.BeingHit -= EnableBeStun;
+            _playerManager.DoneBeingHit -= DisableBeStun;
+        }
         _jumpAction.performed -= HandleJumpInput;
         _sprintAction.performed -= HandleSprintOrRoll;
         _sprintAction.canceled -= HandleSprintStop;
@@ -110,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
         _isLanding = true;
         _moveable = true;
         _isAttacking = false;
+        _rollCoroutine = null;
     }
 
     private void Update()
@@ -128,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
         CheckGrounded();
         StandAfterHardLand();
         CheckAttacking();
+        if (_isStun) return;
         if (_isRolling)
         {
             Rolling();
@@ -268,20 +284,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat(_animHorizontal, currentAnimMagnitude, 0.2f, Time.deltaTime);
         }
-        //if (_isCameraLockOn)
-        //{
-        //    float horizontal = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * _moveInput.x;
-        //    float vertical = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * _moveInput.y;
-        //    animator.SetFloat(_animHorizontal, horizontal, 0.1f, Time.deltaTime);
-        //    animator.SetFloat(_animVertical, vertical, 0.1f, Time.deltaTime);
-        //}
-        //else
-        //{
-        //    float inputMagnitude = _moveInput.magnitude;
-        //    //Debug.Log(inputMagnitude);
-        //    float horizontal = (_isSprinting ? 3 : (_isWalking ? 1 : 2)) * inputMagnitude;
-        //    animator.SetFloat(_animHorizontal, horizontal, 0.1f, Time.deltaTime);
-        //}
 
         // Landing
         animator.SetBool(_animGround, _isGrounded);
@@ -297,6 +299,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (ctx.interaction is TapInteraction)
         {
+            if (_isStun) return;
             if (_isRolling || !_isGrounded) return;
             if (_playerAttack != null)
             {
@@ -308,7 +311,9 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
             animator.SetTrigger(_animRoll);
-            StartCoroutine(RollRoutine());
+
+            if (_rollCoroutine != null) StopCoroutine(_rollCoroutine);
+            _rollCoroutine = StartCoroutine(RollRoutine());
         }
         else if (ctx.interaction is HoldInteraction)
         {
@@ -411,6 +416,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void ForceStopRolling()
+    {
+        if (_isRolling)
+        {
+            if (_rollCoroutine != null) StopCoroutine(_rollCoroutine);
+            _isRolling = false;
+        }
+    }
+
     public bool GetRollInfo() => _isRolling;
     public bool GetIsGround() => _isGrounded;
+
+    public void EnableBeStun()
+    {
+        _isStun = true;
+        rb.linearVelocity = Vector3.zero;
+    }
+    public void DisableBeStun()
+    {
+        _isStun = false;
+    }
+
 }

@@ -24,6 +24,7 @@ public class EnemyAttack : MonoBehaviour
         {
             Amount = _stats.AttackPower.GetValue(),
             Dealer = this.transform,
+            PoiseDamage = _stats.PoiseDamage.GetValue(),
             IsCritical = false
         };
     }
@@ -46,12 +47,12 @@ public class EnemyAttack : MonoBehaviour
 
                 if (Vector3.Angle(forward, dirToTarget) <= _attackAngle/2)
                 {
-                    Debug.Log("Hit Player");
                     HealthSystem playerHealth = hit.GetComponent<HealthSystem>();
 
                     if (playerHealth != null)
                     {
                         Debug.Log("Deal");
+                        SetCurrentDmgInfo();
                         playerHealth.TakeDmg(_dmgInfo);
                     }
 
@@ -63,6 +64,12 @@ public class EnemyAttack : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void SetCurrentDmgInfo()
+    {
+        _dmgInfo.Amount = _stats.AttackPower.GetValue();
+        _dmgInfo.PoiseDamage = _stats.PoiseDamage.GetValue();
     }
 
     private void OnDrawGizmosSelected()

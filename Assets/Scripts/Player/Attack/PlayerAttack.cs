@@ -18,6 +18,7 @@ public class PlayerAttack : MonoBehaviour
 
     private PlayerInput _inputSystem;
     private InputAction _attackAction;
+    private PlayerManager _playerManager;
 
     private AttackNodeSO _currentAttackNode;
     private bool _isComboWindowOpen = false;
@@ -27,10 +28,13 @@ public class PlayerAttack : MonoBehaviour
     private PlayerMovement _playerMovement;
     private Coroutine _fadeLayerCoroutine;
 
+    private bool _isStun = false;
+
     private void Awake()
     {
         _inputSystem = GetComponent<PlayerInput>();
         _playerMovement = GetComponent<PlayerMovement>();
+        _playerManager = GetComponent<PlayerManager>();
         if (_animator == null)
         {
             _animator = GetComponentInChildren<Animator>();
@@ -45,11 +49,21 @@ public class PlayerAttack : MonoBehaviour
     private void OnEnable()
     {
         if (_attackAction == null) return;
+        if (_playerManager != null)
+        {
+            _playerManager.BeingHit += EnableBeStun;
+            _playerManager.DoneBeingHit += DisableBeStun;
+        }
         _attackAction.performed += PerformAttack;
     }
     private void OnDisable()
     {
         if (_attackAction == null) return;
+        if (_playerManager != null)
+        {
+            _playerManager.BeingHit -= EnableBeStun;
+            _playerManager.DoneBeingHit -= DisableBeStun;
+        }
         _attackAction.performed -= PerformAttack;
     }
 
@@ -60,6 +74,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void PerformAttack(InputAction.CallbackContext ctx)
     {
+        if (_isStun) return;
         if (_attackLayerIndex == -1) return;
         if (_playerMovement != null)
         {
@@ -183,6 +198,15 @@ public class PlayerAttack : MonoBehaviour
         _entryLightAttack = null;
         _entryHeavyAttack = null;
     }
-
     public AttackNodeSO GetCurrentAttackNode() => _currentAttackNode;
+
+    public void EnableBeStun()
+    {
+        _isStun = true;
+        ResetCombatState();
+    }
+    public void DisableBeStun()
+    {
+        _isStun = false;
+    }
 }

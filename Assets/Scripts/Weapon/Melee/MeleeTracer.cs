@@ -17,15 +17,32 @@ public class MeleeTracer : MonoBehaviour
     private DmgInfo _dmgInfo;
     private PlayerStatsManager _stats;
     private PlayerAttack _playerAttack;
+    private PlayerManager _playerManager;
     private Animator _animator;
 
     private void Awake()
     {
         _stats = GetComponentInParent<PlayerStatsManager>();
         _playerAttack = GetComponentInParent<PlayerAttack>();
+        _playerManager = GetComponentInParent<PlayerManager>();
         if (_playerAttack != null)
         {
             _animator = _playerAttack.GetComponentInChildren<Animator>();
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (_playerManager != null)
+        {
+            _playerManager.BeingHit += StopSwing;
+        }
+    }
+    private void OnDisable()
+    {
+        if (_playerManager != null)
+        {
+            _playerManager.BeingHit -= StopSwing;
         }
     }
 

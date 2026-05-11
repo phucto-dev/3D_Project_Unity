@@ -63,7 +63,13 @@ public class ComboStateBehaviour : StateMachineBehaviour
     }
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //if (_playerAttack == null) return;
-        //_playerAttack.ResetCombatState();
+        if (_isAttacking)
+        {
+            if (_tracer != null)
+            {
+                _tracer.StopSwing();
+            }
+            _isAttacking = false;
+        }
     }
 }

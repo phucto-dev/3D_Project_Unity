@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\GameData\Items\Weapon\Melee\WeaponDataSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherBowSMB.cs" />
     <Compile Include="Assets\Scripts\Manager\StatManager\PlayerStatsManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\StateMachineController\RollStateBehaviour.cs" />
     <Compile Include="Assets\Scripts\Manager\NavMesh\AgentToDistanceTest.cs" />
     <Compile Include="Assets\Scripts\Enemies\Vision\EnemyVision.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherUnsheatheBowSMB.cs" />

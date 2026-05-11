@@ -39,6 +39,7 @@ public class EntityStatsManager : MonoBehaviour
     {
         if (!_baseStatsSO.IsAffectbyPoise) return false;
         _currentPoise -= poiseDmg;
+        Debug.Log("_currentPoise: " + _currentPoise + " " + poiseDmg);
         return _currentPoise <= 0;
     }
     public void RecoverPoise()
