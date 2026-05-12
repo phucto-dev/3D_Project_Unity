@@ -1,3 +1,4 @@
+using System;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class WeaponDataSO : ScriptableObject
     [Header("--- INFORMATION ---")]
     public string WeaponName = "New Weapon";
     [TextArea(2, 4)] public string Description;
+    public ItemInfo Item;
     public GameObject EquippedPrefab;
     public GameObject DropPrefab;
     public AttackNodeSO EntryLightAttack;

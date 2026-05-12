@@ -19,14 +19,13 @@ public class LootDropSystem : MonoBehaviour
     {
         _hasLanded = false;
         _isDropping = true;
-        _landedPosition = CalSafeDropPos(transform.position); // test
-        float tempY = transform.position.y;
-        transform.position = new Vector3(_landedPosition.x, tempY, _landedPosition.z);
-        Debug.Log(_landedPosition);
+        SpawnDrop(transform.position);
     }
     public void SpawnDrop(Vector3 startPos)
     {
-
+        _landedPosition = CalSafeDropPos(startPos);
+        float tempY = transform.position.y;
+        transform.position = new Vector3(_landedPosition.x, tempY, _landedPosition.z);
     }
 
     private Vector3 CalSafeDropPos(Vector3 startPos)

@@ -24,8 +24,10 @@ public class EnemyStateManager : MonoBehaviour
     private EnemyAnimationManager _animManager;
     private CooldownTimer _delayTimer;
     private HealthSystem _healthSystem;
+    private EnemyDropManager _dropManager;
 
     private bool _isBeingHit;
+    private Material _mat;
 
     private void Awake()
     {
@@ -34,6 +36,7 @@ public class EnemyStateManager : MonoBehaviour
         _animManager = GetComponent<EnemyAnimationManager>();
         _stats = GetComponent<EnemyStatsManager>();
         _healthSystem = GetComponentInChildren<HealthSystem>();
+        _dropManager = GetComponentInChildren<EnemyDropManager>();
     }
     private void OnEnable()
     {
@@ -113,6 +116,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyBrainConfigSO GetBrainConfig() => _brainConfig;
     public EnemyStatsManager GetStats() => _stats;
     public EnemyAnimationManager GetACController() => _animManager;
+    public EnemyDropManager GetDropManager() => _dropManager;
 
 }
 
@@ -332,13 +336,14 @@ public class DieState: IEnemyState
     public void EnterState(EnemyStateManager enemy)
     {
         _isDeath = false;
+        enemy.GetDropManager().ExecuteDrop();
     }
     public void UpdateState(EnemyStateManager enemy)
     {
         if (_isDeath) return;
         enemy.GetACController().DoTargetAnim("Death");
         _isDeath = true;
-    }
+    } 
     public void ExitState(EnemyStateManager enemy)
     {
 

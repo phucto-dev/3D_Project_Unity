@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f70e664a961b4e46b0c672e6b25c1c1, type: 3}
+  m_Name: Item_Drop_Enemy_Bear
+  m_EditorClassIdentifier: Assembly-CSharp::LootItemSO
+  LootItems:
+  - Item:
+      ItemName: AA
+      ItemID: AA
+      ItemImg: {fileID: 0}
+      ItemPrefab: {fileID: 0}
+      ItemOrbDrop: {fileID: 4936614873097352475, guid: 7d0844719586ab14da21d5e3ce49bf94, type: 3}
+      Amount: 0
+    DropChance: 100
+    QuantityRules:
+    - Weight: 8
+      MinAmount: 1
+      MaxAmount: 1
+    - Weight: 2
+      MinAmount: 5
+      MaxAmount: 7
