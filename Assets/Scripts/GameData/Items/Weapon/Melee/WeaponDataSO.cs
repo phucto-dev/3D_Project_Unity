@@ -3,14 +3,10 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "WeaponData", menuName = "GameData/Items/Weapon/WeaponData")]
-public class WeaponDataSO : ScriptableObject
+public class WeaponDataSO : ItemDefinitionSO
 {
-    [Header("--- INFORMATION ---")]
-    public string WeaponName = "New Weapon";
-    [TextArea(2, 4)] public string Description;
-    public ItemInfo Item;
+    [Header("--- WEAPON INFORMATION ---")]
     public GameObject EquippedPrefab;
-    public GameObject DropPrefab;
     public AttackNodeSO EntryLightAttack;
     public AttackNodeSO EntryHeavyAttack;
 

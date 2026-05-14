@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: Item_Drop_Enemy_Bear
   m_EditorClassIdentifier: Assembly-CSharp::LootItemSO
   LootItems:
-  - Item:
-      ItemName: AA
-      ItemID: AA
-      ItemImg: {fileID: 0}
-      ItemPrefab: {fileID: 0}
-      ItemOrbDrop: {fileID: 4936614873097352475, guid: 7d0844719586ab14da21d5e3ce49bf94, type: 3}
-      Amount: 0
+  - Item: {fileID: 11400000, guid: 325698315c88cb24cb27e5b61f147be0, type: 2}
     DropChance: 100
     QuantityRules:
     - Weight: 8

@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class DropInfo : MonoBehaviour
 {
-    private ItemInfo _item;
+    public ItemInstance ItemData { get; private set; }
 
-    public void Initialize(ItemInfo item)
+    public void Initialize(ItemInstance itemInstance)
     {
-        _item = item;
+        ItemData = itemInstance;
     }
 }

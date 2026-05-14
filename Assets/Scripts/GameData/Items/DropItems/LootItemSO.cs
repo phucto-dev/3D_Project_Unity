@@ -13,7 +13,7 @@ public class QuantityDropRule
 [Serializable]
 public class LootItem
 {
-    public ItemInfo Item;
+    public ItemDefinitionSO Item;
 
     [Range(0f, 100f)] public float DropChance;
 
@@ -21,15 +21,28 @@ public class LootItem
     public List<QuantityDropRule> QuantityRules;
 
 }
+
 [Serializable]
-public struct ItemInfo
+public class ItemInstance
 {
-    public string ItemName;
-    public string ItemID;
-    public SpriteRenderer ItemImg;
-    public GameObject ItemPrefab;
-    public GameObject ItemOrbDrop;
+    public ItemDefinitionSO ItemDefinition;
     public int Amount;
+
+    public ItemInstance(ItemDefinitionSO definition, int amount)
+    {
+        ItemDefinition = definition;
+        Amount = amount;
+    }
+}
+public abstract class ItemDefinitionSO : ScriptableObject
+{
+    [Header("--- ITEM INFORMATION ---")]
+    public string ItemID;
+    public string ItemName;
+    [TextArea] public string Description;
+    public Sprite ItemIcon;
+    public GameObject DropPrefab;
+    public int MaxStack = 99;
 }
 
 [CreateAssetMenu(fileName = "LootItemSO", menuName = "GameData/Items/Drop/LootItemSO")]
@@ -37,9 +50,9 @@ public class LootItemSO : ScriptableObject
 {
     public List<LootItem> LootItems;
 
-    public List<ItemInfo> GetRandomDrops()
+    public List<ItemInstance> GetRandomDrops()
     {
-        List<ItemInfo> droppedItems = new List<ItemInfo>();
+        List<ItemInstance> droppedItems = new List<ItemInstance>();
 
         foreach(LootItem lootItem in LootItems)
         {
@@ -49,17 +62,9 @@ public class LootItemSO : ScriptableObject
             {
                 int amountToDrop = CalWeightAmount(lootItem.QuantityRules);
 
-                ItemInfo payload = new ItemInfo
-                {
-                    ItemName = lootItem.Item.ItemName,
-                    ItemID = lootItem.Item.ItemName,
-                    ItemImg = lootItem.Item.ItemImg,
-                    ItemPrefab = lootItem.Item.ItemPrefab,
-                    ItemOrbDrop = lootItem.Item.ItemOrbDrop,
-                    Amount = amountToDrop,
-                };
+                ItemInstance itemInstance = new ItemInstance(lootItem.Item, amountToDrop);
 
-                droppedItems.Add(payload);
+                droppedItems.Add(itemInstance);
             }
         }
 

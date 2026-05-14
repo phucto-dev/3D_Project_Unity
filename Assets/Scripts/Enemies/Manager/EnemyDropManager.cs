@@ -12,12 +12,12 @@ public class EnemyDropManager : MonoBehaviour
     public void ExecuteDrop()
     {
         if (_lootItemSO == null) return;
-        List<ItemInfo> items = _lootItemSO.GetRandomDrops();
+        List<ItemInstance> items = _lootItemSO.GetRandomDrops();
 
-        foreach (ItemInfo item in items)
+        foreach (ItemInstance item in items)
         {
-            if (item.ItemOrbDrop == null) continue;
-            GameObject orbDrop = Instantiate(item.ItemOrbDrop, this.transform.position, Quaternion.identity);
+            if (item.ItemDefinition == null) continue;
+            GameObject orbDrop = Instantiate(item.ItemDefinition.DropPrefab, this.transform.position, Quaternion.identity);
             if (orbDrop != null)
             {
                 DropInfo dropInfo = orbDrop.GetComponent<DropInfo>();

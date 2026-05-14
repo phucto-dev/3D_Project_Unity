@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\Enemies\Manager\EnemyStateManager.cs" />
     <Compile Include="Assets\Scripts\GameData\Stats\BaseStatsSO.cs" />
     <Compile Include="Assets\Scripts\GameSystems\HealthSystem\HealthSystem.cs" />
+    <Compile Include="Assets\Scripts\GameData\Items\Data\ItemData.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Attack\AttackNodeSO.cs" />
     <Compile Include="Assets\Scripts\Manager\StateMachineController\ComboStateBehaviour.cs" />
     <Compile Include="Assets\Scripts\Manager\StatManager\Stat.cs" />
@@ -1288,12 +1289,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor.Shared">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.Shared.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.2D.Sprite.AIIntegration.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.AIIntegration.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor.Shared">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.Shared.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.UI">
