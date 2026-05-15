@@ -82,12 +82,14 @@
     <Compile Include="Assets\Scripts\GameData\Enemies\Stats\EnemyStatsSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherArrow.cs" />
     <Compile Include="Assets\Scripts\GameSystems\ItemSystem\LootDropSystem.cs" />
+    <Compile Include="Assets\Scripts\GUI\Page\PageNavigation\NavButton.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherController.cs" />
     <Compile Include="Assets\Scripts\Player\Attack\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Info\PlayerInfo.cs" />
     <Compile Include="Assets\Scripts\Constant\Tag\TagConstant.cs" />
     <Compile Include="Assets\Scripts\Enemies\Manager\EnemyStateBehaviour.cs" />
     <Compile Include="Assets\Scripts\GameSystems\ItemSystem\LootMagnetSystem.cs" />
+    <Compile Include="Assets\Scripts\GUI\MainMenu\MainMenuController.cs" />
     <Compile Include="Assets\Scripts\Player\Manager\PlayerCamManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Enemies\Manager\EnemyStateManager.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="Assets\Scripts\Manager\GameManager\HitStopManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\Manager\EnemyDropManager.cs" />
     <Compile Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Scripts\PanelArtsystackGui.cs" />
+    <Compile Include="Assets\Scripts\GUI\MainMenu\MenuPage.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherTriggerSMB.cs" />
     <Compile Include="Assets\Scripts\Items\DropInfo.cs" />
     <Compile Include="Assets\Scripts\GameData\Items\DropItems\LootItemSO.cs" />
