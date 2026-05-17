@@ -30,8 +30,12 @@ public class PlayerLootManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
+        Debug.Log(other.tag);
+        Debug.Log(TagConstant.TagDropItem);
         if (other.CompareTag(TagConstant.TagDropItem) && other.TryGetComponent<DropInfo>(out DropInfo item))
         {
+            Debug.Log("Add");
             _listDrop.Add(item);
         }
     }
@@ -39,11 +43,13 @@ public class PlayerLootManager : MonoBehaviour
     {
         if (other.CompareTag(TagConstant.TagDropItem) && other.TryGetComponent<DropInfo>(out DropInfo item))
         {
+            Debug.Log("Remove");
             _listDrop.Remove(item);
         }
     }
     private void HandleLootInput(InputAction.CallbackContext ctx)
     {
+        Debug.Log("Click F");
         LootItem();
     }
 

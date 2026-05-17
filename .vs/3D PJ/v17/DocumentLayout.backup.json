@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\PHUC\\3D PJ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\gamesystems\\itemsystem\\lootmagnetsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystems\\itemsystem\\lootmagnetsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\player\\manager\\playerinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\manager\\playerinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\gamesystems\\itemsystem\\lootmagnetsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesystems\\itemsystem\\lootmagnetsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -186,32 +186,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LootMagnetSystem.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameSystems\\ItemSystem\\LootMagnetSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystems\\ItemSystem\\LootMagnetSystem.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameSystems\\ItemSystem\\LootMagnetSystem.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameSystems\\ItemSystem\\LootMagnetSystem.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAQwCwAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwA0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-17T14:43:05.199Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "PlayerInventory.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerInventory.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Manager\\PlayerInventory.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerInventory.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\Manager\\PlayerInventory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAowFEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAUwEUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-16T15:53:49.322Z"
+              "WhenOpened": "2026-05-16T15:53:49.322Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
