@@ -15,6 +15,7 @@ public class LootMagnetSystem : MonoBehaviour
     private Transform _target;
     private Transform _parent;
     private LootDropSystem _dropSystem;
+    private PlayerInventoryManager _playerInventory;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class LootMagnetSystem : MonoBehaviour
         if (other.CompareTag(TagConstant.TagPlayer))
         {
             _target = other.transform;
+            _playerInventory = _target.GetComponent<PlayerInventoryManager>();
             _isBeingSuck = true;
             _currentSpeed = _config.Speed;
 
@@ -53,8 +55,24 @@ public class LootMagnetSystem : MonoBehaviour
 
     private void AbsortLoot()
     {
-        Debug.Log("Get Item");
+        int leftOverItems;
+        DropInfo dropInfo = GetComponentInParent<DropInfo>();
+        if (_playerInventory == null) return;
+        if (dropInfo == null) return;
 
-        this.transform.parent.gameObject.SetActive(false);
+        leftOverItems = _playerInventory.AddItem(dropInfo.ItemData);
+
+        if (leftOverItems != 0)
+        {
+            dropInfo.SetAmount(leftOverItems);
+            _isBeingSuck = false;
+            _currentSpeed = 0;
+            _dropSystem.enabled = true;
+            Debug.Log("Got it");
+        }
+        else
+        {
+            this.transform.parent.gameObject.SetActive(false);
+        }
     }
 }

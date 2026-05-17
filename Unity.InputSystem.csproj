@@ -319,8 +319,8 @@
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Plugins\PlayerInput\PlayerInputManager.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Editor\Internal\AdvancedDropdown\AdvancedDropdownItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Editor\UITKAssetEditor\Views\DropManipulator.cs" />
-    <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\NativeInputRuntime.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Utilities\SpriteUtilities.cs" />
+    <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\NativeInputRuntime.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Editor\UITKAssetEditor\Views\CollectionViewSelectionChangeFilter.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Editor\UITKAssetEditor\SerializedInputBinding.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Editor\AssetImporter\InputActionCodeGenerator.cs" />
@@ -430,8 +430,8 @@
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Utilities\Observables\SelectObservable.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Devices\InputDevice.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Plugins\WebGL\WebGLGamepad.cs" />
-    <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Actions\InputActionTrace.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Events\IInputEventTypeInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Actions\InputActionTrace.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Controls\TouchPhaseControl.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Actions\Composites\ButtonWithTwoModifiers.cs" />
     <Compile Include="Library\PackageCache\com.unity.inputsystem@02433b2481ab\InputSystem\Editor\Analytics\PlayerInputEditorAnalytic.cs" />
@@ -1061,6 +1061,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@191c0d7e3b69\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64\Runtime\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">

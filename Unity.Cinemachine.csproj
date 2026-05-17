@@ -68,8 +68,8 @@
     <Compile Include="Library\PackageCache\com.unity.cinemachine@285f38545487\Runtime\Core\CinemachineBlenderSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@285f38545487\Runtime\Timeline\CinemachineShotPlayable.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@285f38545487\Runtime\Core\CinemachineCore.cs" />
-    <Compile Include="Library\PackageCache\com.unity.cinemachine@285f38545487\Runtime\Deprecated\CinemachinePOV.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@285f38545487\Runtime\Behaviours\CinemachineBrain.cs" />
+    <Compile Include="Library\PackageCache\com.unity.cinemachine@285f38545487\Runtime\Deprecated\CinemachinePOV.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@285f38545487\Runtime\Deprecated\CinemachinePipeline.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@285f38545487\Runtime\Core\ICinemachineCamera.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine@285f38545487\Runtime\Impulse\CinemachineImpulseListener.cs" />
@@ -779,6 +779,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@191c0d7e3b69\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64\Runtime\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">

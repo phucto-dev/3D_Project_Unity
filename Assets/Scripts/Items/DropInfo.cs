@@ -8,4 +8,15 @@ public class DropInfo : MonoBehaviour
     {
         ItemData = itemInstance;
     }
+
+    public void SetAmount(int amount)
+    {
+        if (ItemData == null) return;
+        ItemData.Amount = amount;
+    }
+
+    public void RemovePrefab()
+    {
+        gameObject.SetActive(false);
+    }
 }
