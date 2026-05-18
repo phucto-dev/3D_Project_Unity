@@ -4,9 +4,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerLootManager : MonoBehaviour
 {
+    public PlayerInventorySO PlayerInventory;
     private PlayerInput _inputSystem;
     private InputAction _lootAction;
-    private PlayerInventoryManager _playerInventory;
     private List<DropInfo> _listDrop;
 
     private void Awake()
@@ -25,7 +25,6 @@ public class PlayerLootManager : MonoBehaviour
     }
     private void Start()
     {
-        _playerInventory = GetComponentInParent<PlayerInventoryManager>();
         _listDrop = new List<DropInfo>();
     }
     private void OnTriggerEnter(Collider other)
@@ -55,11 +54,11 @@ public class PlayerLootManager : MonoBehaviour
 
     private void LootItem()
     {
+        if (PlayerInventory == null) return;
         if (_listDrop.Count <= 0) return;
         int leftOverItems;
-        if (_playerInventory == null) return;
 
-        leftOverItems = _playerInventory.AddItem(_listDrop[0].ItemData);
+        leftOverItems = PlayerInventory.AddItem(_listDrop[0].ItemData);
 
         if (leftOverItems != 0)
         {

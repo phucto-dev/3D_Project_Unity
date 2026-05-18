@@ -4,14 +4,8 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    private Image _image;
-    private TMP_Text _text;
-
-    private void Start()
-    {
-        _image = GetComponentInChildren<Image>();
-        _text = GetComponentInChildren<TMP_Text>();
-    }
+    public Image _image;
+    public TMP_Text _text;
 
     public void UpdateSlot(ItemInstance itemInstance)
     {
@@ -20,9 +14,10 @@ public class InventorySlot : MonoBehaviour
             ClearSlot();
             return;
         }
-
-        _image.sprite = itemInstance.ItemDefinition.ItemIcon;
         _image.transform.gameObject.SetActive(true);
+        Debug.Log("Icon " + itemInstance.ItemDefinition.ItemIcon.name);
+        Debug.Log("Amount " + itemInstance.Amount);
+        _image.sprite = itemInstance.ItemDefinition.ItemIcon;
         _text.text = itemInstance.Amount > 1 ? itemInstance.Amount.ToString() : "";
         
     }

@@ -16,7 +16,7 @@ MonoBehaviour:
   - Item: {fileID: 11400000, guid: 325698315c88cb24cb27e5b61f147be0, type: 2}
     DropChance: 100
     QuantityRules:
-    - Weight: 8
+    - Weight: 0
       MinAmount: 1
       MaxAmount: 1
     - Weight: 2

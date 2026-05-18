@@ -8,10 +8,18 @@ public enum MenuPageType
 }
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] List<MenuPage> pages;
+
+    public static MainMenuController Instance { get; private set; }
+
+    [SerializeField] private List<MenuPage> pages;
 
     private MenuPage _currentPage;
 
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
     private void Start()
     {
         foreach (MenuPage page in pages)
