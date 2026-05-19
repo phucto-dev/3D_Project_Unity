@@ -27,7 +27,10 @@ public class ItemInstance
 {
     public ItemDefinitionSO ItemDefinition;
     public int Amount;
+    public ItemInstance()
+    {
 
+    }
     public ItemInstance(ItemDefinitionSO definition, int amount)
     {
         ItemDefinition = definition;

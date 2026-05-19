@@ -67,6 +67,7 @@
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Inverter.cs" />
     <Compile Include="Assets\Scripts\Manager\StatManager\EntityStatsManager.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager\GameManager.cs" />
+    <Compile Include="Assets\Ex\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\GameData\Items\DropItems\LootAnimConfigSO.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Manager\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\GUI\Page\InventoryPanel\InventorySlot\InventorySlot.cs" />
@@ -75,13 +76,14 @@
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Selector.cs" />
     <Compile Include="Assets\Scripts\Manager\StateMachineController\RecoverStateBehaviour.cs" />
-    <Compile Include="Assets\Scripts\GameData\Items\Weapon\Melee\WeaponDataSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherBowSMB.cs" />
     <Compile Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Scripts\PanelControlArtsystackGui.cs" />
     <Compile Include="Assets\Scripts\Manager\StatManager\PlayerStatsManager.cs" />
     <Compile Include="Assets\Scripts\Manager\StateMachineController\RollStateBehaviour.cs" />
     <Compile Include="Assets\Scripts\Manager\NavMesh\AgentToDistanceTest.cs" />
     <Compile Include="Assets\Scripts\Enemies\Vision\EnemyVision.cs" />
+    <Compile Include="Assets\Ex\Scripts\EngineType.cs" />
+    <Compile Include="Assets\_AssetPackages\Free Low Poly Modular Character Pack - Fantasy Dream\Demo\Scripts\ModularHeroController.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherUnsheatheBowSMB.cs" />
     <Compile Include="Assets\Scripts\Extension\CooldownTimer\CooldownTimer.cs" />
     <Compile Include="Assets\Scripts\Player\Move\PlayerMovement.cs" />
@@ -123,6 +125,7 @@
     <Compile Include="Assets\Scripts\GameData\Items\DropItems\LootItemSO.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestShaderChangeByButton.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherGetArrowSMB.cs" />
+    <Compile Include="Assets\Scripts\GameData\Items\Equipment\Weapon\Melee\WeaponDataSO.cs" />
     <Compile Include="Assets\Scripts\Enemies\Manager\EnemyAnimationManager.cs" />
     <Compile Include="Assets\Scripts\GameData\Enemies\Config\EnemyBrainConfigSO.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Leaf.cs" />
@@ -158,6 +161,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Kurale OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Ex\Low Poly Helicopters Pack Free\Shaders\UnlitShadow.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />

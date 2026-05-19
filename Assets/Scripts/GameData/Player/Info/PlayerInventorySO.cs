@@ -76,4 +76,10 @@ public class PlayerInventorySO : ScriptableObject
 
         return 0;
     }
+
+    public void ChangeItem(int index, ItemInstance item)
+    {
+        if (index >= PlayerInventory.Length) return;
+        PlayerInventory[index] = item;
+    }
 }

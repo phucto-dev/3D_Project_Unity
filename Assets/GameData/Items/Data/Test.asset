@@ -17,4 +17,4 @@ MonoBehaviour:
   Description: aaaaaa
   ItemIcon: {fileID: 21300000, guid: 8a52e4570e30bd84ea5ca072756b793c, type: 3}
   DropPrefab: {fileID: 4936614873097352475, guid: 7d0844719586ab14da21d5e3ce49bf94, type: 3}
-  MaxStack: 1
+  MaxStack: 3
