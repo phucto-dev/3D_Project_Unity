@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\GUI\Page\InventoryPanel\InventorySlot\InventorySlot.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BTAgent.cs" />
     <Compile Include="Assets\_AssetPackages\DoubleL\Demo\DemoCameraController.cs" />
+    <Compile Include="Assets\Ex\Scripts\Manager\PlanePoolManager.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Selector.cs" />
     <Compile Include="Assets\Scripts\Manager\StateMachineController\RecoverStateBehaviour.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Assets\Scripts\GUI\Page\InventoryPanel\InventorySlot\InventoryController.cs" />
     <Compile Include="Assets\Scripts\Player\Manager\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Enemies\Manager\EnemyStateBehaviour.cs" />
+    <Compile Include="Assets\Ex\Scripts\PlanePoolVFX.cs" />
     <Compile Include="Assets\Scripts\GameSystems\ItemSystem\LootMagnetSystem.cs" />
     <Compile Include="Assets\Scripts\GUI\MainMenu\MainMenuController.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BehaviourTree.cs" />
@@ -111,13 +113,17 @@
     <Compile Include="Assets\Scripts\Enemies\Manager\EnemyStateManager.cs" />
     <Compile Include="Assets\Scripts\GameData\Stats\BaseStatsSO.cs" />
     <Compile Include="Assets\Scripts\GameSystems\HealthSystem\HealthSystem.cs" />
+    <Compile Include="Assets\Ex\Scripts\Data\PlaneWeapon.cs" />
     <Compile Include="Assets\Scripts\GameData\Items\Data\ItemData.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Attack\AttackNodeSO.cs" />
     <Compile Include="Assets\Scripts\Manager\StateMachineController\ComboStateBehaviour.cs" />
     <Compile Include="Assets\Scripts\Manager\StatManager\Stat.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager\HitStopManager.cs" />
+    <Compile Include="Assets\Ex\BTM_Assets\BTM_Rockets_Missiles_Bombs\Scripts\RocketRotator.cs" />
+    <Compile Include="Assets\Ex\Scripts\PlaneProjectile.cs" />
     <Compile Include="Assets\Scripts\Enemies\Manager\EnemyDropManager.cs" />
     <Compile Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Scripts\PanelArtsystackGui.cs" />
+    <Compile Include="Assets\Ex\Scripts\PlaneAttack.cs" />
     <Compile Include="Assets\Scripts\GUI\MainMenu\MenuPage.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Utils.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherTriggerSMB.cs" />
