@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 7891949358625017289}
   - component: {fileID: 8011458104796868597}
   - component: {fileID: 4410364276823511068}
+  - component: {fileID: 632975938461739212}
   m_Layer: 0
   m_Name: Heli_1
   m_TagString: Untagged
@@ -334,8 +335,8 @@ MonoBehaviour:
   RotorMaxSpeed: 2000
   RotorAcceleration: 150
   RotorDeceleration: 100
-  HeadUpDeg: -16
-  HeadDownDeg: 16
+  HeadUpDeg: -26
+  HeadDownDeg: 26
   PitchSpeed: 2.5
   TurnSpeed: 50
   _rotorBody: {fileID: 4385752691957004877}
@@ -361,6 +362,18 @@ MonoBehaviour:
   CenterFirePoint: {fileID: 6505737653664375925}
   LeftFirePoint: {fileID: 353299283941955182}
   RightFirePoint: {fileID: 60771672724241776}
+--- !u!114 &632975938461739212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3083756388705830021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d053688dcafbe13488616541f2093ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManager
 --- !u!1 &3112557667951967127
 GameObject:
   m_ObjectHideFlags: 0

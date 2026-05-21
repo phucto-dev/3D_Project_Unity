@@ -96,6 +96,7 @@
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherController.cs" />
     <Compile Include="Assets\Scripts\Player\Attack\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Info\PlayerInfo.cs" />
+    <Compile Include="Assets\Scripts\GameData\Items\Equipment\Armor\ArmorDataSO.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Sequence.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Info\PlayerInventorySO.cs" />
     <Compile Include="Assets\Scripts\Constant\Tag\TagConstant.cs" />

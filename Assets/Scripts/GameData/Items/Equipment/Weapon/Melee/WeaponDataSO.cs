@@ -2,7 +2,7 @@ using System;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "WeaponData", menuName = "GameData/Items/Weapon/WeaponData")]
+[CreateAssetMenu(fileName = "WeaponData", menuName = "GameData/Items/Equipment/WeaponData")]
 public class WeaponDataSO : ItemDefinitionSO
 {
     [Header("--- WEAPON INFORMATION ---")]
