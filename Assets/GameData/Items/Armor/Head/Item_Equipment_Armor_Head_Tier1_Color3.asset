@@ -19,8 +19,8 @@ MonoBehaviour:
   DropPrefab: {fileID: 0}
   MaxStack: 1
   SlotType: 0
-  ArmorMesh: {fileID: 0}
-  ArmorMaterial: {fileID: 0}
+  ArmorMesh: {fileID: 8658281994810557756, guid: a83f047282e83b24493420545414c2ea, type: 3}
+  ArmorMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}
   Defense: 0
   HealthBonus: 0
   MoveSpeedPenalty: 0
