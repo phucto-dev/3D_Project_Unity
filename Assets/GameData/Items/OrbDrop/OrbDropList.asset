@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33fe75e3e882a94fb9a1c9fa6a6e1a1, type: 3}
+  m_Name: OrbDropList
+  m_EditorClassIdentifier: Assembly-CSharp::OrbDropSO
+  OrbDrop:
+  - Rarity: 0
+    OrbPrefab: {fileID: 4936614873097352475, guid: ca5fcfbe4f5e97345b51c986b9882b3e, type: 3}
+  - Rarity: 1
+    OrbPrefab: {fileID: 4936614873097352475, guid: 4ad4bdd69f602664691a75322a89491c, type: 3}
+  - Rarity: 2
+    OrbPrefab: {fileID: 4936614873097352475, guid: 81e701def31fb6048b2a14f6d2d64c7b, type: 3}
+  - Rarity: 3
+    OrbPrefab: {fileID: 4936614873097352475, guid: 7d0844719586ab14da21d5e3ce49bf94, type: 3}
+  - Rarity: 4
+    OrbPrefab: {fileID: 4936614873097352475, guid: 1c35a30e9247b85479a6fbd231d993c6, type: 3}

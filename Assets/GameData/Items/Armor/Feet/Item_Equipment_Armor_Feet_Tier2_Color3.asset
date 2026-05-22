@@ -15,12 +15,15 @@ MonoBehaviour:
   ItemID: Item_Equipment_Armor_Feet_Tier2_Color3
   ItemName: Tier 2 Feet Armor (Color 3)
   Description: 
-  ItemIcon: {fileID: 0}
-  DropPrefab: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: c1334f4f06af06c40ba442432d3d8409, type: 3}
   MaxStack: 1
-  SlotType: 5
-  ArmorMesh: {fileID: -6206577860656257263, guid: a83f047282e83b24493420545414c2ea, type: 3}
+  SlotType: 4
+  Tier: 2
+  MainStat:
+    Type: 4
+    Value: 7
+  SubStat:
+    Type: 10
+    Value: 6
+  ArmorMesh: {fileID: 8646283205900779456, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
   ArmorMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}
-  Defense: 0
-  HealthBonus: 0
-  MoveSpeedPenalty: 0

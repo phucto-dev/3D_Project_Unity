@@ -67,6 +67,7 @@
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <Compile Include="Assets\Editor\AutoGenerateSOs.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Editor\BehaviourTreeGraphView.cs" />
+    <Compile Include="Assets\Editor\IconBakerTool.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Editor\EdgeBT.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Editor\BehaviourTreeGraph.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Editor\GraphSaveUtility.cs" />

@@ -11,6 +11,13 @@ public class QuantityDropRule
 }
 
 [Serializable]
+public class RarityDropRule
+{
+    public float Weight;
+    public EquipmentRarity Rarity;
+}
+
+[Serializable]
 public class LootItem
 {
     public ItemDefinitionSO Item;
@@ -19,7 +26,7 @@ public class LootItem
 
     [Header("--- QUANTITY RULE ---")]
     public List<QuantityDropRule> QuantityRules;
-
+    public List<RarityDropRule> RarityRules;
 }
 
 [Serializable]
@@ -27,14 +34,16 @@ public class ItemInstance
 {
     public ItemDefinitionSO ItemDefinition;
     public int Amount;
+    public GameObject DropPrefab;
     public ItemInstance()
     {
 
     }
-    public ItemInstance(ItemDefinitionSO definition, int amount)
+    public ItemInstance(ItemDefinitionSO definition, int amount, GameObject dropPrefab)
     {
         ItemDefinition = definition;
         Amount = amount;
+        DropPrefab = dropPrefab;
     }
 }
 public abstract class ItemDefinitionSO : ScriptableObject
@@ -44,7 +53,6 @@ public abstract class ItemDefinitionSO : ScriptableObject
     public string ItemName;
     [TextArea] public string Description;
     public Sprite ItemIcon;
-    public GameObject DropPrefab;
     public int MaxStack = 99;
 }
 
@@ -52,6 +60,7 @@ public abstract class ItemDefinitionSO : ScriptableObject
 public class LootItemSO : ScriptableObject
 {
     public List<LootItem> LootItems;
+    public OrbDropSO OrbDrop;
 
     public List<ItemInstance> GetRandomDrops()
     {
@@ -64,8 +73,17 @@ public class LootItemSO : ScriptableObject
             if (rollHit <= lootItem.DropChance)
             {
                 int amountToDrop = CalWeightAmount(lootItem.QuantityRules);
-
-                ItemInstance itemInstance = new ItemInstance(lootItem.Item, amountToDrop);
+                EquipmentRarity rarity = RandomRarityDrop(lootItem.RarityRules, lootItem);
+                GameObject orbVisual = null;
+                foreach (RarityOrbMapping orb in OrbDrop.OrbDrop)
+                {
+                    if (orb.Rarity == rarity)
+                    {
+                        orbVisual = orb.OrbPrefab;
+                        break;
+                    }
+                }
+                ItemInstance itemInstance = new ItemInstance(lootItem.Item, amountToDrop, orbVisual);
 
                 droppedItems.Add(itemInstance);
             }
@@ -92,5 +110,26 @@ public class LootItemSO : ScriptableObject
             }
         }
         return 1;
+    }
+
+    private EquipmentRarity RandomRarityDrop(List<RarityDropRule> rules, LootItem lootItem)
+    {
+        if (!(lootItem.Item is EquipmentDataSO)) return EquipmentRarity.Common;
+        float totalWeight = 0f;
+        foreach (RarityDropRule rule in rules)
+        {
+            totalWeight += rule.Weight;
+        }
+        float randomRoll = UnityEngine.Random.Range(0f, totalWeight);
+        float currentWeight = 0f;
+        foreach (RarityDropRule rule in rules)
+        {
+            currentWeight += rule.Weight;
+            if (randomRoll <= currentWeight)
+            {
+                return rule.Rarity;
+            }
+        }
+        return EquipmentRarity.Common;
     }
 }

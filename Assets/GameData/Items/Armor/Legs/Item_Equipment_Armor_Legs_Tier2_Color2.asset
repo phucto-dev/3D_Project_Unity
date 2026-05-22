@@ -15,12 +15,15 @@ MonoBehaviour:
   ItemID: Item_Equipment_Armor_Legs_Tier2_Color2
   ItemName: Tier 2 Legs Armor (Color 2)
   Description: 
-  ItemIcon: {fileID: 0}
-  DropPrefab: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: 4f2cffbbc45c64e4d8c0d1d772080afc, type: 3}
   MaxStack: 1
-  SlotType: 4
-  ArmorMesh: {fileID: -3849592972002017713, guid: a83f047282e83b24493420545414c2ea, type: 3}
+  SlotType: 3
+  Tier: 2
+  MainStat:
+    Type: 1
+    Value: 20
+  SubStat:
+    Type: 11
+    Value: 20
+  ArmorMesh: {fileID: 2834847736197715925, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
   ArmorMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}
-  Defense: 0
-  HealthBonus: 0
-  MoveSpeedPenalty: 0

@@ -15,12 +15,15 @@ MonoBehaviour:
   ItemID: Item_Equipment_Armor_Arms_Tier4_Color2
   ItemName: Tier 4 Arms Armor (Color 2)
   Description: 
-  ItemIcon: {fileID: 0}
-  DropPrefab: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: 45b38e605db2db646af1b448613c42d8, type: 3}
   MaxStack: 1
   SlotType: 2
-  ArmorMesh: {fileID: 1229049818314427286, guid: a83f047282e83b24493420545414c2ea, type: 3}
+  Tier: 1
+  MainStat:
+    Type: 7
+    Value: 8
+  SubStat:
+    Type: 5
+    Value: 8
+  ArmorMesh: {fileID: -3076984843721198153, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
   ArmorMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}
-  Defense: 0
-  HealthBonus: 0
-  MoveSpeedPenalty: 0

@@ -15,12 +15,15 @@ MonoBehaviour:
   ItemID: Item_Equipment_Armor_Belt_Tier4_Color3
   ItemName: Tier 4 Belt (Color 3)
   Description: 
-  ItemIcon: {fileID: 0}
-  DropPrefab: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: 3ba4ea0a191c5e7499a2e72f817be811, type: 3}
   MaxStack: 1
-  SlotType: 3
-  ArmorMesh: {fileID: 3336358696960977449, guid: a83f047282e83b24493420545414c2ea, type: 3}
+  SlotType: 5
+  Tier: 4
+  MainStat:
+    Type: 11
+    Value: 50
+  SubStat:
+    Type: 10
+    Value: 45
+  ArmorMesh: {fileID: 1344644655643963276, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
   ArmorMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}
-  Defense: 0
-  HealthBonus: 0
-  MoveSpeedPenalty: 0

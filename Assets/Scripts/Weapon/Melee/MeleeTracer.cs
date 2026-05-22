@@ -121,7 +121,7 @@ public class MeleeTracer : MonoBehaviour
     private void CalDamageInfo()
     {
         if (_weaponStats == null) return;
-        _dmgInfo.Amount = _stats.AttackPower.GetValue() + _weaponStats.BaseDamage;
+        _dmgInfo.Amount = _stats.AttackPower.GetValue() + _weaponStats.MainStat.Value;
         _dmgInfo.PoiseDamage = _stats.PoiseDamage.GetValue() + _weaponStats.PoiseDamage;
     }
 }

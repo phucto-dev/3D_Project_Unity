@@ -1,9 +1,7 @@
-using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "WeaponData", menuName = "GameData/Items/Equipment/WeaponData")]
-public class WeaponDataSO : ItemDefinitionSO
+public class WeaponDataSO : EquipmentDataSO
 {
     [Header("--- WEAPON INFORMATION ---")]
     public GameObject EquippedPrefab;
@@ -11,8 +9,8 @@ public class WeaponDataSO : ItemDefinitionSO
     public AttackNodeSO EntryHeavyAttack;
 
     [Header("--- COMBAT ---")]
-    public float BaseDamage = 20f;
     public float AttackRange = 1.5f;
+    public float MagicScale = 0;
     public float PoiseDamage = 5f;
     public float HitStopDuration = 0.08f;
 

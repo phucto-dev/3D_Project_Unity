@@ -15,12 +15,15 @@ MonoBehaviour:
   ItemID: Item_Equipment_Armor_Feet_Tier5_Color3
   ItemName: Tier 5 Feet Armor (Color 3)
   Description: 
-  ItemIcon: {fileID: 0}
-  DropPrefab: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: 00d8df65bb870ec43911cb86f538b707, type: 3}
   MaxStack: 1
-  SlotType: 5
-  ArmorMesh: {fileID: 4243125936175789036, guid: a83f047282e83b24493420545414c2ea, type: 3}
+  SlotType: 4
+  Tier: 5
+  MainStat:
+    Type: 4
+    Value: 22
+  SubStat:
+    Type: 10
+    Value: 15
+  ArmorMesh: {fileID: -2403065815608154189, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
   ArmorMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}
-  Defense: 0
-  HealthBonus: 0
-  MoveSpeedPenalty: 0

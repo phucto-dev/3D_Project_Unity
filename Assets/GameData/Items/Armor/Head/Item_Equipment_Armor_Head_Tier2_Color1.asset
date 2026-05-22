@@ -15,12 +15,15 @@ MonoBehaviour:
   ItemID: Item_Equipment_Armor_Head_Tier2_Color1
   ItemName: Tier 2 Head Armor (Color 1)
   Description: 
-  ItemIcon: {fileID: 0}
-  DropPrefab: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: c47d83e12618023439d82fd7bd71c742, type: 3}
   MaxStack: 1
   SlotType: 0
-  ArmorMesh: {fileID: 1553399452046062991, guid: a83f047282e83b24493420545414c2ea, type: 3}
+  Tier: 2
+  MainStat:
+    Type: 0
+    Value: 40
+  SubStat:
+    Type: 9
+    Value: 8
+  ArmorMesh: {fileID: -4697691726291183925, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
   ArmorMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}
-  Defense: 0
-  HealthBonus: 0
-  MoveSpeedPenalty: 0

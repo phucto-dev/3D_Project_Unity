@@ -35,12 +35,12 @@ public class AutoGenerateSOs : MonoBehaviour
                 newArmor.ItemName = displayName;
 
                 // Tự động phân loại SlotType dựa trên chuỗi chữ
-                if (id.Contains("_Head_")) newArmor.SlotType = ArmorSlotType.Head;
-                else if (id.Contains("_Chest_")) newArmor.SlotType = ArmorSlotType.Chest;
-                else if (id.Contains("_Arms_")) newArmor.SlotType = ArmorSlotType.Arms;
-                else if (id.Contains("_Belt_")) newArmor.SlotType = ArmorSlotType.Belt;
-                else if (id.Contains("_Legs_")) newArmor.SlotType = ArmorSlotType.Legs;
-                else if (id.Contains("_Feet_")) newArmor.SlotType = ArmorSlotType.Feet;
+                if (id.Contains("_Head_")) newArmor.SlotType = EquipmentSlot.Head;
+                else if (id.Contains("_Chest_")) newArmor.SlotType = EquipmentSlot.Chest;
+                else if (id.Contains("_Arms_")) newArmor.SlotType = EquipmentSlot.Arms;
+                else if (id.Contains("_Belt_")) newArmor.SlotType = EquipmentSlot.Belt;
+                else if (id.Contains("_Legs_")) newArmor.SlotType = EquipmentSlot.Legs;
+                else if (id.Contains("_Feet_")) newArmor.SlotType = EquipmentSlot.Feet;
 
                 // LƯU THÀNH FILE .asset XUỐNG Ổ CỨNG
                 string assetPath = $"{savePath}/{id}.asset";

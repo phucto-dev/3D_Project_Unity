@@ -113,6 +113,7 @@
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Enemies\Manager\EnemyStateManager.cs" />
     <Compile Include="Assets\Scripts\GameData\Stats\BaseStatsSO.cs" />
+    <Compile Include="Assets\Scripts\GameData\Items\Equipment\EquipmentInstance.cs" />
     <Compile Include="Assets\Scripts\GameSystems\HealthSystem\HealthSystem.cs" />
     <Compile Include="Assets\Ex\Scripts\Data\PlaneWeapon.cs" />
     <Compile Include="Assets\Scripts\GameData\Items\Data\ItemData.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BehaviourTreeContainer.cs" />
     <Compile Include="Assets\Scripts\Weapon\Melee\MeleeTracer.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Stats\PlayerStatsSO.cs" />
+    <Compile Include="Assets\Scripts\GameData\Items\OrbDrop\OrbDropSO.cs" />
     <Compile Include="Assets\Scripts\Manager\StatManager\EnemyStatsManager.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -17,7 +17,12 @@ public class EnemyDropManager : MonoBehaviour
         foreach (ItemInstance item in items)
         {
             if (item.ItemDefinition == null) continue;
-            GameObject orbDrop = Instantiate(item.ItemDefinition.DropPrefab, this.transform.position, Quaternion.identity);
+            if (item.DropPrefab == null)
+            {
+                Debug.LogWarning("EnemyDropManager: DropPrefab == null");
+                continue;
+            }
+            GameObject orbDrop = Instantiate(item.DropPrefab, this.transform.position, Quaternion.identity);
             if (orbDrop != null)
             {
                 DropInfo dropInfo = orbDrop.GetComponent<DropInfo>();

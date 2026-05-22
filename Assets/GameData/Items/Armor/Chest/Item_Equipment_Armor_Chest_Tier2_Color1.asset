@@ -15,12 +15,15 @@ MonoBehaviour:
   ItemID: Item_Equipment_Armor_Chest_Tier2_Color1
   ItemName: Tier 2 Chest Armor (Color 1)
   Description: 
-  ItemIcon: {fileID: 0}
-  DropPrefab: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: 0370244a39cb7e6478c7b16599bd91c3, type: 3}
   MaxStack: 1
   SlotType: 1
-  ArmorMesh: {fileID: 7167557287375862352, guid: a83f047282e83b24493420545414c2ea, type: 3}
+  Tier: 2
+  MainStat:
+    Type: 0
+    Value: 75
+  SubStat:
+    Type: 3
+    Value: 4
+  ArmorMesh: {fileID: 911937675073825945, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
   ArmorMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}
-  Defense: 0
-  HealthBonus: 0
-  MoveSpeedPenalty: 0

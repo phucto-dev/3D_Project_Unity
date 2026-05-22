@@ -15,12 +15,15 @@ MonoBehaviour:
   ItemID: Item_Equipment_Armor_Belt_Tier5_Color2
   ItemName: Tier 5 Belt (Color 2)
   Description: 
-  ItemIcon: {fileID: 0}
-  DropPrefab: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: 22637758be49f0246be7ae73b7917f35, type: 3}
   MaxStack: 1
-  SlotType: 3
-  ArmorMesh: {fileID: 2789497200501492535, guid: a83f047282e83b24493420545414c2ea, type: 3}
+  SlotType: 5
+  Tier: 5
+  MainStat:
+    Type: 11
+    Value: 60
+  SubStat:
+    Type: 10
+    Value: 50
+  ArmorMesh: {fileID: -1208368784549177018, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
   ArmorMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}
-  Defense: 0
-  HealthBonus: 0
-  MoveSpeedPenalty: 0

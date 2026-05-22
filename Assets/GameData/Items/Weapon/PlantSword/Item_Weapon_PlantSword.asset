@@ -12,17 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7a44260819d5941b548448c270d530, type: 3}
   m_Name: Item_Weapon_PlantSword
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
-  WeaponName: Plant Sword
+  ItemID: 
+  ItemName: 
   Description: ...
-  Item:
-    ItemName: Plant Sword
-    ItemID: Plant_Sword_ID
-    ItemImg: {fileID: 0}
-    ItemPrefab: {fileID: 0}
-    ItemOrbDrop: {fileID: 0}
-    Amount: 0
-  EquippedPrefab: {fileID: 919132149155446097, guid: 83a60d6e49c64204c9e864ebde4266bf, type: 3}
+  ItemIcon: {fileID: 0}
   DropPrefab: {fileID: 0}
+  MaxStack: 1
+  SlotType: 6
+  Tier: 1
+  MainStat:
+    Type: 4
+    Value: 10
+  SubStat:
+    Type: 8
+    Value: 10
+  EquippedPrefab: {fileID: 919132149155446097, guid: 83a60d6e49c64204c9e864ebde4266bf, type: 3}
   EntryLightAttack: {fileID: 11400000, guid: 49c1693f076a4a44aaf0ca3bd3473b29, type: 2}
   EntryHeavyAttack: {fileID: 11400000, guid: 964cb832077b3e142b3c3ed4f5205a16, type: 2}
   BaseDamage: 20
