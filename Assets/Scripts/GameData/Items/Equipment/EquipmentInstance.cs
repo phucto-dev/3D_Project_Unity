@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum EquipmentSlot
 {
@@ -49,6 +50,12 @@ public abstract class EquipmentDataSO : ItemDefinitionSO
     public ItemStat MainStat;
     public ItemStat SubStat;
 
+    [Header("--- MODULAR VISUALS ---")]
+    [FormerlySerializedAs("ArmorMesh")]
+    public Mesh EquipmentMesh;
+    [FormerlySerializedAs("ArmorMaterial")]
+    public Material EquipmentMaterial;
+
     private void OnEnable()
     {
         MaxStack = 1;
@@ -62,10 +69,21 @@ public class EquipmentInstance: ItemInstance
     public EquipmentRarity Rarity;
     public List<ItemStat> BonusStats;
 
-    public EquipmentInstance(EquipmentDataSO definition, int amount = 1, GameObject dropPrefab = null) : base(definition, amount, dropPrefab)
+    public EquipmentInstance() : base()
+    {
+
+    }
+    public EquipmentInstance(
+    EquipmentDataSO definition,
+    int amount = 1,
+    GameObject dropPrefab = null,
+    EquipmentRarity rarity = EquipmentRarity.Common,
+    List<ItemStat> bonusStats = null) : base(definition, amount, dropPrefab)
     {
         UpgradeLevel = 0;
         RandomAffixes = new List<ItemStat>();
+        Rarity = rarity;
+        BonusStats = bonusStats ?? null;
     }
     public EquipmentDataSO GetEquipData()
     {

@@ -74,12 +74,14 @@
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BTAgent.cs" />
     <Compile Include="Assets\_AssetPackages\DoubleL\Demo\DemoCameraController.cs" />
     <Compile Include="Assets\Ex\Scripts\Manager\PlanePoolManager.cs" />
+    <Compile Include="Assets\Scripts\GUI\Page\InventoryPanel\InventorySlot\EquipmentSlot.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Selector.cs" />
     <Compile Include="Assets\Scripts\Manager\StateMachineController\RecoverStateBehaviour.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherBowSMB.cs" />
     <Compile Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Scripts\PanelControlArtsystackGui.cs" />
     <Compile Include="Assets\Scripts\Manager\StatManager\PlayerStatsManager.cs" />
+    <Compile Include="Assets\Scripts\GameData\Player\Info\PlayerEquipmentSO.cs" />
     <Compile Include="Assets\Scripts\Manager\StateMachineController\RollStateBehaviour.cs" />
     <Compile Include="Assets\Scripts\Manager\NavMesh\AgentToDistanceTest.cs" />
     <Compile Include="Assets\Scripts\Enemies\Vision\EnemyVision.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="Assets\Scripts\Items\DropInfo.cs" />
     <Compile Include="Assets\Scripts\GameData\Items\DropItems\LootItemSO.cs" />
     <Compile Include="Assets\Scripts\TestScript\TestShaderChangeByButton.cs" />
+    <Compile Include="Assets\Scripts\Player\Manager\PlayerEquipmentManager.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherGetArrowSMB.cs" />
     <Compile Include="Assets\Scripts\GameData\Items\Equipment\Weapon\Melee\WeaponDataSO.cs" />
     <Compile Include="Assets\Scripts\Enemies\Manager\EnemyAnimationManager.cs" />

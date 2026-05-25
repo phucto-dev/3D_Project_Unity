@@ -14,73 +14,110 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventorySO
   ItemSlotQuantity: 35
   <PlayerInventory>k__BackingField:
+  - ItemDefinition: {fileID: 11400000, guid: 325698315c88cb24cb27e5b61f147be0, type: 2}
+    Amount: 1
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
+    DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
-  - ItemDefinition: {fileID: 0}
-    Amount: 0
+    DropPrefab: {fileID: 0}
+  startingItems:
+  - {fileID: 11400000, guid: 5de856ede925d614c8553d62bafcd42b, type: 2}

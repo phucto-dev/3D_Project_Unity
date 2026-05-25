@@ -10,26 +10,26 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public TMP_Text _text;
     public CanvasGroup IconCanvasGroup;
 
-    private Transform _dragLayer;
-    private InventoryController _inventoryController;
-    private Transform _originalParent;
+    protected Transform _dragLayer;
+    protected InventoryController _inventoryController;
+    protected Transform _originalParent;
 
-    private int _thisIndex;
+    protected int _thisIndex;
 
-    private void Awake()
+    protected void Awake()
     {
         _dragLayer = GameObject.FindGameObjectWithTag(TagConstant.TagDragLayer).transform;
         _inventoryController = GetComponentInParent<InventoryController>();
     }
-    private void OnEnable()
+    protected void OnEnable()
     {
         if (_inventoryController != null) _inventoryController.OnSlotDataChanged += UpdateSlot;
     }
-    private void OnDisable()
+    protected void OnDisable()
     {
         if (_inventoryController != null) _inventoryController.OnSlotDataChanged -= UpdateSlot;
     }
-    private void Start()
+    protected void Start()
     {
         _thisIndex = transform.GetSiblingIndex();
     }
@@ -43,8 +43,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             return;
         }
         ItemContainer.SetActive(true);
-        Debug.Log("Icon " + itemInstance.ItemDefinition.ItemIcon.name);
-        Debug.Log("Amount " + itemInstance.Amount);
+        //Debug.Log("Icon " + itemInstance.ItemDefinition.ItemIcon.name);
+        //Debug.Log("Amount " + itemInstance.Amount);
         _image.sprite = itemInstance.ItemDefinition.ItemIcon;
         _text.text = itemInstance.Amount > 1 ? itemInstance.Amount.ToString() : "";
     }
@@ -84,13 +84,23 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         ItemContainer.transform.localPosition = Vector3.zero;
     }
 
-    public void OnDrop(PointerEventData eventData)
+    public virtual void OnDrop(PointerEventData eventData)
     {
         GameObject draggedObject = eventData.pointerDrag;
-        if (draggedObject != null && draggedObject.TryGetComponent(out InventorySlot sourceSlotUI))
+        if (draggedObject != null && draggedObject.TryGetComponent(out InventorySlot sourceSlot))
         {
-            if (sourceSlotUI == this) return;
-            _inventoryController.ProcessDragAndDrop(sourceSlotUI.GetIndex(), _thisIndex);
+            if (sourceSlot == this) return;
+
+            if (sourceSlot is EquipmentSlotUI sourceEquipmentSlot)
+            {
+                Debug.Log("Equipment ne");
+                _inventoryController.ProcessEquipmentChange(sourceEquipmentSlot.SlotType, false, _thisIndex, sourceEquipmentSlot.GetIndex());
+            }
+            else
+            {
+                Debug.Log("Inventory thuong ne");
+                _inventoryController.ProcessDragAndDrop(sourceSlot.GetIndex(), _thisIndex);
+            }
         }
     }
 }

@@ -115,6 +115,7 @@ public class LootItemSO : ScriptableObject
     private EquipmentRarity RandomRarityDrop(List<RarityDropRule> rules, LootItem lootItem)
     {
         if (!(lootItem.Item is EquipmentDataSO)) return EquipmentRarity.Common;
+        if (rules == null || rules.Count == 0) return EquipmentRarity.Common;
         float totalWeight = 0f;
         foreach (RarityDropRule rule in rules)
         {

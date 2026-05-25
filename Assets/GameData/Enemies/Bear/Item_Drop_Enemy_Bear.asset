@@ -22,3 +22,20 @@ MonoBehaviour:
     - Weight: 2
       MinAmount: 5
       MaxAmount: 7
+    RarityRules: []
+  - Item: {fileID: 11400000, guid: 5de856ede925d614c8553d62bafcd42b, type: 2}
+    DropChance: 100
+    QuantityRules:
+    - Weight: 1
+      MinAmount: 1
+      MaxAmount: 1
+    RarityRules:
+    - Weight: 5
+      Rarity: 0
+    - Weight: 3
+      Rarity: 1
+    - Weight: 1.5
+      Rarity: 2
+    - Weight: 0.5
+      Rarity: 3
+  OrbDrop: {fileID: 11400000, guid: 61f206fdec9e7544b92bf139d3b07ad8, type: 2}

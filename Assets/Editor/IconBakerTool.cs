@@ -114,8 +114,8 @@ public class IconBakerTool : EditorWindow
         MeshFilter mf = dummy.AddComponent<MeshFilter>();
         MeshRenderer mr = dummy.AddComponent<MeshRenderer>();
 
-        mf.sharedMesh = singleArmorData.ArmorMesh;
-        mr.sharedMaterial = singleArmorData.ArmorMaterial;
+        mf.sharedMesh = singleArmorData.EquipmentMesh;
+        mr.sharedMaterial = singleArmorData.EquipmentMaterial;
 
         RenderTexture rt = new RenderTexture(iconSize, iconSize, 24);
         renderCamera.targetTexture = rt;
@@ -170,8 +170,8 @@ public class IconBakerTool : EditorWindow
         MeshFilter mf = dummy.AddComponent<MeshFilter>();
         MeshRenderer mr = dummy.AddComponent<MeshRenderer>();
 
-        mf.sharedMesh = singleArmorData.ArmorMesh;
-        mr.sharedMaterial = singleArmorData.ArmorMaterial;
+        mf.sharedMesh = singleArmorData.EquipmentMesh;
+        mr.sharedMaterial = singleArmorData.EquipmentMaterial;
 
         renderCamera.orthographic = true;
         Bounds bounds = mf.sharedMesh.bounds;
@@ -252,14 +252,14 @@ public class IconBakerTool : EditorWindow
 
     private void BakeSingleIconForBatch(ArmorDataSO targetData)
     {
-        if (targetData.ArmorMesh == null) return;
+        if (targetData.EquipmentMesh == null) return;
 
         GameObject dummy = new GameObject("DummyProp");
         MeshFilter mf = dummy.AddComponent<MeshFilter>();
         MeshRenderer mr = dummy.AddComponent<MeshRenderer>();
 
-        mf.sharedMesh = targetData.ArmorMesh;
-        mr.sharedMaterial = targetData.ArmorMaterial;
+        mf.sharedMesh = targetData.EquipmentMesh;
+        mr.sharedMaterial = targetData.EquipmentMaterial;
 
         renderCamera.orthographic = true;
         Bounds bounds = mf.sharedMesh.bounds;
