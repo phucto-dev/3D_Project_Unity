@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\PHUC\\3D PJ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\inventoryslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\inventoryslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\equipmentslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\equipmentslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\player\\manager\\playerequipmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\manager\\playerequipmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gamedata\\player\\info\\playerequipmentso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedata\\player\\info\\playerequipmentso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\equipmentslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\equipmentslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\inventoryslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\inventoryslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gamedata\\items\\equipment\\equipmentinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedata\\items\\equipment\\equipmentinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gamedata\\items\\equipment\\armor\\armordataso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedata\\items\\equipment\\armor\\armordataso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26021BE5-DD76-8DB0-A16F-9BA7F4987E69}|Assembly-CSharp-Editor.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\editor\\iconbakertool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26021BE5-DD76-8DB0-A16F-9BA7F4987E69}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\iconbakertool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gamedata\\player\\info\\playerinventoryso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,14 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gamedata\\items\\dropitems\\lootitemso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedata\\items\\dropitems\\lootitemso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gamedata\\items\\equipment\\armor\\armordataso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedata\\items\\equipment\\armor\\armordataso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\player\\manager\\playerequipmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\manager\\playerequipmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\player\\manager\\playerlootmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\items\\dropinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\items\\dropinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26021BE5-DD76-8DB0-A16F-9BA7F4987E69}|Assembly-CSharp-Editor.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\editor\\iconbakertool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26021BE5-DD76-8DB0-A16F-9BA7F4987E69}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\iconbakertool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\scripts\\gamesystems\\itemsystem\\lootdropsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -218,21 +218,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EquipmentSlot.cs",
-              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\EquipmentSlot.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\EquipmentSlot.cs",
-              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\EquipmentSlot.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\EquipmentSlot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T15:38:23.286Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -241,40 +228,118 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventoryController.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventoryController.cs",
               "RelativeToolTip": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventoryController.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAADwv4oAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAHgAAAAAAAAAAAApwIYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-18T08:30:50.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "PlayerEquipmentSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Player\\Info\\PlayerEquipmentSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Player\\Info\\PlayerEquipmentSO.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Player\\Info\\PlayerEquipmentSO.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameData\\Player\\Info\\PlayerEquipmentSO.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAgAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAlwB0AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-24T02:51:27.551Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EquipmentInstance.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\Equipment\\EquipmentInstance.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Items\\Equipment\\EquipmentInstance.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\Equipment\\EquipmentInstance.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameData\\Items\\Equipment\\EquipmentInstance.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAApwFAAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAkwDgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-22T04:33:25.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerEquipmentManager.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwCAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T14:02:23.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "ArmorDataSO.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\Equipment\\Armor\\ArmorDataSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Items\\Equipment\\Armor\\ArmorDataSO.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\Equipment\\Armor\\ArmorDataSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameData\\Items\\Equipment\\Armor\\ArmorDataSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T14:20:07.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InventorySlot.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAUwFsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T14:21:09.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EquipmentSlot.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\EquipmentSlot.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\EquipmentSlot.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\EquipmentSlot.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\EquipmentSlot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-24T15:38:23.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IconBakerTool.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Editor\\IconBakerTool.cs",
+              "RelativeDocumentMoniker": "Assets\\Editor\\IconBakerTool.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Editor\\IconBakerTool.cs",
+              "RelativeToolTip": "Assets\\Editor\\IconBakerTool.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAcwHUAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T16:24:56.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PlayerInventorySO.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAlwGsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T08:06:29.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "LootItemSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\DropItems\\LootItemSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Items\\DropItems\\LootItemSO.cs",
@@ -282,51 +347,11 @@
               "RelativeToolTip": "Assets\\Scripts\\GameData\\Items\\DropItems\\LootItemSO.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAlwCIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T10:02:24.683Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T10:02:24.683Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PlayerInventorySO.cs",
-              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
-              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAowGsAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T08:06:29.145Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "InventorySlot.cs",
-              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
-              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwCkAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T14:21:09.183Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ArmorDataSO.cs",
-              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\Equipment\\Armor\\ArmorDataSO.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Items\\Equipment\\Armor\\ArmorDataSO.cs",
-              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\Equipment\\Armor\\ArmorDataSO.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameData\\Items\\Equipment\\Armor\\ArmorDataSO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T14:20:07.458Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "DropInfo.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Items\\DropInfo.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Items\\DropInfo.cs",
@@ -338,19 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PlayerEquipmentManager.cs",
-              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
-              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBcAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T14:02:23.183Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "EnemyDropManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Enemies\\Manager\\EnemyDropManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemies\\Manager\\EnemyDropManager.cs",
@@ -362,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PlayerLootManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerLootManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Manager\\PlayerLootManager.cs",
@@ -407,18 +420,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-14T08:13:13.343Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IconBakerTool.cs",
-              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Editor\\IconBakerTool.cs",
-              "RelativeDocumentMoniker": "Assets\\Editor\\IconBakerTool.cs",
-              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Editor\\IconBakerTool.cs",
-              "RelativeToolTip": "Assets\\Editor\\IconBakerTool.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAA/wDcBAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T16:24:56.424Z"
             },
             {
               "$type": "Document",

@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerEquipmentManager : MonoBehaviour
 {
     public PlayerEquipmentSO PlayerEquipment;
+    public PlayerStatsManager PlayerStats;
 
     [Header("--- ARMOR REF ---")]
     public SkinnedMeshRenderer HeadSkinnedMesh;

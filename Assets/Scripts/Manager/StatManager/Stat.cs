@@ -29,7 +29,7 @@ public class Stat
     }
 
     public void AddModifier(float mod)
-    { 
+    {
         _modifiers.Add(mod);
         OnStatChanged?.Invoke();
     }

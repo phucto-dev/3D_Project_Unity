@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stats_Player
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatsSO
   _maxHealth:
-    baseValue: 9000
+    baseValue: 200
     minValue: 0
     maxValue: 9999
   _healthRegen:

@@ -81,6 +81,7 @@
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherBowSMB.cs" />
     <Compile Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Scripts\PanelControlArtsystackGui.cs" />
     <Compile Include="Assets\Scripts\Manager\StatManager\PlayerStatsManager.cs" />
+    <Compile Include="Assets\Scripts\GUI\Effects\HurtUI.cs" />
     <Compile Include="Assets\Scripts\GameData\Player\Info\PlayerEquipmentSO.cs" />
     <Compile Include="Assets\Scripts\Manager\StateMachineController\RollStateBehaviour.cs" />
     <Compile Include="Assets\Scripts\Manager\NavMesh\AgentToDistanceTest.cs" />

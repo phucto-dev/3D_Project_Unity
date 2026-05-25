@@ -29,9 +29,9 @@ public class PlayerLootManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
-        Debug.Log(other.tag);
-        Debug.Log(TagConstant.TagDropItem);
+        //Debug.Log(other.name);
+        //Debug.Log(other.tag);
+        //Debug.Log(TagConstant.TagDropItem);
         if (other.CompareTag(TagConstant.TagDropItem) && other.TryGetComponent<DropInfo>(out DropInfo item))
         {
             Debug.Log("Add");

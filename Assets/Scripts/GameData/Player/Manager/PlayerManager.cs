@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
 
     public event Action BeingHit;
     public event Action DoneBeingHit;
+    public event Action OnGetHit;
 
     private readonly int _animHurt = Animator.StringToHash("Hurt");
 
@@ -43,6 +44,7 @@ public class PlayerManager : MonoBehaviour
 
     public void GetHit(DmgInfo dmgInfo)
     {
+        OnGetHit?.Invoke();
         if (_stats.IsRunOutPoise(dmgInfo.PoiseDamage))
         {
             if (_hitCoroutine != null) StopCoroutine(_hitCoroutine);
