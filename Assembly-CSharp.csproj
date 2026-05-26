@@ -1296,12 +1296,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.UnifiedRayTracing.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
@@ -1514,13 +1514,13 @@
       <Project>{7D3C34D8-D62E-E48E-7589-18C918230155}</Project>
       <Name>Unity.VisualScripting.Core.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Behavior.csproj">
-      <Project>{00A4A6CF-FA5E-D727-C195-438DC26D1EE5}</Project>
-      <Name>Unity.Behavior</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.TerrainTools.Editor.csproj">
       <Project>{5801EA11-849B-5637-6CEC-87ED0A56BAEB}</Project>
       <Name>Unity.TerrainTools.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Behavior.csproj">
+      <Project>{00A4A6CF-FA5E-D727-C195-438DC26D1EE5}</Project>
+      <Name>Unity.Behavior</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Behavior.Editor.csproj">
       <Project>{45777084-9706-F7F2-4CD5-2C01F7385A1B}</Project>

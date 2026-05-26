@@ -175,8 +175,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\UI\RunModal.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Views\Locks\LocksViewMenu.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\UI\PlasticDialog.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Views\LaunchDiffOperations.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Views\Diff\UnityDiffTree.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Views\LaunchDiffOperations.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\WebApi\CurrentUserAdminCheckResponse.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Views\PendingChanges\ChangelistTreeViewItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\UI\Progress\DrawProgressForOperations.cs" />
@@ -405,8 +405,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Settings\DiffAndMergeOptionsFoldout.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Views\Changesets\ChangesetExplorerView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\AssetMenu\ProjectViewCloudDriveAssetMenu.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\UI\GetWindowIfOpened.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\UVCSToolbar\PopupWindow\Operations\ControlledPopupOperations.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\UI\GetWindowIfOpened.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Views\Locks\LocksTab.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Views\PendingChanges\ChangeCategoryTreeViewItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\CloudDrive\Welcome\WelcomeView.cs" />
@@ -483,8 +483,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Views\Diff\MergeCategoryTreeViewItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Views\History\SerializableHistoryTabState.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Inspector\DrawInspectorOperations.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Views\Merge\Developer\MergeTab.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\UI\Progress\ProgressControlsForViews.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\Views\Merge\Developer\MergeTab.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\UI\Progress\ProgressControlsForWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\AssetsUtils\AssetsPath.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Editor\AssetOverlays\AssetOverlay.cs" />

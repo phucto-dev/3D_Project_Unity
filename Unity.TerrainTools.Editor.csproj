@@ -182,8 +182,8 @@
     <Compile Include="Library\PackageCache\com.unity.terrain-tools@bcd5ab3144b8\Editor\TerrainTools\FilterStack\Filter.cs" />
     <Compile Include="Library\PackageCache\com.unity.terrain-tools@bcd5ab3144b8\Editor\TerrainToolbox\Data\TerrainVisualizationSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.terrain-tools@bcd5ab3144b8\Editor\TerrainTools\BrushControllers\IBrushModifierKeyController.cs" />
-    <Compile Include="Library\PackageCache\com.unity.terrain-tools@bcd5ab3144b8\Editor\TerrainTools\NoiseLib\NoiseSettingsFactory.cs" />
     <Compile Include="Library\PackageCache\com.unity.terrain-tools@bcd5ab3144b8\Editor\TerrainTools\BrushControllers\BaseBrushVariator.cs" />
+    <Compile Include="Library\PackageCache\com.unity.terrain-tools@bcd5ab3144b8\Editor\TerrainTools\NoiseLib\NoiseSettingsFactory.cs" />
     <Compile Include="Library\PackageCache\com.unity.terrain-tools@bcd5ab3144b8\Editor\TerrainTools\BrushControllers\BrushSizeVariator.cs" />
     <Compile Include="Library\PackageCache\com.unity.terrain-tools@bcd5ab3144b8\Editor\TerrainTools\BrushControllers\BrushRenderUIGroupUnderCursor.cs" />
     <Compile Include="Library\PackageCache\com.unity.terrain-tools@bcd5ab3144b8\Editor\TerrainTools\GUI\DistributionSliderGUI.cs" />
