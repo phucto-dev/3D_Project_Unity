@@ -63,123 +63,136 @@
     <Analyzer Include="C:\Users\PHUC\3D PJ\Library\PackageCache\com.unity.dt.app-ui@8ac7e730dd5d\Runtime\MVVM\SourceGenerators\netstandard2.0\MVVMSourceGenerators.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\TestScript\AddForce.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameSystems\HealthSystem\HealthSystem.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Inverter.cs" />
-    <Compile Include="Assets\Scripts\Manager\StatManager\EntityStatsManager.cs" />
-    <Compile Include="Assets\Scripts\Manager\GameManager\GameManager.cs" />
-    <Compile Include="Assets\Ex\Scripts\Movement.cs" />
-    <Compile Include="Assets\Scripts\GameData\Items\DropItems\LootAnimConfigSO.cs" />
-    <Compile Include="Assets\Scripts\GameData\Player\Manager\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\GUI\Page\InventoryPanel\InventorySlot\InventorySlot.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\Equipment\EquipmentInstance.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Stats\PlayerStatsSO.cs" />
+    <Compile Include="Assets\_MyProject\Ex\Scripts\Movement.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\TestScript\AddForce.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\DropItems\LootAnimConfigSO.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\PageNavigation\NavButton.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\InventoryController.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StateMachineController\RecoverStateBehaviour.cs" />
+    <Compile Include="Assets\_MyProject\Ex\Scripts\EngineType.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\Equipment\Armor\ArmorDataSO.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\Stat.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Constant\Tag\TagConstant.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\OrbDrop\OrbDropSO.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameSystems\ItemSystem\LootMagnetSystem.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BTAgent.cs" />
+    <Compile Include="Assets\_MyProject\Ex\Scripts\PlaneAttack.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Extension\CooldownTimer\CooldownTimer.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerInventorySO.cs" />
     <Compile Include="Assets\_AssetPackages\DoubleL\Demo\DemoCameraController.cs" />
-    <Compile Include="Assets\Ex\Scripts\Manager\PlanePoolManager.cs" />
-    <Compile Include="Assets\Scripts\GUI\Page\InventoryPanel\InventorySlot\EquipmentSlot.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerInventory.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MainMenuController.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyStateBehaviour.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Stats\BaseStatsSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Selector.cs" />
-    <Compile Include="Assets\Scripts\Manager\StateMachineController\RecoverStateBehaviour.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StateMachineController\RollStateBehaviour.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Attack\AttackNodeSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherBowSMB.cs" />
     <Compile Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Scripts\PanelControlArtsystackGui.cs" />
-    <Compile Include="Assets\Scripts\Manager\StatManager\PlayerStatsManager.cs" />
-    <Compile Include="Assets\Scripts\GUI\Effects\HurtUI.cs" />
-    <Compile Include="Assets\Scripts\GameData\Player\Info\PlayerEquipmentSO.cs" />
-    <Compile Include="Assets\Scripts\Manager\StateMachineController\RollStateBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Manager\NavMesh\AgentToDistanceTest.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Vision\EnemyVision.cs" />
-    <Compile Include="Assets\Ex\Scripts\EngineType.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyStateManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Enemies\Stats\EnemyStatsSO.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerEquipmentManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\CursorManager\CursorManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Player\Move\PlayerMovement.cs" />
+    <Compile Include="Assets\_MyProject\Ex\Scripts\Data\PlaneWeapon.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\NavMesh\AgentToDistanceTest.cs" />
     <Compile Include="Assets\_AssetPackages\Free Low Poly Modular Character Pack - Fantasy Dream\Demo\Scripts\ModularHeroController.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\GameManager\HitStopManager.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherUnsheatheBowSMB.cs" />
-    <Compile Include="Assets\Scripts\Extension\CooldownTimer\CooldownTimer.cs" />
-    <Compile Include="Assets\Scripts\Player\Move\PlayerMovement.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\GameManager\GameManager.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\RSelector.cs" />
-    <Compile Include="Assets\Scripts\GameData\Enemies\Stats\EnemyStatsSO.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\TestScript\TestShaderChangeByButton.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherArrow.cs" />
-    <Compile Include="Assets\Scripts\GameSystems\ItemSystem\LootDropSystem.cs" />
-    <Compile Include="Assets\Scripts\GUI\Page\PageNavigation\NavButton.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerInfo.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StateMachineController\ComboStateBehaviour.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\HurtUI.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Items\DropInfo.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherController.cs" />
-    <Compile Include="Assets\Scripts\Player\Attack\PlayerAttack.cs" />
-    <Compile Include="Assets\Scripts\GameData\Player\Info\PlayerInfo.cs" />
-    <Compile Include="Assets\Scripts\GameData\Items\Equipment\Armor\ArmorDataSO.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Player\Attack\PlayerAttack.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerLootManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\InventorySlot.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Sequence.cs" />
-    <Compile Include="Assets\Scripts\GameData\Player\Info\PlayerInventorySO.cs" />
-    <Compile Include="Assets\Scripts\Constant\Tag\TagConstant.cs" />
-    <Compile Include="Assets\Scripts\GUI\Page\InventoryPanel\InventorySlot\InventoryController.cs" />
-    <Compile Include="Assets\Scripts\Player\Manager\PlayerInventory.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Manager\EnemyStateBehaviour.cs" />
-    <Compile Include="Assets\Ex\Scripts\PlanePoolVFX.cs" />
-    <Compile Include="Assets\Scripts\GameSystems\ItemSystem\LootMagnetSystem.cs" />
-    <Compile Include="Assets\Scripts\GUI\MainMenu\MainMenuController.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\EnemyStatsManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Enemies\Config\EnemyBrainConfigSO.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\DropItems\LootItemSO.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\Equipment\Weapon\Melee\WeaponDataSO.cs" />
+    <Compile Include="Assets\_MyProject\Ex\Scripts\PlanePoolVFX.cs" />
+    <Compile Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Scripts\SunAlignedParticles.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BehaviourTree.cs" />
-    <Compile Include="Assets\Scripts\Player\Manager\PlayerCamManager.cs" />
-    <Compile Include="Assets\Scripts\Player\Manager\PlayerLootManager.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\NodeBT.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Manager\EnemyStateManager.cs" />
-    <Compile Include="Assets\Scripts\GameData\Stats\BaseStatsSO.cs" />
-    <Compile Include="Assets\Scripts\GameData\Items\Equipment\EquipmentInstance.cs" />
-    <Compile Include="Assets\Scripts\GameSystems\HealthSystem\HealthSystem.cs" />
-    <Compile Include="Assets\Ex\Scripts\Data\PlaneWeapon.cs" />
-    <Compile Include="Assets\Scripts\GameData\Items\Data\ItemData.cs" />
-    <Compile Include="Assets\Scripts\GameData\Player\Attack\AttackNodeSO.cs" />
-    <Compile Include="Assets\Scripts\Manager\StateMachineController\ComboStateBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Manager\StatManager\Stat.cs" />
-    <Compile Include="Assets\Scripts\Manager\GameManager\HitStopManager.cs" />
-    <Compile Include="Assets\Ex\BTM_Assets\BTM_Rockets_Missiles_Bombs\Scripts\RocketRotator.cs" />
-    <Compile Include="Assets\Ex\Scripts\PlaneProjectile.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Manager\EnemyDropManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\EntityStatsManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MenuPage.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerEquipmentSO.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Weapon\Melee\MeleeTracer.cs" />
+    <Compile Include="Assets\_MyProject\Ex\BTM_Assets\BTM_Rockets_Missiles_Bombs\Scripts\RocketRotator.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Manager\PlayerManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Vision\EnemyVision.cs" />
+    <Compile Include="Assets\_MyProject\Ex\Scripts\PlaneProjectile.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyDropManager.cs" />
     <Compile Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Scripts\PanelArtsystackGui.cs" />
-    <Compile Include="Assets\Ex\Scripts\PlaneAttack.cs" />
-    <Compile Include="Assets\Scripts\GUI\MainMenu\MenuPage.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameSystems\ItemSystem\LootDropSystem.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Utils.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherTriggerSMB.cs" />
-    <Compile Include="Assets\Scripts\Items\DropInfo.cs" />
-    <Compile Include="Assets\Scripts\GameData\Items\DropItems\LootItemSO.cs" />
-    <Compile Include="Assets\Scripts\TestScript\TestShaderChangeByButton.cs" />
-    <Compile Include="Assets\Scripts\Player\Manager\PlayerEquipmentManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\Data\ItemData.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherGetArrowSMB.cs" />
-    <Compile Include="Assets\Scripts\GameData\Items\Equipment\Weapon\Melee\WeaponDataSO.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Manager\EnemyAnimationManager.cs" />
-    <Compile Include="Assets\Scripts\GameData\Enemies\Config\EnemyBrainConfigSO.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Combat\EnemyAttack.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\PlayerStatsManager.cs" />
+    <Compile Include="Assets\_MyProject\Ex\Scripts\Manager\PlanePoolManager.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Leaf.cs" />
-    <Compile Include="Assets\Scripts\Manager\CursorManager\CursorManager.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Combat\EnemyAttack.cs" />
+    <Compile Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Scripts\WindManager.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BehaviourTreeContainer.cs" />
-    <Compile Include="Assets\Scripts\Weapon\Melee\MeleeTracer.cs" />
-    <Compile Include="Assets\Scripts\GameData\Player\Stats\PlayerStatsSO.cs" />
-    <Compile Include="Assets\Scripts\GameData\Items\OrbDrop\OrbDropSO.cs" />
-    <Compile Include="Assets\Scripts\Manager\StatManager\EnemyStatsManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyAnimationManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\EquipmentSlot.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerCamManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_Terrain AddPass.shader" />
+    <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_Surface.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
+    <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_Waterfall.shader" />
     <None Include="Assets\_AssetPackages\BehaviourTree\Resources\BehaviourTreeGraph.uss" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\MedievalSharp OFL.txt" />
     <None Include="Assets\_AssetPackages\BehaviourTree\Resources\SelectorNode.uss" />
+    <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_WaterRipples.shader" />
     <None Include="Assets\_AssetPackages\BehaviourTree\Resources\LeafNode.uss" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_SurfaceTop.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_WaterParticles.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_Vegetation.shader" />
     <None Include="Assets\_AssetPackages\BehaviourTree\Resources\Node.uss" />
-    <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_Stone.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_Skybox.shader" />
+    <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_Water.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Kurale OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Ex\Low Poly Helicopters Pack Free\Shaders\UnlitShadow.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\_MyProject\Ex\Low Poly Helicopters Pack Free\Shaders\UnlitShadow.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_Terrain.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_Background.shader" />
+    <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\_AssetPackages\BehaviourTree\Resources\SequenceNode.uss" />
   </ItemGroup>
   <ItemGroup>
@@ -1441,6 +1454,10 @@
       <Project>{D5A46A64-89EF-7D52-2CD3-ADD47DF7A227}</Project>
       <Name>Unity.AI.Navigation.Editor.ConversionSystem</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.TerrainTools.csproj">
+      <Project>{DE91B65F-FC28-BBC0-C60A-F92A57408473}</Project>
+      <Name>Unity.TerrainTools</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
       <Project>{A85F3EB0-8B30-D017-64AB-2A5A6625DB1C}</Project>
       <Name>Unity.VisualScripting.Flow</Name>
@@ -1500,6 +1517,10 @@
     <ProjectReference Include="Unity.Behavior.csproj">
       <Project>{00A4A6CF-FA5E-D727-C195-438DC26D1EE5}</Project>
       <Name>Unity.Behavior</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TerrainTools.Editor.csproj">
+      <Project>{5801EA11-849B-5637-6CEC-87ED0A56BAEB}</Project>
+      <Name>Unity.TerrainTools.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Behavior.Editor.csproj">
       <Project>{45777084-9706-F7F2-4CD5-2C01F7385A1B}</Project>

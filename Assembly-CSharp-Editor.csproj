@@ -64,10 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Editor\PortBT.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
-    <Compile Include="Assets\Editor\AutoGenerateSOs.cs" />
+    <Compile Include="Assets\_MyProject\Editor\AutoGenerateSOs.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Editor\BehaviourTreeGraphView.cs" />
-    <Compile Include="Assets\Editor\IconBakerTool.cs" />
+    <Compile Include="Assets\_MyProject\Editor\IconBakerTool.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Editor\EdgeBT.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Editor\BehaviourTreeGraph.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Editor\GraphSaveUtility.cs" />
@@ -127,7 +126,7 @@
     <None Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Lib\Editor\Localization\plastic-gui.ko.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Lib\Editor\Localization\configurehelper.ja.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Lib\Editor\Localization\plastic-gui.es.txt" />
-    <None Include="Assets\Editor\ArmorList.txt" />
+    <None Include="Assets\_MyProject\Editor\ArmorList.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Lib\Editor\Localization\xdiff.zh-Hans.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Lib\Editor\Localization\cm-help.ja.txt" />
     <None Include="Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af\Lib\Editor\Localization\workspaceserver.ko.txt" />
