@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,6 +14,7 @@ public class EnemyStateManager : MonoBehaviour
     [Header("--- REF ---")]
     public NavMeshAgent Agent { get; private set; }
     public Transform Player { get; private set; }
+    public TMP_Text TextCanvas;
     public bool SeePlayer { get; private set; }
 
     [Header("--- BRAIN CONFIG ---")]
@@ -77,6 +79,7 @@ public class EnemyStateManager : MonoBehaviour
     {
         _currentState?.ExitState(this);
         _currentState = newState;
+        TextCanvas.text = _currentState.ToString();
         _currentState.EnterState(this);
     }
 
@@ -248,12 +251,16 @@ public class AttackState : IEnemyState
     private CooldownTimer _attackUpdateTimer;
     private float _lastAttackTime;
     private float _actuallCooldown;
+    private bool _hasAttacked;
+    private AnimatorStateInfo _stateInfo;
     public void EnterState(EnemyStateManager enemy)
     {
+        _hasAttacked = false;
         _actuallCooldown = enemy.GetStats().DelayPerAttack.GetValue() / enemy.GetStats().Haste.GetValue();
         enemy.GetACController().EnableCombatAnim();
         enemy.Agent.updateRotation = false; //
         enemy.Agent.velocity = Vector3.zero;
+        enemy.Agent.isStopped = true;
     }
     public void UpdateState(EnemyStateManager enemy)
     {
@@ -265,25 +272,110 @@ public class AttackState : IEnemyState
         }
         else
         {
+            if (_hasAttacked) //
+            {
+                _stateInfo = enemy.GetACController().GetStateInfo();
+                if (_stateInfo.normalizedTime >= 0.95f)
+                {
+                    enemy.ChangeState(new AttackCooldownState());
+                }
+                return;
+            }
             Vector3 dirToPlayer = _offset.normalized;
             dirToPlayer.y = 0;
             enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, Quaternion.LookRotation(dirToPlayer), Time.deltaTime * enemy.GetBrainConfig().TurnSpeed);
             TriggerRandomAtack(enemy);
+            _hasAttacked = true;
         }
     }
     public void ExitState(EnemyStateManager enemy)
     {
         enemy.GetACController().DisableCombatAnim();
         enemy.Agent.updateRotation = true; //
+        enemy.Agent.isStopped = false;
     }
     private void TriggerRandomAtack(EnemyStateManager enemy)
     {
-        if (Time.time < _lastAttackTime + _actuallCooldown) return;
-        _lastAttackTime = Time.time;
+        //if (Time.time < _lastAttackTime + _actuallCooldown) return;
+        //_lastAttackTime = Time.time;
         int randomAttackIndex = Random.Range(1, (int)enemy.GetStats().QuantityOfAttack.GetValue() + 1);
         string attackStateName = "Attack_" + randomAttackIndex;
 
         enemy.GetACController().DoARandomAttack(attackStateName, enemy.GetStats().Haste.GetValue());
+    }
+}
+
+public class AttackCooldownState: IEnemyState
+{
+    private CooldownTimer _pathUpdateTimer = new CooldownTimer(0.2f);
+    private float _actuallCooldown;
+    private float _lastAttackTime;
+    private float _safeDistance;
+    private float _safeNumberRange = 0.5f;
+    private float _safeRangeDistance = 2f;
+    private float _rangeToChaseAgain = 0.5f;
+    public void EnterState(EnemyStateManager enemy)
+    {
+        _actuallCooldown = enemy.GetStats().DelayPerAttack.GetValue() / enemy.GetStats().Haste.GetValue();
+        _lastAttackTime = Time.time;
+
+        _safeDistance = enemy.GetStats().AttackRange.GetValue() + _safeRangeDistance;
+        if (enemy.GetACController() != null) enemy.GetACController().EnableMovingAnim();
+
+        FindCooldownPos(enemy);
+    }
+    public void UpdateState(EnemyStateManager enemy)
+    {
+        if (Time.time >= _lastAttackTime + _actuallCooldown)
+        {
+            enemy.ChangeState(new ChaseState());
+            return;
+        }
+        Vector3 _offset = enemy.Player.position - enemy.transform.position;
+        float conditionRange = _offset.sqrMagnitude - (_safeDistance * _safeDistance);
+        if (conditionRange >= 0 && conditionRange <= _rangeToChaseAgain)
+        {
+            if (!enemy.Agent.pathPending && enemy.Agent.remainingDistance <= _safeNumberRange)
+            {
+                enemy.Agent.updateRotation = false;
+
+                Vector3 offsetToPlayer = enemy.Player.position - enemy.transform.position;
+                Vector3 faceDir = offsetToPlayer.normalized;
+                faceDir.y = 0;
+                enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, Quaternion.LookRotation(faceDir), Time.deltaTime * enemy.GetBrainConfig().TurnSpeed);
+            }
+        }
+        else
+        {
+            if (_pathUpdateTimer.Tick())
+            {
+                FindCooldownPos(enemy);
+            }
+        }
+    }
+    public void ExitState(EnemyStateManager enemy)
+    {
+        enemy.Agent.updateRotation = true;
+        if (enemy.GetACController() != null) enemy.GetACController().DisableMovingAnim();
+    }
+
+    private void FindCooldownPos(EnemyStateManager enemy)
+    {
+        Vector3 dirToEnemy = (enemy.transform.position - enemy.Player.position).normalized;
+        dirToEnemy.y = 0;
+
+        float randomAngle = Random.Range(-30f, 30f);
+        Vector3 rotatedDir = Quaternion.Euler(0, randomAngle, 0) * dirToEnemy;
+        Vector3 targetPos = enemy.Player.position + (rotatedDir * _safeDistance);
+
+        if (NavMesh.SamplePosition(targetPos, out NavMeshHit hit, 3f, NavMesh.AllAreas))
+        {
+            enemy.Agent.SetDestination(hit.position);
+        }
+        else
+        {
+            enemy.Agent.SetDestination(enemy.transform.position);
+        }
     }
 }
 
