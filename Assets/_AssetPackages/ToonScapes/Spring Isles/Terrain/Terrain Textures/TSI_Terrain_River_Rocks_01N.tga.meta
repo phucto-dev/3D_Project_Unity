@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: 59d0cc6655cc3464cbe0eb06af296ce0
-AssetOrigin:
-  serializedVersion: 1
-  productId: 361638
-  packageName: 'ToonScapes: Spring Isles'
-  packageVersion: 1.0.1
-  assetPath: Assets/ToonScapes/Spring Isles/Terrain/Terrain Textures/TSI_Terrain_Grass_01N.tga
-  uploadId: 864486
+guid: b9e4d842ea6a3a04487713485cd21bb6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
