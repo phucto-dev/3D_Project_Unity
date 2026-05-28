@@ -89,6 +89,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyStateBehaviour.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Stats\BaseStatsSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
+    <Compile Include="Assets\_AssetPackages\nTools\PrefabPainter\Scripts\PrefabPainterSceneSettings.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Selector.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StateMachineController\RollStateBehaviour.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Attack\AttackNodeSO.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Scripts\PanelArtsystackGui.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameSystems\ItemSystem\LootDropSystem.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Utils.cs" />
+    <Compile Include="Assets\_AssetPackages\nTools\PrefabPainter\Scripts\PrefabPainterSettings.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherTriggerSMB.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\Data\ItemData.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherGetArrowSMB.cs" />
@@ -151,6 +153,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerCamManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\_AssetPackages\nTools\PrefabPainter\Shaders\GUITextureClipLevels.shader" />
     <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_Terrain AddPass.shader" />
@@ -183,6 +186,7 @@
     <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_Skybox.shader" />
     <None Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Shaders\ToonScapes_Water.shader" />
     <None Include="Assets\_AssetPackages\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\_AssetPackages\nTools\PrefabPainter\Docs\changelog.txt" />
     <None Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Kurale OFL.txt" />
     <None Include="Assets\_AssetPackages\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\_MyProject\Ex\Low Poly Helicopters Pack Free\Shaders\UnlitShadow.shader" />

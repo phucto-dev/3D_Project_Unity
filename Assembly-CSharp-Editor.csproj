@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Editor\PortBT.cs" />
+    <Compile Include="Assets\_AssetPackages\nTools\PrefabPainter\Scripts\Editor\PrefabPainter.cs" />
+    <Compile Include="Assets\_AssetPackages\nTools\PrefabPainter\Scripts\Editor\PrafabPainterGUI.cs" />
     <Compile Include="Assets\_MyProject\Editor\AutoGenerateSOs.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Editor\BehaviourTreeGraphView.cs" />
     <Compile Include="Assets\_MyProject\Editor\IconBakerTool.cs" />

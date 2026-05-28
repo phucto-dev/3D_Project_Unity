@@ -115,6 +115,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 0
     - _AlphaCutoff: 0.5
     - _BaseHeight: 12
     - _BaseHeight1: 1
@@ -124,7 +125,7 @@ Material:
     - _CameraDepthFadeOffset: 1
     - _Cutoff: 0.5
     - _DepthDistance: 23.86
-    - _DepthFadeDistance: 5
+    - _DepthFadeDistance: 15
     - _DetailNormalMapScale: 1
     - _DistortionAmount: 0.199
     - _DistortionAmount1: 1
