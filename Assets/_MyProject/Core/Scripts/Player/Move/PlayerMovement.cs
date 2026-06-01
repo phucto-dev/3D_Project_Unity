@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,11 +17,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _acceleration = 15f;
     [SerializeField] private float _deceleration = 25f;
     [SerializeField] private float _standTime = 0.80f;
+    [SerializeField] private float _maxSlopeAngle = 45f;
 
     [Header("Ref")]
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform mainCamera;
+    [SerializeField] private Collider _playerCollider;
+    [SerializeField] private PhysicsMaterial _slipperyMat;
+    [SerializeField] private PhysicsMaterial _brakeMat;
 
     [Header("GroundCheckSettings")]
     [SerializeField] private Transform _groundCheckPoint;
@@ -71,13 +75,13 @@ public class PlayerMovement : MonoBehaviour
     private bool _isAttacking;
     private Vector2 _lastMoveDir;
     private bool _isStun = false;
-
+    private RaycastHit _slopeHit;
     private void Awake()
     {
         _inputSystem = GetComponent<PlayerInput>();
         _playerAttack = GetComponent<PlayerAttack>();
         _playerManager = GetComponent<PlayerManager>();
-
+        _playerCollider = GetComponent<Collider>();
         if (animator == null)
         {
             animator = GetComponentInChildren<Animator>();
@@ -152,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
         if (!_moveable) return;
         if (_isAttacking) return;
         Movement();
-        Jump();
+        //Jump();
     }
 
     private void OnDrawGizmosSelected()
@@ -187,33 +191,81 @@ public class PlayerMovement : MonoBehaviour
     {
         float currentAccelerate = _isMoving ? _acceleration : _deceleration;
         _currentSpeed = Mathf.MoveTowards(_currentSpeed, _speed, currentAccelerate * Time.deltaTime);
-        Vector3 targetVelocity = new Vector3(
-            _calculatedMoveDir.x * _currentSpeed,
-            rb.linearVelocity.y,
-            _calculatedMoveDir.z * _currentSpeed
-        );
-        rb.linearVelocity = targetVelocity;
+        bool isFullyStopped = (_calculatedMoveDir == Vector3.zero && _currentSpeed <= 0.01f);
+        Vector3 targetVelocity;
+        // 5/31/2026
+        float groundAngle = GetGroundAngle(out Vector3 groundNormal);
+        if (_isGrounded && isFullyStopped && !_jumpFlag)
+        {
+            _playerCollider.material = _brakeMat;
+            return;
+        }
+        else
+        {
+            _playerCollider.material = _slipperyMat;
+        }
+        if (_isGrounded && !_jumpFlag)
+        {
+            Vector3 slopeMoveDir = Vector3.ProjectOnPlane(_calculatedMoveDir, groundNormal).normalized;
+            targetVelocity = slopeMoveDir * _currentSpeed;
+
+            if (_calculatedMoveDir == Vector3.zero)
+            {
+                targetVelocity = Vector3.zero;
+            }
+
+            if (_calculatedMoveDir != Vector3.zero)
+            {
+                Vector3 checkOrigin = transform.position + Vector3.up * 0.5f;
+                float playerRadius = 0.3f;
+                float checkDistance = 0.4f;
+
+                if (Physics.SphereCast(checkOrigin, playerRadius, _calculatedMoveDir, out RaycastHit wallHit, checkDistance, _groundLayer))
+                {
+                    float wallAngle = Vector3.Angle(Vector3.up, wallHit.normal);
+
+                    if (wallAngle > _maxSlopeAngle)
+                    {
+                        float pushIntoWallForce = Vector3.Dot(targetVelocity, wallHit.normal);
+
+                        if (pushIntoWallForce < 0)
+                        {
+                            targetVelocity -= pushIntoWallForce * wallHit.normal;
+                        }
+
+                        targetVelocity.y = Mathf.Min(targetVelocity.y, 0f);
+                    }
+                }
+            }
+            rb.linearVelocity = targetVelocity;
+        }
+        //else
+        //{
+        //    float currentY = rb.linearVelocity.y;
+        //    if (currentY > 0 && !_jumpFlag) currentY = 0;
+
+        //    targetVelocity = new Vector3(_calculatedMoveDir.x * _currentSpeed, currentY, _calculatedMoveDir.z * _currentSpeed);
+        //}
+        //targetVelocity = new Vector3(
+        //    _calculatedMoveDir.x * _currentSpeed,
+        //    rb.linearVelocity.y,
+        //    _calculatedMoveDir.z * _currentSpeed
+        //);
+        
 
         if (_calculatedMoveDir != Vector3.zero)
         {
             Quaternion smoothRotation = Quaternion.Slerp(rb.rotation, _targetRotation, _rotationSpeed * Time.fixedDeltaTime);
-
             rb.MoveRotation(smoothRotation);
         }
     }
 
     private void Jump()
     {
-        if (_jumpFlag)
-        {
-            if (_isGrounded)
-            {
-                animator.SetTrigger(_animJump);
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-                rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
-            }
-            _jumpFlag = false;
-        }
+        if (!_jumpFlag ) return;
+        animator.SetTrigger(_animJump);
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+        rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
     }
     private void RotateCharacter()
     {
@@ -293,7 +345,11 @@ public class PlayerMovement : MonoBehaviour
     }
     private void HandleJumpInput(InputAction.CallbackContext ctx)
     {
-        _jumpFlag = true;
+        if (_isGrounded && !_isRolling && !_jumpFlag)
+        {
+            _jumpFlag = true;
+            Jump();
+        }
     }
     private void HandleSprintOrRoll(InputAction.CallbackContext ctx)
     {
@@ -334,9 +390,31 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckGrounded()
     {
-        _isGrounded = Physics.CheckSphere(_groundCheckPoint.position, _groundCheckRadius, _groundLayer);
-        if (!_isGrounded) _fallVelocityY = rb.linearVelocity.y;
+        //_isGrounded = Physics.CheckSphere(_groundCheckPoint.position, _groundCheckRadius, _groundLayer);
+        //if (!_isGrounded) _fallVelocityY = rb.linearVelocity.y;
+
+        // 6/1/2026
+        bool isPhysicallyGrounded = Physics.CheckSphere(_groundCheckPoint.position, _groundCheckRadius, _groundLayer);
+        if (_jumpFlag)
+        {
+            _isGrounded = false;
+
+            if (rb.linearVelocity.y < 0f)
+            {
+                _jumpFlag = false;
+            }
+        }
+        else
+        {
+            _isGrounded = isPhysicallyGrounded;
+        }
+
+        if (!_isGrounded)
+        {
+            _fallVelocityY = rb.linearVelocity.y;
+        }
     }
+
     private void Rolling()
     {
         rb.linearVelocity = new Vector3(_rollDir.x * _rollSpeed, rb.linearVelocity.y, _rollDir.z * _rollSpeed);
@@ -375,6 +453,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 _startStandTime = Time.time;
                 _moveable = false;
+                rb.linearVelocity = Vector3.zero;
             }
             else
             {
@@ -397,6 +476,27 @@ public class PlayerMovement : MonoBehaviour
         _isCameraLockOn = true;
         _targetLockOn = target;
         animator.SetBool("IsLockOnCamera", true);
+    }
+
+    private float GetGroundAngle(out Vector3 groundNormal)
+    {
+        groundNormal = Vector3.up;
+
+        if (!_isGrounded) return 0f;
+
+        Vector3 rayStart = _groundCheckPoint.position + Vector3.up * 0.1f;
+
+        if (Physics.Raycast(rayStart, Vector3.down, out RaycastHit hit, _groundCheckRadius + 0.3f, _groundLayer))
+        {
+            groundNormal = hit.normal;
+            return Vector3.Angle(Vector3.up, groundNormal);
+        }
+
+        return 0f;
+    }
+    private Vector3 GetSlopeMoveDirection()
+    {
+        return Vector3.ProjectOnPlane(_calculatedMoveDir, _slopeHit.normal).normalized;
     }
 
     private void CheckAttacking()
@@ -437,5 +537,4 @@ public class PlayerMovement : MonoBehaviour
     {
         _isStun = false;
     }
-
 }

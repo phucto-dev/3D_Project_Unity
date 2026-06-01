@@ -348,9 +348,13 @@ MonoBehaviour:
   _acceleration: 15
   _deceleration: 25
   _standTime: 0.8
+  _maxSlopeAngle: 45
   rb: {fileID: 8553272608574165676}
   animator: {fileID: 0}
   mainCamera: {fileID: 0}
+  _playerCollider: {fileID: 8060126994249544491}
+  _slipperyMat: {fileID: 13400000, guid: 04319fc7968fa58479b7d7ef3683acaa, type: 2}
+  _brakeMat: {fileID: 13400000, guid: b9f5c3a003e77024b97c39d69877d85a, type: 2}
   _groundCheckPoint: {fileID: 7835262155100685102}
   _groundCheckRadius: 0.21
   _groundLayer:
