@@ -74,18 +74,37 @@ public class LootItemSO : ScriptableObject
             {
                 int amountToDrop = CalWeightAmount(lootItem.QuantityRules);
                 EquipmentRarity rarity = RandomRarityDrop(lootItem.RarityRules, lootItem);
+                
                 GameObject orbVisual = null;
-                foreach (RarityOrbMapping orb in OrbDrop.OrbDrop)
+                if (OrbDrop != null && OrbDrop.OrbDrop != null)
                 {
-                    if (orb.Rarity == rarity)
+                    foreach (var orb in OrbDrop.OrbDrop)
                     {
-                        orbVisual = orb.OrbPrefab;
-                        break;
+                        if (orb.Rarity == rarity)
+                        {
+                            orbVisual = orb.OrbPrefab;
+                            break;
+                        }
                     }
                 }
-                ItemInstance itemInstance = new ItemInstance(lootItem.Item, amountToDrop, orbVisual);
-
-                droppedItems.Add(itemInstance);
+                ItemInstance newDrop;
+                if (lootItem.Item is EquipmentDataSO equipData)
+                {
+                    newDrop = new EquipmentInstance(
+                        definition: equipData,
+                        amount: amountToDrop,
+                        dropPrefab: orbVisual,
+                        rarity: rarity,
+                        bonusStats: null,
+                        upgradeLevel: 0,
+                        randomAffixes: null
+                    );
+                }
+                else
+                {
+                    newDrop = new ItemInstance(lootItem.Item, amountToDrop, orbVisual);
+                }
+                droppedItems.Add(newDrop);
             }
         }
 
@@ -132,5 +151,18 @@ public class LootItemSO : ScriptableObject
             }
         }
         return EquipmentRarity.Common;
+    }
+    private ItemInstance BindingItem(ItemInstance item)
+    {
+        ItemInstance result;
+        if (item is EquipmentInstance equipItem)
+        {
+            result = new EquipmentInstance(equipItem.GetEquipData(), equipItem.Amount, equipItem.DropPrefab, equipItem.Rarity, equipItem.BonusStats, equipItem.UpgradeLevel, equipItem.RandomAffixes);
+        }
+        else
+        {
+            result = new ItemInstance(item.ItemDefinition, item.Amount, item.DropPrefab);
+        }
+        return result;
     }
 }

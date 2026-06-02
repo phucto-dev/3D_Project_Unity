@@ -59,7 +59,6 @@ public class PlayerLootManager : MonoBehaviour
         int leftOverItems;
 
         leftOverItems = PlayerInventory.AddItem(_listDrop[0].ItemData);
-
         if (leftOverItems != 0)
         {
             _listDrop[0].SetAmount(leftOverItems);

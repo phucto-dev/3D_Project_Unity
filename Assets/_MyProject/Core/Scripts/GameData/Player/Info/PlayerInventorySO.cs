@@ -83,13 +83,13 @@ public class PlayerInventorySO : ScriptableObject
                 {
                     if (item.Amount <= maxStack)
                     {
-                        PlayerInventory[i] = item;
+                        PlayerInventory[i] = BindingItem(item);
                         OnSlotUpdated?.Invoke(i, PlayerInventory[i]);
                         return 0;
                     }
                     else
                     {
-                        PlayerInventory[i].ItemDefinition = item.ItemDefinition;
+                        PlayerInventory[i] = BindingItem(item);
                         PlayerInventory[i].Amount = maxStack;
                         OnSlotUpdated?.Invoke(i, PlayerInventory[i]);
                         item.Amount = item.Amount - maxStack;
@@ -100,6 +100,47 @@ public class PlayerInventorySO : ScriptableObject
             }
             //Debug.Log("int" + item.Amount);
             return item.Amount;
+        }
+
+        return 0;
+    }
+
+    public ItemInstance BindingItem(ItemInstance item)
+    {
+        ItemInstance result;
+        if (item is EquipmentInstance equipItem)
+        {
+            Debug.Log("Equipment ne 2");
+            result = new EquipmentInstance(equipItem.GetEquipData(), equipItem.Amount, equipItem.DropPrefab, equipItem.Rarity, equipItem.BonusStats, equipItem.UpgradeLevel, equipItem.RandomAffixes);
+        }
+        else
+        {
+            result = new ItemInstance(item.ItemDefinition, item.Amount, item.DropPrefab);
+        }
+        return result;
+    }
+
+    public int DropItem(ItemInstance item, int amountToDrop = -1)
+    {
+        if (item == null) return 0;
+
+        for (int i = 0; i < PlayerInventory.Length; i++)
+        {
+            if (PlayerInventory[i] == item)
+            {
+                int actualDroppedAmount = (amountToDrop == -1 || amountToDrop >= item.Amount) ? item.Amount : amountToDrop;
+
+                item.Amount -= actualDroppedAmount;
+
+                if (item.Amount <= 0)
+                {
+                    PlayerInventory[i] = null;
+                }
+
+                OnSlotUpdated?.Invoke(i, PlayerInventory[i]);
+
+                return actualDroppedAmount;
+            }
         }
 
         return 0;

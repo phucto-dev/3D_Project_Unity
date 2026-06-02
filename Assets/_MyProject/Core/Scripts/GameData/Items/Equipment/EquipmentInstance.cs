@@ -78,10 +78,12 @@ public class EquipmentInstance: ItemInstance
     int amount = 1,
     GameObject dropPrefab = null,
     EquipmentRarity rarity = EquipmentRarity.Common,
-    List<ItemStat> bonusStats = null) : base(definition, amount, dropPrefab)
+    List<ItemStat> bonusStats = null,
+    int upgradeLevel = 0,
+    List<ItemStat> randomAffixes = null) : base(definition, amount, dropPrefab)
     {
-        UpgradeLevel = 0;
-        RandomAffixes = new List<ItemStat>();
+        UpgradeLevel = upgradeLevel;
+        RandomAffixes = randomAffixes ?? new List<ItemStat>();
         Rarity = rarity;
         BonusStats = bonusStats ?? null;
     }

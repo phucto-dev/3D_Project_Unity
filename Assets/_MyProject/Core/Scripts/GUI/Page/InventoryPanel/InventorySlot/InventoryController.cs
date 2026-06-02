@@ -1,20 +1,26 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Linq;
 using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
+    public PlayerInfo Player;
+
     public PlayerInventorySO PlayerInventory;
     public PlayerEquipmentSO PlayerEquipment;
 
     public GameObject SlotContainerInventory;
     public GameObject SlotContainerEquipment;
 
+    public int CurrentSelectedIndex { get; private set; }
+    public ItemInstance CurrentSelectedItem { get; private set; }
+
     public event Action<ItemInstance> OnSlotDataChanged;
 
     private InventorySlot[] _listSlot;
     private EquipmentSlotUI[] _listEquipmentSlot;
+
     private void Awake()
     {
         if (SlotContainerInventory == null) return;
@@ -26,14 +32,27 @@ public class InventoryController : MonoBehaviour
     {
         if (PlayerInventory == null) return;
         PlayerInventory.OnSlotUpdated += UpdateSlot;
+        if (_listSlot == null || _listSlot.Count() == 0) return;
+        foreach (InventorySlot _slot in _listSlot)
+        {
+            _slot.SelectedItem += GetCurrentSelectedItem;
+        }
+
     }
     private void OnDisable()
     {
         if (PlayerInventory == null) return;
         PlayerInventory.OnSlotUpdated -= UpdateSlot;
+        if (_listSlot == null || _listSlot.Count() == 0) return;
+        foreach (InventorySlot _slot in _listSlot)
+        {
+            _slot.SelectedItem -= GetCurrentSelectedItem;
+        }
     }
     private void Start()
     {
+        CurrentSelectedIndex = -1;
+        CurrentSelectedItem = null;
         if (PlayerInventory == null) return;
         RefreshUI(PlayerInventory.PlayerInventory);
     }
@@ -120,12 +139,13 @@ public class InventoryController : MonoBehaviour
     {
         if (fromInventoryStart)
         {
-            ItemInstance invItem = PlayerInventory.PlayerInventory[inventoryIndex];
+            ItemInstance invItem = PlayerInventory.BindingItem(PlayerInventory.PlayerInventory[inventoryIndex]);
+            Debug.Log("Vone");
 
             if (invItem == null || invItem.ItemDefinition == null || !(invItem is EquipmentInstance pendingEquip)) return;
-
+            Debug.Log("Vone1");
             if (pendingEquip.GetEquipData().SlotType != equipmentSlotType) return;
-
+            Debug.Log("Vone2");
             EquipmentInstance currentlyEquipped = null;
             if (PlayerEquipment.EquippedItems.ContainsKey(equipmentSlotType))
             {
@@ -174,5 +194,24 @@ public class InventoryController : MonoBehaviour
             UpdateSlot(inventoryIndex, PlayerInventory.PlayerInventory[inventoryIndex]);
             UpdateEquipmentSlot(equipmentIndex, new EquipmentInstance());
         }
+    }
+    
+    public void GetCurrentSelectedItem(int slotIndex)
+    {
+        Debug.Log("Setne");
+        if (CurrentSelectedIndex != slotIndex)
+        {
+            Debug.Log("Setne1");
+            CurrentSelectedItem = PlayerInventory.PlayerInventory[slotIndex];
+            CurrentSelectedIndex = slotIndex;
+            return;
+        }
+        CurrentSelectedIndex = -1;
+        CurrentSelectedItem = null;
+    }
+    public void ClearSelectedItem()
+    {
+        CurrentSelectedIndex = -1;
+        CurrentSelectedItem = null;
     }
 }

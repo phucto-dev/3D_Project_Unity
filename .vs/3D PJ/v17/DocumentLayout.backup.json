@@ -3,7 +3,39 @@
   "WorkspaceRootPath": "C:\\Users\\PHUC\\3D PJ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\dropitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\dropitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\enemies\\manager\\enemydropmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\enemies\\manager\\enemydropmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\inventoryslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gui\\page\\inventorypanel\\inventoryslot\\inventoryslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamedata\\player\\info\\playerinventoryso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamedata\\player\\info\\playerinventoryso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamedata\\player\\info\\playerequipmentso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamedata\\player\\info\\playerequipmentso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamedata\\items\\equipment\\equipmentinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamedata\\items\\equipment\\equipmentinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\manager\\playerlootmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\manager\\playerlootmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -221,10 +253,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Enemies\\Vision\\EnemyVision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Enemies\\Vision\\EnemyVision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\DropItems\\LootAnimConfigSO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\GameData\\Items\\DropItems\\LootAnimConfigSO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -234,24 +262,124 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PlayerMovement.cs",
-              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
-              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
-              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
-              "ViewState": "AgIAALgAAAAAAAAAAAAewMIAAAAfAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "EquipmentInstance.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Items\\Equipment\\EquipmentInstance.cs",
+              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Items\\Equipment\\EquipmentInstance.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Items\\Equipment\\EquipmentInstance.cs",
+              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Items\\Equipment\\EquipmentInstance.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAuwFQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T14:55:15.776Z",
+              "WhenOpened": "2026-06-01T13:34:54.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InventorySlot.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
+              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
+              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEEAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T13:27:20.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlayerEquipmentSO.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Info\\PlayerEquipmentSO.cs",
+              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Info\\PlayerEquipmentSO.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Info\\PlayerEquipmentSO.cs",
+              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Info\\PlayerEquipmentSO.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwBoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T13:10:53.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EnemyDropManager.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Manager\\EnemyDropManager.cs",
+              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Manager\\EnemyDropManager.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Manager\\EnemyDropManager.cs",
+              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Manager\\EnemyDropManager.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwB8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T12:17:46.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerInventorySO.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
+              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
+              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T13:21:21.048Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "InventoryController.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventoryController.cs",
+              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventoryController.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventoryController.cs",
+              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventoryController.cs",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAAANAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T13:05:56.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DropItem.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\DropItem.cs",
+              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\DropItem.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\DropItem.cs",
+              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\DropItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T13:19:29.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PlayerLootManager.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerLootManager.cs",
+              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerLootManager.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerLootManager.cs",
+              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerLootManager.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAswDwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T13:21:06.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
+              "ViewState": "AgIAANUAAAAAAAAAAAAjwO0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T14:55:15.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "EnemyStateManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Manager\\EnemyStateManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Manager\\EnemyStateManager.cs",
@@ -263,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "MainMenuController.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\MainMenu\\MainMenuController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GUI\\MainMenu\\MainMenuController.cs",
@@ -275,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "HurtUI.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Effects\\HurtUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GUI\\Effects\\HurtUI.cs",
@@ -286,7 +414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "Stat.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\StatManager\\Stat.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\StatManager\\Stat.cs",
@@ -298,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "HitStopManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\GameManager\\HitStopManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\GameManager\\HitStopManager.cs",
@@ -310,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
               "Title": "MeleeTracer.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Weapon\\Melee\\MeleeTracer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\Melee\\MeleeTracer.cs",
@@ -322,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "HealthSystem.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameSystems\\HealthSystem\\HealthSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystems\\HealthSystem\\HealthSystem.cs",
@@ -334,7 +462,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 18,
               "Title": "PlayerManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Player\\Manager\\PlayerManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Player\\Manager\\PlayerManager.cs",
@@ -346,7 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 19,
               "Title": "PlayerLootManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerLootManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Manager\\PlayerLootManager.cs",
@@ -358,7 +486,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
               "Title": "EntityStatsManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\StatManager\\EntityStatsManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\StatManager\\EntityStatsManager.cs",
@@ -370,7 +498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 21,
               "Title": "PlayerStatsManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\StatManager\\PlayerStatsManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\StatManager\\PlayerStatsManager.cs",
@@ -382,7 +510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 22,
               "Title": "PlayerCamManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerCamManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Manager\\PlayerCamManager.cs",
@@ -394,7 +522,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 23,
               "Title": "PlayerEquipmentManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
@@ -406,7 +534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 24,
               "Title": "EquipmentSlot.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\EquipmentSlot.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\EquipmentSlot.cs",
@@ -418,7 +546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 25,
               "Title": "InventorySlot.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventorySlot.cs",
@@ -430,7 +558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 26,
               "Title": "ArmorDataSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\Equipment\\Armor\\ArmorDataSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Items\\Equipment\\Armor\\ArmorDataSO.cs",
@@ -442,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "EquipmentInstance.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\Equipment\\EquipmentInstance.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Items\\Equipment\\EquipmentInstance.cs",
@@ -454,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 28,
               "Title": "PlayerEquipmentSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Player\\Info\\PlayerEquipmentSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Player\\Info\\PlayerEquipmentSO.cs",
@@ -466,7 +594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 29,
               "Title": "InventoryController.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventoryController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventoryController.cs",
@@ -478,7 +606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 30,
               "Title": "IconBakerTool.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Editor\\IconBakerTool.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\IconBakerTool.cs",
@@ -490,7 +618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 31,
               "Title": "PlayerInventorySO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Player\\Info\\PlayerInventorySO.cs",
@@ -502,7 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 32,
               "Title": "LootItemSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\DropItems\\LootItemSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Items\\DropItems\\LootItemSO.cs",
@@ -514,7 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 33,
               "Title": "DropInfo.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Items\\DropInfo.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Items\\DropInfo.cs",
@@ -526,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 34,
               "Title": "EnemyDropManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Enemies\\Manager\\EnemyDropManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemies\\Manager\\EnemyDropManager.cs",
@@ -538,7 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 35,
               "Title": "LootDropSystem.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameSystems\\ItemSystem\\LootDropSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystems\\ItemSystem\\LootDropSystem.cs",
@@ -550,7 +678,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 36,
               "Title": "Movement.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Ex\\Scripts\\Movement.cs",
               "RelativeDocumentMoniker": "Assets\\Ex\\Scripts\\Movement.cs",
@@ -562,7 +690,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 37,
               "Title": "ItemData.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\Data\\ItemData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Items\\Data\\ItemData.cs",
@@ -574,7 +702,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 38,
               "Title": "WeaponDataSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\Equipment\\Weapon\\Melee\\WeaponDataSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Items\\Equipment\\Weapon\\Melee\\WeaponDataSO.cs",
@@ -586,7 +714,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 39,
               "Title": "OrbDropSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\OrbDrop\\OrbDropSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Items\\OrbDrop\\OrbDropSO.cs",
@@ -598,7 +726,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 40,
               "Title": "PlaneWeapon.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Ex\\Scripts\\Data\\PlaneWeapon.cs",
               "RelativeDocumentMoniker": "Assets\\Ex\\Scripts\\Data\\PlaneWeapon.cs",
@@ -610,7 +738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 41,
               "Title": "PlaneAttack.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Ex\\Scripts\\PlaneAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Ex\\Scripts\\PlaneAttack.cs",
@@ -622,7 +750,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 42,
               "Title": "PlanePoolManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Ex\\Scripts\\Manager\\PlanePoolManager.cs",
               "RelativeDocumentMoniker": "Assets\\Ex\\Scripts\\Manager\\PlanePoolManager.cs",
@@ -634,7 +762,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 43,
               "Title": "PlanePoolVFX.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Ex\\Scripts\\PlanePoolVFX.cs",
               "RelativeDocumentMoniker": "Assets\\Ex\\Scripts\\PlanePoolVFX.cs",
@@ -646,7 +774,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 44,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Move\\PlayerMovement.cs",
@@ -658,7 +786,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 45,
               "Title": "TagConstant.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Constant\\Tag\\TagConstant.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Constant\\Tag\\TagConstant.cs",
@@ -670,7 +798,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "WeaponDataSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\Weapon\\Melee\\WeaponDataSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Items\\Weapon\\Melee\\WeaponDataSO.cs",
@@ -681,7 +809,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 46,
               "Title": "ComboStateBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\StateMachineController\\ComboStateBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\StateMachineController\\ComboStateBehaviour.cs",
@@ -693,7 +821,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 47,
               "Title": "MenuPage.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\MainMenu\\MenuPage.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GUI\\MainMenu\\MenuPage.cs",
@@ -705,7 +833,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 48,
               "Title": "LootMagnetSystem.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameSystems\\ItemSystem\\LootMagnetSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameSystems\\ItemSystem\\LootMagnetSystem.cs",
@@ -717,7 +845,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 49,
               "Title": "NavButton.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GUI\\Page\\PageNavigation\\NavButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GUI\\Page\\PageNavigation\\NavButton.cs",
@@ -729,7 +857,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 50,
               "Title": "CooldownTimer.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Extension\\CooldownTimer\\CooldownTimer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Extension\\CooldownTimer\\CooldownTimer.cs",
@@ -741,7 +869,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 51,
               "Title": "EnemyStateManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Enemies\\Manager\\EnemyStateManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemies\\Manager\\EnemyStateManager.cs",
@@ -753,7 +881,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "BTAgent.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_AssetPackages\\BehaviourTree\\Scripts\\BTAgent.cs",
               "RelativeDocumentMoniker": "Assets\\_AssetPackages\\BehaviourTree\\Scripts\\BTAgent.cs",
@@ -765,7 +893,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 52,
               "Title": "EnemyStateBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Enemies\\Manager\\EnemyStateBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemies\\Manager\\EnemyStateBehaviour.cs",
@@ -777,7 +905,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 53,
               "Title": "PlayerAttack.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Player\\Attack\\PlayerAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Attack\\PlayerAttack.cs",
@@ -789,7 +917,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 54,
               "Title": "EnemyAttack.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Enemies\\Combat\\EnemyAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemies\\Combat\\EnemyAttack.cs",
@@ -801,7 +929,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 55,
               "Title": "RollStateBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\StateMachineController\\RollStateBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\StateMachineController\\RollStateBehaviour.cs",
@@ -813,7 +941,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 56,
               "Title": "EnemyAnimationManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Enemies\\Manager\\EnemyAnimationManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemies\\Manager\\EnemyAnimationManager.cs",
@@ -825,7 +953,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 57,
               "Title": "AttackNodeSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Player\\Attack\\AttackNodeSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Player\\Attack\\AttackNodeSO.cs",
@@ -837,7 +965,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 58,
               "Title": "EnemyStatsSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Enemies\\Stats\\EnemyStatsSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Enemies\\Stats\\EnemyStatsSO.cs",
@@ -849,7 +977,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 59,
               "Title": "RecoverStateBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\StateMachineController\\RecoverStateBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\StateMachineController\\RecoverStateBehaviour.cs",
@@ -861,7 +989,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 60,
               "Title": "BaseStatsSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Stats\\BaseStatsSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Stats\\BaseStatsSO.cs",
@@ -873,7 +1001,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 61,
               "Title": "EnemyStatsManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Manager\\StatManager\\EnemyStatsManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\StatManager\\EnemyStatsManager.cs",
@@ -885,7 +1013,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 62,
               "Title": "EnemyVision.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\Enemies\\Vision\\EnemyVision.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemies\\Vision\\EnemyVision.cs",
@@ -894,18 +1022,6 @@
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwEIAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-21T10:23:38.764Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "LootAnimConfigSO.cs",
-              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\DropItems\\LootAnimConfigSO.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\Items\\DropItems\\LootAnimConfigSO.cs",
-              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\Scripts\\GameData\\Items\\DropItems\\LootAnimConfigSO.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameData\\Items\\DropItems\\LootAnimConfigSO.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBMAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T15:56:52.248Z"
             }
           ]
         }

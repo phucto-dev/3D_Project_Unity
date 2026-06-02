@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,6 +10,8 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public Image _image;
     public TMP_Text _text;
     public CanvasGroup IconCanvasGroup;
+
+    public event Action<int> SelectedItem;
 
     protected Transform _dragLayer;
     protected InventoryController _inventoryController;
@@ -57,6 +60,11 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         _image.sprite = null;
         ItemContainer.SetActive(false);
         _text.text = "";
+    }
+    public void OnSelected()
+    {
+        Debug.Log("Selected");
+        SelectedItem?.Invoke(_thisIndex);
     }
     public int GetIndex() => _thisIndex;
 

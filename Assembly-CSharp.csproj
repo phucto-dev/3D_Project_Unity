@@ -74,6 +74,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\InventoryController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StateMachineController\RecoverStateBehaviour.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\EngineType.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\DropItem.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\Equipment\Armor\ArmorDataSO.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\Stat.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Constant\Tag\TagConstant.cs" />
