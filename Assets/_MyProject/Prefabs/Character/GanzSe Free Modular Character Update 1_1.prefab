@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 4200086460681940905}
   - component: {fileID: 7365442992257947694}
   m_Layer: 0
-  m_Name: Chest Armor Type 1 Color 1
+  m_Name: Chest Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 7487524454677423182, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 1936325985944392684}
   - {fileID: 3860346088492375229}
@@ -2140,7 +2140,7 @@ GameObject:
   - component: {fileID: 2504315867653932812}
   - component: {fileID: 2784871010453811874}
   m_Layer: 0
-  m_Name: Legs Armor Type 1 Color 1
+  m_Name: Legs Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2917,7 +2917,7 @@ GameObject:
   - component: {fileID: 685968140314257037}
   - component: {fileID: 4175185744281321052}
   m_Layer: 0
-  m_Name: Belt Armor Type 1 Color 1
+  m_Name: Belt Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3061,7 +3061,7 @@ GameObject:
   - component: {fileID: 1369560662125605823}
   - component: {fileID: 7313331132590035544}
   m_Layer: 0
-  m_Name: Head Armor Type 1 Color 1
+  m_Name: Head Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3349,7 +3349,7 @@ GameObject:
   - component: {fileID: 3537362918140381225}
   - component: {fileID: 1023955025856591696}
   m_Layer: 0
-  m_Name: Arm Armor Type 1 Color 1
+  m_Name: Arm Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3556,7 +3556,7 @@ GameObject:
   - component: {fileID: 5520106029520265711}
   - component: {fileID: 4020749868513800453}
   m_Layer: 0
-  m_Name: Feet Armor Type 1 Color 1
+  m_Name: Feet Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

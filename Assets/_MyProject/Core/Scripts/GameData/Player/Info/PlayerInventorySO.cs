@@ -19,9 +19,17 @@ public class PlayerInventorySO : ScriptableObject
         
     }
 
-    private void OnEnable()
+    public void InitializeData()
     {
-        PlayerInventory = new ItemInstance[ItemSlotQuantity];
+        if (PlayerInventory == null || PlayerInventory.Length != ItemSlotQuantity)
+        {
+            PlayerInventory = new ItemInstance[ItemSlotQuantity];
+        }
+        else
+        {
+            Array.Clear(PlayerInventory, 0, PlayerInventory.Length);
+        }
+
         GenerateStartingItems();
     }
 
@@ -107,10 +115,10 @@ public class PlayerInventorySO : ScriptableObject
 
     public ItemInstance BindingItem(ItemInstance item)
     {
+        if (item == null) return null;
         ItemInstance result;
         if (item is EquipmentInstance equipItem)
         {
-            Debug.Log("Equipment ne 2");
             result = new EquipmentInstance(equipItem.GetEquipData(), equipItem.Amount, equipItem.DropPrefab, equipItem.Rarity, equipItem.BonusStats, equipItem.UpgradeLevel, equipItem.RandomAffixes);
         }
         else
@@ -149,6 +157,6 @@ public class PlayerInventorySO : ScriptableObject
     public void ChangeItem(int index, ItemInstance item)
     {
         if (index >= PlayerInventory.Length) return;
-        PlayerInventory[index] = item;
+        PlayerInventory[index] = BindingItem(item);
     }
 }

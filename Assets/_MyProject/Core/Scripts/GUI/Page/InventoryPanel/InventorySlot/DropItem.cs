@@ -12,10 +12,13 @@ public class DropItem : MonoBehaviour
     public void OnDrop()
     {
         if (_inventoryController.Player == null) return;
-        Debug.Log("Dropp");
         if (_inventoryController.CurrentSelectedIndex == -1) return;
-        Debug.Log("Dropp1");
         ItemInstance item = _inventoryController.CurrentSelectedItem;
+        if (item == null || item.DropPrefab == null)
+        {
+            Debug.LogWarning("item || DropPrefab == null");
+            return;
+        }
         Debug.Log(item.ItemDefinition.ItemName);
         Debug.Log(item.ItemDefinition.ItemID);
         Debug.Log(item.Amount);
@@ -24,7 +27,7 @@ public class DropItem : MonoBehaviour
         if (orbDrop != null)
         {
             DropInfo dropInfo = orbDrop.GetComponent<DropInfo>();
-            if (dropInfo == null) return; ;
+            if (dropInfo == null) return;
             dropInfo.Initialize(item);
         }
         _inventoryController.PlayerInventory.DropItem(item);

@@ -494,10 +494,6 @@ public class PlayerMovement : MonoBehaviour
 
         return 0f;
     }
-    private Vector3 GetSlopeMoveDirection()
-    {
-        return Vector3.ProjectOnPlane(_calculatedMoveDir, _slopeHit.normal).normalized;
-    }
 
     private void CheckAttacking()
     {

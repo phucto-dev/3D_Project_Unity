@@ -6,9 +6,13 @@ public enum MenuPageType
     Character,
     Combat
 }
+
 public class MainMenuController : MonoBehaviour
 {
-
+    [Header("--- UI ROOTS ---")]
+    [SerializeField] private GameObject _mainMenuRoot;
+    [SerializeField] private GameObject _hudRoot;
+    [SerializeField] private GameObject _inGameMenuRoot;
     public static MainMenuController Instance { get; private set; }
 
     [SerializeField] private List<MenuPage> pages;
@@ -29,6 +33,29 @@ public class MainMenuController : MonoBehaviour
                 _currentPage = page;
                 OpenPage(_currentPage.PageType);
             }
+        }
+    }
+
+    public void ChangeUIState(GameState newState)
+    {
+        _mainMenuRoot.SetActive(false);
+        _hudRoot.SetActive(false);
+        _inGameMenuRoot.SetActive(false);
+
+        switch (newState)
+        {
+            case GameState.MainMenu:
+                _mainMenuRoot.SetActive(true);
+                break;
+            case GameState.Playing:
+                _hudRoot.SetActive(true);
+                break;
+            case GameState.InGameMenu:
+                _hudRoot.SetActive(true);
+                _inGameMenuRoot.SetActive(true);
+                break;
+            case GameState.Cutscene:
+                break;
         }
     }
 

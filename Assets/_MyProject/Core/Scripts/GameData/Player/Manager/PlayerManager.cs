@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -19,12 +20,15 @@ public class PlayerManager : MonoBehaviour
     private Animator _animator;
     private Coroutine _hitCoroutine = null;
 
+    private PlayerInput _inputSystem;
+
     private void Awake()
     {
         Player.PlayerTransform = this.transform;
         _stats = GetComponent<PlayerStatsManager>();
         _healthSystem = GetComponentInChildren<HealthSystem>();
         _animator = GetComponentInChildren<Animator>();
+        _inputSystem = GetComponent<PlayerInput>();
     }
 
     private void OnEnable()
@@ -33,6 +37,7 @@ public class PlayerManager : MonoBehaviour
         {
             _healthSystem.OnTakeDmg += GetHit;
         }
+        GameManager.Instance.ChangeActionInputMap += SwitchActionMap;
     }
     private void OnDisable()
     {
@@ -40,6 +45,7 @@ public class PlayerManager : MonoBehaviour
         {
             _healthSystem.OnTakeDmg -= GetHit;
         }
+        GameManager.Instance.ChangeActionInputMap -= SwitchActionMap;
     }
 
     public void GetHit(DmgInfo dmgInfo)
@@ -68,5 +74,17 @@ public class PlayerManager : MonoBehaviour
         }
         DoneBeingHit?.Invoke();
         _stats.RecoverPoise();
+    }
+    public void SwitchActionMap(ActionInputMapType type)
+    {
+        if (_inputSystem == null) return;
+        if (type == ActionInputMapType.UI)
+        {
+            _inputSystem.SwitchCurrentActionMap("UI");
+        }
+        else if (type == ActionInputMapType.Player)
+        {
+            _inputSystem.SwitchCurrentActionMap("Player");
+        }
     }
 }

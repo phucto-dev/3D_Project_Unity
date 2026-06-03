@@ -92,6 +92,7 @@
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
     <Compile Include="Assets\_AssetPackages\nTools\PrefabPainter\Scripts\PrefabPainterSceneSettings.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Selector.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MenuManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StateMachineController\RollStateBehaviour.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Attack\AttackNodeSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherBowSMB.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BehaviourTree.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\NodeBT.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\EntityStatsManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MenuBtn.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MenuPage.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerEquipmentSO.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Weapon\Melee\MeleeTracer.cs" />
@@ -136,7 +138,9 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Vision\EnemyVision.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\PlaneProjectile.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyDropManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerCamTarget.cs" />
     <Compile Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Scripts\PanelArtsystackGui.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameSystems\SpawnPoint\PlayerSpawnPoint.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameSystems\ItemSystem\LootDropSystem.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Utils.cs" />
     <Compile Include="Assets\_AssetPackages\nTools\PrefabPainter\Scripts\PrefabPainterSettings.cs" />
@@ -152,6 +156,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyAnimationManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\EquipmentSlot.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerCamManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Input\InputSystem_Actions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_AssetPackages\nTools\PrefabPainter\Shaders\GUITextureClipLevels.shader" />

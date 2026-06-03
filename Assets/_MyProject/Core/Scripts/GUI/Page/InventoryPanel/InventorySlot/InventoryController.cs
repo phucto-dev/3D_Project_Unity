@@ -37,7 +37,7 @@ public class InventoryController : MonoBehaviour
         {
             _slot.SelectedItem += GetCurrentSelectedItem;
         }
-
+        RefreshUI(PlayerInventory.PlayerInventory);
     }
     private void OnDisable()
     {
@@ -54,7 +54,6 @@ public class InventoryController : MonoBehaviour
         CurrentSelectedIndex = -1;
         CurrentSelectedItem = null;
         if (PlayerInventory == null) return;
-        RefreshUI(PlayerInventory.PlayerInventory);
     }
     public void UpdateSlot(int i, ItemInstance slot)
     {
@@ -83,9 +82,17 @@ public class InventoryController : MonoBehaviour
 
         ItemInstance fromSlotItem = PlayerInventory.PlayerInventory[fromIndex];
         ItemInstance toSlotItem = PlayerInventory.PlayerInventory[toIndex];
-
+        if (fromSlotItem == null)
+        {
+            Debug.LogWarning("from item == null: " + fromSlotItem);
+            return;
+        }
+        if (toSlotItem == null)
+        {            
+            SwapItems(fromIndex, toIndex);
+            return;
+        }
         if (fromSlotItem.ItemDefinition == null || fromSlotItem.Amount == 0) return;
-
         if (toSlotItem.ItemDefinition == null)
         {
             toSlotItem = fromSlotItem;
@@ -140,12 +147,9 @@ public class InventoryController : MonoBehaviour
         if (fromInventoryStart)
         {
             ItemInstance invItem = PlayerInventory.BindingItem(PlayerInventory.PlayerInventory[inventoryIndex]);
-            Debug.Log("Vone");
 
             if (invItem == null || invItem.ItemDefinition == null || !(invItem is EquipmentInstance pendingEquip)) return;
-            Debug.Log("Vone1");
             if (pendingEquip.GetEquipData().SlotType != equipmentSlotType) return;
-            Debug.Log("Vone2");
             EquipmentInstance currentlyEquipped = null;
             if (PlayerEquipment.EquippedItems.ContainsKey(equipmentSlotType))
             {
@@ -172,8 +176,12 @@ public class InventoryController : MonoBehaviour
 
             EquipmentInstance equipmentItem = PlayerEquipment.EquippedItems[equipmentSlotType];
             ItemInstance targetInvSlot = PlayerInventory.PlayerInventory[inventoryIndex];
-
-            if (targetInvSlot.ItemDefinition != null)
+            if (targetInvSlot == null)
+            {
+                PlayerInventory.ChangeItem(inventoryIndex, equipmentItem);
+                PlayerEquipment.UnequipItem(equipmentSlotType);
+            }
+            else if (targetInvSlot.ItemDefinition != null)
             {
                 if (!(targetInvSlot is EquipmentInstance targetEquip) || targetEquip.GetEquipData().SlotType != equipmentSlotType)
                 {
@@ -213,5 +221,20 @@ public class InventoryController : MonoBehaviour
     {
         CurrentSelectedIndex = -1;
         CurrentSelectedItem = null;
+    }
+
+    public void SwapItems(int fromIndex, int toIndex)
+    {
+        if (fromIndex < 0 || fromIndex >= PlayerInventory.PlayerInventory.Length ||
+            toIndex < 0 || toIndex >= PlayerInventory.PlayerInventory.Length)
+            return;
+
+        if (fromIndex == toIndex) return;
+
+        ItemInstance temp = PlayerInventory.PlayerInventory[toIndex];
+        PlayerInventory.ChangeItem(toIndex, PlayerInventory.PlayerInventory[fromIndex]);
+        PlayerInventory.ChangeItem(fromIndex, temp);
+        UpdateSlot(fromIndex, PlayerInventory.PlayerInventory[fromIndex]);
+        UpdateSlot(toIndex, PlayerInventory.PlayerInventory[toIndex]);
     }
 }
