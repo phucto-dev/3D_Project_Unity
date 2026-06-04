@@ -57,6 +57,7 @@ public class MenuManager : MonoBehaviour
         {
             case MenuBtnList.NewGame:
                 GameManager.Instance.ChangeGameState(GameState.Playing);
+                GameManager.Instance.StartNewGame();
                 break;
             case MenuBtnList.Load:
                 break;

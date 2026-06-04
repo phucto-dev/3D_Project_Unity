@@ -533,4 +533,8 @@ public class PlayerMovement : MonoBehaviour
     {
         _isStun = false;
     }
+    public void SetMainCamera(Transform cam)
+    {
+        mainCamera = cam;
+    }
 }

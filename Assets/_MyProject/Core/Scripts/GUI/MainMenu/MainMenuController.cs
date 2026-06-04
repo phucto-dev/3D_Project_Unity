@@ -13,6 +13,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject _mainMenuRoot;
     [SerializeField] private GameObject _hudRoot;
     [SerializeField] private GameObject _inGameMenuRoot;
+    [SerializeField] private GameObject _loadingRoot;
     public static MainMenuController Instance { get; private set; }
 
     [SerializeField] private List<MenuPage> pages;
@@ -41,6 +42,7 @@ public class MainMenuController : MonoBehaviour
         _mainMenuRoot.SetActive(false);
         _hudRoot.SetActive(false);
         _inGameMenuRoot.SetActive(false);
+        _loadingRoot.SetActive(false);
 
         switch (newState)
         {
@@ -49,6 +51,9 @@ public class MainMenuController : MonoBehaviour
                 break;
             case GameState.Playing:
                 _hudRoot.SetActive(true);
+                break;
+            case GameState.Loading:
+                _loadingRoot.SetActive(true);
                 break;
             case GameState.InGameMenu:
                 _hudRoot.SetActive(true);

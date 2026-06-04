@@ -139,5 +139,8 @@ public class PlayerCamManager : MonoBehaviour
     }
 
     public Transform GetCurrentTarget() => _currentTarget;
-
+    public void SetLockOnCamera(CinemachineCamera lockonCam)
+    {
+        _lockOnCamera = lockonCam;
+    }
 }
