@@ -9,6 +9,7 @@ using Object = UnityEngine.Object;
 public enum GameState
 {
     Booting,
+    Die,
     Loading,
     MainMenu,
     Playing,
@@ -34,9 +35,12 @@ public class GameManager : MonoBehaviour
     public GameState CurrentState { get; private set; }
 
     public event Action<ActionInputMapType> ChangeActionInputMap;
+    public event Action RespawnPlayer;
 
     private @InputSystem_Actions _globalInput;
     private SpawnPointID _targetSpawnID = SpawnPointID.Default_NewGame;
+    private GameObject _playerInstance;
+    private Transform _currentCheckPoint;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -74,13 +78,15 @@ public class GameManager : MonoBehaviour
     {
         if (CurrentState == GameState.Playing)
         {
+            Debug.Log("Tat");
             ChangeGameState(GameState.InGameMenu);
-            ChangeActionInputMap(ActionInputMapType.UI);
+            ChangeActionInputMap?.Invoke(ActionInputMapType.UI);
         }
         else if (CurrentState == GameState.InGameMenu)
         {
+            Debug.Log("Bat");
             ChangeGameState(GameState.Playing);
-            ChangeActionInputMap(ActionInputMapType.Player);
+            ChangeActionInputMap?.Invoke(ActionInputMapType.Player);
         }
         else if (CurrentState == GameState.MainMenu)
         {
@@ -93,7 +99,7 @@ public class GameManager : MonoBehaviour
 
         MainMenuController.Instance.ChangeUIState(newState);
 
-        if (newState == GameState.InGameMenu)
+        if (newState == GameState.InGameMenu || newState == GameState.MainMenu || newState == GameState.Die)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -151,16 +157,19 @@ public class GameManager : MonoBehaviour
         {
             correctSpawn = allSpawns[0];
         }
+        _currentCheckPoint = correctSpawn.transform;
         Scene targetMapScene = correctSpawn.gameObject.scene;
-        GameObject playerInstance = Instantiate(_playerPrefab, correctSpawn.transform.position, correctSpawn.transform.rotation);
+        _playerInstance = Instantiate(_playerPrefab, correctSpawn.transform.position, correctSpawn.transform.rotation);
 
-        if (playerInstance == null) yield break;
+        if (_playerInstance == null) yield break;
 
-        SceneManager.MoveGameObjectToScene(playerInstance, targetMapScene);
+        SceneManager.MoveGameObjectToScene(_playerInstance, targetMapScene);
 
-        PlayerCamTarget camTarget = playerInstance.GetComponentInChildren<PlayerCamTarget>();
-        PlayerMovement playerMovement = playerInstance.GetComponent<PlayerMovement>();
-        PlayerCamManager playerCamManager = playerInstance.GetComponent<PlayerCamManager>();
+        PlayerCamTarget camTarget = _playerInstance.GetComponentInChildren<PlayerCamTarget>();
+        PlayerMovement playerMovement = _playerInstance.GetComponent<PlayerMovement>();
+        PlayerCamManager playerCamManager = _playerInstance.GetComponent<PlayerCamManager>();
+
+        RegisterPlayerEvent();
 
         CinemachineCamera freeLookCam = _freeLookCam.GetComponent<CinemachineCamera>();
         CinemachineCamera lockonCam = _lockOnCam.GetComponent<CinemachineCamera>();
@@ -172,5 +181,31 @@ public class GameManager : MonoBehaviour
         if (playerCamManager != null) playerCamManager.SetLockOnCamera(lockonCam);
 
         yield return new WaitForSeconds(1f);
+    }
+    private void RegisterPlayerEvent()
+    {
+        if (_playerInstance == null) return;
+        HealthSystem playerHealth = _playerInstance.GetComponentInChildren<HealthSystem>();
+        if (playerHealth != null) playerHealth.OnDeath += HandlePlayerDeath;
+    }
+
+    private void HandlePlayerDeath()
+    {
+        ChangeGameState(GameState.Die);
+        ChangeActionInputMap?.Invoke(ActionInputMapType.UI);
+    }
+    public void HandleRespawn()
+    {
+        if (_playerInstance == null) return;
+        CooldownTimer timer = new CooldownTimer(1f);
+        ChangeGameState(GameState.Loading);
+        _playerInstance.transform.position = _currentCheckPoint.position;
+        _playerInstance.transform.rotation = _currentCheckPoint.rotation;
+        RespawnPlayer?.Invoke();
+        if (timer.Tick())
+        {
+            ChangeGameState(GameState.Playing);
+            ChangeActionInputMap?.Invoke(ActionInputMapType.Player);
+        }
     }
 }

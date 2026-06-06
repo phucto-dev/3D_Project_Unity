@@ -21,7 +21,7 @@ MonoBehaviour:
     minValue: 0
     maxValue: 9999
   _attackPower:
-    baseValue: 10
+    baseValue: 50
     minValue: 0
     maxValue: 9999
   _haste:

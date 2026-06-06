@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     public event Action OnGetHit;
 
     private readonly int _animHurt = Animator.StringToHash("Hurt");
+    private readonly int _animDeath = Animator.StringToHash("Death");
 
     private PlayerStatsManager _stats;
     private HealthSystem _healthSystem;
@@ -36,16 +37,20 @@ public class PlayerManager : MonoBehaviour
         if (_healthSystem != null)
         {
             _healthSystem.OnTakeDmg += GetHit;
+            _healthSystem.OnDeath += PlayDeath;
         }
         GameManager.Instance.ChangeActionInputMap += SwitchActionMap;
+        GameManager.Instance.RespawnPlayer += ResetPlayerStats;
     }
     private void OnDisable()
     {
         if (_healthSystem != null)
         {
             _healthSystem.OnTakeDmg -= GetHit;
+            _healthSystem.OnDeath -= PlayDeath;
         }
         GameManager.Instance.ChangeActionInputMap -= SwitchActionMap;
+        GameManager.Instance.RespawnPlayer -= ResetPlayerStats;
     }
 
     public void GetHit(DmgInfo dmgInfo)
@@ -77,14 +82,31 @@ public class PlayerManager : MonoBehaviour
     }
     public void SwitchActionMap(ActionInputMapType type)
     {
-        if (_inputSystem == null) return;
+        if (_inputSystem == null || _inputSystem.actions == null) return;
+
         if (type == ActionInputMapType.UI)
         {
-            _inputSystem.SwitchCurrentActionMap("UI");
+            _inputSystem.actions.FindActionMap("Player").Disable();
+            _inputSystem.actions.FindActionMap("UI").Enable();
         }
         else if (type == ActionInputMapType.Player)
         {
-            _inputSystem.SwitchCurrentActionMap("Player");
+            _inputSystem.actions.FindActionMap("UI").Disable();
+            _inputSystem.actions.FindActionMap("Player").Enable();
+        }
+    }
+    private void PlayDeath()
+    {
+        if (_animator == null) return;
+        _animator.CrossFade(_animDeath, 0.1f);
+    }
+    private void ResetPlayerStats()
+    {
+        if (_healthSystem != null)
+        {
+            _healthSystem.ResetHP();
+            _animator.Rebind();
+            _animator.Update(0f);
         }
     }
 }

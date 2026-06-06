@@ -27,6 +27,7 @@ public class EnemyVision : MonoBehaviour
     public bool CanSeePlayer()
     {
         if (Player == null) return false;
+        if (Player.PlayerTransform == null) return false;
 
         _distanceToTarget = Vector3.Distance(transform.position, Player.PlayerTransform.position);
         if (!_seePlayer) _seePlayer = CheckPlayerOnSightRange();

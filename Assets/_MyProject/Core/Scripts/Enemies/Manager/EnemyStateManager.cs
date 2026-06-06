@@ -13,8 +13,8 @@ public class EnemyStateManager : MonoBehaviour
 {
     [Header("--- REF ---")]
     public NavMeshAgent Agent { get; private set; }
+    [field: SerializeField] public PlayerInfo PlayerInformation { get; private set; }
     public Transform Player { get; private set; }
-    public TMP_Text TextCanvas;
     public bool SeePlayer { get; private set; }
 
     [Header("--- BRAIN CONFIG ---")]
@@ -63,7 +63,8 @@ public class EnemyStateManager : MonoBehaviour
             Debug.Log("EnemyStateManager: _vision null");
             return;
         }
-        Player = _vision.Player.PlayerTransform;
+        //Player = _vision.Player.PlayerTransform;
+        if (PlayerInformation != null) Player = PlayerInformation.PlayerTransform;
         Agent.stoppingDistance = _stats.AttackRange.GetValue();
         SeePlayer = _vision.CanSeePlayer();
         ChangeState(new PatrolState());
@@ -71,7 +72,9 @@ public class EnemyStateManager : MonoBehaviour
 
     private void Update()
     {
+        if (PlayerInformation != null) Player = PlayerInformation.PlayerTransform;
         CheckSawPlayer();
+        //Debug.Log("Current: " + _currentState.ToString());
         _currentState.UpdateState(this);
     }
 
@@ -79,7 +82,6 @@ public class EnemyStateManager : MonoBehaviour
     {
         _currentState?.ExitState(this);
         _currentState = newState;
-        TextCanvas.text = _currentState.ToString();
         _currentState.EnterState(this);
     }
 
@@ -253,9 +255,11 @@ public class AttackState : IEnemyState
     private float _actuallCooldown;
     private bool _hasAttacked;
     private AnimatorStateInfo _stateInfo;
+    private bool _hadDoneAttack;
     public void EnterState(EnemyStateManager enemy)
     {
         _hasAttacked = false;
+        _hadDoneAttack = false;
         _actuallCooldown = enemy.GetStats().DelayPerAttack.GetValue() / enemy.GetStats().Haste.GetValue();
         enemy.GetACController().EnableCombatAnim();
         enemy.Agent.updateRotation = false; //
@@ -277,7 +281,20 @@ public class AttackState : IEnemyState
                 _stateInfo = enemy.GetACController().GetStateInfo();
                 if (_stateInfo.normalizedTime >= 0.95f)
                 {
-                    enemy.ChangeState(new AttackCooldownState());
+                    if (_hadDoneAttack == false)
+                    {
+                        _lastAttackTime = Time.time;
+                        _hadDoneAttack = true;
+                    }
+                    else
+                    {
+                        if (Time.time >= _lastAttackTime + _actuallCooldown)
+                        {
+                            _hasAttacked = false;
+                            _hadDoneAttack = false;
+                        }
+                    }
+                    //enemy.ChangeState(new AttackCooldownState());
                 }
                 return;
             }

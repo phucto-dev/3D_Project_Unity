@@ -51,6 +51,10 @@ public class HealthSystem : MonoBehaviour
             OnDeath?.Invoke();
         }
     }
+    public void ResetHP()
+    {
+        CurrentHealth = _stats.MaxHealth.GetValue();
+    }
     public void AddInvincibility()
     {
         _invincibilitySourcesCount++;
