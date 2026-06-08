@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -23,7 +24,7 @@ public class PoolManager : MonoBehaviour
     {
         if (_poolConfigSO == null) return;
 
-        foreach (PoolEntityConfig item in _poolConfigSO.poolItems)
+        foreach (PoolItemSO item in _poolConfigSO.poolItems)
         {
             if (_pools.ContainsKey(item.poolID)) continue;
 
@@ -31,8 +32,20 @@ public class PoolManager : MonoBehaviour
 
             ObjectPool<GameObject> newPool = new ObjectPool<GameObject>(
                 createFunc: () => InstaintiateItem(item.poolID),
-                actionOnGet: (obj) => obj.SetActive(true),
-                actionOnRelease: (obj) => obj.SetActive(false),
+                actionOnGet: (obj) => 
+                {
+                    if (!item.IsUsingNav) obj.SetActive(true);
+                    else { }
+                },
+                actionOnRelease: (obj) =>
+                {
+                    if (item.IsUsingNav)
+                    {
+                        var agent = obj.GetComponent<UnityEngine.AI.NavMeshAgent>();
+                        if (agent != null) agent.enabled = false;
+                    }
+                    obj.SetActive(false);
+                },
                 actionOnDestroy: (obj) => Destroy(obj),
                 collectionCheck: true,
                 defaultCapacity: item.defaultCapacity,

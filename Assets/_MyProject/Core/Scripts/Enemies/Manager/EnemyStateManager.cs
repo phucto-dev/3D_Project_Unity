@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
@@ -20,6 +21,11 @@ public class EnemyStateManager : MonoBehaviour
     [Header("--- BRAIN CONFIG ---")]
     [SerializeField] private EnemyBrainConfigSO _brainConfig;
 
+    public EntitySpawnInfo SpawnInfo { get; private set; }
+    public event Action<bool> PingDespawnSignal;
+    public event Action<bool> DoTryDespawn;
+    public event Action<GameObject> PingDeath;
+
     private EnemyStatsManager _stats;
     private IEnemyState _currentState;
     private EnemyVision _vision;
@@ -27,7 +33,6 @@ public class EnemyStateManager : MonoBehaviour
     private CooldownTimer _delayTimer;
     private HealthSystem _healthSystem;
     private EnemyDropManager _dropManager;
-
     private bool _isBeingHit;
     private Material _mat;
 
@@ -122,7 +127,26 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyStatsManager GetStats() => _stats;
     public EnemyAnimationManager GetACController() => _animManager;
     public EnemyDropManager GetDropManager() => _dropManager;
-
+    public void SetSpawnInfo(EntitySpawnInfo spawn)
+    {
+        SpawnInfo = spawn;
+    }
+    public void InvokeDespawnPing(bool value)
+    {
+        PingDespawnSignal?.Invoke(value);
+    }
+    public void InvokeDoTryDespawn()
+    {
+        DoTryDespawn?.Invoke(false);
+    }
+    public void DoForceSeePlayer()
+    {
+        _vision.ForceSeePlayer();
+    }
+    public void InvokePingDeath()
+    {
+        PingDeath?.Invoke(this.gameObject);
+    }
 }
 
 public class PatrolState : IEnemyState
@@ -136,6 +160,8 @@ public class PatrolState : IEnemyState
         enemy.SetupAgent(_speed);
         FindNewPatrolPoint(enemy);
         if (enemy.GetACController() != null) enemy.GetACController().EnableMovingAnim();
+        enemy.InvokeDespawnPing(true);
+        enemy.InvokeDoTryDespawn();
     }
 
     public void UpdateState(EnemyStateManager enemy)
@@ -166,14 +192,18 @@ public class PatrolState : IEnemyState
     public void ExitState(EnemyStateManager enemy) 
     {
         if (enemy.GetACController() != null) enemy.GetACController().DisableMovingAnim();
+        enemy.InvokeDespawnPing(false);
     }
 
     private void FindNewPatrolPoint(EnemyStateManager enemy)
     {
-        Vector3 randomDir = Random.insideUnitSphere * enemy.GetBrainConfig().PatrolRadius;
-        randomDir += enemy.transform.position;
+        EntitySpawnInfo spawnInfo = enemy.SpawnInfo;
 
-        if (NavMesh.SamplePosition(randomDir, out NavMeshHit hit, enemy.GetBrainConfig().PatrolRadius, NavMesh.AllAreas))
+        float targetRadius = enemy.SpawnInfo == null ? enemy.GetBrainConfig().PatrolRadius : enemy.SpawnInfo.PatrolRadius;
+        Vector3 randomDir = UnityEngine.Random.insideUnitSphere * targetRadius;
+        randomDir += spawnInfo.SpawnPos;
+
+        if (NavMesh.SamplePosition(randomDir, out NavMeshHit hit, spawnInfo.PatrolRadius, NavMesh.AllAreas))
         {
             enemy.Agent.SetDestination(hit.position);
         }
@@ -198,7 +228,8 @@ public class ChaseState: IEnemyState
 
         if (!enemy.SeePlayer)
         {
-            enemy.ChangeState(new PatrolState());
+            enemy.ChangeState(new GoBackToSpawnState());
+            //enemy.ChangeState(new PatrolState());
             return;
         }
 
@@ -224,6 +255,75 @@ public class ChaseState: IEnemyState
     private void RotateFaceToPlayer(EnemyStateManager enemy)
     {
         _offset = enemy.Player.position - enemy.transform.position;
+
+        if (_offset.sqrMagnitude <= enemy.GetStats().AttackRange.GetValue() * enemy.GetStats().AttackRange.GetValue())
+        {
+            enemy.Agent.updateRotation = false; //
+
+            Vector3 dirToPlayer = _offset.normalized;
+            dirToPlayer.y = 0;
+
+            Quaternion targetRot = Quaternion.LookRotation(dirToPlayer);
+            enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, targetRot, Time.deltaTime * enemy.GetBrainConfig().TurnSpeed);
+
+            if (Vector3.Dot(enemy.transform.forward, dirToPlayer) >= 0.9)
+            {
+                enemy.ChangeState(new AttackState());
+            }
+        }
+        else
+        {
+            enemy.Agent.updateRotation = true; //
+        }
+    }
+}
+
+public class GoBackToSpawnState: IEnemyState
+{
+    private CooldownTimer _pathUpdateTimer = new CooldownTimer(0.2f);
+    private float _speed;
+    private Vector3 _offset;
+    public void EnterState(EnemyStateManager enemy)
+    {
+        _speed = enemy.GetStats().RunSpeed.GetValue();
+        enemy.SetupAgent(_speed);
+        if (enemy.GetACController() != null) enemy.GetACController().EnableMovingAnim();
+    }
+    public void UpdateState(EnemyStateManager enemy)
+    {
+        EntitySpawnInfo spawnInfo = enemy.SpawnInfo;
+        if (spawnInfo == null) return;
+
+        Vector3 flatCurrentPos = new Vector3(enemy.transform.position.x, 0f, enemy.transform.position.z);
+        Vector3 flatSpawnPos = new Vector3(spawnInfo.SpawnPos.x, 0f, spawnInfo.SpawnPos.z);
+
+        float currentDistance = Vector3.Distance(flatCurrentPos, flatSpawnPos);
+
+        if (currentDistance <= spawnInfo.PatrolRadius - 2f)
+        {
+            enemy.ChangeState(new PatrolState());
+            return;
+        }
+        if (_pathUpdateTimer.Tick())
+        {
+            if (enemy.Agent.isOnNavMesh)
+            {
+                enemy.Agent.SetDestination(enemy.SpawnInfo.SpawnPos);
+            }
+        }
+        RotateFaceToSpawn(enemy);
+    }
+    public void ExitState(EnemyStateManager enemy)
+    {
+        if (enemy.Agent.isOnNavMesh)
+        {
+            enemy.Agent.ResetPath();
+        }
+        if (enemy.GetACController() != null) enemy.GetACController().DisableMovingAnim();
+    }
+    private void RotateFaceToSpawn(EnemyStateManager enemy)
+    {
+        _offset = enemy.SpawnInfo.SpawnPos - enemy.transform.position;
 
         if (_offset.sqrMagnitude <= enemy.GetStats().AttackRange.GetValue() * enemy.GetStats().AttackRange.GetValue())
         {
@@ -315,7 +415,7 @@ public class AttackState : IEnemyState
     {
         //if (Time.time < _lastAttackTime + _actuallCooldown) return;
         //_lastAttackTime = Time.time;
-        int randomAttackIndex = Random.Range(1, (int)enemy.GetStats().QuantityOfAttack.GetValue() + 1);
+        int randomAttackIndex = UnityEngine.Random.Range(1, (int)enemy.GetStats().QuantityOfAttack.GetValue() + 1);
         string attackStateName = "Attack_" + randomAttackIndex;
 
         enemy.GetACController().DoARandomAttack(attackStateName, enemy.GetStats().Haste.GetValue());
@@ -381,7 +481,7 @@ public class AttackCooldownState: IEnemyState
         Vector3 dirToEnemy = (enemy.transform.position - enemy.Player.position).normalized;
         dirToEnemy.y = 0;
 
-        float randomAngle = Random.Range(-30f, 30f);
+        float randomAngle = UnityEngine.Random.Range(-30f, 30f);
         Vector3 rotatedDir = Quaternion.Euler(0, randomAngle, 0) * dirToEnemy;
         Vector3 targetPos = enemy.Player.position + (rotatedDir * _safeDistance);
 
@@ -407,6 +507,7 @@ public class HurtState : IEnemyState
         enemy.GetACController().EnableCombatAnim(); // Should enable here to lock in combat mode.
         _actuallCooldown = enemy.GetStats().HurtDelay.GetValue();
         _isHurtOnce = false;
+        enemy.DoForceSeePlayer();
     }
 
     public void UpdateState(EnemyStateManager enemy)
@@ -423,7 +524,7 @@ public class HurtState : IEnemyState
     {
         if (!_isHurtOnce)
         {
-            int randomHurtIndex = Random.Range(1, (int)enemy.GetStats().QuantityOfHurt.GetValue() + 1);
+            int randomHurtIndex = UnityEngine.Random.Range(1, (int)enemy.GetStats().QuantityOfHurt.GetValue() + 1);
             string attackStateName = "Hurt_" + randomHurtIndex;
             enemy.GetACController().DoTargetAnim(attackStateName);
             _isHurtOnce = true;
@@ -442,14 +543,29 @@ public class HurtState : IEnemyState
 public class DieState: IEnemyState
 {
     private bool _isDeath;
+    private bool _isTriggerDespawnOnce;
+    private AnimatorStateInfo _stateInfo;
     public void EnterState(EnemyStateManager enemy)
     {
         _isDeath = false;
+        _isTriggerDespawnOnce = false;
         enemy.GetDropManager().ExecuteDrop();
+        enemy.InvokeDespawnPing(true);
+        enemy.InvokePingDeath();
     }
     public void UpdateState(EnemyStateManager enemy)
     {
-        if (_isDeath) return;
+        if (_isDeath)
+        {
+            if (_isTriggerDespawnOnce) return;
+            _stateInfo = enemy.GetACController().GetStateInfo();
+            if (_stateInfo.normalizedTime >= 1.0f)
+            {
+                _isTriggerDespawnOnce = true;
+                enemy.InvokeDoTryDespawn();
+            }
+            return;
+        }
         enemy.GetACController().DoTargetAnim("Death");
         _isDeath = true;
     } 

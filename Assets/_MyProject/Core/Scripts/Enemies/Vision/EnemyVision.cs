@@ -35,6 +35,15 @@ public class EnemyVision : MonoBehaviour
         return _seePlayer;
     }
 
+    public void ForceSeePlayer()
+    {
+        _seePlayer = true;
+    }
+    public void StopSeePlayer()
+    {
+        _seePlayer = false;
+    }
+
     private bool CheckPlayerOnSightRange()
     {
         if (_distanceToTarget > _brainConfig.SightRange) return false;

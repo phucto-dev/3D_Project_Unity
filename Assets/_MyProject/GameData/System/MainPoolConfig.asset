@@ -13,7 +13,4 @@ MonoBehaviour:
   m_Name: MainPoolConfig
   m_EditorClassIdentifier: Assembly-CSharp::PoolConfigSO
   poolItems:
-  - poolID: Enemy_Bear
-    prefab: {fileID: 4452473576391734993, guid: 09937e3bf490aa24a907d6f90489a58e, type: 3}
-    defaultCapacity: 10
-    maxSize: 20
+  - {fileID: 11400000, guid: dad61910b2b5b88458edb2326774b399, type: 2}
