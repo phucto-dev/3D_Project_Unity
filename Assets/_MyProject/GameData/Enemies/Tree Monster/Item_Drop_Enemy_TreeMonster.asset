@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f70e664a961b4e46b0c672e6b25c1c1, type: 3}
+  m_Name: Item_Drop_Enemy_TreeMonster
+  m_EditorClassIdentifier: Assembly-CSharp::LootItemSO
+  LootItems:
+  - Item: {fileID: 11400000, guid: 325698315c88cb24cb27e5b61f147be0, type: 2}
+    DropChance: 0
+    QuantityRules:
+    - Weight: 0
+      MinAmount: 1
+      MaxAmount: 1
+    - Weight: 2
+      MinAmount: 5
+      MaxAmount: 7
+    RarityRules: []
+  - Item: {fileID: 11400000, guid: 5de856ede925d614c8553d62bafcd42b, type: 2}
+    DropChance: 100
+    QuantityRules:
+    - Weight: 1
+      MinAmount: 1
+      MaxAmount: 1
+    RarityRules:
+    - Weight: 5
+      Rarity: 0
+    - Weight: 3
+      Rarity: 1
+    - Weight: 1.5
+      Rarity: 2
+    - Weight: 0.5
+      Rarity: 3
+  - Item: {fileID: 11400000, guid: 3fc737655e23e2343b1669a2d061d583, type: 2}
+    DropChance: 100
+    QuantityRules:
+    - Weight: 1
+      MinAmount: 1
+      MaxAmount: 1
+    RarityRules:
+    - Weight: 5
+      Rarity: 0
+    - Weight: 3
+      Rarity: 1
+    - Weight: 1.5
+      Rarity: 2
+    - Weight: 0.5
+      Rarity: 3
+  OrbDrop: {fileID: 11400000, guid: 61f206fdec9e7544b92bf139d3b07ad8, type: 2}

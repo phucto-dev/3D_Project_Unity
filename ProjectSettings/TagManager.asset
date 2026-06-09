@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - DropItem
   - DragLayer
+  - Air
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - UI
   - Enemy
   - Player
-  - 
+  - Item
   - 
   - 
   - 

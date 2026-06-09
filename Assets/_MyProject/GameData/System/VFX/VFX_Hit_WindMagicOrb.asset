@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45dbdcce6ef4534a9a74aa1f9fda857, type: 3}
+  m_Name: VFX_Hit_WindMagicOrb
+  m_EditorClassIdentifier: Assembly-CSharp::PoolItemSO
+  poolID: VFX_Hit_WindMagicOrb
+  prefab: {fileID: 5898750128416595620, guid: 9c8d535736226fd45a81f8c1ae0f9ea1, type: 3}
+  IsUsingNav: 0
+  defaultCapacity: 20
+  maxSize: 70

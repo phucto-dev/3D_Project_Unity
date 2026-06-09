@@ -9,6 +9,11 @@ public class EnemyAttack : MonoBehaviour
     [Header("--- ANGLE ---")]
     private float _attackAngle = 90f;
 
+    [Header("--- SETTINGS FOR RANGE ---")]
+    public PoolItemSO ProjectilePoolInfo;
+    public PlayerInfo Player;
+    public float ProjectileSpeed = 20f;
+
     private DmgInfo _dmgInfo;
     private EnemyStatsManager _stats;
 
@@ -29,6 +34,7 @@ public class EnemyAttack : MonoBehaviour
         };
     }
 
+    // for melee
     public void TriggerAttackHitBox()
     {
         if (attackPoint == null) return;
@@ -63,6 +69,33 @@ public class EnemyAttack : MonoBehaviour
                     Debug.Log("Player is out of range");
                 }
             }
+        }
+    }
+
+    // range
+    public void TriggerFireAttack()
+    {
+        if (attackPoint == null) return;
+        if (_stats == null) return;
+        if (Player == null) return;
+
+        GameObject projectile = PoolManager.Instance.Get(ProjectilePoolInfo.poolID);
+        if (projectile == null) return;
+        projectile.transform.position = attackPoint.position;
+
+        ProjectileController projectileController = projectile.GetComponent<ProjectileController>();
+        if (projectileController != null)
+        {
+            ProjectileData data = new ProjectileData();
+            data.PoolID = ProjectilePoolInfo.poolID;
+            data.Speed = ProjectileSpeed;
+            data.Damage = _stats.AttackPower.GetValue();
+            data.PoiseDamage = _stats.PoiseDamage.GetValue();
+            data.IsAttackProjectile = true;
+            data.TargetLayer = PlayerLayer;
+            data.MoveType = ProjectileMoveType.Straight;
+            data.TargetDirection = Player.PlayerTransform.position;
+            projectileController.Fire(data);
         }
     }
 

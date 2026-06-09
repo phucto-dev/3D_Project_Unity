@@ -29,7 +29,7 @@ MonoBehaviour:
     minValue: 0.1
     maxValue: 99
   _delayPerAttack:
-    baseValue: 10
+    baseValue: 3
     minValue: 0.1
     maxValue: 99
   _critRate:

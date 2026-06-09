@@ -88,6 +88,10 @@ public class PoolManager : MonoBehaviour
 
     public void Release(string poolID, GameObject obj)
     {
+        if (obj == null || !obj.activeInHierarchy)
+        {
+            return;
+        }
         if (_pools.TryGetValue(poolID, out var pool))
         {
             pool.Release(obj);

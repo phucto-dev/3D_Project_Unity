@@ -5087,7 +5087,7 @@ GameObject:
   - component: {fileID: 5035012266991763783}
   - component: {fileID: 5473051068674212603}
   - component: {fileID: 3472487305426216355}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mythic
   m_TagString: DropItem
   m_Icon: {fileID: 0}
