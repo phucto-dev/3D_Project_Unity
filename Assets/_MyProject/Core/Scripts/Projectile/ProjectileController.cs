@@ -56,11 +56,11 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (!_isFired) return;
-
-        if (other.isTrigger) return;
+        //if (other.isTrigger) return;
+        if (!_isFired) return;
 
         _isFired = false;
+
         GameObject hitObj = PoolManager.Instance.Get(HitVFX.poolID);
 
         if (_data.IsAttackProjectile)
@@ -90,6 +90,7 @@ public class ProjectileController : MonoBehaviour
             }
             hitObj.transform.position = this.transform.position;
         }
+
         PoolManager.Instance.Release(_data.PoolID, this.gameObject);
     }
 }

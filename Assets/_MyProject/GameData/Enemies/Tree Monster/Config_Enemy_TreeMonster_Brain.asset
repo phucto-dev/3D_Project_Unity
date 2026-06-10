@@ -19,6 +19,6 @@ MonoBehaviour:
   _patrolRadius: 10
   _waitTimeAtWaypoint: 2
   _attackRange: 12
-  _limitChaseRange: 17
+  _limitChaseRange: 20
   _attackCooldown: 1.5
   _turnSpeed: 8

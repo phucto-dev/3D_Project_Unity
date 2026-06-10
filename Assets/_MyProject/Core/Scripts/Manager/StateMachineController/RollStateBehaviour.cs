@@ -7,11 +7,16 @@ public class RollStateBehaviour : StateMachineBehaviour
     [SerializeField, Range(0, 1)] private float _iframeEndTime;
 
     private HealthSystem _healthSystem;
+    private Collider _collider;
     private bool _hasStarted;
     private bool _hasStopped;
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _healthSystem = animator.transform.parent.GetComponentInChildren<HealthSystem>();
+        if (_healthSystem != null)
+        {
+            _collider = _healthSystem.GetComponent<Collider>();
+        }
         _hasStarted = false;
         _hasStopped = false;
     }
@@ -27,11 +32,13 @@ public class RollStateBehaviour : StateMachineBehaviour
         {
             _healthSystem.AddInvincibility();
             _hasStarted = true;
+            if (_collider != null) _collider.enabled = false;
         }
         if (stateInfo.normalizedTime >= _iframeEndTime && !_hasStopped)
         {
             _healthSystem.RemoveInvincibility();
             _hasStopped = true;
+            if (_collider != null) _collider.enabled = true;
         }
     }
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -39,7 +46,7 @@ public class RollStateBehaviour : StateMachineBehaviour
         if (_hasStarted && !_hasStopped && _healthSystem != null)
         {
             _healthSystem.RemoveInvincibility();
-            Debug.Log("remove");
+            if (_collider != null) _collider.enabled = true;
         }
     }
 }

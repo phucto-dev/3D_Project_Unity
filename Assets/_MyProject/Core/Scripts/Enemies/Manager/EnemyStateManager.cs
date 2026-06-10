@@ -22,6 +22,7 @@ public class EnemyStateManager : MonoBehaviour
     [SerializeField] private EnemyBrainConfigSO _brainConfig;
 
     public EntitySpawnInfo SpawnInfo { get; private set; }
+    public float LastAttackTime { get; set; }
     public event Action<bool> PingDespawnSignal;
     public event Action<bool> DoTryDespawn;
     public event Action<GameObject> PingDeath;
@@ -376,6 +377,10 @@ public class AttackState : IEnemyState
         }
         else
         {
+            Vector3 dirToPlayer = _offset.normalized;
+            dirToPlayer.y = 0;
+            enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, Quaternion.LookRotation(dirToPlayer), Time.deltaTime * enemy.GetBrainConfig().TurnSpeed);
+
             if (_hasAttacked) //
             {
                 _stateInfo = enemy.GetACController().GetStateInfo();
@@ -383,12 +388,12 @@ public class AttackState : IEnemyState
                 {
                     if (_hadDoneAttack == false)
                     {
-                        _lastAttackTime = Time.time;
+                        enemy.LastAttackTime = Time.time;
                         _hadDoneAttack = true;
                     }
                     else
                     {
-                        if (Time.time >= _lastAttackTime + _actuallCooldown)
+                        if (Time.time >= enemy.LastAttackTime + _actuallCooldown)
                         {
                             _hasAttacked = false;
                             _hadDoneAttack = false;
@@ -398,11 +403,12 @@ public class AttackState : IEnemyState
                 }
                 return;
             }
-            Vector3 dirToPlayer = _offset.normalized;
-            dirToPlayer.y = 0;
-            enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, Quaternion.LookRotation(dirToPlayer), Time.deltaTime * enemy.GetBrainConfig().TurnSpeed);
-            TriggerRandomAtack(enemy);
-            _hasAttacked = true;
+
+            if (Time.time >= enemy.LastAttackTime + _actuallCooldown)
+            {
+                TriggerRandomAtack(enemy);
+                _hasAttacked = true;
+            }
         }
     }
     public void ExitState(EnemyStateManager enemy)

@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 1099431497287970511}
   - component: {fileID: 2306773102736557399}
   - component: {fileID: 5075622227317635665}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: LootRange
   m_TagString: Air
   m_Icon: {fileID: 0}
@@ -563,6 +563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Feet Armor
       objectReference: {fileID: 0}
+    - target: {fileID: 8681156397415209670, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 321f8f4bf85baf04193a92138a7f8c26, type: 2}
     - target: {fileID: 8704279759809074555, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
       propertyPath: m_Name
       value: GanzSe Free Modular Character Update 1_1

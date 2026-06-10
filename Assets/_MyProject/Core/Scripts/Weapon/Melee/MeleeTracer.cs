@@ -19,12 +19,14 @@ public class MeleeTracer : MonoBehaviour
     private PlayerAttack _playerAttack;
     private PlayerManager _playerManager;
     private Animator _animator;
+    private TrailRenderer _trail;
 
     private void Awake()
     {
         _stats = GetComponentInParent<PlayerStatsManager>();
         _playerAttack = GetComponentInParent<PlayerAttack>();
         _playerManager = GetComponentInParent<PlayerManager>();
+        _trail = transform.parent.GetComponentInChildren<TrailRenderer>();
         if (_playerAttack != null)
         {
             _animator = _playerAttack.GetComponentInChildren<Animator>();
@@ -49,6 +51,7 @@ public class MeleeTracer : MonoBehaviour
     private void Start()
     {
         _previousPos = new Vector3[_damagePoints.Length];
+        if (_trail != null) _trail.enabled = false;
         if (_stats == null) return;
         _dmgInfo = new DmgInfo
         {
@@ -69,6 +72,7 @@ public class MeleeTracer : MonoBehaviour
             _previousPos[i] = damagePoint.position;
             i++;
         }
+        if (_trail != null) _trail.enabled = true;
     }
 
     public void StopSwing()
@@ -76,6 +80,8 @@ public class MeleeTracer : MonoBehaviour
         _isAttacking = false;
         _hitOnce = false;
         enemyHealth = null;
+        if (_trail != null) _trail.enabled = false;
+        Debug.Log("Stopp");
     }
 
     private void Update()
