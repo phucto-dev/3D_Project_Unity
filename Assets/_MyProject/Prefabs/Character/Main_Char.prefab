@@ -403,11 +403,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06be0c3a83b72a4db9dc9707030ddad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  _baseEntryLightAttack: {fileID: 11400000, guid: 2ed008a62dd2e2e429a14217fa65529f, type: 2}
+  _baseEntryLightAttack: {fileID: 11400000, guid: 7cdc285d72dcafc419fb4fcd862e3316, type: 2}
   _baseEntryHeavyAttack: {fileID: 11400000, guid: 4983b53dd280b1a42a3c11a198737597, type: 2}
   _entryLightAttack: {fileID: 11400000, guid: 49c1693f076a4a44aaf0ca3bd3473b29, type: 2}
   _entryHeavyAttack: {fileID: 11400000, guid: 964cb832077b3e142b3c3ed4f5205a16, type: 2}
-  _animator: {fileID: 0}
   _blendTimeBetweenLayers: 0.2
 --- !u!114 &1318419809381394239
 MonoBehaviour:
@@ -443,6 +442,7 @@ MonoBehaviour:
   BeltSkinnedMesh: {fileID: 3777633866239358594}
   LegsSkinnedMesh: {fileID: 3114307043560192636}
   FeetSkinnedMesh: {fileID: 4202269804925663707}
+  WeaponSlot: {fileID: 7656304950531880705}
 --- !u!1 &3058243348367920551
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,13 +566,14 @@ PrefabInstance:
     - target: {fileID: 8681156397415209670, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 321f8f4bf85baf04193a92138a7f8c26, type: 2}
+      objectReference: {fileID: 9100000, guid: c4e9e661cc8ba464db3fa70219e4e66e, type: 2}
     - target: {fileID: 8704279759809074555, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
       propertyPath: m_Name
       value: GanzSe Free Modular Character Update 1_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6278629628966687275, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
@@ -599,6 +600,11 @@ SkinnedMeshRenderer:
 --- !u!137 &7558112501315050118 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7313331132590035544, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+  m_PrefabInstance: {fileID: 981191724032788702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7656304950531880705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7484222152485601247, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
   m_PrefabInstance: {fileID: 981191724032788702}
   m_PrefabAsset: {fileID: 0}
 --- !u!137 &7758202200918839536 stripped

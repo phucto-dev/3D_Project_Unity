@@ -10,7 +10,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private AttackNodeSO _baseEntryHeavyAttack;
     [SerializeField] private AttackNodeSO _entryLightAttack;
     [SerializeField] private AttackNodeSO _entryHeavyAttack;
-    [SerializeField] private Animator _animator;
     [SerializeField] private float _blendTimeBetweenLayers = 0.2f;
 
     [Header("Animator Hashes")]
@@ -20,6 +19,7 @@ public class PlayerAttack : MonoBehaviour
     private InputAction _attackAction;
     private PlayerManager _playerManager;
 
+    private Animator _animator;
     private AttackNodeSO _currentAttackNode;
     private bool _isComboWindowOpen = false;
     private int _attackLayerIndex;
@@ -208,5 +208,10 @@ public class PlayerAttack : MonoBehaviour
     public void DisableBeStun()
     {
         _isStun = false;
+    }
+    public void SetEntryAttack(AttackNodeSO entryLight, AttackNodeSO entryHeavy)
+    {
+        _entryLightAttack = entryLight;
+        _entryHeavyAttack = entryHeavy;
     }
 }

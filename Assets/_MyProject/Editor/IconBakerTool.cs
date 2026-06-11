@@ -5,19 +5,24 @@ using System.IO;
 
 public class IconBakerTool : EditorWindow
 {
+    public enum BakeMode { Armor, Weapon }
+
     [Header("Cài đặt chung")]
     public Camera renderCamera;
     public int iconSize = 256;
+    public BakeMode currentMode = BakeMode.Armor;
 
-    [Header("Chế độ Đơn")]
+    [Header("Dữ liệu Armor")]
     public ArmorDataSO singleArmorData;
-
-    [Header("Chế độ Hàng loạt")]
     public List<ArmorDataSO> armorDataList = new List<ArmorDataSO>();
 
-    // Cầu nối cho List
+    [Header("Dữ liệu Weapon")]
+    public WeaponDataSO singleWeaponData;
+    public List<WeaponDataSO> weaponDataList = new List<WeaponDataSO>();
+
     private SerializedObject serializedObj;
     private SerializedProperty armorDataListProp;
+    private SerializedProperty weaponDataListProp;
 
     [MenuItem("PRO Tools/Icon Baker Studio")]
     public static void ShowWindow()
@@ -29,6 +34,7 @@ public class IconBakerTool : EditorWindow
     {
         serializedObj = new SerializedObject(this);
         armorDataListProp = serializedObj.FindProperty("armorDataList");
+        weaponDataListProp = serializedObj.FindProperty("weaponDataList");
     }
 
     private void OnGUI()
@@ -37,53 +43,16 @@ public class IconBakerTool : EditorWindow
         renderCamera = (Camera)EditorGUILayout.ObjectField("Camera Chụp", renderCamera, typeof(Camera), true);
         iconSize = EditorGUILayout.IntField("Kích thước (px)", iconSize);
 
-        DrawLine();
-
-        // --- KHU VỰC 1: CHẾ ĐỘ ĐƠN ---
-        GUILayout.Label("CHẾ ĐỘ ĐƠN (SINGLE BAKE)", EditorStyles.boldLabel);
-        singleArmorData = (ArmorDataSO)EditorGUILayout.ObjectField("File SO (Mẫu)", singleArmorData, typeof(ArmorDataSO), false);
-
-        GUILayout.BeginHorizontal();
-        if (GUILayout.Button("Chụp V1 (Chỉnh tay)", GUILayout.Height(30)))
-        {
-            if (CheckSingleBakeReady()) BakeIcon();
-        }
-        if (GUILayout.Button("Chụp V2 (Auto-Focus)", GUILayout.Height(30)))
-        {
-            if (CheckSingleBakeReady()) BakeIcon_v2();
-        }
-        GUILayout.EndHorizontal();
-
-        DrawLine();
-
-        // --- KHU VỰC 2: CHẾ ĐỘ HÀNG LOẠT ---
-        GUILayout.Label("CHẾ ĐỘ HÀNG LOẠT (BATCH BAKE)", EditorStyles.boldLabel);
-
-        serializedObj.Update();
-        EditorGUILayout.PropertyField(armorDataListProp, new GUIContent("Danh sách SO"), true);
-        serializedObj.ApplyModifiedProperties();
-
         GUILayout.Space(5);
+        currentMode = (BakeMode)EditorGUILayout.EnumPopup("Loại Item (Mode)", currentMode);
 
-        if (GUILayout.Button("Chụp Tất Cả Danh Sách (Sử dụng logic V2)", GUILayout.Height(40)))
-        {
-            if (renderCamera == null)
-            {
-                Debug.LogError("[LỖI] Thiếu Camera!");
-                return;
-            }
-            if (armorDataList.Count == 0)
-            {
-                Debug.LogWarning("[CẢNH BÁO] Danh sách trống!");
-                return;
-            }
-            BakeAllIcons();
-        }
+        DrawLine();
+        serializedObj.Update();
 
-        if (GUILayout.Button("Clear Danh Sách", GUILayout.Height(20)))
-        {
-            armorDataList.Clear();
-        }
+        if (currentMode == BakeMode.Armor) DrawArmorGUI();
+        else DrawWeaponGUI();
+
+        serializedObj.ApplyModifiedProperties();
     }
 
     private void DrawLine()
@@ -93,184 +62,149 @@ public class IconBakerTool : EditorWindow
         GUILayout.Space(10);
     }
 
-    private bool CheckSingleBakeReady()
+    // ====================================================================
+    // GIAO DIỆN & ĐIỀU HƯỚNG
+    // ====================================================================
+    private void DrawArmorGUI()
     {
-        if (renderCamera == null || singleArmorData == null)
+        GUILayout.Label("CHẾ ĐỘ ĐƠN - ARMOR", EditorStyles.boldLabel);
+        singleArmorData = (ArmorDataSO)EditorGUILayout.ObjectField("File SO (Mẫu)", singleArmorData, typeof(ArmorDataSO), false);
+
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Chụp V1 (Chỉnh tay)", GUILayout.Height(30)) && CheckReady(singleArmorData))
+            ProcessBake(singleArmorData, false, true);
+
+        if (GUILayout.Button("Chụp V2 (Auto-Focus)", GUILayout.Height(30)) && CheckReady(singleArmorData))
+            ProcessBake(singleArmorData, true, true);
+        GUILayout.EndHorizontal();
+
+        DrawLine();
+
+        GUILayout.Label("CHẾ ĐỘ HÀNG LOẠT - ARMOR", EditorStyles.boldLabel);
+        EditorGUILayout.PropertyField(armorDataListProp, new GUIContent("Danh sách SO"), true);
+
+        if (GUILayout.Button("Chụp Tất Cả (Auto-Focus)", GUILayout.Height(40)))
+            BakeBatch(armorDataList);
+    }
+
+    private void DrawWeaponGUI()
+    {
+        GUILayout.Label("CHẾ ĐỘ ĐƠN - WEAPON", EditorStyles.boldLabel);
+        singleWeaponData = (WeaponDataSO)EditorGUILayout.ObjectField("File SO (Vũ khí)", singleWeaponData, typeof(WeaponDataSO), false);
+
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("Chụp V1 (Chỉnh tay)", GUILayout.Height(30)) && CheckReady(singleWeaponData))
+            ProcessBake(singleWeaponData, false, false);
+
+        if (GUILayout.Button("Chụp V2 (Auto-Focus)", GUILayout.Height(30)) && CheckReady(singleWeaponData))
+            ProcessBake(singleWeaponData, true, false);
+        GUILayout.EndHorizontal();
+
+        DrawLine();
+
+        GUILayout.Label("CHẾ ĐỘ HÀNG LOẠT - WEAPON", EditorStyles.boldLabel);
+        EditorGUILayout.PropertyField(weaponDataListProp, new GUIContent("Danh sách SO"), true);
+
+        if (GUILayout.Button("Chụp Tất Cả (Auto-Focus)", GUILayout.Height(40)))
+            BakeBatch(weaponDataList);
+    }
+
+    private bool CheckReady(ScriptableObject data)
+    {
+        if (renderCamera == null || data == null)
         {
-            Debug.LogError("[LỖI] Thiếu Camera hoặc chưa gắn File SO Đơn!");
+            Debug.LogError("[LỖI] Thiếu Camera hoặc chưa gắn File SO!");
             return false;
         }
         return true;
     }
 
     // ====================================================================
-    // HÀM CŨ 1: BAKE ICON (THỦ CÔNG) - Giữ nguyên yêu cầu cá nhân
+    // CORE PIPELINE (XỬ LÝ DỮ LIỆU & RENDER)
     // ====================================================================
-    private void BakeIcon()
+    private void BakeBatch<T>(List<T> list) where T : ScriptableObject
     {
-        GameObject dummy = new GameObject("DummyProp");
-        dummy.transform.position = Vector3.zero;
+        if (renderCamera == null || list.Count == 0) return;
 
-        MeshFilter mf = dummy.AddComponent<MeshFilter>();
-        MeshRenderer mr = dummy.AddComponent<MeshRenderer>();
-
-        mf.sharedMesh = singleArmorData.EquipmentMesh;
-        mr.sharedMaterial = singleArmorData.EquipmentMaterial;
-
-        RenderTexture rt = new RenderTexture(iconSize, iconSize, 24);
-        renderCamera.targetTexture = rt;
-        Texture2D screenShot = new Texture2D(iconSize, iconSize, TextureFormat.RGBA32, false);
-
-        renderCamera.Render();
-        RenderTexture.active = rt;
-        screenShot.ReadPixels(new Rect(0, 0, iconSize, iconSize), 0, 0);
-        screenShot.Apply();
-
-        renderCamera.targetTexture = null;
-        RenderTexture.active = null;
-        DestroyImmediate(rt);
-        DestroyImmediate(dummy);
-
-        byte[] bytes = screenShot.EncodeToPNG();
-        string soPath = AssetDatabase.GetAssetPath(singleArmorData);
-        string folderPath = Path.GetDirectoryName(soPath);
-        string pngPath = $"{folderPath}/{singleArmorData.name}_Icon.png";
-
-        File.WriteAllBytes(pngPath, bytes);
-        AssetDatabase.ImportAsset(pngPath, ImportAssetOptions.ForceUpdate);
-
-        TextureImporter importer = (TextureImporter)AssetImporter.GetAtPath(pngPath);
-        if (importer != null)
-        {
-            importer.textureType = TextureImporterType.Sprite;
-            importer.spriteImportMode = SpriteImportMode.Single;
-            importer.alphaIsTransparency = true;
-            importer.SaveAndReimport();
-        }
-
-        AssetDatabase.ImportAsset(pngPath, ImportAssetOptions.ForceUpdate);
-
-        Sprite generatedSprite = AssetDatabase.LoadAssetAtPath<Sprite>(pngPath);
-        if (generatedSprite != null)
-        {
-            singleArmorData.ItemIcon = generatedSprite;
-            EditorUtility.SetDirty(singleArmorData);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-            Debug.Log($"[PRO Tool V1] Đã tạo thành công cho: {singleArmorData.name}");
-        }
-    }
-
-    // ====================================================================
-    // HÀM CŨ 2: BAKE ICON V2 (AUTO-FOCUS) - Giữ nguyên yêu cầu cá nhân
-    // ====================================================================
-    private void BakeIcon_v2()
-    {
-        GameObject dummy = new GameObject("DummyProp");
-        MeshFilter mf = dummy.AddComponent<MeshFilter>();
-        MeshRenderer mr = dummy.AddComponent<MeshRenderer>();
-
-        mf.sharedMesh = singleArmorData.EquipmentMesh;
-        mr.sharedMaterial = singleArmorData.EquipmentMaterial;
-
-        renderCamera.orthographic = true;
-        Bounds bounds = mf.sharedMesh.bounds;
-        dummy.transform.position = -bounds.center;
-
-        float maxExtent = Mathf.Max(bounds.extents.x, bounds.extents.y, bounds.extents.z);
-        renderCamera.orthographicSize = maxExtent * 1.2f;
-
-        renderCamera.transform.position = new Vector3(0, 0, -10f);
-        renderCamera.transform.LookAt(Vector3.zero);
-
-        RenderTexture rt = new RenderTexture(iconSize, iconSize, 24);
-        renderCamera.targetTexture = rt;
-        Texture2D screenShot = new Texture2D(iconSize, iconSize, TextureFormat.RGBA32, false);
-
-        renderCamera.Render();
-        RenderTexture.active = rt;
-        screenShot.ReadPixels(new Rect(0, 0, iconSize, iconSize), 0, 0);
-        screenShot.Apply();
-
-        renderCamera.targetTexture = null;
-        RenderTexture.active = null;
-        DestroyImmediate(rt);
-        DestroyImmediate(dummy);
-
-        byte[] bytes = screenShot.EncodeToPNG();
-        string soPath = AssetDatabase.GetAssetPath(singleArmorData);
-        string folderPath = Path.GetDirectoryName(soPath);
-        string pngPath = $"{folderPath}/{singleArmorData.name}_Icon.png";
-
-        File.WriteAllBytes(pngPath, bytes);
-        AssetDatabase.ImportAsset(pngPath, ImportAssetOptions.ForceUpdate);
-
-        TextureImporter importer = (TextureImporter)AssetImporter.GetAtPath(pngPath);
-        if (importer != null)
-        {
-            importer.textureType = TextureImporterType.Sprite;
-            importer.spriteImportMode = SpriteImportMode.Single;
-            importer.alphaIsTransparency = true;
-            importer.SaveAndReimport();
-        }
-
-        AssetDatabase.ImportAsset(pngPath, ImportAssetOptions.ForceUpdate);
-
-        Sprite generatedSprite = AssetDatabase.LoadAssetAtPath<Sprite>(pngPath);
-        if (generatedSprite != null)
-        {
-            singleArmorData.ItemIcon = generatedSprite;
-            EditorUtility.SetDirty(singleArmorData);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-            Debug.Log($"[PRO Tool V2] Đã auto-focus và tạo thành công cho: {singleArmorData.name}");
-        }
-    }
-
-    // ====================================================================
-    // HÀM MỚI: BAKE HÀNG LOẠT (DÙNG LOGIC AUTO-FOCUS V2)
-    // ====================================================================
-    private void BakeAllIcons()
-    {
-        int total = armorDataList.Count;
+        bool isArmor = typeof(T) == typeof(ArmorDataSO);
+        int total = list.Count;
 
         for (int i = 0; i < total; i++)
         {
-            ArmorDataSO data = armorDataList[i];
-            if (data == null) continue;
-
-            EditorUtility.DisplayProgressBar("Đang nướng Icon...", $"Đang xử lý: {data.name} ({i + 1}/{total})", (float)i / total);
-            BakeSingleIconForBatch(data);
+            if (list[i] == null) continue;
+            EditorUtility.DisplayProgressBar("Đang nướng Icon...", $"Đang xử lý: {list[i].name} ({i + 1}/{total})", (float)i / total);
+            ProcessBake(list[i], true, isArmor);
         }
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-
         EditorUtility.ClearProgressBar();
-        Debug.Log($"[PRO Tool Batch] Đã hoàn thành nướng hàng loạt {total} Icon!");
+        Debug.Log($"[PRO Tool] Đã hoàn thành nướng hàng loạt {total} Icon!");
     }
 
-    private void BakeSingleIconForBatch(ArmorDataSO targetData)
+    private void ProcessBake(ScriptableObject data, bool isAutoFocus, bool isArmor)
     {
-        if (targetData.EquipmentMesh == null) return;
+        GameObject dummy = null;
 
-        GameObject dummy = new GameObject("DummyProp");
-        MeshFilter mf = dummy.AddComponent<MeshFilter>();
-        MeshRenderer mr = dummy.AddComponent<MeshRenderer>();
+        // BƯỚC 1: Khởi tạo Dummy Model
+        if (isArmor)
+        {
+            ArmorDataSO armorData = data as ArmorDataSO;
+            if (armorData.EquipmentMesh == null) return;
 
-        mf.sharedMesh = targetData.EquipmentMesh;
-        mr.sharedMaterial = targetData.EquipmentMaterial;
+            dummy = new GameObject("DummyProp");
+            dummy.AddComponent<MeshFilter>().sharedMesh = armorData.EquipmentMesh;
+            dummy.AddComponent<MeshRenderer>().sharedMaterial = armorData.EquipmentMaterial;
+        }
+        else
+        {
+            WeaponDataSO weaponData = data as WeaponDataSO;
+            if (weaponData.EquippedPrefab == null) return;
 
-        renderCamera.orthographic = true;
-        Bounds bounds = mf.sharedMesh.bounds;
-        dummy.transform.position = -bounds.center;
+            dummy = Instantiate(weaponData.EquippedPrefab);
+            dummy.name = "DummyProp";
 
-        float maxExtent = Mathf.Max(bounds.extents.x, bounds.extents.y, bounds.extents.z);
-        renderCamera.orthographicSize = maxExtent * 1.2f;
+            // Tắt các hiệu ứng hạt (VFX) không mong muốn dính vào Icon
+            ParticleSystem[] particles = dummy.GetComponentsInChildren<ParticleSystem>();
+            foreach (var ps in particles) ps.gameObject.SetActive(false);
+        }
 
-        renderCamera.transform.position = new Vector3(0, 0, -10f);
-        renderCamera.transform.LookAt(Vector3.zero);
+        dummy.transform.position = Vector3.zero;
 
+        // BƯỚC 2: Căn chỉnh Camera
+        if (isAutoFocus)
+        {
+            renderCamera.orthographic = true;
+            Bounds bounds = CalculateBounds(dummy);
+
+            dummy.transform.position = -bounds.center;
+            float maxExtent = Mathf.Max(bounds.extents.x, bounds.extents.y, bounds.extents.z);
+            renderCamera.orthographicSize = maxExtent * 1.2f;
+
+            renderCamera.transform.position = new Vector3(0, 0, -10f);
+            renderCamera.transform.LookAt(Vector3.zero);
+        }
+
+        // BƯỚC 3: Chụp ảnh & Lưu dữ liệu
+        CaptureAndSave(data, dummy);
+    }
+
+    private Bounds CalculateBounds(GameObject obj)
+    {
+        // Quét toàn bộ Renderer (Kể cả MeshRenderer và SkinnedMeshRenderer của Prefab)
+        Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
+        if (renderers.Length == 0) return new Bounds(obj.transform.position, Vector3.zero);
+
+        Bounds bounds = renderers[0].bounds;
+        for (int i = 1; i < renderers.Length; i++)
+        {
+            bounds.Encapsulate(renderers[i].bounds);
+        }
+        return bounds;
+    }
+
+    private void CaptureAndSave(ScriptableObject targetData, GameObject dummy)
+    {
         RenderTexture rt = new RenderTexture(iconSize, iconSize, 24);
         renderCamera.targetTexture = rt;
         Texture2D screenShot = new Texture2D(iconSize, iconSize, TextureFormat.RGBA32, false);
@@ -285,6 +219,7 @@ public class IconBakerTool : EditorWindow
         DestroyImmediate(rt);
         DestroyImmediate(dummy);
 
+        // Lưu file PNG
         byte[] bytes = screenShot.EncodeToPNG();
         string soPath = AssetDatabase.GetAssetPath(targetData);
         string folderPath = Path.GetDirectoryName(soPath);
@@ -293,6 +228,7 @@ public class IconBakerTool : EditorWindow
         File.WriteAllBytes(pngPath, bytes);
         AssetDatabase.ImportAsset(pngPath, ImportAssetOptions.ForceUpdate);
 
+        // Cấu hình Texture Importer
         TextureImporter importer = (TextureImporter)AssetImporter.GetAtPath(pngPath);
         if (importer != null)
         {
@@ -302,13 +238,17 @@ public class IconBakerTool : EditorWindow
             importer.SaveAndReimport();
         }
 
-        AssetDatabase.ImportAsset(pngPath, ImportAssetOptions.ForceUpdate);
-
         Sprite generatedSprite = AssetDatabase.LoadAssetAtPath<Sprite>(pngPath);
         if (generatedSprite != null)
         {
-            targetData.ItemIcon = generatedSprite;
-            EditorUtility.SetDirty(targetData);
+            // Sử dụng SerializedObject để gán biến động, không cần cast cụ thể kiểu class
+            SerializedObject so = new SerializedObject(targetData);
+            SerializedProperty iconProp = so.FindProperty("ItemIcon");
+            if (iconProp != null)
+            {
+                iconProp.objectReferenceValue = generatedSprite;
+                so.ApplyModifiedProperties();
+            }
         }
     }
 }

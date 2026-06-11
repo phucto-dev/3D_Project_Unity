@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7a44260819d5941b548448c270d530, type: 3}
   m_Name: Item_Weapon_PlantSword
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDataSO
-  ItemID: 
-  ItemName: 
+  ItemID: Item_Weapon_PlantSword
+  ItemName: Plant Sword
   Description: ...
-  ItemIcon: {fileID: 0}
+  ItemIcon: {fileID: 21300000, guid: 3292ac6fd5e5bbb44b15920f49545923, type: 3}
   MaxStack: 1
   SlotType: 6
   Tier: 1
@@ -34,6 +34,6 @@ MonoBehaviour:
   MagicScale: 0
   PoiseDamage: 5
   HitStopDuration: 0.09
-  OverrideController: {fileID: 22100000, guid: 321f8f4bf85baf04193a92138a7f8c26, type: 2}
+  OverrideController: {fileID: 22100000, guid: 50855511de499084ab8a1bfd037c37a6, type: 2}
   HitVFXPrefab: {fileID: 0}
   WeaponTrail: {fileID: 0}

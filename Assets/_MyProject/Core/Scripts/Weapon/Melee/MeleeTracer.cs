@@ -23,22 +23,22 @@ public class MeleeTracer : MonoBehaviour
 
     private void Awake()
     {
-        _stats = GetComponentInParent<PlayerStatsManager>();
-        _playerAttack = GetComponentInParent<PlayerAttack>();
-        _playerManager = GetComponentInParent<PlayerManager>();
-        _trail = transform.parent.GetComponentInChildren<TrailRenderer>();
-        if (_playerAttack != null)
-        {
-            _animator = _playerAttack.GetComponentInChildren<Animator>();
-        }
+        //_stats = GetComponentInParent<PlayerStatsManager>();
+        //_playerAttack = GetComponentInParent<PlayerAttack>();
+        //_playerManager = GetComponentInParent<PlayerManager>();
+        //_trail = transform.parent.GetComponentInChildren<TrailRenderer>();
+        //if (_playerAttack != null)
+        //{
+        //    _animator = _playerAttack.GetComponentInChildren<Animator>();
+        //}
     }
 
     private void OnEnable()
     {
-        if (_playerManager != null)
-        {
-            _playerManager.BeingHit += StopSwing;
-        }
+        //if (_playerManager != null)
+        //{
+        //    _playerManager.BeingHit += StopSwing;
+        //}
     }
     private void OnDisable()
     {
@@ -52,6 +52,26 @@ public class MeleeTracer : MonoBehaviour
     {
         _previousPos = new Vector3[_damagePoints.Length];
         if (_trail != null) _trail.enabled = false;
+        if (_stats == null) return;
+        _dmgInfo = new DmgInfo
+        {
+            Amount = _stats.AttackPower.GetValue(),
+            PoiseDamage = _stats.PoiseDamage.GetValue(),
+            Dealer = _stats.transform,
+            IsCritical = false
+        };
+    }
+
+    public void Initialize(PlayerStatsManager ownerStats, PlayerAttack playerAttack, PlayerManager playerManager, Animator animator)
+    {
+        _stats = ownerStats;
+        _playerAttack = playerAttack;
+        _playerManager = playerManager;
+        _animator = animator;
+        if (_playerManager != null)
+        {
+            _playerManager.BeingHit += StopSwing;
+        }
         if (_stats == null) return;
         _dmgInfo = new DmgInfo
         {
