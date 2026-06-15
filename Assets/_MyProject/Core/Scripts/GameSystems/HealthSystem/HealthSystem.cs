@@ -15,6 +15,7 @@ public class HealthSystem : MonoBehaviour
     [field: SerializeField] public float MaxHealth { get; private set; }
 
     public event Action<float> OnHealthChanged;
+    public event Action<float> OnRecovery;
     public event Action<DmgInfo> OnTakeDmg;
     public event Action OnDeath;
 
@@ -54,6 +55,15 @@ public class HealthSystem : MonoBehaviour
     public void ResetHP()
     {
         CurrentHealth = _stats.MaxHealth.GetValue();
+    }
+    public void RecoverHP(float amount)
+    {
+        CurrentHealth += amount;
+        if (CurrentHealth >= MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
+        OnRecovery?.Invoke(amount);
     }
     public void AddInvincibility()
     {

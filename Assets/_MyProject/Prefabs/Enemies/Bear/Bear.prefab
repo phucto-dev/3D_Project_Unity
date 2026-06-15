@@ -236,6 +236,7 @@ MonoBehaviour:
     _baseValue: 0
   PoiseDamage:
     _baseValue: 0
+  SuperArmor: 0
   QuantityOfAttack:
     _baseValue: 0
   QuantityOfHurt:
@@ -646,6 +647,18 @@ PrefabInstance:
       value: 53.10568
       objectReference: {fileID: 0}
     - target: {fileID: 4864750909457918182, guid: 8d346eb85c0d94b47a39afbc99c107fd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864750909457918182, guid: 8d346eb85c0d94b47a39afbc99c107fd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864750909457918182, guid: 8d346eb85c0d94b47a39afbc99c107fd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864750909457918182, guid: 8d346eb85c0d94b47a39afbc99c107fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -684,6 +697,10 @@ PrefabInstance:
     - target: {fileID: 4864750909457918182, guid: 8d346eb85c0d94b47a39afbc99c107fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864750909457918182, guid: 8d346eb85c0d94b47a39afbc99c107fd, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5050931158102752323, guid: 8d346eb85c0d94b47a39afbc99c107fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -923,3 +940,6 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 128
+  ProjectilePoolInfo: {fileID: 0}
+  Player: {fileID: 0}
+  ProjectileSpeed: 20

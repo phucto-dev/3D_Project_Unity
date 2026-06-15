@@ -25,7 +25,7 @@ MonoBehaviour:
     minValue: 0
     maxValue: 9999
   _haste:
-    baseValue: 1
+    baseValue: 6
     minValue: 0.1
     maxValue: 99
   _delayPerAttack:

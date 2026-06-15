@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 48353633814516615}
   - component: {fileID: 1318419809381394239}
   - component: {fileID: 7320804444637491932}
+  - component: {fileID: 2885385974028102458}
   m_Layer: 0
   m_Name: Main_Char
   m_TagString: Player
@@ -325,6 +326,7 @@ MonoBehaviour:
     _baseValue: 0
   PoiseDamage:
     _baseValue: 0
+  SuperArmor: 0
 --- !u!114 &2868168352298875736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,8 +407,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   _baseEntryLightAttack: {fileID: 11400000, guid: 7cdc285d72dcafc419fb4fcd862e3316, type: 2}
   _baseEntryHeavyAttack: {fileID: 11400000, guid: 4983b53dd280b1a42a3c11a198737597, type: 2}
-  _entryLightAttack: {fileID: 11400000, guid: 49c1693f076a4a44aaf0ca3bd3473b29, type: 2}
-  _entryHeavyAttack: {fileID: 11400000, guid: 964cb832077b3e142b3c3ed4f5205a16, type: 2}
+  _entryLightAttack: {fileID: 11400000, guid: 7cdc285d72dcafc419fb4fcd862e3316, type: 2}
+  _entryHeavyAttack: {fileID: 11400000, guid: e955bc1c4ab701b42ac832e2303dac31, type: 2}
   _blendTimeBetweenLayers: 0.2
 --- !u!114 &1318419809381394239
 MonoBehaviour:
@@ -443,6 +445,22 @@ MonoBehaviour:
   LegsSkinnedMesh: {fileID: 3114307043560192636}
   FeetSkinnedMesh: {fileID: 4202269804925663707}
   WeaponSlot: {fileID: 7656304950531880705}
+  AnimController: {fileID: 0}
+--- !u!114 &2885385974028102458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3026359981471053008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dcda9335744b1640bb3ffc8a236d648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSkill
+  SkillSlots:
+  - {fileID: 11400000, guid: 2ece3c95464bf7b4781b29a894fc010e, type: 2}
+  - {fileID: 11400000, guid: 488b8ff20f730cf48a7254d9c4352465, type: 2}
 --- !u!1 &3058243348367920551
 GameObject:
   m_ObjectHideFlags: 0
