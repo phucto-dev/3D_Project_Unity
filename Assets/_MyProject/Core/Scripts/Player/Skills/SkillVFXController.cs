@@ -1,8 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SkillVFXController : MonoBehaviour
 {
+    public event Action EndDuration;
+
     private SkillDataSO _data;
     private float _tickTimer;
     private float _lifeTimer;
@@ -18,6 +21,7 @@ public class SkillVFXController : MonoBehaviour
             _lifeTimer -= Time.deltaTime;
             if (_lifeTimer <= 0)
             {
+                EndDuration?.Invoke();
                 Destroy(gameObject);
                 return;
             }
@@ -41,7 +45,7 @@ public class SkillVFXController : MonoBehaviour
         float baseDmg = playerStats.AttackPower.GetValue();
         float finalDmg = baseDmg * skillData.DmgScaleMultiplier;
         _data = skillData;
-        Debug.Log("_data: "+ skillData.TargetLayer);
+        //Debug.Log("_data: "+ skillData.TargetLayer);
         _tickTimer = 0f;
         _lifeTimer = skillData.ActiveDuration;
         _dmgInfo = new DmgInfo()
@@ -55,7 +59,6 @@ public class SkillVFXController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("other" + other.name);
         if (((1 << other.gameObject.layer) & _data.TargetLayer) != 0)
         {
             if (!_targetsInRange.Contains(other))

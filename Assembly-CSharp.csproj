@@ -107,6 +107,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Enemies\Stats\EnemyStatsSO.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerEquipmentManager.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ScaleFactorApplyToMaterial.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Player\Skills\PullSkill\PullEntityInRange.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\CursorManager\CursorManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Move\PlayerMovement.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\Data\PlaneWeapon.cs" />

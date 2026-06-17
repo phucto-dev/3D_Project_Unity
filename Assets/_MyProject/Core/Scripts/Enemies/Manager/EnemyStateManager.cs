@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public interface IEnemyState
 {
@@ -81,11 +82,13 @@ public class EnemyStateManager : MonoBehaviour
         if (PlayerInformation != null) Player = PlayerInformation.PlayerTransform;
         CheckSawPlayer();
         //Debug.Log("Current: " + _currentState.ToString());
+        if (!Agent.enabled) return;
         _currentState.UpdateState(this);
     }
 
     public void ChangeState(IEnemyState newState)
     {
+        if (!Agent.enabled) return;
         _currentState?.ExitState(this);
         _currentState = newState;
         _currentState.EnterState(this);
@@ -167,6 +170,7 @@ public class PatrolState : IEnemyState
 
     public void UpdateState(EnemyStateManager enemy)
     {
+        if (!enemy.Agent.enabled) return;
         if (enemy.Player == null) return;
         if (enemy.SeePlayer)
         {
@@ -225,6 +229,7 @@ public class ChaseState: IEnemyState
 
     public void UpdateState(EnemyStateManager enemy)
     {
+        if (!enemy.Agent.enabled) return;
         if (enemy.Player == null) return;
 
         if (!enemy.SeePlayer)
@@ -292,6 +297,7 @@ public class GoBackToSpawnState: IEnemyState
     }
     public void UpdateState(EnemyStateManager enemy)
     {
+        if (!enemy.Agent.enabled) return;
         EntitySpawnInfo spawnInfo = enemy.SpawnInfo;
         if (spawnInfo == null) return;
 
