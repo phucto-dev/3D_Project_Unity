@@ -18,8 +18,8 @@ TagManager:
   - Enemy
   - Player
   - Item
-  - 
-  - 
+  - ProjectileShield
+  - EnemyProjectile
   - 
   - 
   - 
