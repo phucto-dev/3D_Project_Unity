@@ -7,7 +7,7 @@ public enum SkillTargetingMode
 }
 public enum SkillType
 {
-    Projectile,
+    Hold,
     AOE,
     Buff,
 }
@@ -25,6 +25,7 @@ public class SkillDataSO : ScriptableObject
     public float ActiveDuration = 0f;
     public bool IsToggle = false;
     public float CooldownTime = 5f;
+    public float HoldCastingTime = 0f;
 
     [Header("--- DMG & RANGE ---")]
     public bool HasBuff = false;

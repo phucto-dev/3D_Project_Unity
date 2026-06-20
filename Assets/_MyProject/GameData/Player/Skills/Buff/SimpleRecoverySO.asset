@@ -16,10 +16,11 @@ MonoBehaviour:
   SkillName: Simple Recover
   SkillType: 2
   VFXPrefab: {fileID: 1339010535671150650, guid: 2637ca7451a3a0e4fb9ee5978857a645, type: 3}
-  CastTime: 0
+  CastTime: 1.5
   ActiveDuration: 0
   IsToggle: 0
   CooldownTime: 5
+  HoldCastingTime: 0
   HasBuff: 1
   DmgScaleMultiplier: 0
   PoiseDamge: 0

@@ -16,10 +16,11 @@ MonoBehaviour:
   SkillName: Bomb Rainbow
   SkillType: 1
   VFXPrefab: {fileID: 7053249225480425717, guid: e1dba408931563648ad29b0503009738, type: 3}
-  CastTime: 0
+  CastTime: 1.5
   ActiveDuration: 3
   IsToggle: 0
   CooldownTime: 5
+  HoldCastingTime: 0
   HasBuff: 0
   DmgScaleMultiplier: 1
   PoiseDamge: 10

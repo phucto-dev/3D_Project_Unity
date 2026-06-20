@@ -16,21 +16,24 @@ MonoBehaviour:
   SkillName: Eternal Slash Dance
   SkillType: 1
   VFXPrefab: {fileID: 2797559625657395395, guid: cf545e3efb148a740bb0520a7a174df0, type: 3}
-  CastTime: 0
+  CastTime: 1.5
   ActiveDuration: 6
   IsToggle: 0
   CooldownTime: 5
+  HoldCastingTime: 0
   HasBuff: 0
   DmgScaleMultiplier: 1
   PoiseDamge: 20
   RangeScaleMultiplier: 1
   GainInvincible: 0
   GainSuperArmor: 0
-  GainHealthRegen: 0
+  GainHealthRegenPassive: 0
+  RecoveryHealth: 0
   IncreaseDmgMultiplier: 0
   IncreaseDefMultiplier: 0
   IncreasePoiseDefMultiplier: 0
   HealRegenAmount: 0
+  HealRegenPassiveAmount: 0
   BuffDuration: 0
   TickInterval: 0.2
   TargetLayer:

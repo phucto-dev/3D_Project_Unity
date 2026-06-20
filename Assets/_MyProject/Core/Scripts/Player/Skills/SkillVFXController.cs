@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SkillVFXController : MonoBehaviour
 {
+    [SerializeField] private float _holdSkillDelayTime;
+
     public event Action EndDuration;
+    public event Action<PlayerSkill, PlayerStatsManager> OnInit;
 
     private SkillDataSO _data;
     private float _tickTimer;
@@ -12,17 +15,37 @@ public class SkillVFXController : MonoBehaviour
     private DmgInfo _dmgInfo;
     private List<Collider> _targetsInRange = new List<Collider>();
 
+    private bool _flag = false;
     private void Update()
     {
         if (_data == null) return;
-
         if (!_data.IsToggle && _data.ActiveDuration > 0)
         {
             _lifeTimer -= Time.deltaTime;
             if (_lifeTimer <= 0)
             {
-                EndDuration?.Invoke();
-                Destroy(gameObject);
+                if (_data.SkillType != SkillType.Hold)
+                {
+                    EndDuration?.Invoke();
+                    Destroy(gameObject);
+                    return;
+                }
+                else
+                {
+                    if (!_flag)
+                    {
+                        _flag = true;
+                        EndDuration?.Invoke();
+                    }
+                    else
+                    {
+                        float offset = 0.2f;
+                        if (_lifeTimer <= (_holdSkillDelayTime + offset) * -1)
+                        {
+                            Destroy(gameObject);
+                        }
+                    }
+                }
                 return;
             }
         }
@@ -40,8 +63,9 @@ public class SkillVFXController : MonoBehaviour
             }
         }
     }
-    public void Initialize(SkillDataSO skillData, PlayerStatsManager playerStats)
+    public void Initialize(SkillDataSO skillData, PlayerStatsManager playerStats, PlayerSkill playerSkill)
     {
+        OnInit?.Invoke(playerSkill, playerStats);
         float baseDmg = playerStats.AttackPower.GetValue();
         float finalDmg = baseDmg * skillData.DmgScaleMultiplier;
         _data = skillData;

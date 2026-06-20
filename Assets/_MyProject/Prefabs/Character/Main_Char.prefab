@@ -463,6 +463,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 488b8ff20f730cf48a7254d9c4352465, type: 2}
   - {fileID: 11400000, guid: 1b5e0c73a5831b542a1cbc0467653092, type: 2}
   - {fileID: 11400000, guid: 5b2e2fdfc67532c4eabbb20f24ab2e47, type: 2}
+  - {fileID: 11400000, guid: 4114c2aebcde9ba4e9a55fef4d308e8a, type: 2}
+  _blendTimeBetweenLayers: 0.2
+  _smashTime: 1.05
+  TransitionDuaration: 0.2
 --- !u!1 &3058243348367920551
 GameObject:
   m_ObjectHideFlags: 0
