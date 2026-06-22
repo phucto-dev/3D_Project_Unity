@@ -40,4 +40,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   targetingMode: 1
-  forwardOffsetDistance: 10
+  forwardOffsetDistance: 15

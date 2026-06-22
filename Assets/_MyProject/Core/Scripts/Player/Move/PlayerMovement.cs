@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerCamManager playerCamManager;
     private PlayerAttack _playerAttack;
     private PlayerManager _playerManager;
+    private PlayerSkill _playerSkill;
 
     private Vector3 _calculatedMoveDir;
     private Quaternion _targetRotation;
@@ -75,13 +76,15 @@ public class PlayerMovement : MonoBehaviour
     private bool _isAttacking;
     private Vector2 _lastMoveDir;
     private bool _isStun = false;
-    private RaycastHit _slopeHit;
+    private bool _isUsingSkill = false;
+
     private void Awake()
     {
         _inputSystem = GetComponent<PlayerInput>();
         _playerAttack = GetComponent<PlayerAttack>();
         _playerManager = GetComponent<PlayerManager>();
         _playerCollider = GetComponent<Collider>();
+        _playerSkill = GetComponent<PlayerSkill>();
         if (animator == null)
         {
             animator = GetComponentInChildren<Animator>();
@@ -105,6 +108,10 @@ public class PlayerMovement : MonoBehaviour
             _playerManager.BeingHit += EnableBeStun;
             _playerManager.DoneBeingHit += DisableBeStun;
         }
+        if (_playerSkill != null)
+        {
+            _playerSkill.OnUsingSkill += SetAllowMovement;
+        }
         _jumpAction.performed += HandleJumpInput;
         _sprintAction.performed += HandleSprintOrRoll;
         _sprintAction.canceled += HandleSprintStop;
@@ -116,6 +123,10 @@ public class PlayerMovement : MonoBehaviour
         {
             _playerManager.BeingHit -= EnableBeStun;
             _playerManager.DoneBeingHit -= DisableBeStun;
+        }
+        if (_playerSkill != null)
+        {
+            _playerSkill.OnUsingSkill -= SetAllowMovement;
         }
         _jumpAction.performed -= HandleJumpInput;
         _sprintAction.performed -= HandleSprintOrRoll;
@@ -154,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         if (!_moveable) return;
+        if (_isUsingSkill) return;
         if (_isAttacking) return;
         Movement();
         //Jump();
@@ -360,6 +372,7 @@ public class PlayerMovement : MonoBehaviour
             if (_playerAttack != null)
             {
                 _playerAttack.ResetCombatState();
+                _playerSkill.ChangeState(SkillState.End);
                 RotateCharacter();
                 if (_calculatedMoveDir != Vector3.zero)
                 {
@@ -536,5 +549,11 @@ public class PlayerMovement : MonoBehaviour
     public void SetMainCamera(Transform cam)
     {
         mainCamera = cam;
+    }
+    public void SetAllowMovement(bool value)
+    {
+        rb.linearVelocity = Vector3.zero;
+        _isUsingSkill = value;
+        _moveable = !value;
     }
 }

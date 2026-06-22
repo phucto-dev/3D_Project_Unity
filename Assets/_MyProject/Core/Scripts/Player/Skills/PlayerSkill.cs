@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -22,6 +23,8 @@ public class PlayerSkill : MonoBehaviour
     private string _animStart = "CastStart";
     private string _animSmash = "CastSmash";
     private string _animEnd = "CastEnd";
+
+    public event Action<bool> OnUsingSkill;
 
     private PlayerInput _inputSystem;
     private InputAction[] _skillInputActions;
@@ -145,15 +148,20 @@ public class PlayerSkill : MonoBehaviour
         _currentState = SkillState.End;
         if (_fadeLayerCoroutine == null)
             _fadeLayerCoroutine = StartCoroutine(FadeOutSkillLayer(_blendTimeBetweenLayers));
+        OnUsingSkill?.Invoke(false);
     }
     private IEnumerator ExecuteSkillRoutine(float duration, SkillDataSO skillData)
     {
+        OnUsingSkill?.Invoke(true);
         ChangeState(SkillState.Start);
 
         yield return new WaitForSeconds(duration);
 
         ExecuteSkill(skillData);
-        if (skillData.SkillType != SkillType.Hold) SkillDone();
+        if (skillData.SkillType != SkillType.Hold)
+        {
+            SkillDone();
+        }
     }
     private IEnumerator FadeOutSkillLayer(float fadeDuration)
     {

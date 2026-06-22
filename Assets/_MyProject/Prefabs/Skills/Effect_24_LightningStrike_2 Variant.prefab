@@ -59,6 +59,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3835836343253444776, guid: 697f14c51452d3845bc61f48f38ece09, type: 3}
       insertIndex: -1
       addedObject: {fileID: -1162555202631611944}
+    - targetCorrespondingSourceObject: {fileID: 3835836343253444776, guid: 697f14c51452d3845bc61f48f38ece09, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6913007303061003256}
+    - targetCorrespondingSourceObject: {fileID: 3835836343253444776, guid: 697f14c51452d3845bc61f48f38ece09, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3749101574247513287}
   m_SourcePrefab: {fileID: 100100000, guid: 697f14c51452d3845bc61f48f38ece09, type: 3}
 --- !u!1 &3189572376494687677 stripped
 GameObject:
@@ -77,3 +83,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c3a25225f186b4d96a41ad0a079a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillVFXController
+  _holdSkillDelayTime: 0
+--- !u!114 &-6913007303061003256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189572376494687677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a42ade4b86d3e444a1085606a28823c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillCinematic
+  Config:
+    Duration: 0.2
+    WorldTimeScale: 1
+    OutroDuration: 0
+    ZoomAmount: 0
+    TransitionSpeed: 0
+    ShakeAmplitude: 1
+--- !u!135 &3749101574247513287
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189572376494687677}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}

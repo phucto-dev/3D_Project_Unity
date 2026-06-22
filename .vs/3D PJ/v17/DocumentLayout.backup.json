@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\PHUC\\3D PJ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\player\\skills\\playerskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\skills\\playerskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\attack\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\attack\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\skills\\skillvfxcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\skills\\skillvfxcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\skills\\lightningstrike\\summonlightning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\skills\\lightningstrike\\summonlightning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\skills\\skillvfxcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\skills\\skillvfxcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\manager\\statmanager\\entitystatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\manager\\statmanager\\entitystatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\player\\skills\\playerskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\skills\\playerskill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\enemies\\manager\\enemystatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\enemies\\manager\\enemystatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\attack\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\attack\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\manager\\statmanager\\entitystatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\manager\\statmanager\\entitystatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\skills\\pullskill\\pullentityinrange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\skills\\pullskill\\pullentityinrange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\enemies\\manager\\enemystatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\enemies\\manager\\enemystatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\skills\\skillbuffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -394,23 +394,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "SummonLightning.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\LightningStrike\\SummonLightning.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\LightningStrike\\SummonLightning.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\LightningStrike\\SummonLightning.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\LightningStrike\\SummonLightning.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAwwCIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowBYAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-19T04:34:19.716Z"
+              "WhenOpened": "2026-06-19T04:34:19.716Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "SkillVFXController.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\SkillVFXController.cs",
+              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\SkillVFXController.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\SkillVFXController.cs",
+              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\SkillVFXController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAUwCgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-15T12:30:19.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "EntityStatsManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\EntityStatsManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\EntityStatsManager.cs",
@@ -418,23 +432,12 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\EntityStatsManager.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAcwB8AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-15T12:37:29.066Z"
+              "WhenOpened": "2026-06-15T12:37:29.066Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SkillVFXController.cs",
-              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\SkillVFXController.cs",
-              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\SkillVFXController.cs",
-              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\SkillVFXController.cs",
-              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\SkillVFXController.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAwwDQAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-15T12:30:19.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "EnemyStateManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Manager\\EnemyStateManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Manager\\EnemyStateManager.cs",
@@ -442,24 +445,25 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Manager\\EnemyStateManager.cs",
               "ViewState": "AgIAAEwAAAAAAAAAAAAkwFgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T12:13:24.664Z"
+              "WhenOpened": "2026-05-27T12:13:24.664Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "PlayerSkill.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\PlayerSkill.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\PlayerSkill.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\PlayerSkill.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\PlayerSkill.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAAAGsAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAgwJsAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-15T12:52:17.538Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "PlayerAttack.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Attack\\PlayerAttack.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Attack\\PlayerAttack.cs",
@@ -471,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
@@ -495,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "PullEntityInRange.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\PullSkill\\PullEntityInRange.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\PullSkill\\PullEntityInRange.cs",

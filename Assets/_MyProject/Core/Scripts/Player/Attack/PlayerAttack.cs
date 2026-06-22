@@ -18,6 +18,7 @@ public class PlayerAttack : MonoBehaviour
     private PlayerInput _inputSystem;
     private InputAction _attackAction;
     private PlayerManager _playerManager;
+    private PlayerSkill _playerSkill;
 
     private Animator _animator;
     private AttackNodeSO _currentAttackNode;
@@ -29,12 +30,14 @@ public class PlayerAttack : MonoBehaviour
     private Coroutine _fadeLayerCoroutine;
 
     private bool _isStun = false;
+    private bool _allowAttack = true;
 
     private void Awake()
     {
         _inputSystem = GetComponent<PlayerInput>();
         _playerMovement = GetComponent<PlayerMovement>();
         _playerManager = GetComponent<PlayerManager>();
+        _playerSkill = GetComponent<PlayerSkill>();
         if (_animator == null)
         {
             _animator = GetComponentInChildren<Animator>();
@@ -54,6 +57,10 @@ public class PlayerAttack : MonoBehaviour
             _playerManager.BeingHit += EnableBeStun;
             _playerManager.DoneBeingHit += DisableBeStun;
         }
+        if (_playerSkill != null)
+        {
+            _playerSkill.OnUsingSkill += SetAllowAttack;
+        }
         _attackAction.performed += PerformAttack;
     }
     private void OnDisable()
@@ -63,6 +70,10 @@ public class PlayerAttack : MonoBehaviour
         {
             _playerManager.BeingHit -= EnableBeStun;
             _playerManager.DoneBeingHit -= DisableBeStun;
+        }
+        if (_playerSkill != null)
+        {
+            _playerSkill.OnUsingSkill -= SetAllowAttack;
         }
         _attackAction.performed -= PerformAttack;
     }
@@ -74,6 +85,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void PerformAttack(InputAction.CallbackContext ctx)
     {
+        if (!_allowAttack) return;
         if (_isStun) return;
         if (_attackLayerIndex == -1) return;
         if (_playerMovement != null)
@@ -213,5 +225,9 @@ public class PlayerAttack : MonoBehaviour
     {
         _entryLightAttack = entryLight;
         _entryHeavyAttack = entryHeavy;
+    }
+    public void SetAllowAttack(bool value)
+    {
+        _allowAttack = !value;
     }
 }

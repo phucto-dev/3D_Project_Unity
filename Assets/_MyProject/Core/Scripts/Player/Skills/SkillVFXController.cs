@@ -92,6 +92,7 @@ public class SkillVFXController : MonoBehaviour
                 if (_data.TickInterval <= 0)
                 {
                     DealDamage(other);
+                    Debug.Log("Dealll");
                 }
             }
         }

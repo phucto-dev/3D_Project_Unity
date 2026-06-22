@@ -80,7 +80,6 @@ public class PullEntityInRange : MonoBehaviour
         {
             if (_targetDict.TryGetValue(rb, out PullTarget target))
             {
-                Debug.Log("Sao exit ?");
                 RestoreAgent(target);
                 _targetDict.Remove(rb);
             }

@@ -17,7 +17,7 @@ MonoBehaviour:
   SkillType: 1
   VFXPrefab: {fileID: 3189572376494687677, guid: b6ef702a5ab126149a4d7299eae812db, type: 3}
   CastTime: 0
-  ActiveDuration: 0
+  ActiveDuration: 1
   IsToggle: 0
   CooldownTime: 5
   HoldCastingTime: 0
@@ -35,9 +35,9 @@ MonoBehaviour:
   HealRegenAmount: 0
   HealRegenPassiveAmount: 0
   BuffDuration: 0
-  TickInterval: 1
+  TickInterval: 0.9
   TargetLayer:
     serializedVersion: 2
-    m_Bits: 0
-  targetingMode: 1
-  forwardOffsetDistance: 2
+    m_Bits: 64
+  targetingMode: 0
+  forwardOffsetDistance: 0
