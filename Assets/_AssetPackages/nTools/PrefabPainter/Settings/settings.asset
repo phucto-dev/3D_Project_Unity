@@ -3941,7 +3941,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: TSI_Water_Lily_05A
@@ -5521,7 +5521,7 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: TSI_Water_Lily_Flower_01A
       settings:
-        brushRadius: 1
+        brushRadius: 1.32
         brushSpacing: 0.5
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
@@ -65051,7 +65051,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
       customPreviewImage: {fileID: 0}
     levelsGamma: 1

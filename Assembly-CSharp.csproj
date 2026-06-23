@@ -156,6 +156,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\RespawnBtn.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerEquipmentSO.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\DelayActive.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossStateManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Weapon\Melee\MeleeTracer.cs" />
     <Compile Include="Assets\_MyProject\Ex\BTM_Assets\BTM_Rockets_Missiles_Bombs\Scripts\RocketRotator.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Manager\PlayerManager.cs" />
