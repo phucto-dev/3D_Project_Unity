@@ -14,44 +14,17 @@ public interface IBossAttackStrategy
 {
     IEnumerator ExecuteRoutine(BossStateManager boss);
 }
-public class GroundLocomotion: ILocomotionStrategy
+public interface IBossState
 {
-    public void Enter(BossStateManager boss)
-    {
-        boss.GetNavMeshAgent().enabled = true;
-        boss.GetRigidbody().isKinematic = true;
-    }
-    public void MoveTo(BossStateManager boss, Vector3 targetPosition)
-    {
-        if (boss.GetNavMeshAgent().isOnNavMesh) boss.GetNavMeshAgent().SetDestination(targetPosition);
-    }
-    public void Exit(BossStateManager boss)
-    {
-        boss.GetNavMeshAgent().enabled = true;
-    }
+    void Enter(BossStateManager boss);
+    void UpdateState(BossStateManager boss);
+    void Exit(BossStateManager boss);
+    void OnActionTriggered(BossStateManager boss);
+    void OnAnimationEnded(BossStateManager boss);
 }
-public class AirLocomotion: ILocomotionStrategy
-{
-    public void Enter(BossStateManager boss)
-    {
-        boss.GetNavMeshAgent().enabled = false;
-        boss.GetRigidbody().isKinematic = true;
-    }
-    public void MoveTo(BossStateManager boss, Vector3 targetPosition)
-    {
-        boss.transform.position = Vector3.MoveTowards(boss.transform.position, targetPosition, Time.deltaTime * boss.FlySpeed);
-        Vector3 dir = (targetPosition - boss.transform.position).normalized;
-        if (dir != Vector3.zero)
-            boss.transform.rotation = Quaternion.Slerp(boss.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 5f);
-    }
-    public void Exit(BossStateManager boss)
-    {
 
-    }
-}
 public class BossStateManager : MonoBehaviour
 {
-    
     public Animator Anim { get; private set; }
     public Transform Player { get; private set; }
     public bool SeePlayer { get; private set; }
@@ -63,6 +36,7 @@ public class BossStateManager : MonoBehaviour
     private EnemyStatsManager _stats;
     private EnemyVision _vision;
     private ILocomotionStrategy _currentLocomotion;
+    private IBossState _currentState;
     private Coroutine _currentAttackCoroutine;
     private HealthSystem _healthSystem;
     private NavMeshAgent _agent;
@@ -81,19 +55,25 @@ public class BossStateManager : MonoBehaviour
     }
     private void Start()
     {
-        SetLocomotion(new GroundLocomotion());
         if (PlayerInformation != null) Player = PlayerInformation.PlayerTransform;
-        SeePlayer = _vision.CanSeePlayer();
+        //SeePlayer = _vision.CanSeePlayer();
+        ChangeState(new BossIntro());
     }
     private void Update()
     {
-        
+        _currentState?.UpdateState(this);
     }
     public void SetLocomotion(ILocomotionStrategy newLocomotion)
     {
         _currentLocomotion?.Exit(this);
         _currentLocomotion = newLocomotion;
         _currentLocomotion.Enter(this);
+    }
+    public void ChangeState(IBossState newState)
+    {
+        _currentState?.Exit(this);
+        _currentState = newState;
+        _currentState.Enter(this);
     }
     public void MoveToTarget(Vector3 target) => _currentLocomotion?.MoveTo(this, target);
 
@@ -110,5 +90,18 @@ public class BossStateManager : MonoBehaviour
             StopCoroutine(_currentAttackCoroutine);
             _currentAttackCoroutine = null;
         }
+    }
+    public void OnActionTriggered()
+    {
+        _currentState?.OnActionTriggered(this);
+    }
+    public void OnAnimationEnded()
+    {
+        _currentState?.OnAnimationEnded(this);
+    }
+    public void LookForward()
+    {
+        Vector3 currentRotation = transform.eulerAngles;
+        transform.eulerAngles = new Vector3(0f, currentRotation.y, currentRotation.z);
     }
 }
