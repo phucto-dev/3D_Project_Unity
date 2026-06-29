@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum BossSpeedType
+{
+    Normal,
+    Fast
+}
 public interface ILocomotionStrategy
 {
     void Enter(BossStateManager boss);
     void MoveTo(BossStateManager boss, Vector3 targetPosition);
+    void SetSpeedType(BossStateManager boss, BossSpeedType speedType);
+    void Stop(BossStateManager boss);
     void Exit(BossStateManager boss);
 }
 public interface IBossAttackStrategy
@@ -31,9 +36,7 @@ public class BossStateManager : MonoBehaviour
 
     [Header("--- REF ---")]
     [field: SerializeField] public PlayerInfo PlayerInformation { get; private set; }
-    public float FlySpeed = 15f;
 
-    private EnemyStatsManager _stats;
     private EnemyVision _vision;
     private ILocomotionStrategy _currentLocomotion;
     private IBossState _currentState;
@@ -41,16 +44,17 @@ public class BossStateManager : MonoBehaviour
     private HealthSystem _healthSystem;
     private NavMeshAgent _agent;
     private Rigidbody _rb;
-
+    private BossStatsManager _stats;
     public NavMeshAgent GetNavMeshAgent() => _agent;
     public Rigidbody GetRigidbody() => _rb;
+    public BossStatsManager GetStats() => _stats;
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _rb = GetComponent<Rigidbody>();
         _vision = GetComponent<EnemyVision>();
         Anim = GetComponentInChildren<Animator>();
-        _stats = GetComponent<EnemyStatsManager>();
+        _stats = GetComponent<BossStatsManager>();
         _healthSystem = GetComponentInChildren<HealthSystem>();
     }
     private void Start()
@@ -61,6 +65,7 @@ public class BossStateManager : MonoBehaviour
     }
     private void Update()
     {
+        if (PlayerInformation != null) Player = PlayerInformation.PlayerTransform;
         _currentState?.UpdateState(this);
     }
     public void SetLocomotion(ILocomotionStrategy newLocomotion)
@@ -76,6 +81,8 @@ public class BossStateManager : MonoBehaviour
         _currentState.Enter(this);
     }
     public void MoveToTarget(Vector3 target) => _currentLocomotion?.MoveTo(this, target);
+    public void ChasePlayer() => _currentLocomotion?.MoveTo(this, Player.position);
+    public void SetCurentSpeedType(BossSpeedType speed) => _currentLocomotion?.SetSpeedType(this,speed);
 
     public void ExecuteAttack(IBossAttackStrategy attack)
     {

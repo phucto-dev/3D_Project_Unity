@@ -18,7 +18,8 @@ public class BossRoar : IBossState
         {
             _roarEffect.enabled = false;
         }
-        boss.ChangeState(new BossGroundedIdleState());
+        //boss.ChangeState(new BossGroundedIdleState());
+        boss.ChangeState(new BossCombatState());
     }
     public void OnActionTriggered(BossStateManager boss)
     {

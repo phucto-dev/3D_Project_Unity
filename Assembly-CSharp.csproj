@@ -84,6 +84,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\Pool\PoolObject.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BTAgent.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\_ObjectsMakeBase.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Manager\BossAttackFactory.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\PlaneAttack.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Extension\CooldownTimer\CooldownTimer.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerInventorySO.cs" />
@@ -121,7 +122,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\GameManager\HitStopManager.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherUnsheatheBowSMB.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\GameManager\GameManager.cs" />
-    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\BossManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\BossStatsManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\Camera\CameraManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\Spawner\EntitySpawner.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\RSelector.cs" />
@@ -147,7 +148,6 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Skills\PlayerSkill.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Enemies\Config\EnemyBrainConfigSO.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\DropItems\LootItemSO.cs" />
-    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\BossAttackFactory.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\Equipment\Weapon\Melee\WeaponDataSO.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\PlanePoolVFX.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\Pool\PoolManager.cs" />
@@ -156,6 +156,7 @@
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\ShieldActivate.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\NodeBT.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\MultipleObjectsMake.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Manager\BossManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\EntityStatsManager.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\ObjectMove.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MenuBtn.cs" />

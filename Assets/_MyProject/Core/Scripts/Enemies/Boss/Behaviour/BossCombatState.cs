@@ -4,7 +4,8 @@ public class BossCombatState : IBossState
 {
     public void Enter(BossStateManager boss)
     {
-
+        IBossAttackStrategy attackStrategy = BossAttackFactory.CreateStrategy(BossAttackType.DashAndBite);
+        boss.ExecuteAttack(attackStrategy);
     }
 
     public void UpdateState(BossStateManager boss) { }
