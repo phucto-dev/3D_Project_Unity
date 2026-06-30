@@ -37,6 +37,10 @@ public class BossStateManager : MonoBehaviour
     [Header("--- REF ---")]
     [field: SerializeField] public PlayerInfo PlayerInformation { get; private set; }
 
+    private string TurnLeftAnimName = "Turn90L";
+    private string TurnRightAnimName = "Turn90R";
+    private string IdleBreatheAnimName = "IdleBreathe";
+
     private EnemyVision _vision;
     private ILocomotionStrategy _currentLocomotion;
     private IBossState _currentState;
@@ -45,9 +49,14 @@ public class BossStateManager : MonoBehaviour
     private NavMeshAgent _agent;
     private Rigidbody _rb;
     private BossStatsManager _stats;
+    private bool _isRotating;
+    private string _currentAnimName;
+    private float _turnStartThreshold = 60f;
+    private float _turnStopThreshold = 5f;
     public NavMeshAgent GetNavMeshAgent() => _agent;
     public Rigidbody GetRigidbody() => _rb;
     public BossStatsManager GetStats() => _stats;
+    public bool IsRotating { get => _isRotating; set => _isRotating = value; }
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -110,5 +119,63 @@ public class BossStateManager : MonoBehaviour
     {
         Vector3 currentRotation = transform.eulerAngles;
         transform.eulerAngles = new Vector3(0f, currentRotation.y, currentRotation.z);
+    }
+    public void RotateFaceToPlayer()
+    {
+        Vector3 offset;
+        offset = Player.position - transform.position;
+
+        Vector3 dirToPlayer = offset.normalized;
+        dirToPlayer.y = 0;
+
+        float angleToPlayer = Vector3.Angle(transform.forward, dirToPlayer);
+
+        if (!_isRotating)
+        {
+            if (angleToPlayer >= _turnStartThreshold)
+            {
+                _isRotating = true;
+
+                int side = transform.GetDirectionToTarget(Player.position);
+                string targetAnim = (side == -1) ? TurnLeftAnimName : TurnRightAnimName;
+
+                if (_currentAnimName != targetAnim)
+                {
+                    _currentAnimName = targetAnim;
+                    Anim.CrossFade(targetAnim, 0.1f);
+                }
+            }
+            else
+            {
+                if (_currentAnimName != IdleBreatheAnimName)
+                {
+                    _currentAnimName = IdleBreatheAnimName;
+                    Anim.CrossFade(IdleBreatheAnimName, 0.1f);
+                }
+            }
+        }
+        else
+        {
+            //Quaternion targetRot = Quaternion.LookRotation(dirToPlayer);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * 5f);
+
+            //int side = transform.GetDirectionToTarget(Player.position);
+            //string targetAnim = (side == -1) ? TurnLeftAnimName : TurnRightAnimName;
+            //if (_currentAnimName != targetAnim)
+            //{
+            //    _currentAnimName = targetAnim;
+            //    Anim.CrossFade(targetAnim, 0.1f);
+            //}
+
+            if (angleToPlayer > 1f)
+            {
+                Quaternion targetRot = Quaternion.LookRotation(dirToPlayer);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * 5f);
+            }
+            if (angleToPlayer <= _turnStopThreshold)
+            {
+                _isRotating = false;
+            }
+        }
     }
 }
