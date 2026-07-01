@@ -8,6 +8,8 @@ public static class BossAttackFactory
         {
             case BossAttackType.DashAndBite:
                 return new BossBite();
+            case BossAttackType.CoreBeam:
+                return new BossBlast();
             case BossAttackType.GroundFireBreath:
                 return null;
             case BossAttackType.CarpetBombing:

@@ -58,11 +58,11 @@ MonoBehaviour:
     minValue: 0
     maxValue: 9999
   _walkSpeed:
-    baseValue: 0.5
+    baseValue: 3
     minValue: 1
     maxValue: 20
   _runSpeed:
-    baseValue: 6
+    baseValue: 10
     minValue: 1
     maxValue: 20
   _numberOfAttack: 2

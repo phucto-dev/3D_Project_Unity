@@ -8,6 +8,10 @@ public class BossBite : IBossAttackStrategy
     private float _biteOffset = 10f;
     float timeout = 10f;
     float timer = 0f;
+    public void SetCombatInfo(BossCombatInfo info)
+    {
+
+    }
     public IEnumerator ExecuteRoutine(BossStateManager boss)
     {
         boss.SetLocomotion(new GroundLocomotion());

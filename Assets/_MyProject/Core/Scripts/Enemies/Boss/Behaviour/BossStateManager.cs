@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,6 +19,7 @@ public interface ILocomotionStrategy
 public interface IBossAttackStrategy
 {
     IEnumerator ExecuteRoutine(BossStateManager boss);
+    void SetCombatInfo(BossCombatInfo info);
 }
 public interface IBossState
 {
@@ -34,8 +36,11 @@ public class BossStateManager : MonoBehaviour
     public Transform Player { get; private set; }
     public bool SeePlayer { get; private set; }
 
+    [field: SerializeField] public GameObject MouthPoint { get; private set; }
+
     [Header("--- REF ---")]
     [field: SerializeField] public PlayerInfo PlayerInformation { get; private set; }
+    [field: SerializeField] public BossCombatListSO BossCombatDataList { get; private set; }
 
     private string TurnLeftAnimName = "Turn90L";
     private string TurnRightAnimName = "Turn90R";

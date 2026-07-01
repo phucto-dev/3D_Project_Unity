@@ -73,6 +73,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\DropItems\LootAnimConfigSO.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\PageNavigation\NavButton.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\InventoryController.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameSystems\Particle\ParticleNotifier.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StateMachineController\RecoverStateBehaviour.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\EngineType.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\DropItem.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerInventorySO.cs" />
     <Compile Include="Assets\_AssetPackages\DoubleL\Demo\DemoCameraController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerInventory.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Skills\CoreBeam.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MainMenuController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyStateBehaviour.cs" />
     <Compile Include="Assets\_AssetPackages\Lana Studio\Casual RPG VFX\Demo\Scripts\_InputKeyBoard.cs" />
@@ -139,6 +141,7 @@
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\StateMachine\BossAnimationNotifier.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Attack\PlayerAttack.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\BossAttack\BossBlast.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerLootManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\InventorySlot.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Sequence.cs" />
