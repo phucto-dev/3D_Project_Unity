@@ -20,6 +20,7 @@ public interface IBossAttackStrategy
 {
     IEnumerator ExecuteRoutine(BossStateManager boss);
     void SetCombatInfo(BossCombatInfo info);
+    void AttackTrigger(BossStateManager boss);
 }
 public interface IBossState
 {

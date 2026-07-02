@@ -19,6 +19,9 @@ public struct BossCombatInfo
     public float MaxDistance;
     public string VFXID;
 
+    [Header("--- AIR SETUP ---")]
+    public float FlyHeight;
+
     [Header("--- DMG SCALE ---")]
     public float DmgHitMultiple;
     [Tooltip("-1 is Instance. Otherwise, tick hit")]

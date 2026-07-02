@@ -49,4 +49,8 @@ public class BossBite : IBossAttackStrategy
 
         yield return new WaitForSeconds(1f);
     }
+    public void AttackTrigger(BossStateManager boss)
+    {
+
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossBlast : IBossAttackStrategy
 {
     private BossCombatInfo _info;
-    private string SpreadFireAnimName = "SpreadFire";
+    private string BlastBeamAnimName = "BlastBeam";
     public void SetCombatInfo(BossCombatInfo info)
     {
         _info = info;
@@ -15,14 +15,16 @@ public class BossBlast : IBossAttackStrategy
         if (_info.IsUnityNull()) yield return null;
 
         boss.SetLocomotion(new GroundLocomotion());
+        boss.Anim.CrossFade(BlastBeamAnimName, 0.1f);
 
-        boss.Anim.CrossFade(SpreadFireAnimName, 0.1f);
+        yield return new WaitForSeconds(1f);
+    }
+    public void AttackTrigger(BossStateManager boss)
+    {
         GameObject beam = PoolManager.Instance.Get(_info.VFXID);
-        if (beam == null) yield return null;
+        if (beam == null) return;
         CoreBeam corebeam = beam.GetComponent<CoreBeam>();
         if (corebeam != null) corebeam.SetUp(_info);
         beam.transform.position = boss.MouthPoint.transform.position;
-
-        yield return new WaitForSeconds(1f);
     }
 }
