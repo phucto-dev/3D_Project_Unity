@@ -23,7 +23,7 @@ public class BossBlast : IBossAttackStrategy
     {
         GameObject beam = PoolManager.Instance.Get(_info.VFXID);
         if (beam == null) return;
-        CoreBeam corebeam = beam.GetComponent<CoreBeam>();
+        VFXBossSkill corebeam = beam.GetComponent<VFXBossSkill>();
         if (corebeam != null) corebeam.SetUp(_info);
         beam.transform.position = boss.MouthPoint.transform.position;
     }

@@ -128,6 +128,7 @@ public class BossStateManager : MonoBehaviour
     }
     public void RotateFaceToPlayer()
     {
+        if (Player == null) return;
         Vector3 offset;
         offset = Player.position - transform.position;
 

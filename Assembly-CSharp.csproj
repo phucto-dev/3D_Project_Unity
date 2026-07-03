@@ -91,11 +91,11 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerInventorySO.cs" />
     <Compile Include="Assets\_AssetPackages\DoubleL\Demo\DemoCameraController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerInventory.cs" />
-    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Skills\CoreBeam.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MainMenuController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyStateBehaviour.cs" />
     <Compile Include="Assets\_AssetPackages\Lana Studio\Casual RPG VFX\Demo\Scripts\_InputKeyBoard.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossCombatState.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Extension\ScriptAssetsCustom\PooledObjectMove.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Stats\BaseStatsSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
     <Compile Include="Assets\_AssetPackages\nTools\PrefabPainter\Scripts\PrefabPainterSceneSettings.cs" />
@@ -113,6 +113,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerEquipmentManager.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ScaleFactorApplyToMaterial.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Skills\PullSkill\PullEntityInRange.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Statue\BossStatueSpawner.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\CursorManager\CursorManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Move\PlayerMovement.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\Data\PlaneWeapon.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\DropItems\LootItemSO.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\Equipment\Weapon\Melee\WeaponDataSO.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\PlanePoolVFX.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Statue\BossStatue.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Extension\TransformExtension\TransformExtensions.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\Pool\PoolManager.cs" />
     <Compile Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Scripts\SunAlignedParticles.cs" />
@@ -163,6 +165,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Manager\BossManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\EntityStatsManager.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\ObjectMove.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Skills\VFXBossSkill.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MenuBtn.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MenuPage.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\RespawnBtn.cs" />
