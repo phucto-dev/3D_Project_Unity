@@ -16,7 +16,8 @@ public class BossCombatState : IBossState
     public void UpdateState(BossStateManager boss) { }
     public void OnAnimationEnded(BossStateManager boss)
     {
-        boss.ChangeState(new BossGroundedIdleState());
+        //boss.ChangeState(new BossGroundedIdleState());
+        boss.ChangeState(new BossSummonStatues());
     }
     public void OnActionTriggered(BossStateManager boss) 
     {

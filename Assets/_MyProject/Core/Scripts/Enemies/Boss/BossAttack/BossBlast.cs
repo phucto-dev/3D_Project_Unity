@@ -26,5 +26,6 @@ public class BossBlast : IBossAttackStrategy
         VFXBossSkill corebeam = beam.GetComponent<VFXBossSkill>();
         if (corebeam != null) corebeam.SetUp(_info);
         beam.transform.position = boss.MouthPoint.transform.position;
+        beam.transform.rotation = boss.MouthPoint.transform.rotation;
     }
 }

@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     public event Action RespawnPlayer;
 
     private @InputSystem_Actions _globalInput;
-    private SpawnPointID _targetSpawnID = SpawnPointID.Default_NewGame;
+    private SpawnPointID _targetSpawnID = SpawnPointID.Boss_Room_Entrance;
     private GameObject _playerInstance;
     private Transform _currentCheckPoint;
     private void Awake()

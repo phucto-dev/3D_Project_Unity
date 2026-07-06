@@ -14,14 +14,24 @@ public class BossStatue : MonoBehaviour
     public int MaxRetries = 5;
 
     private BoxCollider _spawnArea;
+    private Coroutine _current;
 
     private void Awake()
     {
         _spawnArea = GetComponent<BoxCollider>();
     }
-    private void OnEnable()
+    
+    private void OnDisable()
     {
-        StartCoroutine(SpawnMeteorRoutine());
+        if (_current != null)
+        {
+            _current = null;
+            StopAllCoroutines();
+        }
+    }
+    public void Activate()
+    {
+        _current = StartCoroutine(SpawnMeteorRoutine());
     }
     private IEnumerator SpawnMeteorRoutine()
     {

@@ -96,6 +96,7 @@
     <Compile Include="Assets\_AssetPackages\Lana Studio\Casual RPG VFX\Demo\Scripts\_InputKeyBoard.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossCombatState.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Extension\ScriptAssetsCustom\PooledObjectMove.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\BossAttack\BossSummonStatues.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Stats\BaseStatsSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
     <Compile Include="Assets\_AssetPackages\nTools\PrefabPainter\Scripts\PrefabPainterSceneSettings.cs" />
@@ -193,7 +194,6 @@
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherTriggerSMB.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\DestroyObject.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\Data\ItemData.cs" />
-    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossRoar.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\VariousEffectsScene.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherGetArrowSMB.cs" />
     <Compile Include="Assets\_AssetPackages\Lana Studio\Casual RPG VFX\Demo\Scripts\ObjectsSwitcher.cs" />

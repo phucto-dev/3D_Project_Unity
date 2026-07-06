@@ -2,37 +2,26 @@ using UnityEngine;
 
 public class BossIntro : IBossState
 {
-    private string FlyStationAnimName = "FlyStationary";
-    private string FlyStationToLandAnimName = "FlyStationaryToLanding";
-    private Vector3 _landingTarget;
-    private bool _isLandingSequenceStarted;
-    private readonly float _landingThreshold = 0f;
+    private string RoarAnimName = "Roar";
+    private SkillCinematic _roarEffect;
+
+    private bool _isRoaring = false;
     public void Enter(BossStateManager boss)
     {
-        _isLandingSequenceStarted = false;
+        _roarEffect = boss.GetComponentInChildren<SkillCinematic>(true);
         boss.SetLocomotion(new AirLocomotion());
-        boss.Anim.CrossFade(FlyStationAnimName, 0.1f);
 
-        if (Physics.Raycast(boss.transform.position, Vector3.down, out RaycastHit hit, 100f, LayerMask.GetMask("Ground")))
+        boss.StartCoroutine(boss.LandCoroutine(() =>
         {
-            _landingTarget = hit.point;
-        }
-        else
-        {
-            _landingTarget = boss.transform.position - new Vector3(0, 10f, 0);
-        }
+            boss.SetLocomotion(new GroundLocomotion());
+            boss.Anim.CrossFade(RoarAnimName, 0.1f);
+
+            _isRoaring = true;
+        }));
     }
     public void UpdateState(BossStateManager boss)
     {
-        if (_isLandingSequenceStarted) return;
-        boss.MoveToTarget(_landingTarget);
-        boss.LookForward();
-        float distanceToGround = Vector3.Distance(boss.transform.position, _landingTarget);
-        if (distanceToGround <= _landingThreshold)
-        {
-            _isLandingSequenceStarted = true;
-            boss.Anim.CrossFade(FlyStationToLandAnimName, 0.1f);
-        }
+
     }
     public void Exit(BossStateManager boss)
     {
@@ -40,13 +29,19 @@ public class BossIntro : IBossState
     }
     public void OnActionTriggered(BossStateManager boss)
     {
-
+        if (_roarEffect != null)
+        {
+            _roarEffect.enabled = true;
+        }
     }
     public void OnAnimationEnded(BossStateManager boss)
     {
-        if (_isLandingSequenceStarted)
+        if (!_isRoaring) return;
+        if (_roarEffect != null)
         {
-            boss.ChangeState(new BossRoar());
+            _roarEffect.enabled = false;
         }
+        //boss.ChangeState(new BossGroundedIdleState());
+        boss.ChangeState(new BossCombatState());
     }
 }

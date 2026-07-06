@@ -1,16 +1,50 @@
+using System.Collections;
 using UnityEngine;
 
 public class BossStatueSpawner : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("--- POOL INFO ---")]
+    public PoolItemSO PoolInfo;
 
-    // Update is called once per frame
-    void Update()
+    [Header("--- SUMMON SETTINGS ---")]
+    public float HeightOffset;
+    public float RisingTime;
+
+    private GameObject _statue;
+    private void OnEnable()
     {
-        
+        _statue = null;
+        Activate();
+    }
+    public void Activate()
+    {
+        if (PoolInfo == null) return;
+        _statue = PoolManager.Instance.Get(PoolInfo.poolID);
+        if (_statue == null) return;
+        StartCoroutine(RiseStatueRoutine());
+    }
+    private IEnumerator RiseStatueRoutine()
+    {
+        Vector3 endPos = transform.position;
+        Vector3 startPos = new Vector3(endPos.x, endPos.y - HeightOffset, endPos.z);
+
+        _statue.transform.position = startPos;
+        _statue.transform.rotation = transform.rotation;
+
+        float timer = 0f;
+        while (timer < RisingTime)
+        {
+            timer += Time.deltaTime;
+
+            float t = timer / RisingTime;
+            float smoothT = Mathf.SmoothStep(0f, 1f, t);
+
+            _statue.transform.position = Vector3.Lerp(startPos, endPos, smoothT);
+            yield return null;
+        }
+
+        _statue.transform.position = endPos;
+        BossStatue script = _statue.GetComponent<BossStatue>();
+        if (script != null) script.Activate();
     }
 }
