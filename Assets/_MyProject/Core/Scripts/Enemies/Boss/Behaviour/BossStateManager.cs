@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -43,6 +45,8 @@ public class BossStateManager : MonoBehaviour
     [field: SerializeField] public PlayerInfo PlayerInformation { get; private set; }
     [field: SerializeField] public BossCombatListSO BossCombatDataList { get; private set; }
 
+    public event Action OnSummonStatues;
+
     private string BaseAnimLayer = "Base Layer";
     private string TurnLeftAnimName = "Turn90L";
     private string TurnRightAnimName = "Turn90R";
@@ -60,15 +64,18 @@ public class BossStateManager : MonoBehaviour
     private Rigidbody _rb;
     private BossStatsManager _stats;
     private bool _isRotating;
+    private bool _isSummonable;
     private string _currentAnimName;
     private float _turnStartThreshold = 60f;
     private float _turnStopThreshold = 5f;
     private readonly float _landingThreshold = 0f;
     private readonly float _flyMaxHeight = 12f;
+    
     public NavMeshAgent GetNavMeshAgent() => _agent;
     public Rigidbody GetRigidbody() => _rb;
     public BossStatsManager GetStats() => _stats;
     public bool IsRotating { get => _isRotating; set => _isRotating = value; }
+    public bool IsSummonAble { get => _isSummonable; set => _isSummonable = value; }
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -216,13 +223,13 @@ public class BossStateManager : MonoBehaviour
         float riseSpeed = 5f;
         float groundPosY = transform.position.y;
         float maxHeight = groundPosY + _flyMaxHeight;
-        float distance = _flyMaxHeight - groundPosY;
+        float distance = maxHeight - groundPosY;
         Anim.CrossFade(TakeOffAnimName, 0.1f);
         yield return new WaitForSeconds(0.1f);
         float animLength = Anim.GetCurrentAnimatorStateInfo(Anim.GetLayerIndex(BaseAnimLayer)).length;
-        yield return new WaitForSeconds(animLength - 0.1f);
-
-        while (distance > 0)
+        yield return new WaitForSeconds(animLength * 0.5f);
+        Anim.CrossFade(FlyStationAnimName, 0.1f);
+        while (distance > 0.05f)
         {
             Vector3 currentPos = transform.position;
             currentPos.y = Mathf.MoveTowards(currentPos.y, maxHeight, riseSpeed * Time.deltaTime);
@@ -234,5 +241,13 @@ public class BossStateManager : MonoBehaviour
         Anim.CrossFade(FlyStationAnimName, 0.1f);
         yield return new WaitForSeconds(0.1f);
         onComplete?.Invoke();
+    }
+    public void SummonStatues()
+    {
+        OnSummonStatues?.Invoke();
+    }
+    public void SetSummonAble(bool value)
+    {
+        _isSummonable = value;
     }
 }

@@ -14,7 +14,6 @@ public class BossStatueSpawner : MonoBehaviour
     private void OnEnable()
     {
         _statue = null;
-        Activate();
     }
     public void Activate()
     {

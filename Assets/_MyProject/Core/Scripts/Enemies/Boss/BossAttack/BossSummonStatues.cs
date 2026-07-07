@@ -29,6 +29,7 @@ public class BossSummonStatues : IBossState
         if (_roarEffect != null)
         {
             _roarEffect.enabled = true;
+            boss.SummonStatues();
         }
     }
     public void OnAnimationEnded(BossStateManager boss)

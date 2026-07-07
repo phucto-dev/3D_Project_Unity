@@ -132,6 +132,7 @@
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\RSelector.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\TestScript\TestShaderChangeByButton.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossGroundedIdleState.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Map\BossArea\EntryGate.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherArrow.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\ObjectMoveDestroy.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerInfo.cs" />
@@ -139,6 +140,7 @@
     <Compile Include="Assets\_AssetPackages\Lana Studio\Casual RPG VFX\Scripts\UVscroll.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Skills\SkillVFXController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\HurtUI.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Map\BossArea\BossAreaManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Items\DropInfo.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\StateMachine\BossAnimationNotifier.cs" />
