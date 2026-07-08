@@ -10,8 +10,8 @@ public static class BossAttackFactory
                 return new BossBite();
             case BossAttackType.CoreBeam:
                 return new BossBlast();
-            case BossAttackType.GroundFireBreath:
-                return null;
+            case BossAttackType.SummonStatues:
+                return new BossSummonAttackStrategy();
             case BossAttackType.CarpetBombing:
                 return null;
             default:

@@ -5,16 +5,24 @@ public enum BossAttackType
 {
     DashAndBite,
     CoreBeam,
+    SummonStatues,
     GroundFireBreath,
     CarpetBombing
+}
+public enum BossPhase
+{
+    FirstPhase,
+    SecondPhase
 }
 [Serializable]
 public struct BossCombatInfo
 {
     [Header("--- BASE SETUP ---")]
     public BossAttackType AttackType;
+    public BossPhase PhaseUse;
     public float Weight;
     public float Cooldown;
+    [Range(0, 100)] public float StaminaConsume;
     public float MinDistance;
     public float MaxDistance;
     public string VFXID;

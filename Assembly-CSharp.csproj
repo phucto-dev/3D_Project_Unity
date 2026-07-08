@@ -126,6 +126,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\GameManager\HitStopManager.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherUnsheatheBowSMB.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\GameManager\GameManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\BossAttack\BossSummonAttackStrategy.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\BossStatsManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\Camera\CameraManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\Spawner\EntitySpawner.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Sequence.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\VariousMouseOrbit.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\EnemyStatsManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossStrafingState.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\GroundLocomotion.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Skills\PlayerSkill.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Enemies\Config\EnemyBrainConfigSO.cs" />

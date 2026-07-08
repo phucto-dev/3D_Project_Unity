@@ -42,7 +42,7 @@ public class BossSummonStatues : IBossState
         boss.StartCoroutine(boss.LandCoroutine(() =>
         {
             boss.SetLocomotion(new GroundLocomotion());
-            boss.ChangeState(new BossCombatState());
+            boss.ChangeState(new BossGroundedIdleState());
         }));
     }
 }

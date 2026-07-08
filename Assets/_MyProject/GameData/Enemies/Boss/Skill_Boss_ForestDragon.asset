@@ -14,14 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossCombatListSO
   BossCombatStates:
   - AttackType: 0
-    Weight: 3
-    Cooldown: 3
+    PhaseUse: 0
+    Weight: 4
+    Cooldown: 2
+    StaminaConsume: 30
     MinDistance: 0
     MaxDistance: 100
     VFXID: 
+    FlyHeight: 0
+    DmgHitMultiple: 0
+    TimeHitPerNumberSecond: 0
   - AttackType: 1
-    Weight: 1
-    Cooldown: 3
+    PhaseUse: 0
+    Weight: 2
+    Cooldown: 4
+    StaminaConsume: 40
     MinDistance: 0
     MaxDistance: 100
     VFXID: Projectile_BossBeam
+    FlyHeight: 0
+    DmgHitMultiple: 0
+    TimeHitPerNumberSecond: 0
+  - AttackType: 2
+    PhaseUse: 1
+    Weight: 2
+    Cooldown: 10
+    StaminaConsume: 60
+    MinDistance: 0
+    MaxDistance: 100
+    VFXID: 
+    FlyHeight: 12
+    DmgHitMultiple: 20
+    TimeHitPerNumberSecond: -1

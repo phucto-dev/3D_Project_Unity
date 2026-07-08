@@ -7,8 +7,8 @@ public class BossCombatState : IBossState
     private IBossAttackStrategy _attackStrategy;
     public void Enter(BossStateManager boss)
     {
-        _attackStrategy = BossAttackFactory.CreateStrategy(BossAttackType.CoreBeam);
-        _bossCombatInfo = boss.BossCombatDataList.BossCombatStates[1];
+        _attackStrategy = BossAttackFactory.CreateStrategy(BossAttackType.DashAndBite);
+        _bossCombatInfo = boss.BossCombatDataList.BossCombatStates[0];
         _attackStrategy.SetCombatInfo(_bossCombatInfo);
         boss.ExecuteAttack(_attackStrategy);
     }
@@ -16,8 +16,8 @@ public class BossCombatState : IBossState
     public void UpdateState(BossStateManager boss) { }
     public void OnAnimationEnded(BossStateManager boss)
     {
-        //boss.ChangeState(new BossGroundedIdleState());
-        boss.ChangeState(new BossSummonStatues());
+        boss.ChangeState(new BossGroundedIdleState());
+        //boss.ChangeState(new BossStrafingState());
     }
     public void OnActionTriggered(BossStateManager boss) 
     {

@@ -14,6 +14,7 @@ public interface ILocomotionStrategy
 {
     void Enter(BossStateManager boss);
     void MoveTo(BossStateManager boss, Vector3 targetPosition);
+    void MoveBack(BossStateManager boss, Vector3 dir);
     void SetSpeedType(BossStateManager boss, BossSpeedType speedType);
     void Stop(BossStateManager boss);
     void Exit(BossStateManager boss);
@@ -109,6 +110,7 @@ public class BossStateManager : MonoBehaviour
         _currentState.Enter(this);
     }
     public void MoveToTarget(Vector3 target) => _currentLocomotion?.MoveTo(this, target);
+    public void MoveToDir(Vector3 dir) => _currentLocomotion?.MoveBack(this, dir);
     public void ChasePlayer() => _currentLocomotion?.MoveTo(this, Player.position);
     public void SetCurentSpeedType(BossSpeedType speed) => _currentLocomotion?.SetSpeedType(this,speed);
 

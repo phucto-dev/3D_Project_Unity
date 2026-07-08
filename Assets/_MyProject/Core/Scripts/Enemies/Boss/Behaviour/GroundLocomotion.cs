@@ -5,6 +5,7 @@ public class GroundLocomotion : ILocomotionStrategy
     private string IdleBreathAnimName = "IdleBreathe";
     private string RunAnimName = "Run";
     private string WalkAnimName = "Walk";
+    private string WalkBackAnimName = "Walk_Bw";
 
     private BossSpeedType _currentSpeedType;
     private float _currentSpeed;
@@ -22,6 +23,19 @@ public class GroundLocomotion : ILocomotionStrategy
         {
             boss.GetNavMeshAgent().SetDestination(targetPosition);
             string targetAnim = (_currentSpeedType == BossSpeedType.Normal) ? WalkAnimName : RunAnimName;
+            if (_currentAnimState != targetAnim)
+            {
+                boss.Anim.CrossFade(targetAnim, 0.1f);
+                _currentAnimState = targetAnim;
+            }
+        }
+    }
+    public void MoveBack(BossStateManager boss, Vector3 dir)
+    {
+        if (boss.GetNavMeshAgent().isOnNavMesh)
+        {
+            boss.GetNavMeshAgent().Move(dir * Time.deltaTime * boss.GetStats().WalkSpeed.GetValue());
+            string targetAnim = WalkBackAnimName;
             if (_currentAnimState != targetAnim)
             {
                 boss.Anim.CrossFade(targetAnim, 0.1f);

@@ -29,6 +29,10 @@ public class AirLocomotion : ILocomotionStrategy
             _currentAnimState = targetAnim;
         }
     }
+    public void MoveBack(BossStateManager boss, Vector3 dir)
+    {
+
+    }
     public void SetSpeedType(BossStateManager  boss, BossSpeedType speedType)
     {
         _currentSpeedType = speedType;

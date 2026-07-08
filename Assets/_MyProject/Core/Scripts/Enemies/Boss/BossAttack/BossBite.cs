@@ -34,7 +34,7 @@ public class BossBite : IBossAttackStrategy
         }
 
         boss.Anim.CrossFade(BiteAnimName, 0.1f);
-
+        yield return new WaitForSeconds(0.1f);
         float momentumDur = 1.2f;
         float momentumSpeed = boss.GetStats().RunSpeed.GetValue() + 2f;
         float timer2 = 0f;
@@ -44,13 +44,9 @@ public class BossBite : IBossAttackStrategy
             timer2 += Time.deltaTime;
             yield return null;
         }
-
-
-
-        yield return new WaitForSeconds(1f);
     }
     public void AttackTrigger(BossStateManager boss)
     {
-
+        boss.ChangeState(new BossStrafingState());
     }
 }
