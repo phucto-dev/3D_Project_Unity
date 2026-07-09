@@ -128,8 +128,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!195 &9199901380409106176
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1da494ddbe9f14087f622ea4aec923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossStatsManager
-  _baseStatsSO: {fileID: 11400000, guid: bf3871547a6e23940b5ae7eddaae1c31, type: 2}
+  _baseStatsSO: {fileID: 11400000, guid: 8a770ede4fc738946a45e5e00c47bc7c, type: 2}
   MaxHealth:
     _baseValue: 0
   RunSpeed:

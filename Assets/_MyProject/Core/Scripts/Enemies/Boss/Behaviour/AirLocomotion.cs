@@ -15,6 +15,7 @@ public class AirLocomotion : ILocomotionStrategy
         boss.GetNavMeshAgent().speed = boss.GetStats().WalkSpeed.GetValue();
         boss.GetNavMeshAgent().enabled = false;
         boss.GetRigidbody().isKinematic = true;
+        boss.GetRigidbody().useGravity = false;
     }
     public void MoveTo(BossStateManager boss, Vector3 targetPosition)
     {

@@ -3,16 +3,38 @@ using UnityEngine;
 public class BossGroundedIdleState : IBossState
 {
     private string IdleBreatheAnimName = "IdleBreathe";
+    private float _staminaRecoverPerSec = 20f;
+    private float _timer = 0f;
     public void Enter(BossStateManager boss)
     {
         boss.SetLocomotion(new GroundLocomotion());
-        boss.Anim.CrossFade(IdleBreatheAnimName, 0.1f);
+
+        int layerIndex = 0;
+        AnimatorStateInfo currentState = boss.Anim.GetCurrentAnimatorStateInfo(layerIndex);
+        AnimatorStateInfo nextState = boss.Anim.GetNextAnimatorStateInfo(layerIndex);
+        bool isInTransition = boss.Anim.IsInTransition(layerIndex);
+
+        bool isAlreadyIdle = currentState.IsName(IdleBreatheAnimName) ||
+                             (isInTransition && nextState.IsName(IdleBreatheAnimName));
+
+        if (!isAlreadyIdle)
+        {
+            boss.Anim.CrossFade(IdleBreatheAnimName, 0.1f);
+        }
+
         boss.GetNavMeshAgent().updateRotation = false;
     }
 
     public void UpdateState(BossStateManager boss)
     {
         boss.RotateFaceToPlayer();
+        _timer += Time.deltaTime;
+        boss.GetStats().RecoverStamina(_staminaRecoverPerSec * Time.deltaTime);
+
+        if (_timer >= 2.5f)
+        {
+            boss.ChangeState(new BossDecisionState());
+        }
     }
     public void OnAnimationEnded(BossStateManager boss) 
     {

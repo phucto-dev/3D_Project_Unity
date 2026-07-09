@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GroundLocomotion : ILocomotionStrategy
 {
@@ -14,8 +15,17 @@ public class GroundLocomotion : ILocomotionStrategy
     {
         _currentSpeedType = BossSpeedType.Normal;
         boss.GetNavMeshAgent().speed = boss.GetStats().WalkSpeed.GetValue();
-        boss.GetNavMeshAgent().enabled = true;
         boss.GetRigidbody().isKinematic = true;
+        if (boss.GetNavMeshAgent() != null)
+        {
+            NavMeshHit navHit;
+            if (NavMesh.SamplePosition(boss.transform.position, out navHit, 2.0f, NavMesh.AllAreas))
+            {
+                boss.transform.position = navHit.position;
+            }
+
+            boss.GetNavMeshAgent().enabled = true;
+        }
     }
     public void MoveTo(BossStateManager boss, Vector3 targetPosition)
     {

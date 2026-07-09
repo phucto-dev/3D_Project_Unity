@@ -11,8 +11,8 @@ public enum BossAttackType
 }
 public enum BossPhase
 {
-    FirstPhase,
-    SecondPhase
+    FirstPhase = 1,
+    SecondPhase = 2
 }
 [Serializable]
 public struct BossCombatInfo

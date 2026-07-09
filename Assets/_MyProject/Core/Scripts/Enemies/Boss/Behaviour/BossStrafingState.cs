@@ -25,10 +25,9 @@ public class BossStrafingState : IBossState
             boss.transform.rotation = Quaternion.Slerp(boss.transform.rotation, targetRot, 5f * Time.deltaTime);
         }
         
-        //boss.MoveToDir(moveDir);
         if (_strafeTimer >= _strafeDuration)
         {
-            boss.ChangeState(new BossCombatState());
+            boss.ChangeState(new BossDecisionState());
         }
     }
     public void Exit(BossStateManager boss)

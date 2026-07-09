@@ -69,12 +69,14 @@ public class BossStateManager : MonoBehaviour
     private string _currentAnimName;
     private float _turnStartThreshold = 60f;
     private float _turnStopThreshold = 5f;
+    private BossPhase _currentPhase = BossPhase.SecondPhase;
     private readonly float _landingThreshold = 0f;
     private readonly float _flyMaxHeight = 12f;
     
     public NavMeshAgent GetNavMeshAgent() => _agent;
     public Rigidbody GetRigidbody() => _rb;
     public BossStatsManager GetStats() => _stats;
+    public BossPhase GetCurrentPhase() => _currentPhase;
     public bool IsRotating { get => _isRotating; set => _isRotating = value; }
     public bool IsSummonAble { get => _isSummonable; set => _isSummonable = value; }
     private void Awake()
