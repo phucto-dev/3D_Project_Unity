@@ -169,6 +169,7 @@
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\ShieldActivate.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\NodeBT.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\MultipleObjectsMake.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossTurnState.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Manager\BossManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\EntityStatsManager.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\ObjectMove.cs" />

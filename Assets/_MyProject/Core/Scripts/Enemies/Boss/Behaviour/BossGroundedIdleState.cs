@@ -5,6 +5,7 @@ public class BossGroundedIdleState : IBossState
     private string IdleBreatheAnimName = "IdleBreathe";
     private float _staminaRecoverPerSec = 20f;
     private float _timer = 0f;
+    private float _restTime = 1.5f;
     public void Enter(BossStateManager boss)
     {
         boss.SetLocomotion(new GroundLocomotion());
@@ -23,25 +24,22 @@ public class BossGroundedIdleState : IBossState
         }
 
         boss.GetNavMeshAgent().updateRotation = false;
+        _timer = 0f;
     }
 
     public void UpdateState(BossStateManager boss)
     {
-        boss.RotateFaceToPlayer();
         _timer += Time.deltaTime;
         boss.GetStats().RecoverStamina(_staminaRecoverPerSec * Time.deltaTime);
 
-        if (_timer >= 2.5f)
+        if (_timer >= _restTime)
         {
             boss.ChangeState(new BossDecisionState());
         }
     }
     public void OnAnimationEnded(BossStateManager boss) 
     {
-        if (boss.IsRotating)
-        {
-            boss.IsRotating = false;
-        }
+
     }
     public void OnActionTriggered(BossStateManager boss) { }
     public void Exit(BossStateManager boss)

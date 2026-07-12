@@ -70,14 +70,19 @@ public class BossStateManager : MonoBehaviour
     private float _turnStartThreshold = 60f;
     private float _turnStopThreshold = 5f;
     private BossPhase _currentPhase = BossPhase.SecondPhase;
-    private readonly float _landingThreshold = 0f;
+    private readonly float _landingThreshold = 0.05f;
     private readonly float _flyMaxHeight = 12f;
-    
+    private float _turnTimer = 0f;
+    private float _currentTurnAnimLength = 0f;
+    private float _dynamicRotSpeed = 0f;
+    private Quaternion _committedTargetRot;
+
     public NavMeshAgent GetNavMeshAgent() => _agent;
     public Rigidbody GetRigidbody() => _rb;
     public BossStatsManager GetStats() => _stats;
     public BossPhase GetCurrentPhase() => _currentPhase;
     public bool IsRotating { get => _isRotating; set => _isRotating = value; }
+    public bool AlreadyTurn { get ; private set; }
     public bool IsSummonAble { get => _isSummonable; set => _isSummonable = value; }
     private void Awake()
     {
@@ -107,6 +112,8 @@ public class BossStateManager : MonoBehaviour
     }
     public void ChangeState(IBossState newState)
     {
+        if (_currentState is BossTurnState) AlreadyTurn = true; 
+        if (!(newState is BossDecisionState)) AlreadyTurn = false; 
         _currentState?.Exit(this);
         _currentState = newState;
         _currentState.Enter(this);
@@ -118,6 +125,7 @@ public class BossStateManager : MonoBehaviour
 
     public void ExecuteAttack(IBossAttackStrategy attack)
     {
+        Debug.Log("Execute Attack: " + attack);
         StopCurrentAttack();
         _currentAttackCoroutine = StartCoroutine(attack.ExecuteRoutine(this));
     }
@@ -143,54 +151,7 @@ public class BossStateManager : MonoBehaviour
         Vector3 currentRotation = transform.eulerAngles;
         transform.eulerAngles = new Vector3(0f, currentRotation.y, currentRotation.z);
     }
-    public void RotateFaceToPlayer()
-    {
-        if (Player == null) return;
-        Vector3 offset;
-        offset = Player.position - transform.position;
 
-        Vector3 dirToPlayer = offset.normalized;
-        dirToPlayer.y = 0;
-
-        float angleToPlayer = Vector3.Angle(transform.forward, dirToPlayer);
-
-        if (!_isRotating)
-        {
-            if (angleToPlayer >= _turnStartThreshold)
-            {
-                _isRotating = true;
-
-                int side = transform.GetDirectionToTarget(Player.position);
-                string targetAnim = (side == -1) ? TurnLeftAnimName : TurnRightAnimName;
-
-                if (_currentAnimName != targetAnim)
-                {
-                    _currentAnimName = targetAnim;
-                    Anim.CrossFade(targetAnim, 0.1f);
-                }
-            }
-            else
-            {
-                if (_currentAnimName != IdleBreatheAnimName)
-                {
-                    _currentAnimName = IdleBreatheAnimName;
-                    Anim.CrossFade(IdleBreatheAnimName, 0.1f);
-                }
-            }
-        }
-        else
-        {
-            if (angleToPlayer > 1f)
-            {
-                Quaternion targetRot = Quaternion.LookRotation(dirToPlayer);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * 5f);
-            }
-            if (angleToPlayer <= _turnStopThreshold)
-            {
-                _isRotating = false;
-            }
-        }
-    }
     public IEnumerator LandCoroutine(System.Action onComplete = null)
     {
         Vector3 landingTarget;
@@ -198,7 +159,11 @@ public class BossStateManager : MonoBehaviour
 
         if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 100f, LayerMask.GetMask("Ground")))
         {
-            landingTarget = hit.point;
+            if (NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, 5f, NavMesh.AllAreas))
+            {
+                landingTarget = navHit.position;
+            }
+            else landingTarget = hit.point;
         }
         else
         {
@@ -216,6 +181,10 @@ public class BossStateManager : MonoBehaviour
             distance = transform.position.y - landingTarget.y;
             yield return null;
         }
+        Vector3 finalPos = transform.position;
+        finalPos.y = landingTarget.y;
+        transform.position = finalPos;
+
         Anim.CrossFade(FlyStationToLandAnimName, 0.1f);
         yield return new WaitForSeconds(0.1f);
         float animLength = Anim.GetCurrentAnimatorStateInfo(Anim.GetLayerIndex(BaseAnimLayer)).length;
@@ -253,5 +222,17 @@ public class BossStateManager : MonoBehaviour
     public void SetSummonAble(bool value)
     {
         _isSummonable = value;
+    }
+    public float GetGroundYPos()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 100f, LayerMask.GetMask("Ground")))
+        {
+            if (NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, 5f, NavMesh.AllAreas))
+            {
+                return navHit.position.y;
+            }
+            else return hit.point.y;
+        }
+        return -1;
     }
 }

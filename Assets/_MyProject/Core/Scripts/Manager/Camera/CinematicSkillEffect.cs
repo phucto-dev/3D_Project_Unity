@@ -22,14 +22,23 @@ public class CinematicSkillEffect : MonoBehaviour
     private RectTransform _topBar;
     private RectTransform _bottomBar;
     private float _originalTimeScale;
+    private float _baseFOV = -1f;
     private bool _isPlaying = false;
 
     public void ExecuteCinematic(CinematicParams config, CinemachineCamera activeCam, CinemachineBrain brain, CinemachineImpulseSource impulseSource = null)
     {
+        if (!_isPlaying && activeCam != null)
+        {
+            _baseFOV = activeCam.Lens.FieldOfView;
+            _originalTimeScale = Time.timeScale;
+        }
         if (_isPlaying)
         {
-            StopCoroutine(_currentCinematicRoutine);
-            RestoreState(activeCam, 0); // 0 là cờ hiệu không reset FOV
+            if (_currentCinematicRoutine != null)
+            {
+                StopCoroutine(_currentCinematicRoutine);
+            }
+            if (_dynamicCanvas != null) Destroy(_dynamicCanvas.gameObject);
         }
         _currentCinematicRoutine = StartCoroutine(CinematicRoutine(config, activeCam, brain, impulseSource));
     }
@@ -37,7 +46,6 @@ public class CinematicSkillEffect : MonoBehaviour
     private IEnumerator CinematicRoutine(CinematicParams config, CinemachineCamera activeCam, CinemachineBrain brain, CinemachineImpulseSource impulseSource)
     {
         _isPlaying = true;
-        _originalTimeScale = Time.timeScale;
         Time.timeScale = config.WorldTimeScale;
 
         if (impulseSource != null && config.ShakeAmplitude > 0)
@@ -45,9 +53,7 @@ public class CinematicSkillEffect : MonoBehaviour
             impulseSource.GenerateImpulse(config.ShakeAmplitude);
         }
 
-        float originalFOV = activeCam.Lens.FieldOfView;
-        float currentFOV = originalFOV;
-
+        float currentFOV = activeCam.Lens.FieldOfView;
         CreateCinematicUI();
 
         float timer = 0f;
@@ -57,33 +63,38 @@ public class CinematicSkillEffect : MonoBehaviour
             float remainTime = config.Duration - timer;
 
             float speed = remainTime > config.OutroDuration ? config.TransitionSpeed : config.TransitionSpeed * 1.5f;
-            float targetFOV = remainTime > config.OutroDuration ? (originalFOV - config.ZoomAmount) : originalFOV;
 
-            // Cập nhật UI
+            // Tính toán FOV đích dựa trên _baseFOV tuyệt đối, loại bỏ hoàn toàn lỗi trôi dạt FOV
+            float targetFOV = remainTime > config.OutroDuration ? (_baseFOV - config.ZoomAmount) : _baseFOV;
+
             Vector2 targetBarPos = remainTime > config.OutroDuration ? Vector2.zero : new Vector2(0, blackBarHeight);
             UpdateUIBars(targetBarPos, speed);
 
-            // Cập nhật FOV Unity 6
             float t = Time.unscaledDeltaTime * config.TransitionSpeed;
             currentFOV = Mathf.SmoothStep(currentFOV, targetFOV, t);
             activeCam.Lens.FieldOfView = currentFOV;
+
             if (brain != null)
             {
                 brain.ManualUpdate();
             }
             yield return null;
         }
+
         CameraManager.Instance.ResetBrainUpdateMethod();
-        RestoreState(activeCam, originalFOV);
+        RestoreState(activeCam);
     }
 
-    private void RestoreState(CinemachineCamera activeCam, float originalFOV)
+    private void RestoreState(CinemachineCamera activeCam)
     {
         _isPlaying = false;
         Time.timeScale = _originalTimeScale;
 
-        if (activeCam != null && originalFOV > 0)
-            activeCam.Lens.FieldOfView = originalFOV;
+        // Trả về đúng FOV gốc ban đầu
+        if (activeCam != null && _baseFOV > 0)
+        {
+            activeCam.Lens.FieldOfView = _baseFOV;
+        }
 
         if (_dynamicCanvas != null) Destroy(_dynamicCanvas.gameObject);
     }

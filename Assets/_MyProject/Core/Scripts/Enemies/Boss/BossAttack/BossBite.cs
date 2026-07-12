@@ -6,14 +6,16 @@ public class BossBite : IBossAttackStrategy
 {
     private string BiteAnimName = "BiteAttack";
     private float _biteOffset = 10f;
-    float timeout = 10f;
-    float timer = 0f;
+    
     public void SetCombatInfo(BossCombatInfo info)
     {
 
     }
     public IEnumerator ExecuteRoutine(BossStateManager boss)
     {
+        float timeout = 10f;
+        float timer = 0f;
+        Debug.Log("Bat dau bite");
         boss.SetLocomotion(new GroundLocomotion());
         boss.SetCurentSpeedType(BossSpeedType.Fast);
 
@@ -23,7 +25,7 @@ public class BossBite : IBossAttackStrategy
             timer += Time.deltaTime;
             yield return null;
         }
-
+        Debug.Log("Bat dau bite2");
         boss.GetNavMeshAgent().ResetPath();
         Vector3 dir = (boss.Player.position - boss.transform.position).normalized;
         dir.y = 0;
@@ -44,9 +46,12 @@ public class BossBite : IBossAttackStrategy
             timer2 += Time.deltaTime;
             yield return null;
         }
+
+        Debug.Log("Bat dau lui");
+        boss.ChangeState(new BossStrafingState());
     }
     public void AttackTrigger(BossStateManager boss)
     {
-        boss.ChangeState(new BossStrafingState());
+        
     }
 }

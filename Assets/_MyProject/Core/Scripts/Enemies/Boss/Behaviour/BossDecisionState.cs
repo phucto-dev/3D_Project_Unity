@@ -1,10 +1,28 @@
+using UnityEditor;
 using UnityEngine;
 
 public class BossDecisionState : IBossState
 {
     private string IdleBreatheAnimName = "IdleBreathe";
+    private float offsetAngle = 6f;
     public void Enter(BossStateManager boss)
     {
+        Debug.Log("sap vao TurnState ne");
+        if (!boss.AlreadyTurn)
+        {
+            Debug.Log("TurnState ne");
+            Vector3 offset = boss.Player.position - boss.transform.position;
+            offset.y = 0;
+            Vector3 dirToPlayer = offset.normalized;
+
+            float liveAngleToPlayer = Vector3.Angle(boss.transform.forward, dirToPlayer);
+
+            if (liveAngleToPlayer >= offsetAngle)
+            {
+                boss.ChangeState(new BossTurnState());
+                return;
+            }
+        }
         int layerIndex = 0;
         AnimatorStateInfo currentState = boss.Anim.GetCurrentAnimatorStateInfo(layerIndex);
         AnimatorStateInfo nextState = boss.Anim.GetNextAnimatorStateInfo(layerIndex);

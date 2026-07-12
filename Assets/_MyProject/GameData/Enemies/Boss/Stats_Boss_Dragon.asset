@@ -62,7 +62,7 @@ MonoBehaviour:
     minValue: 1
     maxValue: 20
   _runSpeed:
-    baseValue: 10
+    baseValue: 17
     minValue: 1
     maxValue: 20
   _numberOfAttack: 0

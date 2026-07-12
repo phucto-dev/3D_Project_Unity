@@ -22,7 +22,10 @@ public class CameraManager : MonoBehaviour
     {
         if (_brain == null) return;
 
-        _originalUpdateMethod = _brain.UpdateMethod;
+        if (_brain.UpdateMethod != CinemachineBrain.UpdateMethods.ManualUpdate)
+        {
+            _originalUpdateMethod = _brain.UpdateMethod;
+        }
 
         _brain.UpdateMethod = CinemachineBrain.UpdateMethods.ManualUpdate;
 
