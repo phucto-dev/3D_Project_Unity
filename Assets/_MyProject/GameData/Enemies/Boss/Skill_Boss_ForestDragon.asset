@@ -25,7 +25,7 @@ MonoBehaviour:
     DmgHitMultiple: 0
     TimeHitPerNumberSecond: 0
   - AttackType: 1
-    PhaseUse: 1
+    PhaseUse: 2
     Weight: 4
     Cooldown: 4
     StaminaConsume: 20
@@ -36,8 +36,8 @@ MonoBehaviour:
     DmgHitMultiple: 0
     TimeHitPerNumberSecond: 0
   - AttackType: 2
-    PhaseUse: 1
-    Weight: 0
+    PhaseUse: 2
+    Weight: 2
     Cooldown: 10
     StaminaConsume: 60
     MinDistance: 0

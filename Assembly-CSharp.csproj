@@ -69,6 +69,7 @@
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\LookAtTarget.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Stats\PlayerStatsSO.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\Movement.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\HUDController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\TestScript\AddForce.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\DropItems\LootAnimConfigSO.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\PageNavigation\NavButton.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerInventorySO.cs" />
     <Compile Include="Assets\_AssetPackages\DoubleL\Demo\DemoCameraController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerInventory.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossHurtState.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MainMenuController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyStateBehaviour.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Boss\BossStatsSO.cs" />
@@ -122,6 +124,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\NavMesh\AgentToDistanceTest.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Skills\SkillBuffController.cs" />
     <Compile Include="Assets\_AssetPackages\Free Low Poly Modular Character Pack - Fantasy Dream\Demo\Scripts\ModularHeroController.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossDieState.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\VariousTranslateMove.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Skills\LightningStrike\SummonLightning.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\GameManager\HitStopManager.cs" />
@@ -146,6 +149,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Items\DropInfo.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\StateMachine\BossAnimationNotifier.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\HPBarUI.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Attack\PlayerAttack.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\BossAttack\BossBlast.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerLootManager.cs" />
@@ -214,6 +218,7 @@
     <Compile Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Scripts\WindManager.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BehaviourTreeContainer.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyAnimationManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossEnterSecondPhase.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\EquipmentSlot.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerCamManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossIntro.cs" />

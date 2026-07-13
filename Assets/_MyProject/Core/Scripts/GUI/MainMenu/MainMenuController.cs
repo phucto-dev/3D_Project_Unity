@@ -20,11 +20,17 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private List<MenuPage> pages;
 
     private MenuPage _currentPage;
+    private HUDController _hudController;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        if (_hudRoot != null)
+        {
+            _hudController = _hudRoot.GetComponent<HUDController>();
+        }
     }
     private void Start()
     {
@@ -67,6 +73,31 @@ public class MainMenuController : MonoBehaviour
             case GameState.Cutscene:
                 break;
         }
+    }
+
+    public void ShowBossHUD()
+    {
+        if (_hudController != null)
+        {
+            _hudController.OpenBossHUD();
+        }
+    }
+
+    public void HideBossHUD()
+    {
+        if (_hudController != null)
+        {
+            _hudController.CloseBossHUD();
+        }
+    }
+
+    public HPBarUI HPBossBar()
+    {
+        if (_hudController != null)
+        {
+            return _hudController.GetHPBar();
+        }
+        return null;
     }
 
     public void OpenPage(MenuPageType pageType)

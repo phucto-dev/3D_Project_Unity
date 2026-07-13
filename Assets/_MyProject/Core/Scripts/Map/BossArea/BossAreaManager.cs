@@ -28,10 +28,12 @@ public class BossAreaManager : MonoBehaviour
     private void OnEnable()
     {
         if (_bossEntryGate != null) _bossEntryGate.PlayerEnterTrigger += StartBossPhase;
+        if (_bossEntryGate != null) _bossEntryGate.PlayerEnterTrigger += MainMenuController.Instance.ShowBossHUD;
     }
     private void OnDisable()
     {
         if (_bossEntryGate != null) _bossEntryGate.PlayerEnterTrigger -= StartBossPhase;
+        if (_bossEntryGate != null) _bossEntryGate.PlayerEnterTrigger -= MainMenuController.Instance.ShowBossHUD;
     }
     private void Start()
     {
@@ -48,12 +50,21 @@ public class BossAreaManager : MonoBehaviour
         _boss = PoolManager.Instance.Get(BossInfo.poolID);
         if (_boss == null) return;
         BossManager bossManager = _boss.GetComponent<BossManager>();
+        HealthSystem bossHealth = _boss.GetComponentInChildren<HealthSystem>();
         if (bossManager != null)
         {
             bossManager.GetBossStateManager().OnSummonStatues += SummonStatues;
             OnStatueStatusChanged += bossManager.GetBossStateManager().SetSummonAble;
         }
+        if (bossHealth != null)
+        {
+            if (MainMenuController.Instance.HPBossBar() != null)
+            {
+                bossHealth.OnHealthChanged += MainMenuController.Instance.HPBossBar().SetTargetHealth;
+            }
+        }
         OnStatueStatusChanged?.Invoke(true);
+
         _boss.transform.position = BossSpawn.position;
         _boss.transform.rotation = BossSpawn.rotation;
         _isStarted = true;
@@ -62,10 +73,18 @@ public class BossAreaManager : MonoBehaviour
     {
         if (_boss == null) return;
         BossManager bossManager = _boss.GetComponent<BossManager>();
+        HealthSystem bossHealth = _boss.GetComponentInChildren<HealthSystem>();
         if (bossManager != null)
         {
             bossManager.GetBossStateManager().OnSummonStatues -= SummonStatues;
             OnStatueStatusChanged -= bossManager.GetBossStateManager().SetSummonAble;
+        }
+        if (bossHealth != null)
+        {
+            if (MainMenuController.Instance.HPBossBar() != null)
+            {
+                bossHealth.OnHealthChanged -= MainMenuController.Instance.HPBossBar().SetTargetHealth;
+            }
         }
         PoolManager.Instance.Release(BossInfo.poolID, _boss);
         _boss = null;

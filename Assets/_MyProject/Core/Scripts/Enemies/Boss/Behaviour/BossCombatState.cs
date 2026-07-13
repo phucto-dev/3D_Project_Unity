@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class BossCombatState : IBossState
@@ -21,7 +20,19 @@ public class BossCombatState : IBossState
         {
             if (skill.PhaseUse <= currentPhase && skill.StaminaConsume <= currentStamina)
             {
-                _validSkills.Add(skill);
+                if (skill.AttackType == BossAttackType.SummonStatues)
+                {
+                    if (boss.IsSummonAble) _validSkills.Add(skill);
+                    else
+                    {
+                        Debug.Log("Skip summon");
+                        continue;
+                    }
+                }
+                else
+                {
+                    _validSkills.Add(skill);
+                }
             }
         }
         if (_validSkills.Count == 0)

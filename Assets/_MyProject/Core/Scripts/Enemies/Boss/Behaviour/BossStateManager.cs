@@ -1,7 +1,5 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -49,14 +47,10 @@ public class BossStateManager : MonoBehaviour
     public event Action OnSummonStatues;
 
     private string BaseAnimLayer = "Base Layer";
-    private string TurnLeftAnimName = "Turn90L";
-    private string TurnRightAnimName = "Turn90R";
-    private string IdleBreatheAnimName = "IdleBreathe";
     private string FlyStationAnimName = "FlyStationary";
     private string FlyStationToLandAnimName = "FlyStationaryToLanding";
     private string TakeOffAnimName = "TakeOff";
 
-    private EnemyVision _vision;
     private ILocomotionStrategy _currentLocomotion;
     private IBossState _currentState;
     private Coroutine _currentAttackCoroutine;
@@ -66,16 +60,10 @@ public class BossStateManager : MonoBehaviour
     private BossStatsManager _stats;
     private bool _isRotating;
     private bool _isSummonable;
-    private string _currentAnimName;
-    private float _turnStartThreshold = 60f;
-    private float _turnStopThreshold = 5f;
-    private BossPhase _currentPhase = BossPhase.SecondPhase;
+    private BossPhase _currentPhase = BossPhase.FirstPhase;
     private readonly float _landingThreshold = 0.05f;
     private readonly float _flyMaxHeight = 12f;
-    private float _turnTimer = 0f;
-    private float _currentTurnAnimLength = 0f;
-    private float _dynamicRotSpeed = 0f;
-    private Quaternion _committedTargetRot;
+    private bool _isBossDeath;
 
     public NavMeshAgent GetNavMeshAgent() => _agent;
     public Rigidbody GetRigidbody() => _rb;
@@ -88,15 +76,26 @@ public class BossStateManager : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         _rb = GetComponent<Rigidbody>();
-        _vision = GetComponent<EnemyVision>();
         Anim = GetComponentInChildren<Animator>();
         _stats = GetComponent<BossStatsManager>();
         _healthSystem = GetComponentInChildren<HealthSystem>();
     }
+    private void OnEnable()
+    {
+        if (_healthSystem != null) _healthSystem.OnDeath += OnDeath;
+        if (_healthSystem != null) _healthSystem.OnTakeDmg += OnTakeDmg;
+        if (_healthSystem != null) _healthSystem.OnHealthChanged += OnChangePhase;
+    }
+    private void OnDisable()
+    {
+        if (_healthSystem != null) _healthSystem.OnDeath -= OnDeath;
+        if (_healthSystem != null) _healthSystem.OnTakeDmg -= OnTakeDmg;
+        if (_healthSystem != null) _healthSystem.OnHealthChanged -= OnChangePhase;
+    }
     private void Start()
     {
+        _isBossDeath = false;
         if (PlayerInformation != null) Player = PlayerInformation.PlayerTransform;
-        //SeePlayer = _vision.CanSeePlayer();
         ChangeState(new BossIntro());
     }
     private void Update()
@@ -112,6 +111,8 @@ public class BossStateManager : MonoBehaviour
     }
     public void ChangeState(IBossState newState)
     {
+        if (_isBossDeath) return;
+        if (newState is BossDieState) _isBossDeath = true;
         if (_currentState is BossTurnState) AlreadyTurn = true; 
         if (!(newState is BossDecisionState)) AlreadyTurn = false; 
         _currentState?.Exit(this);
@@ -122,7 +123,16 @@ public class BossStateManager : MonoBehaviour
     public void MoveToDir(Vector3 dir) => _currentLocomotion?.MoveBack(this, dir);
     public void ChasePlayer() => _currentLocomotion?.MoveTo(this, Player.position);
     public void SetCurentSpeedType(BossSpeedType speed) => _currentLocomotion?.SetSpeedType(this,speed);
-
+    public void CloseHurtBox() 
+    {
+        if (_healthSystem == null) return;
+        _healthSystem.enabled = false;
+    }
+    public void OpenHurtBox() 
+    {
+        if (_healthSystem == null) return;
+        _healthSystem.enabled = true;
+    }
     public void ExecuteAttack(IBossAttackStrategy attack)
     {
         Debug.Log("Execute Attack: " + attack);
@@ -234,5 +244,24 @@ public class BossStateManager : MonoBehaviour
             else return hit.point.y;
         }
         return -1;
+    }
+    private void OnDeath()
+    {
+        ChangeState(new BossDieState());
+    }
+    private void OnTakeDmg(DmgInfo info)
+    {
+        if (!(_currentState is BossGroundedIdleState)) return;
+        ChangeState(new BossHurtState());
+    }
+    private void OnChangePhase(float currentHealth, float maxHealth)
+    {
+        if (_currentPhase == BossPhase.SecondPhase) return;
+        float percentleft = currentHealth / maxHealth * 100f;
+        if (percentleft <= 50)
+        {
+            _currentPhase = BossPhase.SecondPhase;
+            ChangeState(new BossEnterSecondPhase());
+        }
     }
 }
