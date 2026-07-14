@@ -43,6 +43,7 @@ public class BossStateManager : MonoBehaviour
     [Header("--- REF ---")]
     [field: SerializeField] public PlayerInfo PlayerInformation { get; private set; }
     [field: SerializeField] public BossCombatListSO BossCombatDataList { get; private set; }
+    [field: SerializeField] public PoolItemSO SkyFallData { get; private set; }
 
     public event Action OnSummonStatues;
 
@@ -228,6 +229,14 @@ public class BossStateManager : MonoBehaviour
     public void SummonStatues()
     {
         OnSummonStatues?.Invoke();
+    }
+    public void SummonSkyFall()
+    {
+        string id = SkyFallData.poolID;
+        Vector3 summonPos = Player.position;
+        summonPos.y = transform.position.y + 5f;
+        GameObject skyFall = PoolManager.Instance.Get(id);
+        if (skyFall != null) skyFall.transform.position = summonPos;
     }
     public void SetSummonAble(bool value)
     {

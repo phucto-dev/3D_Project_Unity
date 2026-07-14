@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: MainPoolConfig
   m_EditorClassIdentifier: Assembly-CSharp::PoolConfigSO
   poolItems:
-  - {fileID: 11400000, guid: dad61910b2b5b88458edb2326774b399, type: 2}
-  - {fileID: 11400000, guid: 81ba30e484edc2549adc7479f9ba3810, type: 2}
   - {fileID: 11400000, guid: 47bc23d4b301f7841b306bda63334b42, type: 2}
   - {fileID: 11400000, guid: 6063b2db5c2453649ae321a6b3fbace3, type: 2}
   - {fileID: 11400000, guid: 07e0909a3803c8948ab8d637dd695fc7, type: 2}
   - {fileID: 11400000, guid: d0ce50aee5d175a42bf186511bdb69f1, type: 2}
   - {fileID: 11400000, guid: d37e6b0f3a23509478958687074da982, type: 2}
   - {fileID: 11400000, guid: 7e58820c0d053564d967cc1be0ad75df, type: 2}
+  - {fileID: 11400000, guid: d5ed4c87db6ec45488bcc0e948a5f988, type: 2}
+  - {fileID: 11400000, guid: 4649b880f8b68f84e8f96d904e0d9d3e, type: 2}
   - {fileID: 11400000, guid: 54a85bd82261bf54984bac9fa7c6bb77, type: 2}
   - {fileID: 11400000, guid: 0a62f2e6e2bffdc4a9ff3dc6fe1223f5, type: 2}
+  - {fileID: 11400000, guid: 81ba30e484edc2549adc7479f9ba3810, type: 2}
+  - {fileID: 11400000, guid: dad61910b2b5b88458edb2326774b399, type: 2}
   - {fileID: 11400000, guid: 603e56fc20c2d8f4fb2e66f73fe1618a, type: 2}

@@ -6,8 +6,7 @@ public enum BossAttackType
     DashAndBite,
     CoreBeam,
     SummonStatues,
-    GroundFireBreath,
-    CarpetBombing
+    SkyFall,
 }
 public enum BossPhase
 {

@@ -46,3 +46,14 @@ MonoBehaviour:
     FlyHeight: 12
     DmgHitMultiple: 20
     TimeHitPerNumberSecond: -1
+  - AttackType: 3
+    PhaseUse: 2
+    Weight: 2
+    Cooldown: 10
+    StaminaConsume: 60
+    MinDistance: 0
+    MaxDistance: 100
+    VFXID: 
+    FlyHeight: 12
+    DmgHitMultiple: 20
+    TimeHitPerNumberSecond: -1

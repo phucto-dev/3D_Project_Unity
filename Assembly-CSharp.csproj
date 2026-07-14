@@ -99,7 +99,6 @@
     <Compile Include="Assets\_AssetPackages\Lana Studio\Casual RPG VFX\Demo\Scripts\_InputKeyBoard.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossCombatState.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Extension\ScriptAssetsCustom\PooledObjectMove.cs" />
-    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\BossAttack\BossSummonStatues.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Stats\BaseStatsSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
     <Compile Include="Assets\_AssetPackages\nTools\PrefabPainter\Scripts\PrefabPainterSceneSettings.cs" />
@@ -137,6 +136,7 @@
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\RSelector.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\TestScript\TestShaderChangeByButton.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossGroundedIdleState.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\BossAttack\BossSummon.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Map\BossArea\EntryGate.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherArrow.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\ObjectMoveDestroy.cs" />
@@ -215,6 +215,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Pool\PoolItemSO.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Leaf.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\VariousRotateObject.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Extension\VFX\VFXScaler.cs" />
     <Compile Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Scripts\WindManager.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BehaviourTreeContainer.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyAnimationManager.cs" />
