@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982481981905297507, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 4982481981905297507, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 4982481981905297507, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 4982481981905297507, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
       propertyPath: m_LocalPosition.x
@@ -74,58 +74,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982481981905297507, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933950630149922752, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933950630149922752, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933950630149922752, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933950630149922752, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 966881259421655030, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 5708017846591467517, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -4766679598417536259}
+      addedObject: {fileID: 4408751776282610844}
   m_SourcePrefab: {fileID: 100100000, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
---- !u!1 &7781003027816058951 stripped
+--- !u!1 &3001178131157803084 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 966881259421655030, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5708017846591467517, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
   m_PrefabInstance: {fileID: 7390583351867363249}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-4766679598417536259
-MonoBehaviour:
+--- !u!135 &4408751776282610844
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7781003027816058951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7688f963a42325d4f9f93debc4940bae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VFXScaler
-  _maxSize: {x: 4, y: 4, z: 4}
-  _duration: 0.1
-  _scaleCurve:
+  m_GameObject: {fileID: 3001178131157803084}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _autoPlayOnEnable: 1
-  _playScaleInstant: 1
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 8.3
+  m_Center: {x: -0.047413826, y: -0.09848788, z: -0.028451927}

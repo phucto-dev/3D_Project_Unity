@@ -49,6 +49,7 @@ public class VFXScaler : MonoBehaviour
     }
     private IEnumerator ScaleRoutine()
     {
+        Debug.Log("Start ne");
         StartScale?.Invoke();
         float timer = 0f;
         Vector3 startScale = Vector3.one;
@@ -66,6 +67,8 @@ public class VFXScaler : MonoBehaviour
         }
 
         transform.localScale = _maxSize;
+        _scaleCoroutine = null;
+        Debug.Log("End ne");
         EndScale?.Invoke();
     }
     public void ResetScale()

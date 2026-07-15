@@ -15,7 +15,7 @@ public class BossEnterSecondPhase : IBossState
                 _bossCombatInfo = skill;
             }
         }
-        _attackStrategy = BossAttackFactory.CreateStrategy(_bossCombatInfo.AttackType);
+        _attackStrategy = BossAttackFactory.CreateStrategy(_bossCombatInfo);
         _attackStrategy.SetCombatInfo(_bossCombatInfo);
         boss.GetStats().UsedStamina(_bossCombatInfo.StaminaConsume);
         boss.ExecuteAttack(_attackStrategy);

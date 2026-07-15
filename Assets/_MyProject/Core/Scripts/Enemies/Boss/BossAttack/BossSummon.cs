@@ -5,14 +5,16 @@ public class BossSummon : IBossState
     private string RoarAnimName = "AirRoar";
     private SkillCinematic _roarEffect;
     private BossAttackType _type;
+    private BossCombatInfo _bossCombatInfo;
     private bool _isRoaring = false;
     public BossSummon()
     {
         _type = BossAttackType.SummonStatues;
     }
-    public BossSummon(BossAttackType type)
+    public BossSummon(BossCombatInfo bossCombatInfo)
     {
-        _type = type;
+        _bossCombatInfo = bossCombatInfo;
+        _type = bossCombatInfo.AttackType;
     }
     public void Enter(BossStateManager boss)
     {
@@ -22,7 +24,7 @@ public class BossSummon : IBossState
             boss.Anim.CrossFade(RoarAnimName, 0.1f);
 
             _isRoaring = true;
-        }));
+        }, _bossCombatInfo.FlyHeight));
     }
     public void UpdateState(BossStateManager boss)
     {

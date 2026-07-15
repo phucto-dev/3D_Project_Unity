@@ -166,6 +166,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\Equipment\Weapon\Melee\WeaponDataSO.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\PlanePoolVFX.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Statue\BossStatue.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Skills\VFXBossAttack.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Extension\TransformExtension\TransformExtensions.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\Pool\PoolManager.cs" />
     <Compile Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Scripts\SunAlignedParticles.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MenuPage.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\RespawnBtn.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerEquipmentSO.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\BossAttack\BossBiteHitboxControl.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\DelayActive.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossStateManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Boss\BossCombatListSO.cs" />

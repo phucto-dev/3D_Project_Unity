@@ -10,7 +10,6 @@ public class BossCombatState : IBossState
     private float _exitTimer;
     public void Enter(BossStateManager boss)
     {
-        Debug.Log("Vao combat ne");
         _exitTimer = 0f;
         BossPhase currentPhase = boss.GetCurrentPhase();
         float currentStamina = boss.GetStats().GetCurrentStamina();
@@ -25,7 +24,6 @@ public class BossCombatState : IBossState
                     if (boss.IsSummonAble) _validSkills.Add(skill);
                     else
                     {
-                        Debug.Log("Skip summon");
                         continue;
                     }
                 }
@@ -42,7 +40,7 @@ public class BossCombatState : IBossState
         }
 
         _bossCombatInfo = GetSkillByWeight(_validSkills);
-        _attackStrategy = BossAttackFactory.CreateStrategy(_bossCombatInfo.AttackType);
+        _attackStrategy = BossAttackFactory.CreateStrategy(_bossCombatInfo);
         _attackStrategy.SetCombatInfo(_bossCombatInfo);
         boss.GetStats().UsedStamina(_bossCombatInfo.StaminaConsume);
         boss.ExecuteAttack(_attackStrategy);

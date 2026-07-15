@@ -37,6 +37,7 @@ public class BossStateManager : MonoBehaviour
     public Animator Anim { get; private set; }
     public Transform Player { get; private set; }
     public bool SeePlayer { get; private set; }
+    
 
     [field: SerializeField] public GameObject MouthPoint { get; private set; }
 
@@ -59,11 +60,12 @@ public class BossStateManager : MonoBehaviour
     private NavMeshAgent _agent;
     private Rigidbody _rb;
     private BossStatsManager _stats;
+    private BossBiteHitboxControl _bossBiteHitboxControl;
     private bool _isRotating;
     private bool _isSummonable;
     private BossPhase _currentPhase = BossPhase.FirstPhase;
     private readonly float _landingThreshold = 0.05f;
-    private readonly float _flyMaxHeight = 12f;
+    private readonly float _flyMaxHeight = 15f;
     private bool _isBossDeath;
 
     public NavMeshAgent GetNavMeshAgent() => _agent;
@@ -80,6 +82,7 @@ public class BossStateManager : MonoBehaviour
         Anim = GetComponentInChildren<Animator>();
         _stats = GetComponent<BossStatsManager>();
         _healthSystem = GetComponentInChildren<HealthSystem>();
+        _bossBiteHitboxControl = GetComponentInChildren<BossBiteHitboxControl>();
     }
     private void OnEnable()
     {
@@ -202,11 +205,12 @@ public class BossStateManager : MonoBehaviour
         yield return new WaitForSeconds(animLength - 0.1f);
         onComplete?.Invoke();
     }
-    public IEnumerator TakeOffCoroutine(System.Action onComplete = null)
+    public IEnumerator TakeOffCoroutine(System.Action onComplete = null, float flyHeight = -1)
     {
         float riseSpeed = 5f;
         float groundPosY = transform.position.y;
-        float maxHeight = groundPosY + _flyMaxHeight;
+        float flyMaxHeight = flyHeight <= 0 ? _flyMaxHeight : flyHeight;
+        float maxHeight = groundPosY + flyMaxHeight;
         float distance = maxHeight - groundPosY;
         Anim.CrossFade(TakeOffAnimName, 0.1f);
         yield return new WaitForSeconds(0.1f);
@@ -234,7 +238,7 @@ public class BossStateManager : MonoBehaviour
     {
         string id = SkyFallData.poolID;
         Vector3 summonPos = Player.position;
-        summonPos.y = transform.position.y + 5f;
+        summonPos.y = transform.position.y + 20f;
         GameObject skyFall = PoolManager.Instance.Get(id);
         if (skyFall != null) skyFall.transform.position = summonPos;
     }
@@ -272,5 +276,15 @@ public class BossStateManager : MonoBehaviour
             _currentPhase = BossPhase.SecondPhase;
             ChangeState(new BossEnterSecondPhase());
         }
+    }
+    public void BossOpenBiteHitBox(BossCombatInfo info)
+    {
+        if (_bossBiteHitboxControl == null) return;
+        _bossBiteHitboxControl.OpenHitbox(info);
+    }
+    public void BossCloseBiteHitBox()
+    {
+        if (_bossBiteHitboxControl == null) return;
+        _bossBiteHitboxControl.CloseHitbox();
     }
 }

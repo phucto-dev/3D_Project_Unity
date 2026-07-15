@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PooledObjectMove : MonoBehaviour
 {
@@ -30,17 +31,33 @@ public class PooledObjectMove : MonoBehaviour
     private bool _blockMove = false;
 
     private VFXScaler _vfxScaler;
+    private void Awake()
+    {
+        _vfxScaler = GetComponent<VFXScaler>();
+        if (_vfxScaler != null) _vfxScaler.StartScale += BlockMoveOn;
+        if (_vfxScaler != null) _vfxScaler.EndScale += BlockMoveOff;
+    }
+    private void OnDestroy()
+    {
+        if (_vfxScaler != null) _vfxScaler.StartScale -= BlockMoveOn;
+        if (_vfxScaler != null) _vfxScaler.EndScale -= BlockMoveOff;
+    }
     private void Start()
     {
         if (MyPoolVFX != null) _myPoolID = MyPoolVFX.poolID;
         if (HitPoolVFX != null) _hitPoolID = HitPoolVFX.poolID;
-        _vfxScaler = GetComponent<VFXScaler>();
     }
 
     private void OnEnable()
     {
-        if (_vfxScaler != null) _vfxScaler.StartScale += BlockMoveOn;
-        if (_vfxScaler != null) _vfxScaler.EndScale -= BlockMoveOff;
+        if (_vfxScaler != null)
+        {
+            _blockMove = true;
+        }
+        else
+        {
+            _blockMove = false;
+        }
         _startTime = Time.time;
         _isHit = false;
         m_scalefactor = VariousEffectsScene.m_gaph_scenesizefactor;
@@ -65,8 +82,6 @@ public class PooledObjectMove : MonoBehaviour
         // hễ viên đạn này bị tắt (thu hồi về pool), nó sẽ chạy hàm này.
 
         // 1. Dọn dẹp Hit Object nếu nó chưa được dọn
-        if (_vfxScaler != null) _vfxScaler.StartScale -= BlockMoveOn;
-        if (_vfxScaler != null) _vfxScaler.EndScale -= BlockMoveOff;
         if (m_makedObject != null)
         {
             PoolManager.Instance.Release(_hitPoolID, m_makedObject);
@@ -112,7 +127,7 @@ public class PooledObjectMove : MonoBehaviour
             m_makedObject.transform.position = hit.point;
             m_makedObject.transform.rotation = Quaternion.LookRotation(hit.normal);
             m_makedObject.transform.parent = transform.parent;
-            m_makedObject.transform.localScale = Vector3.one;
+            //m_makedObject.transform.localScale = Vector3.one;
         }
     }
 
@@ -185,10 +200,12 @@ public class PooledObjectMove : MonoBehaviour
     }
     public void BlockMoveOn()
     {
+        Debug.Log("Bat ne");
         _blockMove = true;
     }
     public void BlockMoveOff()
     {
+        Debug.Log("Tat ne");
         _blockMove = false;
     }
 }

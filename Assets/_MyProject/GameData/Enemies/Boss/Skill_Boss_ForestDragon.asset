@@ -17,7 +17,7 @@ MonoBehaviour:
     PhaseUse: 1
     Weight: 4
     Cooldown: 2
-    StaminaConsume: 20
+    StaminaConsume: 30
     MinDistance: 0
     MaxDistance: 100
     VFXID: 
@@ -25,10 +25,10 @@ MonoBehaviour:
     DmgHitMultiple: 0
     TimeHitPerNumberSecond: 0
   - AttackType: 1
-    PhaseUse: 2
+    PhaseUse: 1
     Weight: 4
     Cooldown: 4
-    StaminaConsume: 20
+    StaminaConsume: 40
     MinDistance: 0
     MaxDistance: 100
     VFXID: Projectile_BossBeam
@@ -37,7 +37,7 @@ MonoBehaviour:
     TimeHitPerNumberSecond: 0
   - AttackType: 2
     PhaseUse: 2
-    Weight: 2
+    Weight: 0
     Cooldown: 10
     StaminaConsume: 60
     MinDistance: 0

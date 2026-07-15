@@ -257,6 +257,7 @@ MonoBehaviour:
   <MouthPoint>k__BackingField: {fileID: 4543363691180166805}
   <PlayerInformation>k__BackingField: {fileID: 11400000, guid: 63df771c184cffe4486430f7a12102d3, type: 2}
   <BossCombatDataList>k__BackingField: {fileID: 11400000, guid: a4bf4568119de874694de443abb19d95, type: 2}
+  <SkyFallData>k__BackingField: {fileID: 11400000, guid: d5ed4c87db6ec45488bcc0e948a5f988, type: 2}
 --- !u!114 &5244896103423107041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8475524058911057695}
   - component: {fileID: 4580353365266852246}
+  - component: {fileID: 8925132415043359159}
   m_Layer: 0
   m_Name: BiteHitbox
   m_TagString: Untagged
@@ -359,6 +361,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.7337031, y: 4.209954, z: 8.083047}
   m_Center: {x: -0.1390121, y: 2.0712378, z: 1.2362552}
+--- !u!114 &8925132415043359159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8207760250270478920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e513d6b677efe8545926285375ad5a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossBiteHitboxControl
 --- !u!1001 &2161144272513384908
 PrefabInstance:
   m_ObjectHideFlags: 0

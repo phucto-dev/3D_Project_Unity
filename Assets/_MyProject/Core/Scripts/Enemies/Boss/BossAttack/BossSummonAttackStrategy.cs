@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class BossSummonAttackStrategy : IBossAttackStrategy
 {
-    private BossAttackType _type;
+    private BossCombatInfo _bossCombatInfo;
     public BossSummonAttackStrategy()
     {
-        _type = BossAttackType.SummonStatues;
+
     }
-    public BossSummonAttackStrategy(BossAttackType type)
+    public BossSummonAttackStrategy(BossCombatInfo bossCombatInfo)
     {
-        _type = type;
+        _bossCombatInfo = bossCombatInfo;
     }
     public void SetCombatInfo(BossCombatInfo info)
     {
@@ -19,7 +19,7 @@ public class BossSummonAttackStrategy : IBossAttackStrategy
     public IEnumerator ExecuteRoutine(BossStateManager boss)
     {
         yield return new WaitForSeconds(0f);
-        boss.ChangeState(new BossSummon(_type));
+        boss.ChangeState(new BossSummon(_bossCombatInfo));
     }
     public void AttackTrigger(BossStateManager boss)
     {

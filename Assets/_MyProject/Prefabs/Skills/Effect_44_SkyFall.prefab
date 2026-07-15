@@ -4935,7 +4935,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6059844313797423976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14897,7 +14897,7 @@ MonoBehaviour:
   TailDestroyTime: 0
   HitObjectDestroyTime: 1
   maxTime: 1
-  MoveSpeed: 3.3
+  MoveSpeed: 5
   isCheckHitTag: 0
   mtag: 
   isShieldActive: 0
@@ -14916,8 +14916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7688f963a42325d4f9f93debc4940bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VFXScaler
-  _maxSize: {x: 4, y: 4, z: 4}
-  _duration: 2.5
+  _maxSize: {x: 8, y: 8, z: 8}
+  _duration: 3
   _scaleCurve:
     serializedVersion: 2
     m_Curve:
