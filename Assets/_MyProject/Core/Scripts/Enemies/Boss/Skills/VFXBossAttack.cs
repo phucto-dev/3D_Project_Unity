@@ -12,6 +12,12 @@ public class VFXBossAttack : MonoBehaviour
     {
         timer = null;
     }
+    private void OnDisable()
+    {
+        _playerHealth = null;
+        _activate = false;
+        timer = null;
+    }
     private void Update()
     {
         if (!_activate) return;
@@ -24,7 +30,7 @@ public class VFXBossAttack : MonoBehaviour
             }
         }
     }
-    public void VFXGetSkillInfo(BossCombatInfo info, BossStatsManager stats)
+    public void VFXSetSkillInfo(BossCombatInfo info, BossStatsManager stats)
     {
         _combatInfo = info;
         _stats = stats;
@@ -42,6 +48,7 @@ public class VFXBossAttack : MonoBehaviour
 
             if (_playerHealth != null)
             {
+                Debug.Log("Deall: " + _dmgInfo.Amount);
                 SetCurrentDmgInfo();
                 _playerHealth.TakeDmg(_dmgInfo);
             }

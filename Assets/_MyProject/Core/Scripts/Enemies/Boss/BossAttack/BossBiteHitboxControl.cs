@@ -37,7 +37,7 @@ public class BossBiteHitboxControl : MonoBehaviour
 
             if (playerHealth != null)
             {
-                Debug.Log("Deal");
+                Debug.Log("Deal: " + _dmgInfo.Amount);
                 SetCurrentDmgInfo();
                 playerHealth.TakeDmg(_dmgInfo);
             }

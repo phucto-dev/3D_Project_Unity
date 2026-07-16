@@ -15,6 +15,8 @@ public class BossStatue : MonoBehaviour
 
     private BoxCollider _spawnArea;
     private Coroutine _current;
+    private BossCombatInfo _combatInfo;
+    private BossStatsManager _stats;
 
     private void Awake()
     {
@@ -29,8 +31,10 @@ public class BossStatue : MonoBehaviour
             StopAllCoroutines();
         }
     }
-    public void Activate()
+    public void Activate(BossCombatInfo info, BossStatsManager stats)
     {
+        _combatInfo = info;
+        _stats = stats;
         _current = StartCoroutine(SpawnMeteorRoutine());
     }
     private IEnumerator SpawnMeteorRoutine()
@@ -57,6 +61,8 @@ public class BossStatue : MonoBehaviour
         if (vfx != null)
         {
             vfx.transform.position = finalSpawnPosition;
+            PooledObjectMove skillAtack = vfx.GetComponent<PooledObjectMove>();
+            if (skillAtack != null) skillAtack.SetUpHitObject(_combatInfo, _stats);
         }
     }
 

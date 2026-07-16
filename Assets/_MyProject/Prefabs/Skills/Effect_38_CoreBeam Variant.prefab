@@ -106,6 +106,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5115854740689918544, guid: 32e9dc608fcba3f4f811a02579949ad4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8164915053215404170}
+    - targetCorrespondingSourceObject: {fileID: 5115854740689918544, guid: 32e9dc608fcba3f4f811a02579949ad4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6453370456022391356}
     - targetCorrespondingSourceObject: {fileID: 6885943710746282341, guid: 32e9dc608fcba3f4f811a02579949ad4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1292086740119826349}
@@ -168,3 +171,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoreBeam
   HitVFX: {fileID: 11400000, guid: d0ce50aee5d175a42bf186511bdb69f1, type: 2}
+--- !u!114 &-6453370456022391356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070699418919709677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f29713cd53cfe48aaf832911b49d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VFXBossAttack

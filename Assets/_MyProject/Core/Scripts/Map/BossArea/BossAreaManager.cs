@@ -90,7 +90,7 @@ public class BossAreaManager : MonoBehaviour
         _boss = null;
         StartBossPhase();
     }
-    private void SummonStatues()
+    private void SummonStatues(BossCombatInfo info, BossStatsManager stats)
     {
         int flag = 0;
         int i = 0;
@@ -98,7 +98,7 @@ public class BossAreaManager : MonoBehaviour
         {
             if (!statue.IsActive)
             {
-                statue.Statue.Activate();
+                statue.Statue.Activate(info, stats);
                 _statueList[i].IsActive = true;
                 flag++;
             }

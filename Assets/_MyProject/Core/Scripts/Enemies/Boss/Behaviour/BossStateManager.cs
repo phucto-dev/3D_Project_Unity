@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -46,7 +47,7 @@ public class BossStateManager : MonoBehaviour
     [field: SerializeField] public BossCombatListSO BossCombatDataList { get; private set; }
     [field: SerializeField] public PoolItemSO SkyFallData { get; private set; }
 
-    public event Action OnSummonStatues;
+    public event Action<BossCombatInfo , BossStatsManager> OnSummonStatues;
 
     private string BaseAnimLayer = "Base Layer";
     private string FlyStationAnimName = "FlyStationary";
@@ -230,17 +231,22 @@ public class BossStateManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         onComplete?.Invoke();
     }
-    public void SummonStatues()
+    public void SummonStatues(BossCombatInfo info)
     {
-        OnSummonStatues?.Invoke();
+        OnSummonStatues?.Invoke(info, _stats);
     }
-    public void SummonSkyFall()
+    public void SummonSkyFall(BossCombatInfo info)
     {
         string id = SkyFallData.poolID;
         Vector3 summonPos = Player.position;
         summonPos.y = transform.position.y + 20f;
         GameObject skyFall = PoolManager.Instance.Get(id);
-        if (skyFall != null) skyFall.transform.position = summonPos;
+        if (skyFall != null)
+        {
+            skyFall.transform.position = summonPos;
+            PooledObjectMove skillAttack = skyFall.GetComponent<PooledObjectMove>();
+            if (skillAttack != null) skillAttack.SetUpHitObject(info, _stats);
+        }
     }
     public void SetSummonAble(bool value)
     {

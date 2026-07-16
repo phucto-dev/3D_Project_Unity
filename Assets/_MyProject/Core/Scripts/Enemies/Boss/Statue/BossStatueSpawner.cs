@@ -11,12 +11,16 @@ public class BossStatueSpawner : MonoBehaviour
     public float RisingTime;
 
     private GameObject _statue;
+    private BossCombatInfo _combatInfo;
+    private BossStatsManager _stats;
     private void OnEnable()
     {
         _statue = null;
     }
-    public void Activate()
+    public void Activate(BossCombatInfo info, BossStatsManager stats)
     {
+        _combatInfo = info;
+        _stats = stats;
         if (PoolInfo == null) return;
         _statue = PoolManager.Instance.Get(PoolInfo.poolID);
         if (_statue == null) return;
@@ -44,6 +48,6 @@ public class BossStatueSpawner : MonoBehaviour
 
         _statue.transform.position = endPos;
         BossStatue script = _statue.GetComponent<BossStatue>();
-        if (script != null) script.Activate();
+        if (script != null) script.Activate(_combatInfo, _stats);
     }
 }

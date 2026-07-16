@@ -31,6 +31,8 @@ public class PooledObjectMove : MonoBehaviour
     private bool _blockMove = false;
 
     private VFXScaler _vfxScaler;
+    private BossCombatInfo _combatInfo;
+    private BossStatsManager _stats;
     private void Awake()
     {
         _vfxScaler = GetComponent<VFXScaler>();
@@ -128,6 +130,8 @@ public class PooledObjectMove : MonoBehaviour
             m_makedObject.transform.rotation = Quaternion.LookRotation(hit.normal);
             m_makedObject.transform.parent = transform.parent;
             //m_makedObject.transform.localScale = Vector3.one;
+            VFXBossAttack skillAttack = m_makedObject.GetComponent<VFXBossAttack>();
+            if (skillAttack != null) skillAttack.VFXSetSkillInfo(_combatInfo, _stats);
         }
     }
 
@@ -141,8 +145,15 @@ public class PooledObjectMove : MonoBehaviour
             m_makedObject.transform.position = point.position;
             m_makedObject.transform.rotation = point.rotation;
             m_makedObject.transform.parent = transform.parent;
-            m_makedObject.transform.localScale = Vector3.one;
+            //m_makedObject.transform.localScale = Vector3.one;
+            VFXBossAttack skillAttack = m_makedObject.GetComponent<VFXBossAttack>();
+            if (skillAttack != null) skillAttack.VFXSetSkillInfo(_combatInfo, _stats);
         }
+    }
+    public void SetUpHitObject(BossCombatInfo info, BossStatsManager stats)
+    {
+        _combatInfo = info;
+        _stats = stats;
     }
 
     private void HitObj(RaycastHit hit)
@@ -200,12 +211,10 @@ public class PooledObjectMove : MonoBehaviour
     }
     public void BlockMoveOn()
     {
-        Debug.Log("Bat ne");
         _blockMove = true;
     }
     public void BlockMoveOff()
     {
-        Debug.Log("Tat ne");
         _blockMove = false;
     }
 }

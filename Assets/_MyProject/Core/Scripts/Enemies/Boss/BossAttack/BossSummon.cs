@@ -39,8 +39,8 @@ public class BossSummon : IBossState
         if (_roarEffect != null)
         {
             _roarEffect.enabled = true;
-            if (_type == BossAttackType.SummonStatues) boss.SummonStatues();
-            else if(_type == BossAttackType.SkyFall) boss.SummonSkyFall();
+            if (_type == BossAttackType.SummonStatues) boss.SummonStatues(_bossCombatInfo);
+            else if(_type == BossAttackType.SkyFall) boss.SummonSkyFall(_bossCombatInfo);
         }
     }
     public void OnAnimationEnded(BossStateManager boss)

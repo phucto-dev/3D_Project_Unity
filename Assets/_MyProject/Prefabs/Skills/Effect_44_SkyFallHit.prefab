@@ -96,22 +96,25 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5708017846591467517, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 966881259421655030, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4408751776282610844}
+      addedObject: {fileID: 8995514003089393496}
+    - targetCorrespondingSourceObject: {fileID: 966881259421655030, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5126488449425877786}
   m_SourcePrefab: {fileID: 100100000, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
---- !u!1 &3001178131157803084 stripped
+--- !u!1 &7781003027816058951 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5708017846591467517, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
+  m_CorrespondingSourceObject: {fileID: 966881259421655030, guid: 910ad43c4023a414b9db58b1c6b64987, type: 3}
   m_PrefabInstance: {fileID: 7390583351867363249}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &4408751776282610844
+--- !u!135 &8995514003089393496
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3001178131157803084}
+  m_GameObject: {fileID: 7781003027816058951}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -120,9 +123,21 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 8.3
   m_Center: {x: -0.047413826, y: -0.09848788, z: -0.028451927}
+--- !u!114 &5126488449425877786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7781003027816058951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f29713cd53cfe48aaf832911b49d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VFXBossAttack

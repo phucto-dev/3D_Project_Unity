@@ -7,6 +7,7 @@ public class BossBlast : IBossAttackStrategy
     private BossCombatInfo _info;
     private string BlastBeamAnimName = "BlastBeam";
     private bool _hasFired = false;
+    private BossStatsManager _stats;
     public void SetCombatInfo(BossCombatInfo info)
     {
         _info = info;
@@ -54,7 +55,9 @@ public class BossBlast : IBossAttackStrategy
         GameObject beam = PoolManager.Instance.Get(_info.VFXID);
         if (beam == null) return;
         VFXBossSkill corebeam = beam.GetComponent<VFXBossSkill>();
+        VFXBossAttack skillAttack = beam.GetComponent<VFXBossAttack>();
         if (corebeam != null) corebeam.SetUp(_info);
+        if (skillAttack != null) skillAttack.VFXSetSkillInfo(_info, boss.GetStats());
         beam.transform.position = boss.MouthPoint.transform.position;
         beam.transform.rotation = boss.MouthPoint.transform.rotation;
     }
