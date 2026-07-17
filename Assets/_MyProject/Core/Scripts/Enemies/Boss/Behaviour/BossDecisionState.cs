@@ -5,8 +5,11 @@ public class BossDecisionState : IBossState
 {
     private string IdleBreatheAnimName = "IdleBreathe";
     private float offsetAngle = 6f;
+    private float _exitTime = 6;
+    private float _exitTimer;
     public void Enter(BossStateManager boss)
     {
+        _exitTimer = 0f;
         Debug.Log("sap vao TurnState ne");
         if (!boss.AlreadyTurn)
         {
@@ -70,7 +73,12 @@ public class BossDecisionState : IBossState
     }
     public void UpdateState(BossStateManager boss)
     {
-
+        _exitTimer += Time.deltaTime;
+        if (_exitTimer >= _exitTime)
+        {
+            Debug.Log("Force Quit");
+            boss.ChangeState(new BossDecisionState());
+        }
     }
     public void Exit(BossStateManager boss)
     {

@@ -5,13 +5,13 @@ public class HUDController : MonoBehaviour
     [SerializeField] private GameObject _mainHUD;
     [SerializeField] private GameObject _mainBossAreaHUD;
 
-    private HPBarUI hpBar;
+    private BarUI hpBar;
 
     private void Start()
     {
         if (_mainBossAreaHUD == null) return;
         _mainBossAreaHUD.SetActive(false);
-        hpBar = _mainBossAreaHUD.GetComponentInChildren<HPBarUI>();
+        hpBar = _mainBossAreaHUD.GetComponentInChildren<BarUI>();
     }
     public void OpenBossHUD()
     {
@@ -23,7 +23,7 @@ public class HUDController : MonoBehaviour
         if (_mainBossAreaHUD == null) return;
         _mainBossAreaHUD.SetActive(false);
     }
-    public HPBarUI GetHPBar()
+    public BarUI GetBossHPBar()
     {
         return hpBar;
     }

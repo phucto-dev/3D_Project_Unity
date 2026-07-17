@@ -91,6 +91,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Extension\CooldownTimer\CooldownTimer.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerInventorySO.cs" />
     <Compile Include="Assets\_AssetPackages\DoubleL\Demo\DemoCameraController.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\BarUI.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerInventory.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossHurtState.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\MainMenu\MainMenuController.cs" />
@@ -149,7 +150,6 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Items\DropInfo.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\StateMachine\BossAnimationNotifier.cs" />
-    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\HPBarUI.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Attack\PlayerAttack.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\BossAttack\BossBlast.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerLootManager.cs" />
@@ -211,6 +211,7 @@
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherGetArrowSMB.cs" />
     <Compile Include="Assets\_AssetPackages\Lana Studio\Casual RPG VFX\Demo\Scripts\ObjectsSwitcher.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Combat\EnemyAttack.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\PlayerStaminaBar.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StatManager\PlayerStatsManager.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\Manager\PlanePoolManager.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\NewMaterialChange.cs" />
@@ -218,12 +219,15 @@
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Leaf.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\VariousRotateObject.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Extension\VFX\VFXScaler.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\PlayerManaBar.cs" />
     <Compile Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Scripts\WindManager.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BehaviourTreeContainer.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyAnimationManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossEnterSecondPhase.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\PlayerHPBar.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\EquipmentSlot.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerCamManager.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\BossHPBar.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossIntro.cs" />
     <Compile Include="Assets\_MyProject\Core\Input\InputSystem_Actions.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\Camera\CinematicSkillEffect.cs" />

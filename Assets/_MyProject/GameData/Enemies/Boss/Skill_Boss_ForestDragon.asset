@@ -34,7 +34,7 @@ MonoBehaviour:
     VFXID: Projectile_BossBeam
     FlyHeight: 0
     DmgHitMultiple: 0.5
-    TimeHitPerNumberSecond: 0.5
+    TimeHitPerNumberSecond: 0.1
   - AttackType: 2
     PhaseUse: 2
     Weight: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
     MaxDistance: 100
     VFXID: 
     FlyHeight: 12
-    DmgHitMultiple: 20
+    DmgHitMultiple: 5
     TimeHitPerNumberSecond: -1
   - AttackType: 3
     PhaseUse: 2
@@ -55,5 +55,5 @@ MonoBehaviour:
     MaxDistance: 100
     VFXID: 
     FlyHeight: 12
-    DmgHitMultiple: 100
+    DmgHitMultiple: 10
     TimeHitPerNumberSecond: -1

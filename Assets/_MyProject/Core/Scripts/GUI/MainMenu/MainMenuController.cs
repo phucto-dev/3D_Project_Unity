@@ -91,11 +91,11 @@ public class MainMenuController : MonoBehaviour
         }
     }
 
-    public HPBarUI HPBossBar()
+    public BarUI HPBossBar()
     {
         if (_hudController != null)
         {
-            return _hudController.GetHPBar();
+            return _hudController.GetBossHPBar();
         }
         return null;
     }

@@ -22,7 +22,7 @@ MonoBehaviour:
   CooldownTime: 5
   HoldCastingTime: 0
   HasBuff: 0
-  DmgScaleMultiplier: 1
+  DmgScaleMultiplier: 0.35
   PoiseDamge: 20
   RangeScaleMultiplier: 1
   GainInvincible: 0

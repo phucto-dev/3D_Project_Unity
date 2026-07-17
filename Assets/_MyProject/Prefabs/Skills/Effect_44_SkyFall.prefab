@@ -14893,13 +14893,13 @@ MonoBehaviour:
   m_gameObjectTail: {fileID: 0}
   maxLength: 1
   isDestroy: 0
-  ObjectDestroyTime: 1
+  ObjectDestroyTime: 10
   TailDestroyTime: 0
   HitObjectDestroyTime: 1
   maxTime: 1
   MoveSpeed: 5
-  isCheckHitTag: 0
-  mtag: 
+  isCheckHitTag: 1
+  mtag: Ground
   isShieldActive: 0
   isHitMake: 1
   MyPoolVFX: {fileID: 11400000, guid: d5ed4c87db6ec45488bcc0e948a5f988, type: 2}

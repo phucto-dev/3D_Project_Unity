@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RollStateBehaviour
   _iframeStartTime: 0.05
-  _iframeEndTime: 0.36
+  _iframeEndTime: 0.47
 --- !u!1102 &-7687390439242153059
 AnimatorState:
   serializedVersion: 6
