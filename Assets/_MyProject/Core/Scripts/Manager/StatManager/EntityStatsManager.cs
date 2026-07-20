@@ -51,4 +51,8 @@ public class EntityStatsManager : MonoBehaviour
     {
         SuperArmor = value;
     }
+    public BaseStatsSO GetStatsData()
+    {
+        return _baseStatsSO;
+    }
 }

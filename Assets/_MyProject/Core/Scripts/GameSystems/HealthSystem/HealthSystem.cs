@@ -51,10 +51,14 @@ public class HealthSystem : MonoBehaviour
             OnDeath?.Invoke();
         }
         OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
+        if (_stats.GetStatsData() != null)
+            _stats.GetStatsData().TriggeredHealthChanged(CurrentHealth, MaxHealth);
     }
     public void ResetHP()
     {
         CurrentHealth = _stats.MaxHealth.GetValue();
+        if (_stats.GetStatsData() != null)
+            _stats.GetStatsData().TriggeredHealthChanged(CurrentHealth, MaxHealth);
     }
     public void RecoverHP(float amount)
     {
@@ -65,6 +69,8 @@ public class HealthSystem : MonoBehaviour
         }
         OnRecovery?.Invoke(amount);
         OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
+        if (_stats.GetStatsData() != null)
+            _stats.GetStatsData().TriggeredHealthChanged(CurrentHealth, MaxHealth);
     }
     public void AddInvincibility()
     {

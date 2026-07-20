@@ -39,13 +39,13 @@ public class SkillBuffController : MonoBehaviour
         }
     }
 
-    public void Initialize(SkillDataSO skillData, PlayerStatsManager playerStats, HealthSystem playerHealthSystem, PlayerStatsManager playerStatsManager)
+    public void Initialize(SkillDataSO skillData, PlayerStatsManager playerStats, HealthSystem playerHealthSystem)
     {
         _data = skillData;
         _tickTimer = 0f;
         _lifeTimer = skillData.BuffDuration;
         _playerHealth = playerHealthSystem;
-        _playerStatsManager = playerStatsManager;
+        _playerStatsManager = playerStats;
 
         if (_data != null)
         {

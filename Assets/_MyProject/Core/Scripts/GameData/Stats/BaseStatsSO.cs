@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [System.Serializable]
@@ -81,4 +82,11 @@ public class BaseStatsSO : ScriptableObject
     [SerializeField]
     private StatData _runSpeed = new StatData(6f, 1f, 20f);
     public StatData RunSpeed => _runSpeed;
+
+    public event Action<float, float> OnHealthChanged;
+
+    public void TriggeredHealthChanged(float current, float max)
+    {
+        OnHealthChanged?.Invoke(current, max);
+    }
 }

@@ -16,6 +16,7 @@ MonoBehaviour:
   SkillName: Lightning Field
   SkillType: 0
   VFXPrefab: {fileID: 4614166899693264910, guid: 4e1e4e76d52224740ae6116c2723d1c3, type: 3}
+  ManaCost: 40
   CastTime: 0
   ActiveDuration: 2.7
   IsToggle: 0

@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _deceleration = 25f;
     [SerializeField] private float _standTime = 0.80f;
     [SerializeField] private float _maxSlopeAngle = 45f;
+    [SerializeField] private float _recoverStaminaAfterRollDelay = 2f;
 
     [Header("Ref")]
     [SerializeField] private Rigidbody rb;
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerAttack _playerAttack;
     private PlayerManager _playerManager;
     private PlayerSkill _playerSkill;
+    private PlayerStatsManager _stats;
 
     private Vector3 _calculatedMoveDir;
     private Quaternion _targetRotation;
@@ -66,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _isGrounded;
     private bool _isRolling;
     private Coroutine _rollCoroutine;
+    private Coroutine _rollCoroutineStaminaRecoverDelay;
     private bool _isLanding;
     private Vector3 _rollDir;
     private float _fallVelocityY;
@@ -77,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _lastMoveDir;
     private bool _isStun = false;
     private bool _isUsingSkill = false;
+    private bool _staminaAllowRecoverFlag = true;
+    private float _recoverStaminaAfterRollDelayTimer;
 
     private void Awake()
     {
@@ -85,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
         _playerManager = GetComponent<PlayerManager>();
         _playerCollider = GetComponent<Collider>();
         _playerSkill = GetComponent<PlayerSkill>();
+        _stats = GetComponent<PlayerStatsManager>();
         if (animator == null)
         {
             animator = GetComponentInChildren<Animator>();
@@ -102,6 +108,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
+        // Start
+        if (animator != null) animator.SetBool("IsLockOnCamera", false);
+        _isLanding = true;
+        _moveable = true;
+        _isAttacking = false;
+        _rollCoroutine = null;
+        _rollCoroutineStaminaRecoverDelay = null;
+        _recoverStaminaAfterRollDelayTimer = 0;
+        //
         if (playerCamManager != null) playerCamManager.SentLockOnTarget += HandleLockOnCam;
         if (_playerManager != null)
         {
@@ -135,11 +150,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        if (animator != null) animator.SetBool("IsLockOnCamera", false);
-        _isLanding = true;
-        _moveable = true;
-        _isAttacking = false;
-        _rollCoroutine = null;
+        
     }
 
     private void Update()
@@ -251,19 +262,6 @@ public class PlayerMovement : MonoBehaviour
             }
             rb.linearVelocity = targetVelocity;
         }
-        //else
-        //{
-        //    float currentY = rb.linearVelocity.y;
-        //    if (currentY > 0 && !_jumpFlag) currentY = 0;
-
-        //    targetVelocity = new Vector3(_calculatedMoveDir.x * _currentSpeed, currentY, _calculatedMoveDir.z * _currentSpeed);
-        //}
-        //targetVelocity = new Vector3(
-        //    _calculatedMoveDir.x * _currentSpeed,
-        //    rb.linearVelocity.y,
-        //    _calculatedMoveDir.z * _currentSpeed
-        //);
-        
 
         if (_calculatedMoveDir != Vector3.zero)
         {
@@ -367,6 +365,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (ctx.interaction is TapInteraction)
         {
+            if (_stats.IsRunOutStamnia()) return;
             if (_isStun) return;
             if (_isRolling || !_isGrounded) return;
             if (_playerAttack != null)
@@ -383,6 +382,8 @@ public class PlayerMovement : MonoBehaviour
 
             if (_rollCoroutine != null) StopCoroutine(_rollCoroutine);
             _rollCoroutine = StartCoroutine(RollRoutine());
+            if (_rollCoroutineStaminaRecoverDelay != null) StopCoroutine(_rollCoroutineStaminaRecoverDelay);
+            _rollCoroutineStaminaRecoverDelay = StartCoroutine(StaminaRecoverFlagRoutine());
         }
         else if (ctx.interaction is HoldInteraction)
         {
@@ -555,5 +556,24 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         _isUsingSkill = value;
         _moveable = !value;
+    }
+    private IEnumerator StaminaRecoverFlagRoutine()
+    {
+        _staminaAllowRecoverFlag = false;
+        yield return new WaitForSeconds(_recoverStaminaAfterRollDelay);
+        _staminaAllowRecoverFlag = true;
+        _recoverStaminaAfterRollDelayTimer = 0f;
+        _rollCoroutineStaminaRecoverDelay = null;
+    }
+    public void RecoverStamina()
+    {
+        if (_speed > _walkSpeed) return;
+        if (!_staminaAllowRecoverFlag) return;
+        _recoverStaminaAfterRollDelayTimer += Time.deltaTime;
+        if (_recoverStaminaAfterRollDelayTimer >= 1f)
+        {
+            _stats.RecoverStamina();
+            _recoverStaminaAfterRollDelayTimer = 0f;
+        }
     }
 }

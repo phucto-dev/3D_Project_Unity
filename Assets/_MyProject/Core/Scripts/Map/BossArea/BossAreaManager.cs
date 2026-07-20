@@ -60,7 +60,7 @@ public class BossAreaManager : MonoBehaviour
         {
             if (MainMenuController.Instance.HPBossBar() != null)
             {
-                bossHealth.OnHealthChanged += MainMenuController.Instance.HPBossBar().SetTargetHealth;
+                bossHealth.OnHealthChanged += MainMenuController.Instance.HPBossBar().SetTarget;
             }
         }
         OnStatueStatusChanged?.Invoke(true);
@@ -83,7 +83,7 @@ public class BossAreaManager : MonoBehaviour
         {
             if (MainMenuController.Instance.HPBossBar() != null)
             {
-                bossHealth.OnHealthChanged -= MainMenuController.Instance.HPBossBar().SetTargetHealth;
+                bossHealth.OnHealthChanged -= MainMenuController.Instance.HPBossBar().SetTarget;
             }
         }
         PoolManager.Instance.Release(BossInfo.poolID, _boss);

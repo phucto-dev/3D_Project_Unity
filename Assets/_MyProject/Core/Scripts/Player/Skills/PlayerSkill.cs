@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -32,7 +31,6 @@ public class PlayerSkill : MonoBehaviour
     private Transform _playerTransform;
     private PlayerStatsManager _playerStats;
     private HealthSystem _healthSystem;
-    private PlayerStatsManager _statsManager;
     private Animator _animator;
     private int _skillLayerIndex;
     private Coroutine _fadeLayerCoroutine;
@@ -42,7 +40,6 @@ public class PlayerSkill : MonoBehaviour
     private void Awake()
     {
         _healthSystem = GetComponentInChildren<HealthSystem>();
-        _statsManager = GetComponent<PlayerStatsManager>();
         _inputSystem = GetComponent<PlayerInput>();
         _playerStats = GetComponent<PlayerStatsManager>();
         _playerTransform = this.transform;
@@ -81,6 +78,8 @@ public class PlayerSkill : MonoBehaviour
     {
         SkillDataSO skill = SkillSlots[index];
         if (skill == null) return;
+        if (_playerStats == null) return;
+        if (!_playerStats.IsEnoughMana(skill.ManaCost)) return;
         if (CheckSkillAvaiableToCast())
         {
             float time = 0f;
@@ -108,7 +107,7 @@ public class PlayerSkill : MonoBehaviour
                 break;
             case SkillType.Buff:
                 GameObject vfxBuffInstance = Instantiate(skillData.VFXPrefab, spawnPosition, _playerTransform.rotation, this.transform);
-                vfxBuffInstance.GetComponent<SkillBuffController>().Initialize(skillData, _playerStats, _healthSystem, _statsManager);
+                vfxBuffInstance.GetComponent<SkillBuffController>().Initialize(skillData, _playerStats, _healthSystem);
                 break;
             case SkillType.Hold:
                 GameObject vfxHoldInstance = Instantiate(skillData.VFXPrefab, spawnPosition, _playerTransform.rotation);

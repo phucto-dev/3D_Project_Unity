@@ -16,6 +16,7 @@ MonoBehaviour:
   SkillName: Shield Gold
   SkillType: 2
   VFXPrefab: {fileID: 6189608216269378262, guid: 4b9b238795ad21d4eb366c8d07d1736c, type: 3}
+  ManaCost: 20
   CastTime: 1
   ActiveDuration: 0
   IsToggle: 0

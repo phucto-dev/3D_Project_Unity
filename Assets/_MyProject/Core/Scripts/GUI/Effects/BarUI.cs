@@ -4,32 +4,32 @@ using UnityEngine.UI;
 public class BarUI : MonoBehaviour
 {
     [SerializeField] protected float _lerpSpeed = 5f;
-    protected Image _healthFillImage;
+    protected Image _fillImage;
     protected float _targetFillAmount = 1f;
     protected void Awake()
     {
-        _healthFillImage = GetComponent<Image>();
+        _fillImage = GetComponent<Image>();
     }
     protected void Start()
     {
-        if (_healthFillImage == null) return;
-        _healthFillImage.fillAmount = 1f;
+        if (_fillImage == null) return;
+        _fillImage.fillAmount = 1f;
         _targetFillAmount = 1f;
     }
     protected void Update()
     {
-        if (_healthFillImage == null) return;
-        if (!Mathf.Approximately(_healthFillImage.fillAmount, _targetFillAmount))
+        if (_fillImage == null) return;
+        if (!Mathf.Approximately(_fillImage.fillAmount, _targetFillAmount))
         {
-            _healthFillImage.fillAmount = Mathf.Lerp(
-                _healthFillImage.fillAmount,
+            _fillImage.fillAmount = Mathf.Lerp(
+                _fillImage.fillAmount,
                 _targetFillAmount,
                 _lerpSpeed * Time.deltaTime
             );
         }
     }
-    public void SetTargetHealth(float currentHealth, float maxHealth)
+    public virtual void SetTarget(float current, float max)
     {
-        _targetFillAmount = currentHealth / maxHealth;
+        _targetFillAmount = current / max;
     }
 }

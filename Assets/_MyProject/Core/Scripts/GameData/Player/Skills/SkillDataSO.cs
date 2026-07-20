@@ -21,6 +21,7 @@ public class SkillDataSO : ScriptableObject
     public GameObject VFXPrefab;
 
     [Header("--- LIFECYCLE ---")]
+    public float ManaCost = 0f;
     public float CastTime = 0f;
     public float ActiveDuration = 0f;
     public bool IsToggle = false;
