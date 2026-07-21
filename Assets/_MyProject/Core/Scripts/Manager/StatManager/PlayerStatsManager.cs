@@ -24,6 +24,20 @@ public class PlayerStatsManager : EntityStatsManager
             _staminaRecover = new Stat(playerStats.StaminaRecoverPerSec.BaseValue).GetValue();
         }
     }
+    private void OnEnable()
+    {
+        if (_baseStatsSO is PlayerStatsSO playerStats)
+        {
+            float timer = Time.time;
+            while (Time.time - timer < 3f)
+            {
+                Debug.Log("Trong While: " + Time.time);
+            }
+            Debug.Log("Xong");
+            playerStats.TriggeredManaChanged(_currentMana, MaxMana.GetValue());
+            playerStats.TriggeredStaminaChanged(_currentStamina, MaxStamina.GetValue());
+        }
+    }
     public bool IsEnoughMana(float amount)
     {
         if (_currentMana < amount) return false;
@@ -37,15 +51,32 @@ public class PlayerStatsManager : EntityStatsManager
     public bool IsRunOutStamnia()
     {
         if (_currentStamina < _staminaCost) return true;
+        return false;
+    }
+    public void ConsumeStamina()
+    {
+        if (_currentStamina < _staminaCost) return;
         _currentStamina -= _staminaCost;
         if (_baseStatsSO is PlayerStatsSO playerStats)
         {
             playerStats.TriggeredStaminaChanged(_currentStamina, MaxStamina.GetValue());
         }
-        return false;
     }
     public void RecoverStamina()
     {
+        if (_currentStamina == MaxStamina.GetValue()) return;
+        if (!(_baseStatsSO is PlayerStatsSO playerStats)) return;
+        if (_currentStamina > MaxStamina.GetValue())
+        {
+            _currentStamina = MaxStamina.GetValue();
+            playerStats.TriggeredStaminaChanged(_currentStamina, MaxStamina.GetValue());
+            return;
+        }
         _currentStamina += _staminaRecover;
+        playerStats.TriggeredStaminaChanged(_currentStamina, MaxStamina.GetValue());
+    }
+    public bool CheckAllowRecoverStamina()
+    {
+        return !(_currentStamina >= MaxStamina.GetValue());
     }
 }

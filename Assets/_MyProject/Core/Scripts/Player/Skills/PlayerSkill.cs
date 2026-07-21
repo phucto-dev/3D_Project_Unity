@@ -34,6 +34,7 @@ public class PlayerSkill : MonoBehaviour
     private Animator _animator;
     private int _skillLayerIndex;
     private Coroutine _fadeLayerCoroutine;
+    private bool _allowToUseSkill;
 
     private SkillState _currentState;
     private SkillDataSO _currentSkill;
@@ -63,6 +64,7 @@ public class PlayerSkill : MonoBehaviour
             int slotIndex = i;
             _skillInputActions[i].performed += ctx => HandleSkillCast(ctx, slotIndex);
         }
+        _allowToUseSkill = true;
     }
     private void OnDisable()
     {
@@ -76,9 +78,10 @@ public class PlayerSkill : MonoBehaviour
 
     private void HandleSkillCast(InputAction.CallbackContext ctx, int index)
     {
+        if (_playerStats == null) return;
+        if (!_allowToUseSkill) return;
         SkillDataSO skill = SkillSlots[index];
         if (skill == null) return;
-        if (_playerStats == null) return;
         if (!_playerStats.IsEnoughMana(skill.ManaCost)) return;
         if (CheckSkillAvaiableToCast())
         {
@@ -148,10 +151,12 @@ public class PlayerSkill : MonoBehaviour
         if (_fadeLayerCoroutine == null)
             _fadeLayerCoroutine = StartCoroutine(FadeOutSkillLayer(_blendTimeBetweenLayers));
         OnUsingSkill?.Invoke(false);
+        _allowToUseSkill = true;
     }
     private IEnumerator ExecuteSkillRoutine(float duration, SkillDataSO skillData)
     {
         OnUsingSkill?.Invoke(true);
+        _allowToUseSkill = false;
         ChangeState(SkillState.Start);
 
         yield return new WaitForSeconds(duration);

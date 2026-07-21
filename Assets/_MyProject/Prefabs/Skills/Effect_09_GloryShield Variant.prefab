@@ -8,9 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6051243425741854251, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385442801040891284, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7385442801184268036, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
       propertyPath: m_Name
-      value: Effect_09_GloryShield
+      value: Effect_09_GloryShield Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385442801184268036, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7385442801184268039, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,8 +64,74 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7385442801228409994, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385442802078564227, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385442802416149687, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385442802438514748, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385442802652292457, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7385442801184268036, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6878725777570791931}
+    - targetCorrespondingSourceObject: {fileID: 7385442801184268036, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1098167179621088469}
   m_SourcePrefab: {fileID: 100100000, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
+--- !u!1 &5791084827629787005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7385442801184268036, guid: 4873ade85befa8e42b268370137a5e0e, type: 3}
+  m_PrefabInstance: {fileID: 3900202965365606521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6878725777570791931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5791084827629787005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77741146e72a4f4ca1c5fac8f68124c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillBuffController
+  TransitionEffectTime: 0
+  SideLoopEffect: {fileID: 0}
+--- !u!135 &1098167179621088469
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5791084827629787005}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.54
+  m_Center: {x: 0, y: 1.54, z: 0}

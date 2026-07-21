@@ -169,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
         CheckGrounded();
         StandAfterHardLand();
         CheckAttacking();
+        RecoverStamina();
         if (_isStun) return;
         if (_isRolling)
         {
@@ -378,6 +379,7 @@ public class PlayerMovement : MonoBehaviour
                     rb.MoveRotation(_targetRotation);
                 }
             }
+            _stats.ConsumeStamina();
             animator.SetTrigger(_animRoll);
 
             if (_rollCoroutine != null) StopCoroutine(_rollCoroutine);
@@ -567,12 +569,15 @@ public class PlayerMovement : MonoBehaviour
     }
     public void RecoverStamina()
     {
+        if (!_stats.CheckAllowRecoverStamina()) return;
+        //Debug.Log("Recover ? :" + _speed + " " + _staminaAllowRecoverFlag + " " + _walkSpeed);
         if (_speed > _walkSpeed) return;
         if (!_staminaAllowRecoverFlag) return;
         _recoverStaminaAfterRollDelayTimer += Time.deltaTime;
         if (_recoverStaminaAfterRollDelayTimer >= 1f)
         {
             _stats.RecoverStamina();
+            Debug.Log("Recover ne");
             _recoverStaminaAfterRollDelayTimer = 0f;
         }
     }

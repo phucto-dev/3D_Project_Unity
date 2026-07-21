@@ -65,3 +65,19 @@ MonoBehaviour:
     baseValue: 6
     minValue: 1
     maxValue: 20
+  _maxStamina:
+    baseValue: 100
+    minValue: 0
+    maxValue: 9999
+  _maxMana:
+    baseValue: 100
+    minValue: 0
+    maxValue: 9999
+  _staminaCostPerRoll:
+    baseValue: 20
+    minValue: 0
+    maxValue: 9999
+  _staminaRecoverPerSec:
+    baseValue: 20
+    minValue: 0
+    maxValue: 9999

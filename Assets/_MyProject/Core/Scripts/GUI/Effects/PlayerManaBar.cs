@@ -6,7 +6,10 @@ public class PlayerManaBar : BarUI
     private void OnEnable()
     {
         if (BaseStats != null)
+        {
+            Debug.Log("+ ne");
             BaseStats.OnManaChanged += SetTarget;
+        }
     }
     private void OnDisable()
     {

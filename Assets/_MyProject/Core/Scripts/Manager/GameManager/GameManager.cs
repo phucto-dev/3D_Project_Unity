@@ -180,7 +180,7 @@ public class GameManager : MonoBehaviour
         if (playerMovement != null) playerMovement.SetMainCamera(_mainCamera.transform);
         if (playerCamManager != null) playerCamManager.SetLockOnCamera(lockonCam);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
     }
     private void RegisterPlayerEvent()
     {

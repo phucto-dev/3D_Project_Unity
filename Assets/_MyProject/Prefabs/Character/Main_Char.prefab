@@ -327,6 +327,10 @@ MonoBehaviour:
   PoiseDamage:
     _baseValue: 0
   SuperArmor: 0
+  MaxStamina:
+    _baseValue: 0
+  MaxMana:
+    _baseValue: 0
 --- !u!114 &2868168352298875736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +354,7 @@ MonoBehaviour:
   _deceleration: 25
   _standTime: 0.8
   _maxSlopeAngle: 45
+  _recoverStaminaAfterRollDelay: 2
   rb: {fileID: 8553272608574165676}
   animator: {fileID: 0}
   mainCamera: {fileID: 0}
@@ -459,11 +464,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSkill
   SkillSlots:
-  - {fileID: 11400000, guid: 2ece3c95464bf7b4781b29a894fc010e, type: 2}
   - {fileID: 11400000, guid: 488b8ff20f730cf48a7254d9c4352465, type: 2}
   - {fileID: 11400000, guid: 1b5e0c73a5831b542a1cbc0467653092, type: 2}
   - {fileID: 11400000, guid: 5b2e2fdfc67532c4eabbb20f24ab2e47, type: 2}
   - {fileID: 11400000, guid: 4114c2aebcde9ba4e9a55fef4d308e8a, type: 2}
+  - {fileID: 11400000, guid: 2ece3c95464bf7b4781b29a894fc010e, type: 2}
   _blendTimeBetweenLayers: 0.2
   _smashTime: 1.05
   TransitionDuaration: 0.2

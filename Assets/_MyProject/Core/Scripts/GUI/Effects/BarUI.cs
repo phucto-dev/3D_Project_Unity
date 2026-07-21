@@ -1,9 +1,12 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BarUI : MonoBehaviour
 {
     [SerializeField] protected float _lerpSpeed = 5f;
+    [SerializeField] protected TMP_Text _currentValueText;
+    [SerializeField] protected TMP_Text _currentMaxValueText;
     protected Image _fillImage;
     protected float _targetFillAmount = 1f;
     protected void Awake()
@@ -31,5 +34,14 @@ public class BarUI : MonoBehaviour
     public virtual void SetTarget(float current, float max)
     {
         _targetFillAmount = current / max;
+        Debug.Log("Vo nee1" + current);
+        if (_currentValueText != null)
+        {
+            Debug.Log("Vo nee" + current);
+            Debug.Log("Vo nee 2" + current);
+            _currentValueText.SetText(current + "");
+        }
+
+        if (_currentMaxValueText != null) _currentMaxValueText.SetText(max.ToString());
     }
 }

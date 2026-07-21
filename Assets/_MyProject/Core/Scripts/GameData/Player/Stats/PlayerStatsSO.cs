@@ -15,7 +15,7 @@ public class PlayerStatsSO : BaseStatsSO
     private StatData _staminaCostPerRoll = new StatData(20f);
     public StatData StaminaCostPerRoll => _staminaCostPerRoll;
     [SerializeField]
-    private StatData _staminaRecoverPerSec = new StatData(30f);
+    private StatData _staminaRecoverPerSec = new StatData(20f);
     public StatData StaminaRecoverPerSec => _staminaRecoverPerSec;
 
     public event Action<float, float> OnStaminaChanged;
