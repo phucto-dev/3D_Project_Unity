@@ -26,7 +26,7 @@ public class MeleeTracer : MonoBehaviour
         //_stats = GetComponentInParent<PlayerStatsManager>();
         //_playerAttack = GetComponentInParent<PlayerAttack>();
         //_playerManager = GetComponentInParent<PlayerManager>();
-        //_trail = transform.parent.GetComponentInChildren<TrailRenderer>();
+        _trail = transform.parent.GetComponentInChildren<TrailRenderer>();
         //if (_playerAttack != null)
         //{
         //    _animator = _playerAttack.GetComponentInChildren<Animator>();
@@ -101,7 +101,6 @@ public class MeleeTracer : MonoBehaviour
         _hitOnce = false;
         enemyHealth = null;
         if (_trail != null) _trail.enabled = false;
-        Debug.Log("Stopp");
     }
 
     private void Update()
@@ -120,26 +119,38 @@ public class MeleeTracer : MonoBehaviour
 
             if (Physics.SphereCast(prevPos, _hitboxRadius, dir, out RaycastHit hit, distance, _enemyLayer))
             {
-                HandleHit(hit.collider);
+                HandleHit(hit);
                 _hitOnce = true;
                 break;
             }
-
         }
     }
 
-    private void HandleHit(Collider enemyCollider)
+    private void HandleHit(RaycastHit hit)
     {
-        Debug.Log("Hit");
-        if (enemyHealth == null)
+        Collider enemyCollider = hit.collider;
+
+        if (enemyCollider.TryGetComponent<HealthSystem>(out HealthSystem targetHealth))
         {
-            enemyHealth = enemyCollider.GetComponent<HealthSystem>();
-        }
-        if (enemyHealth != null)
-        {
-            enemyHealth.TakeDmg(_dmgInfo);
+            targetHealth.TakeDmg(_dmgInfo);
+
             Animator enemyAnimator = enemyCollider.transform.parent.GetComponentInChildren<Animator>();
             Debug.Log("enemy Anim: " + enemyAnimator.name);
+
+            if (_playerAttack != null)
+            {
+                _playerAttack.RecoverManaOnHit();
+                string vfxID = _playerAttack.GetVFXID();
+                GameObject vfx = PoolManager.Instance.Get(vfxID);
+
+                vfx.transform.position = hit.point;
+
+                if (hit.normal != Vector3.zero)
+                {
+                    vfx.transform.rotation = Quaternion.LookRotation(hit.normal);
+                }
+            }
+
             HitStopManager.Instance.TriggerHitStop(_weaponStats.HitStopDuration, _animator, enemyAnimator);
         }
     }

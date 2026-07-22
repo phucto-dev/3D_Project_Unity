@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "GameData/Player/Stats/PlayerStats")]
@@ -12,6 +13,9 @@ public class PlayerStatsSO : BaseStatsSO
     private StatData _maxMana = new StatData(100f);
     public StatData MaxMana => _maxMana;
     [SerializeField]
+    private StatData _mananaRecoverPerSec = new StatData(2f);
+    public StatData ManaRecoverPerSec => _mananaRecoverPerSec;
+    [SerializeField]
     private StatData _staminaCostPerRoll = new StatData(20f);
     public StatData StaminaCostPerRoll => _staminaCostPerRoll;
     [SerializeField]
@@ -20,6 +24,7 @@ public class PlayerStatsSO : BaseStatsSO
 
     public event Action<float, float> OnStaminaChanged;
     public event Action<float, float> OnManaChanged;
+    public event Action<Dictionary<StatsValue, float>> OnStatsChanged;
 
     public void TriggeredStaminaChanged(float current, float max)
     {
@@ -28,5 +33,9 @@ public class PlayerStatsSO : BaseStatsSO
     public void TriggeredManaChanged(float current, float max)
     {
         OnManaChanged?.Invoke(current, max);
+    }
+    public void TriggeredStatsChanged(Dictionary<StatsValue, float> dictStats)
+    {
+        OnStatsChanged?.Invoke(dictStats);
     }
 }

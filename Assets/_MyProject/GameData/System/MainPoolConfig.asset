@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MainPoolConfig
   m_EditorClassIdentifier: Assembly-CSharp::PoolConfigSO
   poolItems:
+  - {fileID: 11400000, guid: be4afcd90648f5d4a9c2f83f0669cbdc, type: 2}
   - {fileID: 11400000, guid: 47bc23d4b301f7841b306bda63334b42, type: 2}
   - {fileID: 11400000, guid: 6063b2db5c2453649ae321a6b3fbace3, type: 2}
   - {fileID: 11400000, guid: 07e0909a3803c8948ab8d637dd695fc7, type: 2}

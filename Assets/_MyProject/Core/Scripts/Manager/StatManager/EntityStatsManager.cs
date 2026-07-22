@@ -1,6 +1,18 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
+public enum StatsValue
+{
+    HP,
+    Defense,
+    Stamina,
+    Mana,
+    Attack,
+    CR,
+    CD,
+    Haste
+}
 public class EntityStatsManager : MonoBehaviour
 {
     [Header("--- STATS SOURCE ---")]
@@ -16,13 +28,32 @@ public class EntityStatsManager : MonoBehaviour
     public Stat Haste;
     public Stat Poise;
     public Stat PoiseDamage;
+    public Stat Defense;
+    public Stat CritRate;
+    public Stat CritDamage;
+
+    [Header("--- FINAL STATS (USE THESE FOR LOGIC) ---")]
+    public float FinalMaxHealth { get; protected set; }
+    public float FinalAttackPower { get; protected set; }
+    public float FinalDefense { get; protected set; }
+    public float FinalCritRate { get; protected set; }
+    public float FinalCritDamage { get; protected set; }
+    public float FinalHaste { get; protected set; }
+    public float FinalPoise { get; protected set; }
+
+
     public bool SuperArmor;
 
     private float _currentPoise;
+    protected Dictionary<StatsValue, float> _dictStats = new Dictionary<StatsValue, float>();
 
     protected virtual void Awake()
     {
         if (_baseStatsSO == null) return;
+
+        Defense = new Stat(_baseStatsSO.Defense.BaseValue);
+        CritRate = new Stat(_baseStatsSO.CritRate.BaseValue);
+        CritDamage = new Stat(_baseStatsSO.CritDamage.BaseValue);
         MaxHealth = new Stat(_baseStatsSO.MaxHealth.BaseValue);
         RunSpeed = new Stat(_baseStatsSO.RunSpeed.BaseValue);
         WalkSpeed = new Stat(_baseStatsSO.WalkSpeed.BaseValue);
@@ -34,6 +65,8 @@ public class EntityStatsManager : MonoBehaviour
         PoiseDamage = new Stat(_baseStatsSO.PoiseDamage.BaseValue);
         SuperArmor = _baseStatsSO.IsAffectbyPoise;
         _currentPoise = Poise.GetValue();
+
+        RecalculateFinalStats(new Dictionary<StatType, float>());
     }
 
     public bool IsRunOutPoise(float poiseDmg)
@@ -54,5 +87,42 @@ public class EntityStatsManager : MonoBehaviour
     public BaseStatsSO GetStatsData()
     {
         return _baseStatsSO;
+    }
+    public virtual void RecalculateFinalStats(Dictionary<StatType, float> eqBonuses)
+    {
+        if (eqBonuses == null) eqBonuses = new Dictionary<StatType, float>();
+
+        // Lấy Base Values
+        float baseHp = MaxHealth.GetValue();
+        float baseAtk = AttackPower.GetValue();
+        float baseDef = Defense.GetValue();
+
+        // Tính Final HP, ATK, DEF = Base + Flat Bonus + (Base * Percent Bonus / 100)
+        FinalMaxHealth = baseHp
+                       + eqBonuses.GetValueOrDefault(StatType.BaseHP, 0f)
+                       + (baseHp * eqBonuses.GetValueOrDefault(StatType.HPPercent, 0f) / 100f);
+
+        FinalAttackPower = baseAtk
+                         + eqBonuses.GetValueOrDefault(StatType.BaseATK, 0f)
+                         + (baseAtk * eqBonuses.GetValueOrDefault(StatType.ATKPercent, 0f) / 100f);
+
+        FinalDefense = baseDef
+                     + eqBonuses.GetValueOrDefault(StatType.BaseDef, 0f)
+                     + (baseDef * eqBonuses.GetValueOrDefault(StatType.DefPercent, 0f) / 100f);
+
+        // Tính Final Crit (Cộng dồn trực tiếp)
+        FinalCritRate = CritRate.GetValue() + eqBonuses.GetValueOrDefault(StatType.CritRate, 0f);
+        FinalCritDamage = CritDamage.GetValue() + eqBonuses.GetValueOrDefault(StatType.CritDamage, 0f);
+
+        // Tính các chỉ số Flat khác
+        FinalHaste = Haste.GetValue() + eqBonuses.GetValueOrDefault(StatType.Haste, 0f);
+        FinalPoise = Poise.GetValue() + eqBonuses.GetValueOrDefault(StatType.Poise, 0f);
+
+        _dictStats[StatsValue.HP] = FinalMaxHealth;
+        _dictStats[StatsValue.Attack] = FinalAttackPower;
+        _dictStats[StatsValue.Defense] = FinalDefense;
+        _dictStats[StatsValue.CR] = FinalCritRate;
+        _dictStats[StatsValue.CD] = FinalCritDamage;
+        _dictStats[StatsValue.Haste] = FinalHaste;
     }
 }

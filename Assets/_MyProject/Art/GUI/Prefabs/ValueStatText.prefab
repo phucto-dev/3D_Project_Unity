@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 123702975419720411}
   - component: {fileID: 1098634526059583305}
   - component: {fileID: 7896569785872760050}
+  - component: {fileID: 4838150200499898955}
   m_Layer: 5
   m_Name: ValueStatText
   m_TagString: Untagged
@@ -137,3 +138,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4838150200499898955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3534106070331425192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c33da1e482c7be4d88de3763b22c97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotStatUIController
+  TextValue: 0
+  playerStats: {fileID: 11400000, guid: dacecba0f4e621147b75ec956aa4942c, type: 2}

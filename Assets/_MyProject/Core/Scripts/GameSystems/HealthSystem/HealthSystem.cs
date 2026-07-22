@@ -32,8 +32,8 @@ public class HealthSystem : MonoBehaviour
     {
         if (_stats == null) return;
 
-        MaxHealth = _stats.MaxHealth.GetValue();
-        CurrentHealth = _stats.MaxHealth.GetValue();
+        MaxHealth = _stats.FinalMaxHealth;
+        CurrentHealth = _stats.FinalMaxHealth;
     }
     public void TakeDmg(DmgInfo dmgInfo)
     {

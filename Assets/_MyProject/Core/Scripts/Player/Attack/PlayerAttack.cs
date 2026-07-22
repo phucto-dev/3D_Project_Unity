@@ -19,6 +19,7 @@ public class PlayerAttack : MonoBehaviour
     private InputAction _attackAction;
     private PlayerManager _playerManager;
     private PlayerSkill _playerSkill;
+    private PlayerStatsManager _stats;
 
     private Animator _animator;
     private AttackNodeSO _currentAttackNode;
@@ -31,6 +32,7 @@ public class PlayerAttack : MonoBehaviour
 
     private bool _isStun = false;
     private bool _allowAttack = true;
+    private float _currentManaRecover;
 
     private void Awake()
     {
@@ -38,6 +40,7 @@ public class PlayerAttack : MonoBehaviour
         _playerMovement = GetComponent<PlayerMovement>();
         _playerManager = GetComponent<PlayerManager>();
         _playerSkill = GetComponent<PlayerSkill>();
+        _stats = GetComponent<PlayerStatsManager>();
         if (_animator == null)
         {
             _animator = GetComponentInChildren<Animator>();
@@ -143,6 +146,7 @@ public class PlayerAttack : MonoBehaviour
     private void ExecuteAttack(AttackNodeSO targetNode)
     {
         _currentAttackNode = targetNode;
+        _currentManaRecover = targetNode.ManaRecoverPerHit;
         _isComboWindowOpen = false;
         _bufferedAttackNode = null;
         _animator.SetBool(_animRecovery, false);
@@ -229,5 +233,16 @@ public class PlayerAttack : MonoBehaviour
     public void SetAllowAttack(bool value)
     {
         _allowAttack = !value;
+    }
+    public void RecoverManaOnHit()
+    {
+        if (_stats == null) return;
+        _stats.RecoverMana(_currentManaRecover);
+    }
+    public string GetVFXID()
+    {
+        if (_currentAttackNode == null) return "Found Nothing *^%#@";
+        if (_currentAttackNode.AttackHitVFX == null) return "Found Nothing *^%#@";
+        return _currentAttackNode.AttackHitVFX.poolID;
     }
 }

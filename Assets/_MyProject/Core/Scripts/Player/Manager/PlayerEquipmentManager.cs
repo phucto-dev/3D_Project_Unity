@@ -1,7 +1,6 @@
-using Unity.VisualScripting;
-using UnityEditor.Animations;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
 
 public class PlayerEquipmentManager : MonoBehaviour
 {
@@ -21,6 +20,8 @@ public class PlayerEquipmentManager : MonoBehaviour
 
     [Header("--- BASE ANIMATOR REF ---")]
     public RuntimeAnimatorController AnimController;
+
+    public event Action<Dictionary<StatType, float>> OnUpdatePlayerStats;
 
     private PlayerStatsManager _stats;
     private PlayerAttack _playerAttack;
@@ -135,6 +136,43 @@ public class PlayerEquipmentManager : MonoBehaviour
 
     private void UpdatePlayerStats()
     {
+        Dictionary<StatType, float> eqBonuses = new Dictionary<StatType, float>();
 
+        if (PlayerEquipment != null && PlayerEquipment.EquippedItems != null)
+        {
+            foreach (EquipmentInstance eqInstance in PlayerEquipment.EquippedItems.Values)
+            {
+                if (eqInstance == null) continue;
+
+                EquipmentDataSO equipData = eqInstance.GetEquipData();
+
+                if (equipData != null)
+                {
+                    AddStatToDictionary(eqBonuses, equipData.MainStat);
+                    AddStatToDictionary(eqBonuses, equipData.SubStat);
+                }
+            }
+        }
+
+        OnUpdatePlayerStats?.Invoke(eqBonuses);
+
+        if (_stats != null)
+        {
+            _stats.RecalculateFinalStats(eqBonuses);
+        }
+    }
+
+    private void AddStatToDictionary(Dictionary<StatType, float> dict, ItemStat stat)
+    {
+        if (stat.Value == 0f) return;
+
+        if (dict.ContainsKey(stat.Type))
+        {
+            dict[stat.Type] += stat.Value;
+        }
+        else
+        {
+            dict.Add(stat.Type, stat.Value);
+        }
     }
 }

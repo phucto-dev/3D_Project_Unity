@@ -8,6 +8,9 @@ public class AttackNodeSO : ScriptableObject
     public float TransitionDuaration = 0.1f;
     public bool HasRecoveryAnim = false;
 
+    [Header("--- VFX ---")]
+    public PoolItemSO AttackHitVFX ;
+
     [Header("--- SWING TIMING ---")]
     [Range(0,1)] public float SwingTiming;
 
@@ -16,5 +19,7 @@ public class AttackNodeSO : ScriptableObject
     public AttackNodeSO NextHeavyAttack;
     public AttackNodeSO NextAttack;
 
+    [Header("--- STATS ---")]
+    public float ManaRecoverPerHit;
     public float DamageMultiplier = 1f;
 }

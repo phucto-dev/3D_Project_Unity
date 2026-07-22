@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aeab647463998e46890688f97038a29, type: 3}
   m_Name: Attack_Heavy_Entry
   m_EditorClassIdentifier: Assembly-CSharp::AttackNodeSO
-  AnimStateName: Attack_Light_Phase_Entry
+  AnimStateName: Attack_Heavy_Phase_Entry
   TransitionDuaration: 0
   HasRecoveryAnim: 0
+  AttackHitVFX: {fileID: 11400000, guid: be4afcd90648f5d4a9c2f83f0669cbdc, type: 2}
   SwingTiming: 0.2
   NextLightAttack: {fileID: 11400000, guid: 02dddf68ecd1e264da2f20bfe363c788, type: 2}
   NextHeavyAttack: {fileID: 0}
   NextAttack: {fileID: 0}
+  ManaRecoverPerHit: 2
   DamageMultiplier: 1

@@ -77,7 +77,7 @@ public class BossDecisionState : IBossState
         if (_exitTimer >= _exitTime)
         {
             Debug.Log("Force Quit");
-            boss.ChangeState(new BossDecisionState());
+            boss.ChangeState(new BossGroundedIdleState());
         }
     }
     public void Exit(BossStateManager boss)

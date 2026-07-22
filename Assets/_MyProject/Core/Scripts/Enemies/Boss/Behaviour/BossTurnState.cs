@@ -48,7 +48,7 @@ public class BossTurnState : IBossState
         }
 
         // ========================================================
-        // LIVE TRACKING KẾT HỢP DYNAMIC SPEED (Gốc rễ của Game Feel)
+        // LIVE TRACKING KẾT HỢP DYNAMIC SPEED
         // ========================================================
         Vector3 offset = boss.Player.position - boss.transform.position;
         offset.y = 0;

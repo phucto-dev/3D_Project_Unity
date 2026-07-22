@@ -28,7 +28,7 @@ public class ComboStateBehaviour : StateMachineBehaviour
     {
         if (_playerAttack == null) return;
         if (animator.IsInTransition(layerIndex)) return;
-        if (stateInfo.normalizedTime >= _swingTiming)
+        if (stateInfo.normalizedTime >= _swingTiming && stateInfo.normalizedTime < _transitionToNextAttack)
         {
             if (!_isAttacking)
             {

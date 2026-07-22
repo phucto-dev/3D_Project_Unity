@@ -1,3 +1,6 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStatsManager : EntityStatsManager
@@ -6,14 +9,22 @@ public class PlayerStatsManager : EntityStatsManager
     public Stat MaxStamina;
     public Stat MaxMana;
 
+    [Header("--- FINAL STATS ---")]
+    public float FinalMaxStamina { get; private set; }
+    public float FinalMaxMana { get; private set; }
+
     private float _currentStamina;
     private float _currentMana;
+
     private float _staminaCost;
     private float _staminaRecover;
+    private float _manaRecoverPerSec;
+    private float _timer;
+
     protected override void Awake()
     {
         if (_baseStatsSO == null) return;
-        base.Awake();
+        
         if (_baseStatsSO is PlayerStatsSO playerStats)
         {
             MaxStamina = new Stat(playerStats.MaxStamina.BaseValue);
@@ -22,18 +33,31 @@ public class PlayerStatsManager : EntityStatsManager
             _currentMana = MaxMana.GetValue();
             _staminaCost = new Stat(playerStats.StaminaCostPerRoll.BaseValue).GetValue();
             _staminaRecover = new Stat(playerStats.StaminaRecoverPerSec.BaseValue).GetValue();
+            _manaRecoverPerSec = new Stat(playerStats.ManaRecoverPerSec.BaseValue).GetValue();
         }
+
+        base.Awake();
+        RecalculateFinalStats(new Dictionary<StatType, float>());
     }
     private void OnEnable()
     {
+        StartCoroutine(DelayedTriggerRoutine());
+    }
+    private void FixedUpdate()
+    {
+        _timer += Time.deltaTime;
+        if (_timer >= 1)
+        {
+            RecoverMana(_manaRecoverPerSec);
+            _timer = 0;
+        }
+    }
+    private IEnumerator DelayedTriggerRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+
         if (_baseStatsSO is PlayerStatsSO playerStats)
         {
-            float timer = Time.time;
-            while (Time.time - timer < 3f)
-            {
-                Debug.Log("Trong While: " + Time.time);
-            }
-            Debug.Log("Xong");
             playerStats.TriggeredManaChanged(_currentMana, MaxMana.GetValue());
             playerStats.TriggeredStaminaChanged(_currentStamina, MaxStamina.GetValue());
         }
@@ -78,5 +102,37 @@ public class PlayerStatsManager : EntityStatsManager
     public bool CheckAllowRecoverStamina()
     {
         return !(_currentStamina >= MaxStamina.GetValue());
+    }
+    public void RecoverMana(float amount)
+    {
+        if (_currentMana == MaxMana.GetValue()) return;
+        if (!(_baseStatsSO is PlayerStatsSO playerStats)) return;
+        if (_currentMana > MaxMana.GetValue())
+        {
+            _currentMana = MaxMana.GetValue();
+            playerStats.TriggeredManaChanged(_currentMana, MaxMana.GetValue());
+            return;
+        }
+        _currentMana += amount;
+        playerStats.TriggeredManaChanged(_currentMana, MaxMana.GetValue());
+    }
+
+    public override void RecalculateFinalStats(Dictionary<StatType, float> eqBonuses)
+    {
+        base.RecalculateFinalStats(eqBonuses);
+        if (eqBonuses == null) eqBonuses = new Dictionary<StatType, float>();
+
+        FinalMaxStamina = MaxStamina.GetValue() + eqBonuses.GetValueOrDefault(StatType.Stamina, 0f);
+        FinalMaxMana = MaxMana.GetValue() + eqBonuses.GetValueOrDefault(StatType.Mana, 0f);
+
+        // Điều chỉnh Current Values không được vượt quá Final Max mới (khi tháo đồ)
+        
+        _currentStamina = Mathf.Min(_currentStamina, FinalMaxStamina);
+        _currentMana = Mathf.Min(_currentMana, FinalMaxMana);
+
+        _dictStats[StatsValue.Stamina] = FinalMaxStamina;
+        _dictStats[StatsValue.Mana] = FinalMaxMana;
+        if (!(_baseStatsSO is PlayerStatsSO playerStats)) return;
+        playerStats.TriggeredStatsChanged(_dictStats);
     }
 }

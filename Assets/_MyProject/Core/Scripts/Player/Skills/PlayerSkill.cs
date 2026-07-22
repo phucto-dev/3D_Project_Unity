@@ -131,8 +131,7 @@ public class PlayerSkill : MonoBehaviour
     {
         switch (state)
         {
-            case SkillState.Start:
-                _animator.SetLayerWeight(_skillLayerIndex, 1f);
+            case SkillState.Start: 
                 _animator.CrossFadeInFixedTime(_animStart, TransitionDuaration);
                 break;
             case SkillState.Smash:
@@ -157,6 +156,14 @@ public class PlayerSkill : MonoBehaviour
     {
         OnUsingSkill?.Invoke(true);
         _allowToUseSkill = false;
+
+        if (_fadeLayerCoroutine != null)
+        {
+            StopCoroutine(_fadeLayerCoroutine);
+            _fadeLayerCoroutine = null;
+        }
+        _animator.SetLayerWeight(_skillLayerIndex, 1f);
+
         ChangeState(SkillState.Start);
 
         yield return new WaitForSeconds(duration);

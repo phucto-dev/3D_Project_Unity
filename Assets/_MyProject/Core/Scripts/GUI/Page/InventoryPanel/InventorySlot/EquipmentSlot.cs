@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 public class EquipmentSlotUI : InventorySlot
 {
     public EquipmentSlot SlotType;
-
     public override void OnDrop(PointerEventData eventData)
     {
         GameObject draggedObject = eventData.pointerDrag;

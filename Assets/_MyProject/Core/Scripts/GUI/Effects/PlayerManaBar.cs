@@ -7,7 +7,6 @@ public class PlayerManaBar : BarUI
     {
         if (BaseStats != null)
         {
-            Debug.Log("+ ne");
             BaseStats.OnManaChanged += SetTarget;
         }
     }

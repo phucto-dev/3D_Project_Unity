@@ -528,6 +528,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest Armor
       objectReference: {fileID: 0}
+    - target: {fileID: 5655557913979741493, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655557913979741493, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6462123
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655557913979741493, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.4840734
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655557913979741493, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.42693055
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655557913979741493, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.4072014
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655557913979741493, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 16.137
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655557913979741493, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655557913979741493, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 78
+      objectReference: {fileID: 0}
     - target: {fileID: 5751424580863225501, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
       propertyPath: m_Name
       value: Legs Armor
