@@ -21,8 +21,6 @@ public class PlayerEquipmentManager : MonoBehaviour
     [Header("--- BASE ANIMATOR REF ---")]
     public RuntimeAnimatorController AnimController;
 
-    public event Action<Dictionary<StatType, float>> OnUpdatePlayerStats;
-
     private PlayerStatsManager _stats;
     private PlayerAttack _playerAttack;
     private PlayerManager _playerManager;
@@ -42,10 +40,13 @@ public class PlayerEquipmentManager : MonoBehaviour
     private void OnEnable()
     {
         if (PlayerEquipment != null) PlayerEquipment.OnEquipmentChanged += HandleEquipmentChanged;
+        if (MainMenuController.Instance != null) MainMenuController.Instance.OnOpenInventory += UpdatePlayerStats;
+        UpdatePlayerStats();
     }
     private void OnDisable()
     {
         if (PlayerEquipment != null) PlayerEquipment.OnEquipmentChanged -= HandleEquipmentChanged;
+        if (MainMenuController.Instance != null) MainMenuController.Instance.OnOpenInventory -= UpdatePlayerStats;
     }
 
     private void HandleEquipmentChanged(EquipmentSlot slot, EquipmentInstance newEquipment)
@@ -153,8 +154,6 @@ public class PlayerEquipmentManager : MonoBehaviour
                 }
             }
         }
-
-        OnUpdatePlayerStats?.Invoke(eqBonuses);
 
         if (_stats != null)
         {

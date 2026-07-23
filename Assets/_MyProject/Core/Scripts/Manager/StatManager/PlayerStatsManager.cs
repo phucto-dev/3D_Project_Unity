@@ -8,6 +8,9 @@ public class PlayerStatsManager : EntityStatsManager
     [Header("--- PLAYER STATS ---")]
     public Stat MaxStamina;
     public Stat MaxMana;
+    public Stat JumpForce;
+    public Stat RotationSpeed;
+    public Stat RollSpeed;
 
     [Header("--- FINAL STATS ---")]
     public float FinalMaxStamina { get; private set; }
@@ -29,6 +32,9 @@ public class PlayerStatsManager : EntityStatsManager
         {
             MaxStamina = new Stat(playerStats.MaxStamina.BaseValue);
             MaxMana = new Stat(playerStats.MaxMana.BaseValue);
+            JumpForce = new Stat(playerStats.JumpForce.BaseValue);
+            RotationSpeed = new Stat(playerStats.RotationSpeed.BaseValue);
+            RollSpeed = new Stat(playerStats.RollSpeed.BaseValue);
             _currentStamina = MaxStamina.GetValue();
             _currentMana = MaxMana.GetValue();
             _staminaCost = new Stat(playerStats.StaminaCostPerRoll.BaseValue).GetValue();
@@ -37,7 +43,7 @@ public class PlayerStatsManager : EntityStatsManager
         }
 
         base.Awake();
-        RecalculateFinalStats(new Dictionary<StatType, float>());
+        //RecalculateFinalStats(new Dictionary<StatType, float>());
     }
     private void OnEnable()
     {
@@ -61,6 +67,7 @@ public class PlayerStatsManager : EntityStatsManager
             playerStats.TriggeredManaChanged(_currentMana, MaxMana.GetValue());
             playerStats.TriggeredStaminaChanged(_currentStamina, MaxStamina.GetValue());
         }
+        RecalculateFinalStats(new Dictionary<StatType, float>());
     }
     public bool IsEnoughMana(float amount)
     {
@@ -133,6 +140,7 @@ public class PlayerStatsManager : EntityStatsManager
         _dictStats[StatsValue.Stamina] = FinalMaxStamina;
         _dictStats[StatsValue.Mana] = FinalMaxMana;
         if (!(_baseStatsSO is PlayerStatsSO playerStats)) return;
+        Debug.Log("Goi ne");
         playerStats.TriggeredStatsChanged(_dictStats);
     }
 }

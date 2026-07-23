@@ -21,6 +21,15 @@ public class PlayerStatsSO : BaseStatsSO
     [SerializeField]
     private StatData _staminaRecoverPerSec = new StatData(20f);
     public StatData StaminaRecoverPerSec => _staminaRecoverPerSec;
+    [SerializeField]
+    private StatData _rollSpeed = new StatData(5f);
+    public StatData RollSpeed => _rollSpeed;
+    [SerializeField]
+    private StatData _jumpForce = new StatData(8f);
+    public StatData JumpForce => _jumpForce;
+    [SerializeField]
+    private StatData _rotationSpeed = new StatData(15f);
+    public StatData RotationSpeed => _rotationSpeed;
 
     public event Action<float, float> OnStaminaChanged;
     public event Action<float, float> OnManaChanged;

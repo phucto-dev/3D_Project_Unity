@@ -6,21 +6,15 @@ using UnityEngine.InputSystem.Interactions;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Stats")]
-    [SerializeField] private float _walkSpeed = 2f;
-    [SerializeField] private float _runSpeed = 5f;
-    [SerializeField] private float _sprintSpeed = 8f;
-    [SerializeField] private float _rollSpeed = 5;
+    [Header("--- CONFIG ---")]
     [SerializeField] private float _rollDuration = 0.96f;
-    [SerializeField] private float _jumpForce = 8f;
-    [SerializeField] private float _rotationSpeed = 15f;
     [SerializeField] private float _acceleration = 15f;
     [SerializeField] private float _deceleration = 25f;
     [SerializeField] private float _standTime = 0.80f;
     [SerializeField] private float _maxSlopeAngle = 45f;
     [SerializeField] private float _recoverStaminaAfterRollDelay = 2f;
 
-    [Header("Ref")]
+    [Header("--- REF ---")]
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform mainCamera;
@@ -28,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PhysicsMaterial _slipperyMat;
     [SerializeField] private PhysicsMaterial _brakeMat;
 
-    [Header("GroundCheckSettings")]
+    [Header("--- GROUND CHECK ---")]
     [SerializeField] private Transform _groundCheckPoint;
     [SerializeField] private float _groundCheckRadius;
     [SerializeField] private LayerMask _groundLayer;
@@ -200,15 +194,15 @@ public class PlayerMovement : MonoBehaviour
         }
         if (_isCameraLockOn)
         {
-            if (_isSprinting) _speed = _runSpeed;
-            else if (_isWalking) _speed = _walkSpeed;
-            else _speed = _walkSpeed;
+            if (_isSprinting) _speed = _stats.RunSpeed.GetValue();
+            else if (_isWalking) _speed = _stats.WalkSpeed.GetValue();
+            else _speed = _stats.WalkSpeed.GetValue();
         }
         else
         {
-            if (_isSprinting) _speed = _sprintSpeed;
-            else if (_isWalking) _speed = _walkSpeed;
-            else _speed = _runSpeed;
+            if (_isSprinting) _speed = _stats.SprintSpeed.GetValue();
+            else if (_isWalking) _speed = _stats.WalkSpeed.GetValue();
+            else _speed = _stats.RunSpeed.GetValue();
         }
     }
     private void Movement()
@@ -266,7 +260,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (_calculatedMoveDir != Vector3.zero)
         {
-            Quaternion smoothRotation = Quaternion.Slerp(rb.rotation, _targetRotation, _rotationSpeed * Time.fixedDeltaTime);
+            Quaternion smoothRotation = Quaternion.Slerp(rb.rotation, _targetRotation, _stats.RotationSpeed.GetValue() * Time.fixedDeltaTime);
             rb.MoveRotation(smoothRotation);
         }
     }
@@ -276,7 +270,7 @@ public class PlayerMovement : MonoBehaviour
         if (!_jumpFlag ) return;
         animator.SetTrigger(_animJump);
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-        rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+        rb.AddForce(Vector3.up * _stats.JumpForce.GetValue(), ForceMode.Impulse);
     }
     private void RotateCharacter()
     {
@@ -433,7 +427,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Rolling()
     {
-        rb.linearVelocity = new Vector3(_rollDir.x * _rollSpeed, rb.linearVelocity.y, _rollDir.z * _rollSpeed);
+        rb.linearVelocity = new Vector3(_rollDir.x * _stats.RollSpeed.GetValue(), rb.linearVelocity.y, _rollDir.z * _stats.RollSpeed.GetValue());
     }
     private IEnumerator RollRoutine()
     {
@@ -570,8 +564,8 @@ public class PlayerMovement : MonoBehaviour
     public void RecoverStamina()
     {
         if (!_stats.CheckAllowRecoverStamina()) return;
-        //Debug.Log("Recover ? :" + _speed + " " + _staminaAllowRecoverFlag + " " + _walkSpeed);
-        if (_speed > _walkSpeed) return;
+        //Debug.Log("Recover ? :" + _speed + " " + _staminaAllowRecoverFlag + " " + _stats.WalkSpeed.GetValue());
+        if (_speed > _stats.WalkSpeed.GetValue()) return;
         if (!_staminaAllowRecoverFlag) return;
         _recoverStaminaAfterRollDelayTimer += Time.deltaTime;
         if (_recoverStaminaAfterRollDelayTimer >= 1f)

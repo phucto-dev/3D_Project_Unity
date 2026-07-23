@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\PHUC\\3D PJ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\manager\\statmanager\\playerstatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\manager\\statmanager\\playerstatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\manager\\statmanager\\playerstatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\manager\\statmanager\\entitystatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\manager\\statmanager\\entitystatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\manager\\statmanager\\stat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\manager\\statmanager\\stat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\gui\\page\\inventorypanel\\slotsstat\\slotstatuicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gui\\page\\inventorypanel\\slotsstat\\slotstatuicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gui\\page\\inventorypanel\\slotsstat\\slotstatuicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\gamedata\\player\\stats\\playerstatsso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamedata\\player\\stats\\playerstatsso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamedata\\player\\stats\\playerstatsso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\player\\manager\\playerequipmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\manager\\playerequipmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\manager\\playerequipmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\manager\\statmanager\\entitystatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\manager\\statmanager\\entitystatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamesystems\\healthsystem\\healthsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -538,7 +538,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SlotStatUIController.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\SlotsStat\\SlotStatUIController.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\SlotsStat\\SlotStatUIController.cs",
@@ -546,12 +546,11 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\SlotsStat\\SlotStatUIController.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-22T14:16:54.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-22T14:16:54.967Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PlayerStatsSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Stats\\PlayerStatsSO.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Stats\\PlayerStatsSO.cs",
@@ -559,12 +558,11 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Stats\\PlayerStatsSO.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAowCQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-22T13:57:46.424Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-22T13:57:46.424Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PlayerEquipmentManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
@@ -572,18 +570,17 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
               "ViewState": "AgIAAKIAAAAAAAAAAAAAAKwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T10:49:14.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T10:49:14.295Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "EntityStatsManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\EntityStatsManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\EntityStatsManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\EntityStatsManager.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\EntityStatsManager.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAEwCwAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAA4wDMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-22T13:13:34.48Z",
               "EditorCaption": ""
@@ -596,7 +593,7 @@
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\PlayerStatsManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\PlayerStatsManager.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\PlayerStatsManager.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAcwHUAAABVAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAACYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-20T12:30:12.782Z",
               "EditorCaption": ""
@@ -611,18 +608,17 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\HealthSystem\\HealthSystem.cs",
               "ViewState": "AgIAAEIAAAAAAAAAAAAIwC8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-15T12:13:48.134Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-15T12:13:48.134Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Stat.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\Stat.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\Stat.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\Stat.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\Stat.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-09T14:43:09.305Z",
               "EditorCaption": ""

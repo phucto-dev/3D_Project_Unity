@@ -314,6 +314,8 @@ MonoBehaviour:
     _baseValue: 0
   WalkSpeed:
     _baseValue: 0
+  SprintSpeed:
+    _baseValue: 0
   AttackPower:
     _baseValue: 0
   AttackRange:
@@ -326,10 +328,22 @@ MonoBehaviour:
     _baseValue: 0
   PoiseDamage:
     _baseValue: 0
+  Defense:
+    _baseValue: 0
+  CritRate:
+    _baseValue: 0
+  CritDamage:
+    _baseValue: 0
   SuperArmor: 0
   MaxStamina:
     _baseValue: 0
   MaxMana:
+    _baseValue: 0
+  JumpForce:
+    _baseValue: 0
+  RotationSpeed:
+    _baseValue: 0
+  RollSpeed:
     _baseValue: 0
 --- !u!114 &2868168352298875736
 MonoBehaviour:
@@ -343,13 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b327af5053c2546a776d0fb38a96b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  _walkSpeed: 2
-  _runSpeed: 5
-  _sprintSpeed: 8
-  _rollSpeed: 5
   _rollDuration: 0.96
-  _jumpForce: 5
-  _rotationSpeed: 15
   _acceleration: 15
   _deceleration: 25
   _standTime: 0.8
@@ -450,7 +458,7 @@ MonoBehaviour:
   LegsSkinnedMesh: {fileID: 3114307043560192636}
   FeetSkinnedMesh: {fileID: 4202269804925663707}
   WeaponSlot: {fileID: 7656304950531880705}
-  AnimController: {fileID: 0}
+  AnimController: {fileID: 9100000, guid: c4e9e661cc8ba464db3fa70219e4e66e, type: 2}
 --- !u!114 &2885385974028102458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,6 +536,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest Armor
       objectReference: {fileID: 0}
+    - target: {fileID: 1023955025856591696, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784871010453811874, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020749868513800453, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175185744281321052, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5655557913979741493, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.05
@@ -603,6 +627,10 @@ PrefabInstance:
     - target: {fileID: 6982509380450558838, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7313331132590035544, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7365442992257947694, guid: cc7414f46ac33fa43aa7e08d0adf2c7a, type: 3}
       propertyPath: m_Mesh

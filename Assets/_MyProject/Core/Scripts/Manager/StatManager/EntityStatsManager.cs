@@ -22,6 +22,7 @@ public class EntityStatsManager : MonoBehaviour
     public Stat MaxHealth;
     public Stat RunSpeed;
     public Stat WalkSpeed;
+    public Stat SprintSpeed;
     public Stat AttackPower;
     public Stat AttackRange;
     public Stat DelayPerAttack;
@@ -57,6 +58,7 @@ public class EntityStatsManager : MonoBehaviour
         MaxHealth = new Stat(_baseStatsSO.MaxHealth.BaseValue);
         RunSpeed = new Stat(_baseStatsSO.RunSpeed.BaseValue);
         WalkSpeed = new Stat(_baseStatsSO.WalkSpeed.BaseValue);
+        SprintSpeed = new Stat(_baseStatsSO.SprintSpeed.BaseValue);
         AttackPower = new Stat(_baseStatsSO.AttackPower.BaseValue);
         AttackRange = new Stat(_baseStatsSO.AttackRange.BaseValue);
         DelayPerAttack = new Stat(_baseStatsSO.DelayPerAttack.BaseValue);

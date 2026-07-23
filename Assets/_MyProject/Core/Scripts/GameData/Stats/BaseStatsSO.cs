@@ -82,6 +82,9 @@ public class BaseStatsSO : ScriptableObject
     [SerializeField]
     private StatData _runSpeed = new StatData(6f, 1f, 20f);
     public StatData RunSpeed => _runSpeed;
+    [SerializeField]
+    private StatData _sprintSpeed = new StatData(8f, 1f, 20f);
+    public StatData SprintSpeed => _sprintSpeed;
 
     public event Action<float, float> OnHealthChanged;
 

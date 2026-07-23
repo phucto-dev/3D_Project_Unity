@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject _loadingRoot;
     [SerializeField] private GameObject _globalRoot;
     public static MainMenuController Instance { get; private set; }
+
+    public event Action OnOpenInventory;
 
     [SerializeField] private List<MenuPage> pages;
 
@@ -66,6 +69,7 @@ public class MainMenuController : MonoBehaviour
             case GameState.InGameMenu:
                 _hudRoot.SetActive(true);
                 _inGameMenuRoot.SetActive(true);
+                OnOpenInventory?.Invoke();
                 break;
             case GameState.Die:
                 _globalRoot.SetActive(true);
