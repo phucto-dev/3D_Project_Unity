@@ -536,6 +536,7 @@ public class HurtState : IEnemyState
     {
         if (!_isHurtOnce)
         {
+            Debug.Log("!_isHurtOnce");
             int randomHurtIndex = UnityEngine.Random.Range(1, (int)enemy.GetStats().QuantityOfHurt.GetValue() + 1);
             string attackStateName = "Hurt_" + randomHurtIndex;
             enemy.GetACController().DoTargetAnim(attackStateName);
@@ -543,6 +544,7 @@ public class HurtState : IEnemyState
         }
         else
         {
+            Debug.Log("_isHurtOnce");
             _stateInfo = enemy.GetACController().GetStateInfo();
             if (_stateInfo.normalizedTime >= 1.0f)
             {

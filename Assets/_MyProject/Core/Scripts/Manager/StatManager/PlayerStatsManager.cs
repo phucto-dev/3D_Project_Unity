@@ -23,9 +23,11 @@ public class PlayerStatsManager : EntityStatsManager
     private float _staminaRecover;
     private float _manaRecoverPerSec;
     private float _timer;
+    private HealthSystem _health;
 
     protected override void Awake()
     {
+        _health = GetComponentInChildren<HealthSystem>();
         if (_baseStatsSO == null) return;
         
         if (_baseStatsSO is PlayerStatsSO playerStats)
@@ -64,8 +66,8 @@ public class PlayerStatsManager : EntityStatsManager
 
         if (_baseStatsSO is PlayerStatsSO playerStats)
         {
-            playerStats.TriggeredManaChanged(_currentMana, MaxMana.GetValue());
-            playerStats.TriggeredStaminaChanged(_currentStamina, MaxStamina.GetValue());
+            playerStats.TriggeredManaChanged(_currentMana, FinalMaxMana);
+            playerStats.TriggeredStaminaChanged(_currentStamina, FinalMaxStamina);
         }
         RecalculateFinalStats(new Dictionary<StatType, float>());
     }
@@ -75,7 +77,7 @@ public class PlayerStatsManager : EntityStatsManager
         _currentMana -= amount;
         if (_baseStatsSO is PlayerStatsSO playerStats)
         {
-            playerStats.TriggeredManaChanged(_currentMana, MaxMana.GetValue());
+            playerStats.TriggeredManaChanged(_currentMana, FinalMaxMana);
         }
         return true;
     }
@@ -90,38 +92,38 @@ public class PlayerStatsManager : EntityStatsManager
         _currentStamina -= _staminaCost;
         if (_baseStatsSO is PlayerStatsSO playerStats)
         {
-            playerStats.TriggeredStaminaChanged(_currentStamina, MaxStamina.GetValue());
+            playerStats.TriggeredStaminaChanged(_currentStamina, FinalMaxStamina);
         }
     }
     public void RecoverStamina()
     {
-        if (_currentStamina == MaxStamina.GetValue()) return;
+        if (_currentStamina == FinalMaxStamina) return;
         if (!(_baseStatsSO is PlayerStatsSO playerStats)) return;
-        if (_currentStamina > MaxStamina.GetValue())
+        if (_currentStamina > FinalMaxStamina)
         {
-            _currentStamina = MaxStamina.GetValue();
-            playerStats.TriggeredStaminaChanged(_currentStamina, MaxStamina.GetValue());
+            _currentStamina = FinalMaxStamina;
+            playerStats.TriggeredStaminaChanged(_currentStamina, FinalMaxStamina);
             return;
         }
         _currentStamina += _staminaRecover;
-        playerStats.TriggeredStaminaChanged(_currentStamina, MaxStamina.GetValue());
+        playerStats.TriggeredStaminaChanged(_currentStamina, FinalMaxStamina);
     }
     public bool CheckAllowRecoverStamina()
     {
-        return !(_currentStamina >= MaxStamina.GetValue());
+        return !(_currentStamina >= FinalMaxStamina);
     }
     public void RecoverMana(float amount)
     {
-        if (_currentMana == MaxMana.GetValue()) return;
+        if (_currentMana == FinalMaxMana) return;
         if (!(_baseStatsSO is PlayerStatsSO playerStats)) return;
-        if (_currentMana > MaxMana.GetValue())
+        if (_currentMana > FinalMaxMana)
         {
-            _currentMana = MaxMana.GetValue();
-            playerStats.TriggeredManaChanged(_currentMana, MaxMana.GetValue());
+            _currentMana = FinalMaxMana;
+            playerStats.TriggeredManaChanged(_currentMana, FinalMaxMana);
             return;
         }
         _currentMana += amount;
-        playerStats.TriggeredManaChanged(_currentMana, MaxMana.GetValue());
+        playerStats.TriggeredManaChanged(_currentMana, FinalMaxMana);
     }
 
     public override void RecalculateFinalStats(Dictionary<StatType, float> eqBonuses)
@@ -141,6 +143,7 @@ public class PlayerStatsManager : EntityStatsManager
         _dictStats[StatsValue.Mana] = FinalMaxMana;
         if (!(_baseStatsSO is PlayerStatsSO playerStats)) return;
         Debug.Log("Goi ne");
+        if (_health != null) _health.UpdateMaxHP();
         playerStats.TriggeredStatsChanged(_dictStats);
     }
 }

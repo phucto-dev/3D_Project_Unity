@@ -45,7 +45,7 @@ MonoBehaviour:
     minValue: 1
     maxValue: 99
   _poiseDamage:
-    baseValue: 10
+    baseValue: 20
     minValue: 0
     maxValue: 9999
   _defense:
@@ -63,6 +63,10 @@ MonoBehaviour:
     maxValue: 20
   _runSpeed:
     baseValue: 6
+    minValue: 1
+    maxValue: 20
+  _sprintSpeed:
+    baseValue: 8
     minValue: 1
     maxValue: 20
   _maxStamina:
@@ -83,5 +87,17 @@ MonoBehaviour:
     maxValue: 9999
   _staminaRecoverPerSec:
     baseValue: 25
+    minValue: 0
+    maxValue: 9999
+  _rollSpeed:
+    baseValue: 5
+    minValue: 0
+    maxValue: 9999
+  _jumpForce:
+    baseValue: 8
+    minValue: 0
+    maxValue: 9999
+  _rotationSpeed:
+    baseValue: 15
     minValue: 0
     maxValue: 9999

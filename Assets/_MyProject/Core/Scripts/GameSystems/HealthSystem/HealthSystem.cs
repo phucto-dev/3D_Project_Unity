@@ -26,6 +26,7 @@ public class HealthSystem : MonoBehaviour
     private void Awake()
     {
         _stats = GetComponentInParent<EntityStatsManager>();
+        Debug.Log("Stats???? : " + _stats);
     }
 
     private void Start()
@@ -56,9 +57,26 @@ public class HealthSystem : MonoBehaviour
     }
     public void ResetHP()
     {
-        CurrentHealth = _stats.MaxHealth.GetValue();
+        CurrentHealth = MaxHealth;
+        Debug.Log("Health Reset out");
         if (_stats.GetStatsData() != null)
+        {
+            _stats.GetStatsData().TriggeredHealthChanged(MaxHealth, MaxHealth);
+            Debug.Log("Health Reset");
+        }
+    }
+    public void UpdateMaxHP()
+    {
+        if (_stats == null) return;
+        Debug.Log("Stats???? 2: " + _stats);
+        Debug.Log("Stats???? 3: " + _stats.FinalMaxHealth);
+        MaxHealth = _stats.FinalMaxHealth;
+        if (CurrentHealth > _stats.FinalMaxHealth) CurrentHealth = _stats.FinalMaxHealth;
+        if (_stats.GetStatsData() != null)
+        {
             _stats.GetStatsData().TriggeredHealthChanged(CurrentHealth, MaxHealth);
+            Debug.Log("Health Updated");
+        }
     }
     public void RecoverHP(float amount)
     {

@@ -65,7 +65,7 @@ public class EntityStatsManager : MonoBehaviour
         Haste = new Stat(_baseStatsSO.Haste.BaseValue);
         Poise = new Stat(_baseStatsSO.Poise.BaseValue);
         PoiseDamage = new Stat(_baseStatsSO.PoiseDamage.BaseValue);
-        SuperArmor = _baseStatsSO.IsAffectbyPoise;
+        SuperArmor = !_baseStatsSO.IsAffectbyPoise;
         _currentPoise = Poise.GetValue();
 
         RecalculateFinalStats(new Dictionary<StatType, float>());
@@ -73,7 +73,11 @@ public class EntityStatsManager : MonoBehaviour
 
     public bool IsRunOutPoise(float poiseDmg)
     {
-        if (SuperArmor) return false;
+        if (SuperArmor)
+        {
+            Debug.Log("SupperArmor Active: " + _currentPoise + " " + poiseDmg);
+            return false;
+        }
         _currentPoise -= poiseDmg;
         Debug.Log("_currentPoise: " + _currentPoise + " " + poiseDmg);
         return _currentPoise <= 0;

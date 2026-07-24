@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     public event Action RespawnPlayer;
 
     private @InputSystem_Actions _globalInput;
-    private SpawnPointID _targetSpawnID = SpawnPointID.Boss_Room_Entrance;
+    private SpawnPointID _targetSpawnID = SpawnPointID.Default_NewGame;
     private GameObject _playerInstance;
     private Transform _currentCheckPoint;
     private void Awake()
@@ -201,10 +201,10 @@ public class GameManager : MonoBehaviour
         ChangeGameState(GameState.Loading);
         _playerInstance.transform.position = _currentCheckPoint.position;
         _playerInstance.transform.rotation = _currentCheckPoint.rotation;
-        RespawnPlayer?.Invoke();
         if (timer.Tick())
         {
             ChangeGameState(GameState.Playing);
+            RespawnPlayer?.Invoke();
             ChangeActionInputMap?.Invoke(ActionInputMapType.Player);
         }
     }
