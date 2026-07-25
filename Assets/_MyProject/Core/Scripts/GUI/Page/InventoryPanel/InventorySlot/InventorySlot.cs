@@ -1,10 +1,11 @@
-using System;
+﻿using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
+public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject ItemContainer;
     public Image _image;
@@ -31,6 +32,10 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     protected void OnDisable()
     {
         if (_inventoryController != null) _inventoryController.OnSlotDataChanged -= UpdateSlot;
+        if (TooltipManager.Instance != null && gameObject.activeInHierarchy)
+        {
+            TooltipManager.Instance.HideTooltip();
+        }
     }
     protected void Start()
     {
@@ -110,5 +115,21 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 _inventoryController.ProcessDragAndDrop(sourceSlot.GetIndex(), _thisIndex);
             }
         }
+    }
+    public virtual void OnPointerEnter(PointerEventData eventData)
+    {
+        if (_inventoryController == null) return;
+
+        ItemInstance invItem = _inventoryController.PlayerInventory.BindingItem(
+            _inventoryController.PlayerInventory.PlayerInventory[_thisIndex]
+        );
+
+        if (invItem == null || invItem.ItemDefinition == null) return;
+
+        TooltipManager.Instance.ShowTooltip(invItem);
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        TooltipManager.Instance.HideTooltip();
     }
 }

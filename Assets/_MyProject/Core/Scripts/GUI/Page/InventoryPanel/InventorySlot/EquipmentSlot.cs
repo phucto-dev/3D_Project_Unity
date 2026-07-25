@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class EquipmentSlotUI : InventorySlot
@@ -11,5 +11,15 @@ public class EquipmentSlotUI : InventorySlot
         {
             _inventoryController.ProcessEquipmentChange(SlotType, true, sourceSlotUI.GetIndex(), _thisIndex);
         }
+    }
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        if (_inventoryController == null) return;
+
+        EquipmentInstance invItem = _inventoryController.PlayerEquipment.EquippedItems[SlotType];
+
+        if (invItem == null || invItem.ItemDefinition == null) return;
+
+        TooltipManager.Instance.ShowTooltip(invItem);
     }
 }
