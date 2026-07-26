@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public enum MenuPageType
@@ -16,6 +17,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject _inGameMenuRoot;
     [SerializeField] private GameObject _loadingRoot;
     [SerializeField] private GameObject _globalRoot;
+    [SerializeField] private GameObject _interactionUI;
     public static MainMenuController Instance { get; private set; }
 
     public event Action OnOpenInventory;
@@ -24,7 +26,7 @@ public class MainMenuController : MonoBehaviour
 
     private MenuPage _currentPage;
     private HUDController _hudController;
-
+    private TMP_Text _interactionText;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -33,6 +35,10 @@ public class MainMenuController : MonoBehaviour
         if (_hudRoot != null)
         {
             _hudController = _hudRoot.GetComponent<HUDController>();
+        }
+        if (_interactionUI != null)
+        {
+            _interactionText = _interactionUI.GetComponentInChildren<TMP_Text>();
         }
     }
     private void Start()
@@ -45,6 +51,7 @@ public class MainMenuController : MonoBehaviour
                 OpenPage(_currentPage.PageType);
             }
         }
+        HideInteractionUI();
     }
 
     public void ChangeUIState(GameState newState)
@@ -79,6 +86,26 @@ public class MainMenuController : MonoBehaviour
         }
     }
 
+    public void ShowInteractionUI()
+    {
+        if (_interactionUI != null)
+        {
+            _interactionUI.SetActive(true);
+        }
+    }
+
+    public void HideInteractionUI()
+    {
+        if (_interactionUI != null)
+        {
+            _interactionUI.SetActive(false);
+        }
+    }
+    public void SetInteractionText(string text)
+    {
+        if (_interactionText == null) return;
+        _interactionText.SetText(text);
+    }
     public void ShowBossHUD()
     {
         if (_hudController != null)

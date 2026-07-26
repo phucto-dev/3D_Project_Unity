@@ -1,9 +1,15 @@
+using System;
 using UnityEngine;
 
-public class DropInfo : MonoBehaviour
+public class DropInfo : MonoBehaviour, IInteractable
 {
+    [field: SerializeField] public int InteractionPriority { get; private set; }
+    public string GetInteractText() => "Loot";
     public ItemInstance ItemData { get; private set; }
+    public void Interact()
+    {
 
+    }
     public void Initialize(ItemInstance itemInstance)
     {
         ItemData = BindingItem(itemInstance);

@@ -5163,3 +5163,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1efe725652ae4c41b33b2370bc58caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropInfo
+  <InteractionPriority>k__BackingField: 10

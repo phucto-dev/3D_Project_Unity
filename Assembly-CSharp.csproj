@@ -155,7 +155,6 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\StateMachine\BossAnimationNotifier.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Attack\PlayerAttack.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\BossAttack\BossBlast.cs" />
-    <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerLootManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\InventorySlot.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossDecisionState.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Sequence.cs" />
@@ -221,6 +220,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Pool\PoolItemSO.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Leaf.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\VariousRotateObject.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerInteractionManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Extension\VFX\VFXScaler.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\PlayerManaBar.cs" />
     <Compile Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Scripts\WindManager.cs" />

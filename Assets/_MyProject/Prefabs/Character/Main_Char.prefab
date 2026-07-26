@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 2306773102736557399}
   - component: {fileID: 5075622227317635665}
   m_Layer: 0
-  m_Name: LootRange
+  m_Name: InteractionRange
   m_TagString: Air
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

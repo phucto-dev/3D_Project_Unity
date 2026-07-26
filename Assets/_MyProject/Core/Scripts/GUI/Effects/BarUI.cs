@@ -34,11 +34,8 @@ public class BarUI : MonoBehaviour
     public virtual void SetTarget(float current, float max)
     {
         _targetFillAmount = current / max;
-        Debug.Log("Vo nee1" + current);
         if (_currentValueText != null)
         {
-            Debug.Log("Vo nee" + current);
-            Debug.Log("Vo nee 2" + current);
             _currentValueText.SetText(current + "");
         }
 
