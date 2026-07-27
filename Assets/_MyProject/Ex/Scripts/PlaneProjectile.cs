@@ -1,5 +1,4 @@
-﻿using UnityEditor.EditorTools;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Pool;
 
 [RequireComponent(typeof(Rigidbody), typeof(Collider))]
