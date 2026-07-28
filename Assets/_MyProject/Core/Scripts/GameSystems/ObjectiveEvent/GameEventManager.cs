@@ -3,10 +3,10 @@ using UnityEngine;
 
 public static class GameEventManager
 {
-    public static event Action<ObjectiveEventType, string, int> OnObjectiveAction;
+    public static event Action<ObjectiveEventType, bool, string, int> OnObjectiveAction;
 
-    public static void TriggerObjectiveAction(ObjectiveEventType type, string targetId, int amount = 1)
+    public static void TriggerObjectiveAction(ObjectiveEventType type, bool targetCheck, string targetId, int amount = 1)
     {
-        OnObjectiveAction?.Invoke(type, targetId, amount);
+        OnObjectiveAction?.Invoke(type, targetCheck, targetId, amount);
     }
 }

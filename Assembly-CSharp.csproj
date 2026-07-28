@@ -67,6 +67,7 @@
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\Inverter.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\ObjectiveEvent\ObjectiveSO.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\Equipment\EquipmentInstance.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\BillboardUI.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\LookAtTarget.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Stats\PlayerStatsSO.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\Movement.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\CursorManager\CursorManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Move\PlayerMovement.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\Data\PlaneWeapon.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\ObjectiveEvent\ObjectiveChainSO.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\NavMesh\AgentToDistanceTest.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Skills\SkillBuffController.cs" />
     <Compile Include="Assets\_AssetPackages\Free Low Poly Modular Character Pack - Fantasy Dream\Demo\Scripts\ModularHeroController.cs" />
