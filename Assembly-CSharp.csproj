@@ -102,6 +102,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Boss\BossStatsSO.cs" />
     <Compile Include="Assets\_AssetPackages\Lana Studio\Casual RPG VFX\Demo\Scripts\_InputKeyBoard.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossCombatState.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\NPC\NPCInteractable.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Extension\ScriptAssetsCustom\PooledObjectMove.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Stats\BaseStatsSO.cs" />
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Scripts\SpineProxy.cs" />
@@ -197,6 +198,7 @@
     <Compile Include="Assets\_MyProject\Ex\BTM_Assets\BTM_Rockets_Missiles_Bombs\Scripts\RocketRotator.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Manager\PlayerManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\SideEffect\SkillCinematic.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameSystems\DialogueSystem\DialogueManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Vision\EnemyVision.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Pool\PoolConfigSO.cs" />
     <Compile Include="Assets\_MyProject\Ex\Scripts\PlaneProjectile.cs" />
@@ -205,6 +207,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Projectile\ProjectileController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerCamTarget.cs" />
     <Compile Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Scripts\PanelArtsystackGui.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\NPC\DialogueSO.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ChangeSizeColor.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameSystems\SpawnPoint\PlayerSpawnPoint.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameSystems\ItemSystem\LootDropSystem.cs" />

@@ -4,6 +4,7 @@ using UnityEngine;
 public class DropInfo : MonoBehaviour, IInteractable
 {
     [field: SerializeField] public int InteractionPriority { get; private set; }
+    public InteractType GetInteractType() => InteractType.Loot;
     public string GetInteractText() => "Loot";
     public ItemInstance ItemData { get; private set; }
     public void Interact()

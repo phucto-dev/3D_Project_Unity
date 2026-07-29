@@ -84,15 +84,21 @@ public class PlayerManager : MonoBehaviour
     {
         if (_inputSystem == null || _inputSystem.actions == null) return;
 
-        if (type == ActionInputMapType.UI)
+        _inputSystem.actions.FindActionMap("Player").Disable();
+        _inputSystem.actions.FindActionMap("UI").Disable();
+        _inputSystem.actions.FindActionMap("Interaction").Disable();
+
+        switch (type)
         {
-            _inputSystem.actions.FindActionMap("Player").Disable();
-            _inputSystem.actions.FindActionMap("UI").Enable();
-        }
-        else if (type == ActionInputMapType.Player)
-        {
-            _inputSystem.actions.FindActionMap("UI").Disable();
-            _inputSystem.actions.FindActionMap("Player").Enable();
+            case ActionInputMapType.Player:
+                _inputSystem.actions.FindActionMap("Player").Enable();
+                break;
+            case ActionInputMapType.UI:
+                _inputSystem.actions.FindActionMap("UI").Enable();
+                break;
+            case ActionInputMapType.Interaction:
+                _inputSystem.actions.FindActionMap("Interaction").Enable();
+                break;
         }
     }
     private void PlayDeath()
@@ -108,5 +114,9 @@ public class PlayerManager : MonoBehaviour
             _animator.Rebind();
             _animator.Update(0f);
         }
+    }
+    private void TransitionNextDialogue()
+    {
+
     }
 }

@@ -1,9 +1,14 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+public enum InteractType
+{
+    Loot,
+    Talk
+}
 public interface IInteractable
 {
+    InteractType GetInteractType();
     int InteractionPriority { get; }
 
     string GetInteractText();
@@ -17,7 +22,7 @@ public class PlayerInteractionManager : MonoBehaviour
     private InputAction _lootAction;
     private List<DropInfo> _listDrop;
     private List<IInteractable> _interactablesInRange = new List<IInteractable>();
-
+    private IInteractable _currentHighestInteract;
     private void Awake()
     {
         _inputSystem = GetComponentInParent<PlayerInput>();
@@ -26,11 +31,11 @@ public class PlayerInteractionManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        _lootAction.performed += HandleLootInput;
+        _lootAction.performed += HandleInteractInput;
     }
     private void OnDisable()
     {
-        _lootAction.performed -= HandleLootInput;
+        _lootAction.performed -= HandleInteractInput;
     }
     private void Start()
     {
@@ -38,6 +43,7 @@ public class PlayerInteractionManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Searching" + other);
         if (other.CompareTag(TagConstant.TagDropItem) && other.TryGetComponent<DropInfo>(out DropInfo item))
         {
             if (!_listDrop.Contains(item))
@@ -48,6 +54,7 @@ public class PlayerInteractionManager : MonoBehaviour
 
         if (other.TryGetComponent<IInteractable>(out IInteractable interactable))
         {
+            Debug.Log("Found" + interactable);
             if (!_interactablesInRange.Contains(interactable))
             {
                 _interactablesInRange.Add(interactable);
@@ -70,12 +77,17 @@ public class PlayerInteractionManager : MonoBehaviour
 
         UpdateCurrentInteraction();
     }
-    private void HandleLootInput(InputAction.CallbackContext ctx)
+    private void HandleInteractInput(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Click F");
-        LootItem();
+        if (_currentHighestInteract == null) return;
+        if (_currentHighestInteract.GetInteractType() == InteractType.Loot) LootItem();
+        else
+        {
+            _currentHighestInteract.Interact();
+            //_interactablesInRange.Remove(_currentHighestInteract);
+            //UpdateCurrentInteraction();
+        }
     }
-
     private void LootItem()
     {
         if (PlayerInventory == null || _listDrop.Count <= 0) return;
@@ -105,6 +117,7 @@ public class PlayerInteractionManager : MonoBehaviour
 
     private void UpdateCurrentInteraction()
     {
+        _currentHighestInteract = null;
         if (_interactablesInRange == null || _interactablesInRange.Count == 0)
         {
             MainMenuController.Instance.HideInteractionUI();
@@ -125,6 +138,7 @@ public class PlayerInteractionManager : MonoBehaviour
 
         if (highestPriorityInteractable != null)
         {
+            _currentHighestInteract = highestPriorityInteractable;
             MainMenuController.Instance.SetInteractionText($"[{_lootAction.GetBindingDisplayString()}] {highestPriorityInteractable.GetInteractText()}");
             MainMenuController.Instance.ShowInteractionUI();
         }

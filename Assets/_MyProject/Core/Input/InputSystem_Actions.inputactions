@@ -1175,6 +1175,34 @@
             ]
         },
         {
+            "name": "Interaction",
+            "id": "9c9561a6-2461-4171-9abb-afd29ca0cb37",
+            "actions": [
+                {
+                    "name": "Next",
+                    "type": "Button",
+                    "id": "85f68f42-0bb3-4282-88d7-3ac348bcba1f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7bf9a07a-de79-43d4-a5f7-89de7b120708",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Global",
             "id": "b4915d67-c0ec-4a1c-bfcf-5809d856d228",
             "actions": [

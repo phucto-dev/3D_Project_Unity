@@ -27,6 +27,11 @@ public class ObjectiveEventManager : MonoBehaviour
     private void OnEnable() => GameEventManager.OnObjectiveAction += HandleObjectiveProgress;
     private void OnDisable() => GameEventManager.OnObjectiveAction -= HandleObjectiveProgress;
 
+    private void Start()
+    {
+        ObjectivePanel.SetActive(false);
+    }
+
     public void StartObjectiveChain(ObjectiveChainSO chain)
     {
         if (chain == null || chain.Objectives.Count == 0) return;

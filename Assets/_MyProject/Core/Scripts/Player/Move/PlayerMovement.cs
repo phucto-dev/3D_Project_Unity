@@ -267,6 +267,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        if (_isStun) return;
         if (!_jumpFlag ) return;
         animator.SetTrigger(_animJump);
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);

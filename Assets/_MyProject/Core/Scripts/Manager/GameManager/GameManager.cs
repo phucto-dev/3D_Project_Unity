@@ -19,7 +19,8 @@ public enum GameState
 public enum ActionInputMapType
 {
     UI,
-    Player
+    Player,
+    Interaction
 }
 public class GameManager : MonoBehaviour
 {
@@ -92,6 +93,13 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Do nothing");
         }
+    }
+    public void ChangeActionInputInvoke(ActionInputMapType type)
+    {
+        // Need REFACTOR HERE
+        // Just for tempting use
+        // DialogueManager Call this
+        ChangeActionInputMap?.Invoke(type);
     }
     public void ChangeGameState(GameState newState)
     {
