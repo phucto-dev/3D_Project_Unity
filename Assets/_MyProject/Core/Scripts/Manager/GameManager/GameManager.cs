@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     public event Action RespawnPlayer;
 
     private @InputSystem_Actions _globalInput;
+    public @InputSystem_Actions GlobalInput => _globalInput;
     private SpawnPointID _targetSpawnID = SpawnPointID.Default_NewGame;
     private GameObject _playerInstance;
     private Transform _currentCheckPoint;

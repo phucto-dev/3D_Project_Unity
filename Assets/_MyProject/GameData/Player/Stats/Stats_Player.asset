@@ -90,11 +90,11 @@ MonoBehaviour:
     minValue: 0
     maxValue: 9999
   _rollSpeed:
-    baseValue: 5
+    baseValue: 6
     minValue: 0
     maxValue: 9999
   _jumpForce:
-    baseValue: 8
+    baseValue: 5.5
     minValue: 0
     maxValue: 9999
   _rotationSpeed:

@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\PHUC\\3D PJ\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\gamedata\\player\\manager\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamedata\\player\\manager\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\npc\\npcinteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\npc\\npcinteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\gamesystems\\dialoguesystem\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamesystems\\dialoguesystem\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\manager\\playerinteractionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\manager\\playerinteractionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\manager\\gamemanager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\manager\\gamemanager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\player\\attack\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\attack\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamesystems\\dialoguesystem\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamesystems\\dialoguesystem\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\move\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\npc\\npcinteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\npc\\npcinteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamesystems\\objectiveevent\\objectiveeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamesystems\\objectiveevent\\objectiveeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\attack\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\attack\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\weapon\\melee\\meleetracer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,14 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gui\\effects\\hurtui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gui\\effects\\hurtui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\player\\manager\\playerinteractionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\player\\manager\\playerinteractionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamesystems\\objectiveevent\\objectiveeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamesystems\\objectiveevent\\objectiveeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamedata\\npc\\dialogueso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -586,11 +586,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "PlayerAttack.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Attack\\PlayerAttack.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Attack\\PlayerAttack.cs",
@@ -598,44 +598,43 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Player\\Attack\\PlayerAttack.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAMwFMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-29T13:57:57.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-29T13:57:57.773Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Manager\\PlayerManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Manager\\PlayerManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Manager\\PlayerManager.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Manager\\PlayerManager.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAowFkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAkwGQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-29T13:57:02.769Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "DialogueManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameSystems\\DialogueSystem\\DialogueManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\DialogueSystem\\DialogueManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameSystems\\DialogueSystem\\DialogueManager.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\DialogueSystem\\DialogueManager.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAIwDoAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwB4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-29T10:53:17.595Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "NPCInteractable.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\NPC\\NPCInteractable.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\NPC\\NPCInteractable.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\NPC\\NPCInteractable.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\NPC\\NPCInteractable.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-29T10:13:05.229Z",
               "EditorCaption": ""
@@ -648,14 +647,14 @@
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Manager\\GameManager\\GameManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\GameManager\\GameManager.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Manager\\GameManager\\GameManager.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAIAwwGYAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwDMAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-21T16:32:18.59Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "HurtUI.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Effects\\HurtUI.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Effects\\HurtUI.cs",
@@ -663,25 +662,24 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Effects\\HurtUI.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAMwB8AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T07:31:26.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-08T07:31:26.3Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAD4v4QAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAP4AAAAAAAAAAAAkwBQBAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-15T02:14:37.419Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "MeleeTracer.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Weapon\\Melee\\MeleeTracer.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Weapon\\Melee\\MeleeTracer.cs",
@@ -689,31 +687,30 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Weapon\\Melee\\MeleeTracer.cs",
               "ViewState": "AgIAAD4AAAAAAAAAAAAMwEgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T13:27:46.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-10T13:27:46.94Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "PlayerInteractionManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerInteractionManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerInteractionManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerInteractionManager.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerInteractionManager.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAD4v1UAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwB8AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-26T05:36:12.425Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "ObjectiveEventManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameSystems\\ObjectiveEvent\\ObjectiveEventManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\ObjectiveEvent\\ObjectiveEventManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameSystems\\ObjectiveEvent\\ObjectiveEventManager.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\ObjectiveEvent\\ObjectiveEventManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-27T13:53:55.783Z",
               "EditorCaption": ""
@@ -728,8 +725,7 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameData\\NPC\\DialogueSO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-29T10:18:11.684Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-29T10:18:11.684Z"
             },
             {
               "$type": "Document",
@@ -741,8 +737,7 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameData\\ObjectiveEvent\\ObjectiveChainSO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-28T14:09:00.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-28T14:09:00.555Z"
             },
             {
               "$type": "Document",
@@ -754,8 +749,7 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Items\\DropInfo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-02T14:51:19.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-02T14:51:19.335Z"
             },
             {
               "$type": "Document",
@@ -767,8 +761,7 @@
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Effects\\BillboardUI.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-28T15:43:24.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-28T15:43:24.261Z"
             },
             {
               "$type": "Document",

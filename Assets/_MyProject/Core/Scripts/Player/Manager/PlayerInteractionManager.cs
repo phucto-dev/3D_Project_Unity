@@ -20,6 +20,7 @@ public class PlayerInteractionManager : MonoBehaviour
     public PlayerInventorySO PlayerInventory;
     private PlayerInput _inputSystem;
     private InputAction _lootAction;
+    private InputAction _interactAction;
     private List<DropInfo> _listDrop;
     private List<IInteractable> _interactablesInRange = new List<IInteractable>();
     private IInteractable _currentHighestInteract;
@@ -28,14 +29,17 @@ public class PlayerInteractionManager : MonoBehaviour
         _inputSystem = GetComponentInParent<PlayerInput>();
         if (_inputSystem == null) return;
         _lootAction = _inputSystem.actions["Loot"];
+        _interactAction = GameManager.Instance.GlobalInput.Interaction.Next;
     }
     private void OnEnable()
     {
         _lootAction.performed += HandleInteractInput;
+        _interactAction.performed += HandleNextConversation;
     }
     private void OnDisable()
     {
         _lootAction.performed -= HandleInteractInput;
+        _interactAction.performed -= HandleNextConversation;
     }
     private void Start()
     {
@@ -114,7 +118,11 @@ public class PlayerInteractionManager : MonoBehaviour
 
         Debug.Log("Got it");
     }
-
+    private void HandleNextConversation(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("Spacceeeeee");
+        DialogueManager.Instance.DisplayNextSentence();
+    }
     private void UpdateCurrentInteraction()
     {
         _currentHighestInteract = null;

@@ -86,7 +86,8 @@ public class PlayerManager : MonoBehaviour
 
         _inputSystem.actions.FindActionMap("Player").Disable();
         _inputSystem.actions.FindActionMap("UI").Disable();
-        _inputSystem.actions.FindActionMap("Interaction").Disable();
+        //_inputSystem.actions.FindActionMap("Interaction").Disable();
+        GameManager.Instance.GlobalInput.Interaction.Disable();
 
         switch (type)
         {
@@ -97,7 +98,9 @@ public class PlayerManager : MonoBehaviour
                 _inputSystem.actions.FindActionMap("UI").Enable();
                 break;
             case ActionInputMapType.Interaction:
-                _inputSystem.actions.FindActionMap("Interaction").Enable();
+                Debug.Log("Doi r ne");
+                //GameManager.Instance.GlobalInput.Interaction.Enable();
+                GameManager.Instance.GlobalInput.Interaction.Enable();
                 break;
         }
     }
