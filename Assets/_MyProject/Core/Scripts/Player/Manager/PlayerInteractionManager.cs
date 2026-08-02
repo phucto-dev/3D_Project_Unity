@@ -47,7 +47,6 @@ public class PlayerInteractionManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Searching" + other);
         if (other.CompareTag(TagConstant.TagDropItem) && other.TryGetComponent<DropInfo>(out DropInfo item))
         {
             if (!_listDrop.Contains(item))

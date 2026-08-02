@@ -8,6 +8,9 @@ public class BossDieState : IBossState
         boss.SetLocomotion(new GroundLocomotion());
         boss.CloseHurtBox();
         boss.Anim.CrossFade(DieAnimName, 0.1f);
+
+        // Objective Event
+        GameEventManager.TriggerObjectiveAction(ObjectiveEventType.KillEnemy, true, "Boss_Dragon", 1);
     }
     public void UpdateState(BossStateManager boss)
     {

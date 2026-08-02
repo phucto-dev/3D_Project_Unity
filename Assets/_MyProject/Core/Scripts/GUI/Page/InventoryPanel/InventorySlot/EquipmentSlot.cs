@@ -16,10 +16,11 @@ public class EquipmentSlotUI : InventorySlot
     {
         if (_inventoryController == null) return;
 
-        EquipmentInstance invItem = _inventoryController.PlayerEquipment.EquippedItems[SlotType];
+        if (_inventoryController.PlayerEquipment.EquippedItems.TryGetValue(SlotType, out EquipmentInstance invItem))
+        {
+            if (invItem == null || invItem.ItemDefinition == null) return;
 
-        if (invItem == null || invItem.ItemDefinition == null) return;
-
-        TooltipManager.Instance.ShowTooltip(invItem);
+            TooltipManager.Instance.ShowTooltip(invItem);
+        }
     }
 }

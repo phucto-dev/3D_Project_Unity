@@ -13,44 +13,55 @@ MonoBehaviour:
   m_Name: Item_Drop_Enemy_Bear
   m_EditorClassIdentifier: Assembly-CSharp::LootItemSO
   LootItems:
-  - Item: {fileID: 11400000, guid: 325698315c88cb24cb27e5b61f147be0, type: 2}
-    DropChance: 0
-    QuantityRules:
-    - Weight: 0
-      MinAmount: 1
-      MaxAmount: 1
-    - Weight: 2
-      MinAmount: 5
-      MaxAmount: 7
-    RarityRules: []
-  - Item: {fileID: 11400000, guid: 5de856ede925d614c8553d62bafcd42b, type: 2}
-    DropChance: 100
+  - Item: {fileID: 11400000, guid: 938eae8fdd35a1143afc4d8f1f9ea174, type: 2}
+    DropChance: 25
     QuantityRules:
     - Weight: 1
       MinAmount: 1
       MaxAmount: 1
     RarityRules:
-    - Weight: 5
+    - Weight: 33
       Rarity: 0
-    - Weight: 3
+    - Weight: 33
       Rarity: 1
-    - Weight: 1.5
+    - Weight: 33
       Rarity: 2
-    - Weight: 0.5
+    - Weight: 33
       Rarity: 3
-  - Item: {fileID: 11400000, guid: 3fc737655e23e2343b1669a2d061d583, type: 2}
-    DropChance: 100
+    - Weight: 33
+      Rarity: 4
+  - Item: {fileID: 11400000, guid: fe278da85773b2c4bb0b24db76952428, type: 2}
+    DropChance: 25
     QuantityRules:
     - Weight: 1
       MinAmount: 1
       MaxAmount: 1
     RarityRules:
-    - Weight: 5
+    - Weight: 33
       Rarity: 0
-    - Weight: 3
+    - Weight: 33
       Rarity: 1
-    - Weight: 1.5
+    - Weight: 33
       Rarity: 2
-    - Weight: 0.5
+    - Weight: 33
       Rarity: 3
+    - Weight: 33
+      Rarity: 4
+  - Item: {fileID: 11400000, guid: 975e17abc0dc0034ea0a5ea8df5c0dd8, type: 2}
+    DropChance: 25
+    QuantityRules:
+    - Weight: 1
+      MinAmount: 1
+      MaxAmount: 1
+    RarityRules:
+    - Weight: 33
+      Rarity: 0
+    - Weight: 33
+      Rarity: 1
+    - Weight: 33
+      Rarity: 2
+    - Weight: 33
+      Rarity: 3
+    - Weight: 33
+      Rarity: 4
   OrbDrop: {fileID: 11400000, guid: 61f206fdec9e7544b92bf139d3b07ad8, type: 2}

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2b74e472b57c74cbc5d8995061fbaf, type: 3}
   m_Name: EnemiesKill
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveSO
-  ObjectiveID: Objective_Stage_01
-  Description: Kill 20 enemies
+  ObjectiveID: Objective_KillEnemy_01
+  Description: Hunt "10" enemies
   Title: First Journey
   EventType: 0
-  TargetCheck: 0
-  TargetID: '""'
-  RequiredAmount: 20
+  TargetCheck: 1
+  TargetID: KillAny
+  RequiredAmount: 10

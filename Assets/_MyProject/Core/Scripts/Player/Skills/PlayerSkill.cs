@@ -133,6 +133,8 @@ public class PlayerSkill : MonoBehaviour
         {
             case SkillState.Start: 
                 _animator.CrossFadeInFixedTime(_animStart, TransitionDuaration);
+                // Objective Event
+                GameEventManager.TriggerObjectiveAction(ObjectiveEventType.ControllerInteract, true, "Skill", 1);
                 break;
             case SkillState.Smash:
                 _animator.CrossFadeInFixedTime(_animSmash, TransitionDuaration);

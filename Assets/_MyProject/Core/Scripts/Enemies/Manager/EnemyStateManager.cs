@@ -110,7 +110,7 @@ public class EnemyStateManager : MonoBehaviour
 
     private void IsDeath()
     {
-        GameEventManager.TriggerObjectiveAction(ObjectiveEventType.KillEnemy, false, "", 1);
+        GameEventManager.TriggerObjectiveAction(ObjectiveEventType.KillEnemy, true, "KillAny", 1);
         ChangeState(new DieState());
     }
 

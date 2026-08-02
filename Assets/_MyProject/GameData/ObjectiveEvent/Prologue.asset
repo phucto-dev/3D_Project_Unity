@@ -14,4 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveChainSO
   ChainName: Prologue
   Objectives:
+  - {fileID: 11400000, guid: da0b21c6694a0c5489bf015e3a6e05d0, type: 2}
+  - {fileID: 11400000, guid: 1fd95d85ffb05904597622698d070e5c, type: 2}
+  - {fileID: 11400000, guid: 19dcca1ddfd415f4ea98e1922951c33f, type: 2}
+  - {fileID: 11400000, guid: b316ca8cbb6cc364db3ce66b52b59e3c, type: 2}
+  - {fileID: 11400000, guid: 5a14f83437eb9bb4689ed842d7f12148, type: 2}
   - {fileID: 11400000, guid: 5473e97ad667d734fac78be79d100fa2, type: 2}
+  - {fileID: 11400000, guid: ea5867a4c1a003246950e84eca3ab83f, type: 2}
+  - {fileID: 11400000, guid: cf0c32e5ad1b2ef468c2c1dd434e48ee, type: 2}
+  - {fileID: 11400000, guid: c99c6f94b8c66484c9d722bd8be94502, type: 2}

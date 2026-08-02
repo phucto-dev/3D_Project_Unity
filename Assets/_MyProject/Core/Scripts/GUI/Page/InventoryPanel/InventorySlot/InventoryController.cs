@@ -150,6 +150,13 @@ public class InventoryController : MonoBehaviour
 
             if (invItem == null || invItem.ItemDefinition == null || !(invItem is EquipmentInstance pendingEquip)) return;
             if (pendingEquip.GetEquipData().SlotType != equipmentSlotType) return;
+
+            // Objective Event
+            if (pendingEquip.GetEquipData().SlotType == EquipmentSlot.Weapon_RightHand)
+            {
+                GameEventManager.TriggerObjectiveAction(ObjectiveEventType.Equip, true, "EquipSword", 1);
+            }
+
             EquipmentInstance currentlyEquipped = null;
             if (PlayerEquipment.EquippedItems.ContainsKey(equipmentSlotType))
             {

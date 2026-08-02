@@ -145,13 +145,8 @@ public class PlayerEquipmentManager : MonoBehaviour
             {
                 if (eqInstance == null) continue;
 
-                EquipmentDataSO equipData = eqInstance.GetEquipData();
-
-                if (equipData != null)
-                {
-                    AddStatToDictionary(eqBonuses, equipData.MainStat);
-                    AddStatToDictionary(eqBonuses, equipData.SubStat);
-                }
+                AddStatToDictionary(eqBonuses, eqInstance.FinalMainStat);
+                AddStatToDictionary(eqBonuses, eqInstance.FinalSubStat);
             }
         }
 

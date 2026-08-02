@@ -17,7 +17,7 @@ MonoBehaviour:
   Description: 
   ItemIcon: {fileID: 21300000, guid: 5510bef69dd715c49941147d90004f63, type: 3}
   MaxStack: 1
-  SlotType: 3
+  SlotType: 5
   Tier: 1
   MainStat:
     Type: 11
@@ -25,5 +25,5 @@ MonoBehaviour:
   SubStat:
     Type: 10
     Value: 20
-  ArmorMesh: {fileID: -9190662051438336828, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
-  ArmorMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}
+  EquipmentMesh: {fileID: -9190662051438336828, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
+  EquipmentMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}

@@ -94,7 +94,7 @@ MonoBehaviour:
     minValue: 0
     maxValue: 9999
   _jumpForce:
-    baseValue: 5.5
+    baseValue: 4.5
     minValue: 0
     maxValue: 9999
   _rotationSpeed:

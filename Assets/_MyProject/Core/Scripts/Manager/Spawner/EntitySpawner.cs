@@ -29,7 +29,7 @@ public class EntitySpawnData
     public int MaxNumber;
 }
 
-[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(Collider))]
 public class EntitySpawner : MonoBehaviour
 {
     [Header("--- SPAWNER SETTINGS ---")]
@@ -40,14 +40,14 @@ public class EntitySpawner : MonoBehaviour
     [SerializeField] private float _limitRadius;
 
     private List<KeyValuePair<string, GameObject>> _activeEntities = new List<KeyValuePair<string, GameObject>>();
-    private SphereCollider _triggerCollider; // also range spawn
+    private Collider _triggerCollider; // also range spawn
     private EntitySpawnInfo _spawnInfo;
     private bool _isPlayerInZone;
     private bool _despawnAble;
 
     private void Reset()
     {
-        _triggerCollider = GetComponent<SphereCollider>();
+        _triggerCollider = GetComponent<Collider>();
 
         if (_triggerCollider != null)
         {
@@ -58,7 +58,7 @@ public class EntitySpawner : MonoBehaviour
 
     private void Awake()
     {
-        _triggerCollider = GetComponent<SphereCollider>();
+        _triggerCollider = GetComponent<Collider>();
     }
 
     private void Start()
@@ -204,6 +204,7 @@ public class EntitySpawner : MonoBehaviour
             if (activeEntity.Value == target)
             {
                 _activeEntities.Remove(activeEntity);
+                break;
             }
         }
     }

@@ -1,7 +1,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
-
+public static class RarityMultiplierHelper
+{
+    public static float GetMultiplier(this EquipmentRarity rarity)
+    {
+        return rarity switch
+        {
+            EquipmentRarity.Common => 1.0f,
+            EquipmentRarity.Rare => 1.25f,
+            EquipmentRarity.Unique => 1.6f,
+            EquipmentRarity.Legendary => 2.1f,
+            EquipmentRarity.Mythic => 3.0f,
+            _ => 1.0f
+        };
+    }
+}
 public enum EquipmentSlot
 {
     Head, Chest, Arms, Legs, Feet, Belt,
@@ -90,5 +104,47 @@ public class EquipmentInstance: ItemInstance
     public EquipmentDataSO GetEquipData()
     {
         return ItemDefinition as EquipmentDataSO;
+    }
+    public ItemStat FinalMainStat
+    {
+        get
+        {
+            EquipmentDataSO data = GetEquipData();
+            if (data == null) return new ItemStat();
+            return CalculateFinalStat(data.MainStat);
+        }
+    }
+
+    public ItemStat FinalSubStat
+    {
+        get
+        {
+            EquipmentDataSO data = GetEquipData();
+            if (data == null) return new ItemStat();
+            return CalculateFinalStat(data.SubStat);
+        }
+    }
+    private ItemStat CalculateFinalStat(ItemStat baseStat)
+    {
+        float calculatedValue = baseStat.Value * Rarity.GetMultiplier();
+        float upgradeMultiplier = 1f + (UpgradeLevel * 0.1f);
+        calculatedValue *= upgradeMultiplier;
+
+        if (BonusStats != null)
+        {
+            foreach (var bonus in BonusStats)
+            {
+                if (bonus.Type == baseStat.Type)
+                {
+                    calculatedValue += bonus.Value;
+                }
+            }
+        }
+
+        return new ItemStat
+        {
+            Type = baseStat.Type,
+            Value = calculatedValue
+        };
     }
 }

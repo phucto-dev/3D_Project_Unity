@@ -3,6 +3,8 @@ using UnityEngine;
 public enum ObjectiveEventType
 {
     KillEnemy,
+    ControllerInteract,
+    Equip,
     CollectItem,
     TalkToNPC,
     ReachLocation

@@ -272,6 +272,8 @@ public class PlayerMovement : MonoBehaviour
         animator.SetTrigger(_animJump);
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
         rb.AddForce(Vector3.up * _stats.JumpForce.GetValue(), ForceMode.Impulse);
+        // Objective Event
+        GameEventManager.TriggerObjectiveAction(ObjectiveEventType.ControllerInteract, true, "Jump", 1);
     }
     private void RotateCharacter()
     {
@@ -444,6 +446,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         yield return new WaitForSeconds(_rollDuration);
+        // Objective Event
+        GameEventManager.TriggerObjectiveAction(ObjectiveEventType.ControllerInteract, true, "Roll", 1);
 
         _isRolling = false;
     }

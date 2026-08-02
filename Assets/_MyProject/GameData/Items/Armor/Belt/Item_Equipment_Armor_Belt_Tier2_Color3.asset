@@ -25,5 +25,5 @@ MonoBehaviour:
   SubStat:
     Type: 10
     Value: 25
-  ArmorMesh: {fileID: -4130811602398394782, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
-  ArmorMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}
+  EquipmentMesh: {fileID: -4130811602398394782, guid: ae7b8b29b783efa42802858321c5ca7b, type: 3}
+  EquipmentMaterial: {fileID: 2100000, guid: 9845b38987b69224ca6524623f877af8, type: 2}

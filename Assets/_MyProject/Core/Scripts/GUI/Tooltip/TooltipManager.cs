@@ -40,8 +40,8 @@ public class TooltipManager : MonoBehaviour
                 string hexColor = GetRarityHexColor(equipItem.Rarity);
 
                 _nameText.SetText($"<color={hexColor}>{equipType.ItemName}</color>");
-                _mainStat.SetText($"{equipType.MainStat.Type}: {equipType.MainStat.Value}");
-                _subStat.SetText($"{equipType.SubStat.Type}: {equipType.SubStat.Value}");
+                _mainStat.SetText($"{equipType.MainStat.Type}: {equipItem.FinalMainStat.Value}");
+                _subStat.SetText($"{equipType.SubStat.Type}: {equipItem.FinalSubStat.Value}");
                 _descriptionText.SetText(string.IsNullOrEmpty(equipType.Description) ? "???" : equipType.Description);
                 _rarity.SetText($"Rarity: <color={hexColor}>{equipItem.Rarity}</color>");
                 _quantity.SetText("Quantity: 1");

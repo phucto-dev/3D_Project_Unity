@@ -151,6 +151,8 @@ public class PlayerAttack : MonoBehaviour
         _bufferedAttackNode = null;
         _animator.SetBool(_animRecovery, false);
         _animator.CrossFadeInFixedTime(targetNode.AnimStateName, targetNode.TransitionDuaration);
+        // Objective Event
+        GameEventManager.TriggerObjectiveAction(ObjectiveEventType.ControllerInteract, true, "PressAttack", 1);
     }
 
     public void TryExecuteBufferedAttack()
