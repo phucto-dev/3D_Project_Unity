@@ -1,5 +1,5 @@
-using Newtonsoft.Json;
 using System;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 public struct StatueInfo
 {
@@ -29,11 +29,13 @@ public class BossAreaManager : MonoBehaviour
     {
         if (_bossEntryGate != null) _bossEntryGate.PlayerEnterTrigger += StartBossPhase;
         if (_bossEntryGate != null) _bossEntryGate.PlayerEnterTrigger += MainMenuController.Instance.ShowBossHUD;
+        GameManager.Instance.RespawnPlayer += EndBossPhase;
     }
     private void OnDisable()
     {
         if (_bossEntryGate != null) _bossEntryGate.PlayerEnterTrigger -= StartBossPhase;
         if (_bossEntryGate != null) _bossEntryGate.PlayerEnterTrigger -= MainMenuController.Instance.ShowBossHUD;
+        GameManager.Instance.RespawnPlayer -= EndBossPhase;
     }
     private void Start()
     {
@@ -69,11 +71,12 @@ public class BossAreaManager : MonoBehaviour
         _boss.transform.rotation = BossSpawn.rotation;
         _isStarted = true;
     }
-    private void ResetBossPhase()
+    private void EndBossPhase()
     {
         if (_boss == null) return;
         BossManager bossManager = _boss.GetComponent<BossManager>();
         HealthSystem bossHealth = _boss.GetComponentInChildren<HealthSystem>();
+        bossHealth.ResetHP();
         if (bossManager != null)
         {
             bossManager.GetBossStateManager().OnSummonStatues -= SummonStatues;
@@ -88,7 +91,9 @@ public class BossAreaManager : MonoBehaviour
         }
         PoolManager.Instance.Release(BossInfo.poolID, _boss);
         _boss = null;
-        StartBossPhase();
+        MainMenuController.Instance.HideBossHUD();
+        ReleaseSummon();
+        _isStarted = false;
     }
     private void SummonStatues(BossCombatInfo info, BossStatsManager stats)
     {
@@ -106,6 +111,20 @@ public class BossAreaManager : MonoBehaviour
         }
         if (flag >= _statueList.Length) OnStatueStatusChanged?.Invoke(false);
         else OnStatueStatusChanged?.Invoke(true);
+    }
+    private void ReleaseSummon()
+    {
+        int i = 0;
+        foreach (StatueInfo statue in _statueList)
+        {
+            if (statue.IsActive)
+            {
+                statue.Statue.DeActivate();
+                _statueList[i].IsActive = false;
+            }
+            i++;
+        }
+        OnStatueStatusChanged?.Invoke(true);
     }
     private void SetStatueStatus(bool value)
     {

@@ -37,6 +37,11 @@ public class BossStatue : MonoBehaviour
         _stats = stats;
         _current = StartCoroutine(SpawnMeteorRoutine());
     }
+    public void DeActivate()
+    {
+        StopCoroutine(_current);
+        _current = null;
+    }
     private IEnumerator SpawnMeteorRoutine()
     {
         while (true)

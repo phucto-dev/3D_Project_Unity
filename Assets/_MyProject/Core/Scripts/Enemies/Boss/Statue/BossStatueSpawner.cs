@@ -26,6 +26,14 @@ public class BossStatueSpawner : MonoBehaviour
         if (_statue == null) return;
         StartCoroutine(RiseStatueRoutine());
     }
+    public void DeActivate()
+    {
+        if (_statue == null) return;
+        BossStatue script = _statue.GetComponent<BossStatue>();
+        if (script != null) script.DeActivate();
+        PoolManager.Instance.Release(PoolInfo.poolID, _statue);
+        _statue = null;
+    }
     private IEnumerator RiseStatueRoutine()
     {
         Vector3 endPos = transform.position;

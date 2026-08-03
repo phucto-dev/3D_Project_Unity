@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MeleeTracer : MonoBehaviour
@@ -128,6 +129,7 @@ public class MeleeTracer : MonoBehaviour
 
     private void HandleHit(RaycastHit hit)
     {
+        if (hit.IsUnityNull()) return;
         Collider enemyCollider = hit.collider;
 
         if (enemyCollider.TryGetComponent<HealthSystem>(out HealthSystem targetHealth))
@@ -142,12 +144,19 @@ public class MeleeTracer : MonoBehaviour
                 _playerAttack.RecoverManaOnHit();
                 string vfxID = _playerAttack.GetVFXID();
                 GameObject vfx = PoolManager.Instance.Get(vfxID);
-
-                vfx.transform.position = hit.point;
-
-                if (hit.normal != Vector3.zero)
+                if (vfx != null)
                 {
-                    vfx.transform.rotation = Quaternion.LookRotation(hit.normal);
+                    vfx.transform.position = hit.point;
+
+                    if (hit.normal != Vector3.zero)
+                    {
+                        vfx.transform.rotation = Quaternion.LookRotation(hit.normal);
+                    }
+                    VFXPool vfxPool = vfx.GetComponentInChildren<VFXPool>();
+                    if (vfxPool != null)
+                    {
+                        vfxPool.Setup(vfxID);
+                    }
                 }
             }
 

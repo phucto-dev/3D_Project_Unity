@@ -58,6 +58,7 @@ public class HealthSystem : MonoBehaviour
     public void ResetHP()
     {
         CurrentHealth = MaxHealth;
+        OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
         Debug.Log("Health Reset out");
         if (_stats.GetStatsData() != null)
         {

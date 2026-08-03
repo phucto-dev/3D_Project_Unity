@@ -517,6 +517,10 @@ public class HurtState : IEnemyState
     private AnimatorStateInfo _stateInfo;
     public void EnterState(EnemyStateManager enemy)
     {
+        if (enemy.Agent.isOnNavMesh)
+        {
+            enemy.Agent.ResetPath();
+        }
         enemy.GetACController().EnableCombatAnim(); // Should enable here to lock in combat mode.
         _actuallCooldown = enemy.GetStats().HurtDelay.GetValue();
         _isHurtOnce = false;
@@ -562,6 +566,10 @@ public class DieState: IEnemyState
     private AnimatorStateInfo _stateInfo;
     public void EnterState(EnemyStateManager enemy)
     {
+        if (enemy.Agent.isOnNavMesh)
+        {
+            enemy.Agent.ResetPath();
+        }
         _isDeath = false;
         _isTriggerDespawnOnce = false;
         enemy.GetDropManager().ExecuteDrop();

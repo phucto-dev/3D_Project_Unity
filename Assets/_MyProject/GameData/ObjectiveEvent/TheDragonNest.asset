@@ -18,4 +18,4 @@ MonoBehaviour:
   EventType: 5
   TargetCheck: 1
   TargetID: ReachDragonNest
-  RequiredAmount: 0
+  RequiredAmount: 1

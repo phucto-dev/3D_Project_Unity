@@ -37,12 +37,14 @@ public class GameManager : MonoBehaviour
 
     public event Action<ActionInputMapType> ChangeActionInputMap;
     public event Action RespawnPlayer;
+    public event Action ResetStatsPlayer;
 
     private @InputSystem_Actions _globalInput;
     public @InputSystem_Actions GlobalInput => _globalInput;
     private SpawnPointID _targetSpawnID = SpawnPointID.Default_NewGame;
     private GameObject _playerInstance;
     private Transform _currentCheckPoint;
+    private PlayerSpawnPoint[] _allSpawns;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -147,25 +149,10 @@ public class GameManager : MonoBehaviour
     private IEnumerator InitGameplayRoutine()
     {
         yield return null;
-        PlayerSpawnPoint[] allSpawns = Object.FindObjectsByType<PlayerSpawnPoint>(FindObjectsSortMode.None);
-        if (allSpawns.Length == 0)
-        {
-            Debug.LogError("No SpawnPoint could be founded!");
-            yield break;
-        }
-        PlayerSpawnPoint correctSpawn = null;
-        foreach (PlayerSpawnPoint sp in allSpawns)
-        {
-            if (sp.PointID == _targetSpawnID)
-            {
-                correctSpawn = sp;
-                break;
-            }
-        }
-        if (correctSpawn == null)
-        {
-            correctSpawn = allSpawns[0];
-        }
+        _allSpawns = Object.FindObjectsByType<PlayerSpawnPoint>(FindObjectsSortMode.None);
+
+        PlayerSpawnPoint correctSpawn = GetCorrectSpawn();
+        
         _currentCheckPoint = correctSpawn.transform;
         Scene targetMapScene = correctSpawn.gameObject.scene;
         _playerInstance = Instantiate(_playerPrefab, correctSpawn.transform.position, correctSpawn.transform.rotation);
@@ -191,6 +178,28 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
     }
+    private PlayerSpawnPoint GetCorrectSpawn()
+    {
+        if (_allSpawns.Length == 0)
+        {
+            Debug.LogError("No SpawnPoint could be founded!");
+            return null;
+        }
+        PlayerSpawnPoint correctSpawn = null;
+        foreach (PlayerSpawnPoint sp in _allSpawns)
+        {
+            if (sp.PointID == _targetSpawnID)
+            {
+                correctSpawn = sp;
+                break;
+            }
+        }
+        if (correctSpawn == null)
+        {
+            correctSpawn = _allSpawns[0];
+        }
+        return correctSpawn;
+    }
     private void RegisterPlayerEvent()
     {
         if (_playerInstance == null) return;
@@ -215,6 +224,20 @@ public class GameManager : MonoBehaviour
             ChangeGameState(GameState.Playing);
             RespawnPlayer?.Invoke();
             ChangeActionInputMap?.Invoke(ActionInputMapType.Player);
+        }
+    }
+    public void HandleResetStatsPlayer()
+    {
+        ResetStatsPlayer?.Invoke();
+    }
+    public void SetCheckPoint(SpawnPointID pointID)
+    {
+        Debug.Log("Set r neeeee");
+        _targetSpawnID = pointID;
+        PlayerSpawnPoint correctSpawn = GetCorrectSpawn();
+        if (correctSpawn != null)
+        {
+            _currentCheckPoint = correctSpawn.transform;
         }
     }
 }

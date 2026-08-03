@@ -13,6 +13,7 @@ public class ObjectiveEventManager : MonoBehaviour
 
     [Header("--- CURRENT PROGRESS ---")]
     [SerializeField] private ObjectiveChainSO _currentChain;
+    [SerializeField] private ObjectiveEventNotice EventCall;
 
     private int _currentIndex = 0;
 
@@ -51,9 +52,9 @@ public class ObjectiveEventManager : MonoBehaviour
     }
     private void HandleObjectiveProgress(ObjectiveEventType type, bool targetCheck, string targetId, int amount)
     {
-        Debug.Log($"Param || Type: {type}, TargetCheck: {targetCheck}, TargetID: {targetId}, Amount: {amount}");
+        //Debug.Log($"Param || Type: {type}, TargetCheck: {targetCheck}, TargetID: {targetId}, Amount: {amount}");
         if (_currentObjective == null) return;
-        Debug.Log($"CurrentObjective || Type: {_currentObjective.EventType}, TargetCheck: {_currentObjective.TargetCheck}, TargetID: {_currentObjective.TargetID}, Amount: {_currentObjective.RequiredAmount}");
+        //Debug.Log($"CurrentObjective || Type: {_currentObjective.EventType}, TargetCheck: {_currentObjective.TargetCheck}, TargetID: {_currentObjective.TargetID}, Amount: {_currentObjective.RequiredAmount}");
 
         if (_currentObjective.EventType == type)
         {
@@ -76,6 +77,12 @@ public class ObjectiveEventManager : MonoBehaviour
     }
     private void CompleteCurrentObjective()
     {
+        if (_currentObjective != null)
+        {
+            if (EventCall != null)
+                EventCall.TriggerOnObjectiveEventComplete(_currentObjective.ObjectiveID);
+        }
+
         _currentIndex++;
 
         if (_currentIndex < _currentChain.Objectives.Count)

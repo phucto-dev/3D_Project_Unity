@@ -146,4 +146,16 @@ public class PlayerStatsManager : EntityStatsManager
         if (_health != null) _health.UpdateMaxHP();
         playerStats.TriggeredStatsChanged(_dictStats);
     }
+    public void ResetMana()
+    {
+        if (!(_baseStatsSO is PlayerStatsSO playerStats)) return;
+        _currentMana = FinalMaxMana;
+        playerStats.TriggeredManaChanged(_currentMana, FinalMaxMana);
+    }
+    public void ResetStamina()
+    {
+        if (!(_baseStatsSO is PlayerStatsSO playerStats)) return;
+        _currentStamina = FinalMaxStamina;
+        playerStats.TriggeredStaminaChanged(_currentStamina, FinalMaxStamina);
+    }
 }

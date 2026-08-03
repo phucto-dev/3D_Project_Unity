@@ -177,6 +177,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Extension\TransformExtension\TransformExtensions.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\Pool\PoolManager.cs" />
     <Compile Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Scripts\SunAlignedParticles.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Map\ObjectiveEventNotice.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BehaviourTree.cs" />
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\ShieldActivate.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\NodeBT.cs" />
@@ -229,6 +230,7 @@
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\VariousRotateObject.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerInteractionManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Extension\VFX\VFXScaler.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Map\WorldArea\ProgressWallCheck.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\PlayerManaBar.cs" />
     <Compile Include="Assets\_AssetPackages\ToonScapes\Shared Assets\Scripts\WindManager.cs" />
     <Compile Include="Assets\_AssetPackages\BehaviourTree\Scripts\BehaviourTreeContainer.cs" />

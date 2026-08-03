@@ -40,7 +40,8 @@ public class PlayerManager : MonoBehaviour
             _healthSystem.OnDeath += PlayDeath;
         }
         GameManager.Instance.ChangeActionInputMap += SwitchActionMap;
-        GameManager.Instance.RespawnPlayer += ResetPlayerStats;
+        GameManager.Instance.RespawnPlayer += ResetPlayer;
+        GameManager.Instance.ResetStatsPlayer += ResetPlayerStats;
     }
     private void OnDisable()
     {
@@ -50,7 +51,8 @@ public class PlayerManager : MonoBehaviour
             _healthSystem.OnDeath -= PlayDeath;
         }
         GameManager.Instance.ChangeActionInputMap -= SwitchActionMap;
-        GameManager.Instance.RespawnPlayer -= ResetPlayerStats;
+        GameManager.Instance.RespawnPlayer -= ResetPlayer;
+        GameManager.Instance.ResetStatsPlayer -= ResetPlayerStats;
     }
 
     public void GetHit(DmgInfo dmgInfo)
@@ -109,17 +111,23 @@ public class PlayerManager : MonoBehaviour
         if (_animator == null) return;
         _animator.CrossFade(_animDeath, 0.1f);
     }
+    private void ResetPlayer()
+    {
+        ResetPlayerStats();
+        _animator.Rebind();
+        _animator.Update(0f);
+    }
     private void ResetPlayerStats()
     {
         if (_healthSystem != null)
         {
             _healthSystem.ResetHP();
-            _animator.Rebind();
-            _animator.Update(0f);
         }
-    }
-    private void TransitionNextDialogue()
-    {
+        if (_stats != null)
+        {
+            _stats.ResetMana();
+            _stats.ResetStamina();
+        }
 
     }
 }

@@ -101,7 +101,7 @@ public class PlayerSkill : MonoBehaviour
     {
         if (_playerStats == null) return;
         Vector3 spawnPosition = CalculateSpawnPosition(skillData);
-
+        // The only reason not to use Object Pool here is that vfx's script being control by script assets and dev didnt want to ruin their logic. (Or he's lazy)
         switch (skillData.SkillType)
         {
             case SkillType.AOE:

@@ -570,13 +570,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!_stats.CheckAllowRecoverStamina()) return;
         //Debug.Log("Recover ? :" + _speed + " " + _staminaAllowRecoverFlag + " " + _stats.WalkSpeed.GetValue());
-        if (_speed > _stats.WalkSpeed.GetValue()) return;
+        if (_speed > _stats.RunSpeed.GetValue()) return;
         if (!_staminaAllowRecoverFlag) return;
         _recoverStaminaAfterRollDelayTimer += Time.deltaTime;
         if (_recoverStaminaAfterRollDelayTimer >= 1f)
         {
             _stats.RecoverStamina();
-            Debug.Log("Recover ne");
             _recoverStaminaAfterRollDelayTimer = 0f;
         }
     }
