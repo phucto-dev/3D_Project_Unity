@@ -2,40 +2,58 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ModifyType
+{
+    Cheat,
+    Positive,
+    Negative,
+}
 [Serializable]
 public class Stat
 {
     [Header("--- DO NOT EDIT ---")]
     [SerializeField] private float _baseValue;
 
-    private List<float> _modifiers = new List<float>();
+    private Dictionary<ModifyType, float> _modifiers = new();
 
-    public event Action OnStatChanged;
+    private Action _onValueChanged;
 
-    public Stat(float value)
+    public Stat(float value, Action onValueChanged = null)
     {
         _baseValue = value;
+        _onValueChanged = onValueChanged;
     }
 
     public float GetValue()
     {
         float finalValue = _baseValue;
-        foreach (float mod in _modifiers)
+        foreach (var mod in _modifiers)
         {
-            finalValue += mod;
+            finalValue += mod.Value;
         }
 
         return finalValue;
     }
 
-    public void AddModifier(float mod)
+    public void AddModifier(ModifyType type, float value)
     {
-        _modifiers.Add(mod);
-        OnStatChanged?.Invoke();
+        if (type == ModifyType.Cheat)
+        {
+            Debug.Log("_baseValue: " + _baseValue);
+            _modifiers[type] = value;
+        }
+        else
+        {
+            _modifiers[type] += _modifiers.GetValueOrDefault(type, 0f) + value;
+        }
+        _onValueChanged?.Invoke();
     }
-    public void RemoveModifier(float mod)
+    public void RemoveModifier(ModifyType type, float value)
     {
-        _modifiers.Remove(mod);
-        OnStatChanged?.Invoke();
+        if (!_modifiers.ContainsKey(type)) return;
+        if (type == ModifyType.Positive || type == ModifyType.Cheat) _modifiers[type] -= value;
+        if (type == ModifyType.Negative) _modifiers[type] += Math.Abs(value);
+        if (_modifiers[type] <= 0) _modifiers.Remove(type);
+        _onValueChanged?.Invoke();
     }
 }

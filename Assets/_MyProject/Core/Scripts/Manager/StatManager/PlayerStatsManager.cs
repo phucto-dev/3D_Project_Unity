@@ -33,7 +33,7 @@ public class PlayerStatsManager : EntityStatsManager
         if (_baseStatsSO is PlayerStatsSO playerStats)
         {
             MaxStamina = new Stat(playerStats.MaxStamina.BaseValue);
-            MaxMana = new Stat(playerStats.MaxMana.BaseValue);
+            MaxMana = new Stat(playerStats.MaxMana.BaseValue, () => RecalculateFinalStats(null));
             JumpForce = new Stat(playerStats.JumpForce.BaseValue);
             RotationSpeed = new Stat(playerStats.RotationSpeed.BaseValue);
             RollSpeed = new Stat(playerStats.RollSpeed.BaseValue);

@@ -232,12 +232,38 @@ public class GameManager : MonoBehaviour
     }
     public void SetCheckPoint(SpawnPointID pointID)
     {
-        Debug.Log("Set r neeeee");
         _targetSpawnID = pointID;
         PlayerSpawnPoint correctSpawn = GetCorrectSpawn();
         if (correctSpawn != null)
         {
             _currentCheckPoint = correctSpawn.transform;
+        }
+    }
+    public void HandleCheatButton(StatsCheatType type, float value)
+    {
+        if (_playerInstance == null) return;
+        PlayerStatsManager playerStats = _playerInstance.GetComponent<PlayerStatsManager>();
+        if (playerStats == null) return;
+        Debug.Log("Vo r neeeee123");
+        if (type == StatsCheatType.Attack)
+        {
+            playerStats.AttackPower.AddModifier(ModifyType.Cheat, value);
+            Debug.Log("Vo r neeee456");
+        }
+        if (type == StatsCheatType.Health) playerStats.MaxHealth.AddModifier(ModifyType.Cheat, value);
+        if (type == StatsCheatType.Mana) playerStats.MaxMana.AddModifier(ModifyType.Cheat, value);
+    }
+    public void HandleTeleportCheatButton(SpawnPointID id)
+    {
+        if (_allSpawns == null) return;
+        for (int i = 0; i < _allSpawns.Length; i++)
+        {
+            if (_allSpawns[i].PointID == id)
+            {
+                _playerInstance.transform.position = _allSpawns[i].transform.position;
+                _playerInstance.transform.rotation = _allSpawns[i].transform.rotation;
+                return;
+            }
         }
     }
 }

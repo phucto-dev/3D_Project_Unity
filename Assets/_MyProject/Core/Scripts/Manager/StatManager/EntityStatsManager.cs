@@ -55,11 +55,11 @@ public class EntityStatsManager : MonoBehaviour
         Defense = new Stat(_baseStatsSO.Defense.BaseValue);
         CritRate = new Stat(_baseStatsSO.CritRate.BaseValue);
         CritDamage = new Stat(_baseStatsSO.CritDamage.BaseValue);
-        MaxHealth = new Stat(_baseStatsSO.MaxHealth.BaseValue);
+        MaxHealth = new Stat(_baseStatsSO.MaxHealth.BaseValue, () => RecalculateFinalStats(null));
         RunSpeed = new Stat(_baseStatsSO.RunSpeed.BaseValue);
         WalkSpeed = new Stat(_baseStatsSO.WalkSpeed.BaseValue);
         SprintSpeed = new Stat(_baseStatsSO.SprintSpeed.BaseValue);
-        AttackPower = new Stat(_baseStatsSO.AttackPower.BaseValue);
+        AttackPower = new Stat(_baseStatsSO.AttackPower.BaseValue, () => RecalculateFinalStats(null));
         AttackRange = new Stat(_baseStatsSO.AttackRange.BaseValue);
         DelayPerAttack = new Stat(_baseStatsSO.DelayPerAttack.BaseValue);
         Haste = new Stat(_baseStatsSO.Haste.BaseValue);

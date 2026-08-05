@@ -6,7 +6,7 @@ using UnityEngine;
 public enum MenuPageType
 {
     Character,
-    Combat
+    StatsCheat
 }
 
 public class MainMenuController : MonoBehaviour
