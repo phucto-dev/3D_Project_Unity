@@ -102,4 +102,12 @@ public class HealthSystem : MonoBehaviour
 
         if (_invincibilitySourcesCount < 0) _invincibilitySourcesCount = 0;
     }
+    public void InstantDead()
+    {
+        CurrentHealth = 0;
+        OnDeath?.Invoke();
+        OnHealthChanged?.Invoke(CurrentHealth, MaxHealth);
+        if (_stats.GetStatsData() != null)
+            _stats.GetStatsData().TriggeredHealthChanged(CurrentHealth, MaxHealth);
+    }
 }

@@ -144,5 +144,9 @@ public class MainMenuController : MonoBehaviour
                 _currentPage = page;
             }
         }
+        if (_currentPage.PageType == MenuPageType.Character)
+        {
+            OnOpenInventory?.Invoke();
+        }
     }
 }

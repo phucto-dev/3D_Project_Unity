@@ -252,6 +252,7 @@ public class GameManager : MonoBehaviour
         }
         if (type == StatsCheatType.Health) playerStats.MaxHealth.AddModifier(ModifyType.Cheat, value);
         if (type == StatsCheatType.Mana) playerStats.MaxMana.AddModifier(ModifyType.Cheat, value);
+        HandleResetStatsPlayer();
     }
     public void HandleTeleportCheatButton(SpawnPointID id)
     {

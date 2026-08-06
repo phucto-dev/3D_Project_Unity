@@ -151,6 +151,7 @@
     <Compile Include="Assets\_AssetPackages\SpecialSkillsEffectsPack\Scripts\ForEffects\ObjectMoveDestroy.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Player\Info\PlayerInfo.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\StateMachineController\ComboStateBehaviour.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Map\Water\WaterDeadLayer.cs" />
     <Compile Include="Assets\_AssetPackages\Lana Studio\Casual RPG VFX\Scripts\UVscroll.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Skills\SkillVFXController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\HurtUI.cs" />
