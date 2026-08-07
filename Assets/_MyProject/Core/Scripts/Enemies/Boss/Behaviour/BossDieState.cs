@@ -7,6 +7,7 @@ public class BossDieState : IBossState
     {
         boss.SetLocomotion(new GroundLocomotion());
         boss.CloseHurtBox();
+        boss.HandleBossDie();
         boss.Anim.CrossFade(DieAnimName, 0.1f);
 
         // Objective Event

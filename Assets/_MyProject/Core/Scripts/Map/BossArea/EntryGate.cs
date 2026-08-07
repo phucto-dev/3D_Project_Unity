@@ -9,12 +9,15 @@ public class BossEntryGate : MonoBehaviour
     [SerializeField] private Collider _wall;
     [SerializeField] private float _closeTimeOffset = 1f;
     private Coroutine _closeGateRoutine;
+    private bool _doneBossPhase;
     private void Awake()
     {
         _areaManager = GetComponentInParent<BossAreaManager>();
+        _doneBossPhase = false;
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (_doneBossPhase) return;
         if (other.CompareTag(TagConstant.TagPlayer))
         {
             PlayerEnterTrigger?.Invoke();
@@ -23,6 +26,7 @@ public class BossEntryGate : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        if (_doneBossPhase) return;
         if (other.CompareTag(TagConstant.TagPlayer))
         {
             if (_closeGateRoutine != null)
@@ -39,5 +43,10 @@ public class BossEntryGate : MonoBehaviour
 
         if (_wall != null) _wall.enabled = true;
         _closeGateRoutine = null;
+    }
+    public void OpenGate()
+    {
+        _doneBossPhase = true;
+        if (_wall != null) _wall.enabled = false;
     }
 }

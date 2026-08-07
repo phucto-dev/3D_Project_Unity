@@ -20,6 +20,7 @@ public class BossAreaManager : MonoBehaviour
     private BossEntryGate _bossEntryGate;
     private GameObject _boss;
     private bool _isStarted;
+    private bool _removeBoss;
     private void Awake()
     {
         _bossEntryGate = GetComponentInChildren<BossEntryGate>();
@@ -52,10 +53,12 @@ public class BossAreaManager : MonoBehaviour
         _boss = PoolManager.Instance.Get(BossInfo.poolID);
         if (_boss == null) return;
         BossManager bossManager = _boss.GetComponent<BossManager>();
+        BossStateManager bossState = _boss.GetComponent<BossStateManager>();
         HealthSystem bossHealth = _boss.GetComponentInChildren<HealthSystem>();
         if (bossManager != null)
         {
             bossManager.GetBossStateManager().OnSummonStatues += SummonStatues;
+            bossState.OnBossDie += HandleEndBossPhase;
             OnStatueStatusChanged += bossManager.GetBossStateManager().SetSummonAble;
         }
         if (bossHealth != null)
@@ -70,16 +73,19 @@ public class BossAreaManager : MonoBehaviour
         _boss.transform.position = BossSpawn.position;
         _boss.transform.rotation = BossSpawn.rotation;
         _isStarted = true;
+        _removeBoss = true;
     }
     private void EndBossPhase()
     {
         if (_boss == null) return;
         BossManager bossManager = _boss.GetComponent<BossManager>();
+        BossStateManager bossState = _boss.GetComponent<BossStateManager>();
         HealthSystem bossHealth = _boss.GetComponentInChildren<HealthSystem>();
         bossHealth.ResetHP();
         if (bossManager != null)
         {
             bossManager.GetBossStateManager().OnSummonStatues -= SummonStatues;
+            bossState.OnBossDie -= HandleEndBossPhase;
             OnStatueStatusChanged -= bossManager.GetBossStateManager().SetSummonAble;
         }
         if (bossHealth != null)
@@ -89,7 +95,8 @@ public class BossAreaManager : MonoBehaviour
                 bossHealth.OnHealthChanged -= MainMenuController.Instance.HPBossBar().SetTarget;
             }
         }
-        PoolManager.Instance.Release(BossInfo.poolID, _boss);
+        _bossEntryGate.OpenGate();
+        if (_removeBoss) PoolManager.Instance.Release(BossInfo.poolID, _boss);
         _boss = null;
         MainMenuController.Instance.HideBossHUD();
         ReleaseSummon();
@@ -126,13 +133,9 @@ public class BossAreaManager : MonoBehaviour
         }
         OnStatueStatusChanged?.Invoke(true);
     }
-    private void SetStatueStatus(bool value)
+    private void HandleEndBossPhase()
     {
-
-    }
-    private bool CheckAllowSummon()
-    {
-        OnStatueStatusChanged?.Invoke(false);
-        return false;
+        _removeBoss = false;
+        EndBossPhase();
     }
 }

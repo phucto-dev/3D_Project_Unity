@@ -48,6 +48,7 @@ public class BossStateManager : MonoBehaviour
     [field: SerializeField] public PoolItemSO SkyFallData { get; private set; }
 
     public event Action<BossCombatInfo , BossStatsManager> OnSummonStatues;
+    public event Action OnBossDie;
 
     private string BaseAnimLayer = "Base Layer";
     private string FlyStationAnimName = "FlyStationary";
@@ -292,5 +293,9 @@ public class BossStateManager : MonoBehaviour
     {
         if (_bossBiteHitboxControl == null) return;
         _bossBiteHitboxControl.CloseHitbox();
+    }
+    public void HandleBossDie()
+    {
+        OnBossDie?.Invoke();
     }
 }
