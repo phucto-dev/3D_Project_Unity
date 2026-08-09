@@ -160,6 +160,7 @@
     <Compile Include="Assets\_AssetPackages\Kevin Iglesias\Human Animations\Unity Demo Scenes\Human Archer Animations\Scripts\HumanArcherController.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\StateMachine\BossAnimationNotifier.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Attack\PlayerAttack.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\AudioManager\AudioManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\BossAttack\BossBlast.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\InventorySlot.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossDecisionState.cs" />
@@ -209,6 +210,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\AirLocomotion.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Manager\EnemyDropManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Projectile\ProjectileController.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Sound\SoundConfigSO.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerCamTarget.cs" />
     <Compile Include="Assets\_AssetPackages\Artsystack - Fantasy RPG GUI\Scripts\PanelArtsystackGui.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\NPC\DialogueSO.cs" />
@@ -246,6 +248,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\BossHPBar.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossIntro.cs" />
     <Compile Include="Assets\_MyProject\Core\Input\InputSystem_Actions.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\AudioManager\PlayerAudio\FootStep\PlayerFootstepManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Manager\Camera\CinematicSkillEffect.cs" />
   </ItemGroup>
   <ItemGroup>
