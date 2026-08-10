@@ -46,7 +46,10 @@ public class BossEntryGate : MonoBehaviour
     }
     public void OpenGate()
     {
-        _doneBossPhase = true;
         if (_wall != null) _wall.enabled = false;
+    }
+    public void MarkDoneBoss()
+    {
+        _doneBossPhase = true;
     }
 }

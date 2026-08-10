@@ -13,6 +13,9 @@ public class AudioManager : MonoBehaviour
     [Header("--- POOL SETTINGS ---")]
     public int SfxPoolSize = 15;
 
+    [Header("--- BGM ---")]
+    public SoundConfigSO BGM;
+
     private List<AudioSource> _sfxPool;
     private AudioSource _bgmSource;
     private SoundConfigSO _currentBGM;
@@ -22,6 +25,10 @@ public class AudioManager : MonoBehaviour
         else Destroy(this);
 
         InitializeSystem();
+    }
+    private void OnEnable()
+    {
+        if (BGM != null) PlayBGM(BGM);
     }
     private void InitializeSystem()
     {
@@ -59,6 +66,7 @@ public class AudioManager : MonoBehaviour
         source.clip = clipToPlay;
         source.volume = soundConfig.Volume;
         source.pitch = Random.Range(soundConfig.PitchMin, soundConfig.PitchMax);
+        source.loop = false;
 
         if (position.HasValue)
         {
@@ -71,6 +79,45 @@ public class AudioManager : MonoBehaviour
         }
 
         source.Play();
+    }
+    public AudioSource PlaySFXLoop(SoundConfigSO soundConfig, Vector3? position = null)
+    {
+        if (soundConfig == null) return null;
+
+        AudioClip clipToPlay = soundConfig.GetRandomClip();
+        if (clipToPlay == null) return null;
+
+        AudioSource source = GetAvailableSFXSource();
+
+        source.clip = clipToPlay;
+        source.volume = soundConfig.Volume;
+        source.pitch = Random.Range(soundConfig.PitchMin, soundConfig.PitchMax);
+
+        source.loop = true;
+
+        if (position.HasValue)
+        {
+            source.spatialBlend = 1f;
+            source.transform.position = position.Value;
+        }
+        else
+        {
+            source.spatialBlend = 0f;
+        }
+
+        source.Play();
+
+        return source;
+    }
+    public void StopSFXLoop(AudioSource loopSource)
+    {
+        if (loopSource != null && loopSource.isPlaying)
+        {
+            loopSource.Stop();
+
+            loopSource.loop = false;
+            loopSource.clip = null;
+        }
     }
     public void PlayBGM(SoundConfigSO bgmConfig)
     {
@@ -86,7 +133,7 @@ public class AudioManager : MonoBehaviour
         _bgmSource.clip = clipToPlay;
         _bgmSource.volume = bgmConfig.Volume;
         _bgmSource.pitch = 1f;
-
+        _bgmSource.loop = true;
         _bgmSource.Play();
     }
 

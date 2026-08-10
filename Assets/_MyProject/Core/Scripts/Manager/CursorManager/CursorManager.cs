@@ -47,6 +47,7 @@ public class CursorManager : MonoBehaviour
     private void ToggleCursor()
     {
         _isCursorLocked = !_isCursorLocked;
+        Debug.Log("Toggle neee " + _isCursorLocked);
 
         if (_isCursorLocked)
         {

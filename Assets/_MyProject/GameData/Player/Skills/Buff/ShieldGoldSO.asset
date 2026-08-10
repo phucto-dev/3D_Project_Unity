@@ -16,6 +16,12 @@ MonoBehaviour:
   SkillName: Shield Gold
   SkillType: 2
   VFXPrefab: {fileID: 5791084827629787005, guid: 9604939590c79d4429d3857a5ca0028c, type: 3}
+  Audio:
+    Cast: {fileID: 0}
+    Appear: {fileID: 11400000, guid: 3c0f6c39c0ebd424a9ca79b88f072c5b, type: 2}
+    Loop: {fileID: 0}
+    Hit: {fileID: 0}
+    End: {fileID: 0}
   ManaCost: 20
   CastTime: 1
   ActiveDuration: 0

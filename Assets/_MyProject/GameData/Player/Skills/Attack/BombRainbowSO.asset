@@ -16,6 +16,12 @@ MonoBehaviour:
   SkillName: Bomb Rainbow
   SkillType: 1
   VFXPrefab: {fileID: 7053249225480425717, guid: e1dba408931563648ad29b0503009738, type: 3}
+  Audio:
+    Cast: {fileID: 0}
+    Appear: {fileID: 11400000, guid: 345948c8162efdb4b906c43df667ff53, type: 2}
+    Loop: {fileID: 0}
+    Hit: {fileID: 0}
+    End: {fileID: 0}
   ManaCost: 40
   CastTime: 1
   ActiveDuration: 3

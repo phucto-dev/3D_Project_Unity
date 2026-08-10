@@ -9,6 +9,10 @@ public enum SkillState
     Smash,
     End
 }
+public interface PlayerSkillEnd
+{
+    public event Action EndDuration;
+}
 public class PlayerSkill : MonoBehaviour
 {
     public SkillDataSO[] SkillSlots;
@@ -35,6 +39,7 @@ public class PlayerSkill : MonoBehaviour
     private int _skillLayerIndex;
     private Coroutine _fadeLayerCoroutine;
     private bool _allowToUseSkill;
+    private PlayerAudioManager _playerAudio;
 
     private SkillState _currentState;
     private SkillDataSO _currentSkill;
@@ -46,6 +51,7 @@ public class PlayerSkill : MonoBehaviour
         _playerTransform = this.transform;
         _skillInputActions = new InputAction[maxSlotAmount];
         _animator = GetComponentInChildren<Animator>();
+        _playerAudio = GetComponentInChildren<PlayerAudioManager>();
         if (_animator != null)
         {
             _skillLayerIndex = _animator.GetLayerIndex("Skill");
@@ -106,17 +112,35 @@ public class PlayerSkill : MonoBehaviour
         {
             case SkillType.AOE:
                 GameObject vfxAOEInstance = Instantiate(skillData.VFXPrefab, spawnPosition, _playerTransform.rotation);
-                vfxAOEInstance.GetComponent<SkillVFXController>().Initialize(skillData, _playerStats, this);
+                SkillVFXController AOEController = vfxAOEInstance.GetComponent<SkillVFXController>();
+                AOEController.Initialize(skillData, _playerStats, this);
+                AOEController.EndDuration += EndSkillSound; // Be destroy anyway so don't need to remove event here
                 break;
             case SkillType.Buff:
                 GameObject vfxBuffInstance = Instantiate(skillData.VFXPrefab, spawnPosition, _playerTransform.rotation, this.transform);
-                vfxBuffInstance.GetComponent<SkillBuffController>().Initialize(skillData, _playerStats, _healthSystem);
+                SkillBuffController buffController = vfxBuffInstance.GetComponent<SkillBuffController>();
+                buffController.Initialize(skillData, _playerStats, _healthSystem);
+                buffController.EndDuration += EndSkillSound; // Be destroy anyway so don't need to remove event here
                 break;
             case SkillType.Hold:
                 GameObject vfxHoldInstance = Instantiate(skillData.VFXPrefab, spawnPosition, _playerTransform.rotation);
-                vfxHoldInstance.GetComponent<SkillVFXController>().Initialize(skillData, _playerStats, this);
+                SkillVFXController HoldController = vfxHoldInstance.GetComponent<SkillVFXController>();
+                HoldController.Initialize(skillData, _playerStats, this);
+                HoldController.EndDuration += EndSkillSound; // Be destroy anyway so don't need to remove event here
                 break;
         }
+        if (skillData.Audio == null) return;
+        if (skillData.Audio.Appear == null) return;
+        if (skillData.Audio.Appear.AttachType == SoundAttachType.Caster)
+        {
+            if (_playerAudio == null) return;
+            _playerAudio.PlaySkill(skillData.Audio.Appear);
+        }
+    }
+    private void EndSkillSound()
+    {
+        if (_playerAudio == null) return;
+        _playerAudio.StopSkillLoop();
     }
     private bool CheckCurrentSkillUseable()
     {

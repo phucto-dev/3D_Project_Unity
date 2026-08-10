@@ -18,6 +18,9 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject _loadingRoot;
     [SerializeField] private GameObject _globalRoot;
     [SerializeField] private GameObject _interactionUI;
+
+    [Header("--- MAIN BACKGROUND MENU ---")]
+    public GameObject MenuBackground;
     public static MainMenuController Instance { get; private set; }
 
     public event Action OnOpenInventory;
@@ -61,11 +64,13 @@ public class MainMenuController : MonoBehaviour
         _inGameMenuRoot.SetActive(false);
         _loadingRoot.SetActive(false);
         _globalRoot.SetActive(false);
+        if (MenuBackground != null) MenuBackground.SetActive(false);
 
         switch (newState)
         {
             case GameState.MainMenu:
                 _mainMenuRoot.SetActive(true);
+                if (MenuBackground != null) MenuBackground.SetActive(true);
                 break;
             case GameState.Playing:
                 _hudRoot.SetActive(true);

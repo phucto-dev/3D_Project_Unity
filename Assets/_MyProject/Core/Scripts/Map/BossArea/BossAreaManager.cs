@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 public struct StatueInfo
 {
@@ -13,6 +12,9 @@ public class BossAreaManager : MonoBehaviour
     public Transform BossSpawn;
     public BossStatueSpawner StatueA;
     public BossStatueSpawner StatueB;
+
+    [Header("--- BGM ---")]
+    public SoundConfigSO BGM;
 
     public event Action<bool> OnStatueStatusChanged;
 
@@ -52,6 +54,7 @@ public class BossAreaManager : MonoBehaviour
         if (BossInfo == null) return;
         _boss = PoolManager.Instance.Get(BossInfo.poolID);
         if (_boss == null) return;
+        if (BGM != null) AudioManager.Instance.PlayBGM(BGM);
         BossManager bossManager = _boss.GetComponent<BossManager>();
         BossStateManager bossState = _boss.GetComponent<BossStateManager>();
         HealthSystem bossHealth = _boss.GetComponentInChildren<HealthSystem>();
@@ -78,6 +81,7 @@ public class BossAreaManager : MonoBehaviour
     private void EndBossPhase()
     {
         if (_boss == null) return;
+        if (BGM != null) AudioManager.Instance.StopBGM();
         BossManager bossManager = _boss.GetComponent<BossManager>();
         BossStateManager bossState = _boss.GetComponent<BossStateManager>();
         HealthSystem bossHealth = _boss.GetComponentInChildren<HealthSystem>();
@@ -135,6 +139,7 @@ public class BossAreaManager : MonoBehaviour
     }
     private void HandleEndBossPhase()
     {
+        if (_bossEntryGate != null) _bossEntryGate.MarkDoneBoss();
         _removeBoss = false;
         EndBossPhase();
     }

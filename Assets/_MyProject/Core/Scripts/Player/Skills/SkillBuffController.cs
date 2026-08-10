@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
-public class SkillBuffController : MonoBehaviour
+public class SkillBuffController : MonoBehaviour, PlayerSkillEnd
 {
     public float TransitionEffectTime;
     public GameObject SideLoopEffect;
+    public event Action EndDuration;
 
     private SkillDataSO _data;
     private float _tickTimer;
@@ -13,6 +15,16 @@ public class SkillBuffController : MonoBehaviour
     private PlayerStatsManager _playerStatsManager;
     private bool _hasRegenPassive;
     private CooldownTimer _timer;
+    private AudioSource _audioSource;
+
+    private void OnEnable()
+    {
+        EndDuration += StopAudio;
+    }
+    private void OnDisable()
+    {
+        EndDuration = null;
+    }
     private void Update()
     {
         if (_data == null) return;
@@ -22,6 +34,7 @@ public class SkillBuffController : MonoBehaviour
             _lifeTimer -= Time.deltaTime;
             if (_lifeTimer <= 0)
             {
+                EndDuration?.Invoke();
                 Destroy(gameObject);
                 return;
             }
@@ -55,6 +68,17 @@ public class SkillBuffController : MonoBehaviour
                 StartCoroutine(TransitionEffect());
             }
         }
+        if (_data.Audio == null) return;
+        if (_data.Audio.Appear == null) return;
+        if (_data.Audio.Appear.AttachType == SoundAttachType.Caster) return;
+        if (_data.Audio.Appear.PlaybackType == SoundPlaybackType.Loop)
+        {
+            _audioSource = AudioManager.Instance.PlaySFXLoop(_data.Audio.Appear, transform.position);
+        }
+        else
+        {
+            AudioManager.Instance.PlaySFX(_data.Audio.Appear, transform.position);
+        }
     }
     private void OnGainBuff()
     {
@@ -81,5 +105,10 @@ public class SkillBuffController : MonoBehaviour
     {
         yield return new WaitForSeconds(TransitionEffectTime);
         Instantiate(SideLoopEffect, this.transform);
+    }
+    private void StopAudio()
+    {
+        if (_audioSource == null) return;
+        AudioManager.Instance.StopSFXLoop(_audioSource);
     }
 }

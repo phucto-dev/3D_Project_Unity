@@ -16,6 +16,12 @@ MonoBehaviour:
   SkillName: Eternal Slash Dance
   SkillType: 1
   VFXPrefab: {fileID: 2797559625657395395, guid: cf545e3efb148a740bb0520a7a174df0, type: 3}
+  Audio:
+    Cast: {fileID: 0}
+    Appear: {fileID: 11400000, guid: cbaf87ff275789d4eb3240e9446f61d0, type: 2}
+    Loop: {fileID: 0}
+    Hit: {fileID: 0}
+    End: {fileID: 0}
   ManaCost: 60
   CastTime: 1
   ActiveDuration: 6

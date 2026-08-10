@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillVFXController : MonoBehaviour
+public class SkillVFXController : MonoBehaviour, PlayerSkillEnd
 {
     [SerializeField] private float _holdSkillDelayTime;
 
@@ -16,12 +16,25 @@ public class SkillVFXController : MonoBehaviour
     private List<Collider> _targetsInRange = new List<Collider>();
 
     private bool _flag = false;
+    private AudioSource _audioSource;
+
+    private void OnEnable()
+    {
+        EndDuration += StopAudio;
+    }
+    private void OnDisable()
+    {
+        EndDuration = null;
+    }
     private void Update()
     {
         if (_data == null) return;
+
+        float unscaledDelta = Time.unscaledDeltaTime;
+
         if (!_data.IsToggle && _data.ActiveDuration > 0)
         {
-            _lifeTimer -= Time.deltaTime;
+            _lifeTimer -= unscaledDelta;
             if (_lifeTimer <= 0)
             {
                 if (_data.SkillType != SkillType.Hold)
@@ -35,6 +48,7 @@ public class SkillVFXController : MonoBehaviour
                     if (!_flag)
                     {
                         _flag = true;
+                        Debug.Log("End ne");
                         EndDuration?.Invoke();
                     }
                     else
@@ -49,10 +63,12 @@ public class SkillVFXController : MonoBehaviour
                 return;
             }
         }
+
         _targetsInRange.RemoveAll(item => item == null || !item.gameObject.activeInHierarchy);
+
         if (_data.TickInterval > 0)
         {
-            _tickTimer -= Time.deltaTime;
+            _tickTimer -= unscaledDelta;
             if (_tickTimer <= 0)
             {
                 foreach (Collider target in _targetsInRange)
@@ -72,6 +88,7 @@ public class SkillVFXController : MonoBehaviour
         //Debug.Log("_data: "+ skillData.TargetLayer);
         _tickTimer = 0f;
         _lifeTimer = skillData.ActiveDuration;
+        Debug.Log("Nhiu day "+ _lifeTimer);
         _dmgInfo = new DmgInfo()
         {
             Amount = finalDmg,
@@ -80,6 +97,23 @@ public class SkillVFXController : MonoBehaviour
             IsCritical = false
         };
         transform.localScale *= skillData.RangeScaleMultiplier;
+        if (_data.Audio == null) return;
+        if (_data.Audio.Appear == null) return;
+        if (_data.Audio.Appear.AttachType == SoundAttachType.Caster) return;
+        if (_data.Audio.Appear.PlaybackType == SoundPlaybackType.Loop)
+        {
+            _audioSource = AudioManager.Instance.PlaySFXLoop(_data.Audio.Appear, transform.position);
+        }
+        else
+        {
+            AudioManager.Instance.PlaySFX(_data.Audio.Appear, transform.position);
+        }
+    }
+    private void StopAudio()
+    {
+        Debug.Log("Stop chua");
+        if (_audioSource == null) return;
+        AudioManager.Instance.StopSFXLoop(_audioSource);
     }
     private void OnTriggerEnter(Collider other)
     {

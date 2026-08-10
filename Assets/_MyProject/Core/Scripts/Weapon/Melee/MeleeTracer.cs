@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MeleeTracer : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class MeleeTracer : MonoBehaviour
     [SerializeField] private Transform[] _damagePoints;
     [SerializeField] private float _hitboxRadius;
     [SerializeField] private LayerMask _enemyLayer;
+
+    [Header("--- SOUND SETTINGS ---")]
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip[] _slashs;
+    [SerializeField] private SoundConfigSO _slashHit;
 
     private bool _isAttacking;
     private bool _hitOnce;
@@ -94,6 +100,7 @@ public class MeleeTracer : MonoBehaviour
             i++;
         }
         if (_trail != null) _trail.enabled = true;
+        PlaySlash();
     }
 
     public void StopSwing()
@@ -156,6 +163,7 @@ public class MeleeTracer : MonoBehaviour
                     if (vfxPool != null)
                     {
                         vfxPool.Setup(vfxID);
+                        AudioManager.Instance.PlaySFX(_slashHit, hit.point);
                     }
                 }
             }
@@ -169,5 +177,18 @@ public class MeleeTracer : MonoBehaviour
         if (_weaponStats == null) return;
         _dmgInfo.Amount = _stats.AttackPower.GetValue() + _weaponStats.MainStat.Value;
         _dmgInfo.PoiseDamage = _stats.PoiseDamage.GetValue() + _weaponStats.PoiseDamage;
+    }
+
+    public void PlaySlash()
+    {
+        if (_slashs.Length == 0)
+            return;
+
+        int index = Random.Range(0, _slashs.Length);
+
+        _audioSource.PlayOneShot(
+            _slashs[index],
+            0.5f
+        );
     }
 }

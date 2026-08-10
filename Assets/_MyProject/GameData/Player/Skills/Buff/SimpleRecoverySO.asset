@@ -16,6 +16,12 @@ MonoBehaviour:
   SkillName: Simple Recover
   SkillType: 2
   VFXPrefab: {fileID: 1339010535671150650, guid: 2637ca7451a3a0e4fb9ee5978857a645, type: 3}
+  Audio:
+    Cast: {fileID: 0}
+    Appear: {fileID: 11400000, guid: 3224d55d56276ff4fa13b63e0cf460eb, type: 2}
+    Loop: {fileID: 0}
+    Hit: {fileID: 0}
+    End: {fileID: 0}
   ManaCost: 20
   CastTime: 1
   ActiveDuration: 0

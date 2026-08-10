@@ -16,6 +16,13 @@ MonoBehaviour:
   SkillName: Lightning Strike
   SkillType: 1
   VFXPrefab: {fileID: 3189572376494687677, guid: b6ef702a5ab126149a4d7299eae812db, type: 3}
+  Audio:
+    Cast: {fileID: 0}
+    Appear: {fileID: 11400000, guid: 91b44dfe24c52654f8632d1f8bff6c99, type: 2}
+    Loop: {fileID: 0}
+    Hit: {fileID: 0}
+    End: {fileID: 0}
+  ManaCost: 0
   CastTime: 0
   ActiveDuration: 1
   IsToggle: 0

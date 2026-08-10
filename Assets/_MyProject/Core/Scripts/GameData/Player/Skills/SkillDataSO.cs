@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public enum SkillTargetingMode
 {
@@ -11,6 +12,15 @@ public enum SkillType
     AOE,
     Buff,
 }
+[Serializable]
+public class SkillAudioData
+{
+    public SoundConfigSO Cast;
+    public SoundConfigSO Appear;
+    public SoundConfigSO Loop;
+    public SoundConfigSO Hit;
+    public SoundConfigSO End;
+}
 [CreateAssetMenu(fileName = "NewSkill", menuName = "GameData/Player/Skills")]
 public class SkillDataSO : ScriptableObject
 {
@@ -19,6 +29,9 @@ public class SkillDataSO : ScriptableObject
     public string SkillName;
     public SkillType SkillType;
     public GameObject VFXPrefab;
+
+    [Header("--- AUDIO ---")]
+    public SkillAudioData Audio;
 
     [Header("--- LIFECYCLE ---")]
     public float ManaCost = 0f;
