@@ -171,6 +171,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\DropItems\LootItemSO.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameData\Items\Equipment\Weapon\Melee\WeaponDataSO.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Statue\BossStatue.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Slider\VolumeSettingsSlider.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Skills\VFXBossAttack.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameSystems\ObjectiveEvent\ObjectiveEventManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Extension\TransformExtension\TransformExtensions.cs" />

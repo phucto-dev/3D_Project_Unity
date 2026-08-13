@@ -20,9 +20,12 @@ public class MenuManager : MonoBehaviour
     [Header("--- MENU BTN SCRIPT ---")]
     [SerializeField] private MenuBtn _newGameBtnScript;
     [SerializeField] private MenuBtn _loadBtnScript;
-    [SerializeField] private MenuBtn _optionBtnScript;
+    [SerializeField] private MenuBtn _optionsBtnScript;
     [SerializeField] private MenuBtn _creditBtnScript;
     [SerializeField] private MenuBtn _quitBtnScript;
+
+    [Header("--- MENU CONTENT ---")]
+    [SerializeField] private GameObject _optionsContent;
 
     private void Awake()
     {
@@ -33,7 +36,7 @@ public class MenuManager : MonoBehaviour
     {
         if (_newGameBtnScript != null) _newGameBtnScript.BtnClicked += ChangeUIMenu;
         if (_loadBtnScript != null) _loadBtnScript.BtnClicked += ChangeUIMenu;
-        if (_optionBtnScript != null) _optionBtnScript.BtnClicked += ChangeUIMenu;
+        if (_optionsBtnScript != null) _optionsBtnScript.BtnClicked += ChangeUIMenu;
         if (_creditBtnScript != null) _creditBtnScript.BtnClicked += ChangeUIMenu;
         if (_quitBtnScript != null) _quitBtnScript.BtnClicked += ChangeUIMenu;
     }
@@ -41,7 +44,7 @@ public class MenuManager : MonoBehaviour
     {
         if (_newGameBtnScript != null) _newGameBtnScript.BtnClicked -= ChangeUIMenu;
         if (_loadBtnScript != null) _loadBtnScript.BtnClicked -= ChangeUIMenu;
-        if (_optionBtnScript != null) _optionBtnScript.BtnClicked -= ChangeUIMenu;
+        if (_optionsBtnScript != null) _optionsBtnScript.BtnClicked -= ChangeUIMenu;
         if (_creditBtnScript != null) _creditBtnScript.BtnClicked -= ChangeUIMenu;
         if (_quitBtnScript != null) _quitBtnScript.BtnClicked -= ChangeUIMenu;
     }
@@ -62,11 +65,18 @@ public class MenuManager : MonoBehaviour
             case MenuBtnList.Load:
                 break;
             case MenuBtnList.Options:
+                OpenContent(_optionsContent);
                 break;
             case MenuBtnList.Credits:
                 break;
             case MenuBtnList.Quit:
                 break;
         }
+    }
+
+    private void OpenContent(GameObject objectContent)
+    {
+        if (objectContent == null) return;
+        objectContent.SetActive(!objectContent.activeSelf);
     }
 }
