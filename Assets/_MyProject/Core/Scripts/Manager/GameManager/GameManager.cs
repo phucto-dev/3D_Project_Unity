@@ -12,6 +12,7 @@ public enum GameState
     Die,
     Loading,
     MainMenu,
+    MainMenuIngame,
     Playing,
     InGameMenu,
     Cutscene
@@ -78,6 +79,10 @@ public class GameManager : MonoBehaviour
     {
         HandleInvToggle();
     }
+    private void HandleToggleGameMenu(InputAction.CallbackContext context)
+    {
+        
+    }
     private void HandleInvToggle()
     {
         if (CurrentState == GameState.Playing)
@@ -96,6 +101,10 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Do nothing");
         }
+    }
+    private void HandleIngameMainMenuToggle()
+    {
+
     }
     public void ChangeActionInputInvoke(ActionInputMapType type)
     {
