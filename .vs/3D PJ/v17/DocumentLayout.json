@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\PHUC\\3D PJ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\gui\\slider\\volumesettingsslider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gui\\slider\\volumesettingsslider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\gui\\mainmenu\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gui\\mainmenu\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gui\\mainmenu\\menubtn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gui\\mainmenu\\menubtn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\manager\\gamemanager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\manager\\gamemanager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gui\\mainmenu\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gui\\mainmenu\\mainmenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\manager\\gamemanager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\manager\\gamemanager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gui\\mainmenu\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gui\\mainmenu\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamesystems\\dialoguesystem\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamesystems\\dialoguesystem\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamedata\\player\\manager\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamedata\\player\\manager\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\manager\\cursormanager\\cursormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\manager\\cursormanager\\cursormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamedata\\player\\manager\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamedata\\player\\manager\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|c:\\users\\phuc\\3d pj\\assets\\_myproject\\core\\scripts\\gui\\slider\\volumesettingsslider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gui\\slider\\volumesettingsslider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gui\\mainmenu\\menubtn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gui\\mainmenu\\menubtn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\enemies\\boss\\behaviour\\bossstatemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -245,10 +249,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamedata\\items\\dropitems\\lootitemso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamedata\\items\\dropitems\\lootitemso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gamesystems\\dialoguesystem\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|solutionrelative:assets\\_myproject\\core\\scripts\\gamesystems\\dialoguesystem\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA053E22-6A57-E0E6-5119-C8C906486955}|Assembly-CSharp.csproj|C:\\Users\\PHUC\\3D PJ\\assets\\_myproject\\core\\scripts\\gui\\effects\\hurtui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -654,44 +654,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "VolumeSettingsSlider.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Slider\\VolumeSettingsSlider.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Slider\\VolumeSettingsSlider.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Slider\\VolumeSettingsSlider.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Slider\\VolumeSettingsSlider.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA1wBAAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-13T16:43:51.834Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MenuBtn.cs",
-              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuBtn.cs",
-              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuBtn.cs",
-              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuBtn.cs",
-              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuBtn.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-13T16:31:22.601Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\GameManager\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Manager\\GameManager\\GameManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\GameManager\\GameManager.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Manager\\GameManager\\GameManager.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAmwHkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAIA8wDEAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-21T16:32:18.59Z"
+              "WhenOpened": "2026-07-21T16:32:18.59Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -701,25 +690,27 @@
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Manager\\CursorManager\\CursorManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\CursorManager\\CursorManager.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\Manager\\CursorManager\\CursorManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T08:58:17.481Z"
+              "WhenOpened": "2026-06-03T08:58:17.481Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MainMenuController.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MainMenuController.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MainMenuController.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MainMenuController.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MainMenuController.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAowEQAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAArwDsAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-23T09:14:40.684Z"
+              "WhenOpened": "2026-07-23T09:14:40.684Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "BossSummonAttackStrategy.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\BossAttack\\BossSummonAttackStrategy.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\BossAttack\\BossSummonAttackStrategy.cs",
@@ -731,32 +722,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MenuManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuManager.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuManager.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAcwEcAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAIwAwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-21T16:37:45.897Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "PlayerManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Manager\\PlayerManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Manager\\PlayerManager.cs",
               "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Manager\\PlayerManager.cs",
               "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Manager\\PlayerManager.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBQAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAADgvxQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-29T13:57:02.769Z"
+              "WhenOpened": "2026-07-29T13:57:02.769Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "BossEnterSecondPhase.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Behaviour\\BossEnterSecondPhase.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Behaviour\\BossEnterSecondPhase.cs",
@@ -768,7 +760,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 3,
+              "Title": "DialogueManager.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameSystems\\DialogueSystem\\DialogueManager.cs",
+              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\DialogueSystem\\DialogueManager.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameSystems\\DialogueSystem\\DialogueManager.cs",
+              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\DialogueSystem\\DialogueManager.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAArwDsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T10:53:17.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MenuBtn.cs",
+              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuBtn.cs",
+              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuBtn.cs",
+              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuBtn.cs",
+              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuBtn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T16:31:22.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "SkillBuffController.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\SkillBuffController.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\SkillBuffController.cs",
@@ -780,7 +797,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "BossAttackFactory.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Manager\\BossAttackFactory.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Manager\\BossAttackFactory.cs",
@@ -792,7 +809,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "BossSummon.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\BossAttack\\BossSummon.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\BossAttack\\BossSummon.cs",
@@ -804,7 +821,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "EntryGate.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Map\\BossArea\\EntryGate.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Map\\BossArea\\EntryGate.cs",
@@ -816,7 +833,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "BossDieState.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Behaviour\\BossDieState.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Behaviour\\BossDieState.cs",
@@ -828,7 +845,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "SkillVFXController.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\SkillVFXController.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\SkillVFXController.cs",
@@ -840,7 +857,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "BossStateManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Behaviour\\BossStateManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Behaviour\\BossStateManager.cs",
@@ -852,7 +869,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "SkillCinematic.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\SideEffect\\SkillCinematic.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\SideEffect\\SkillCinematic.cs",
@@ -864,7 +881,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "PlayerSkill.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\PlayerSkill.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\PlayerSkill.cs",
@@ -876,7 +893,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "SkillDataSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Skills\\SkillDataSO.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Skills\\SkillDataSO.cs",
@@ -888,7 +905,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "SummonLightning.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\LightningStrike\\SummonLightning.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\LightningStrike\\SummonLightning.cs",
@@ -912,7 +929,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "SoundConfigSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Sound\\SoundConfigSO.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Sound\\SoundConfigSO.cs",
@@ -924,7 +941,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\AudioManager\\AudioManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Manager\\AudioManager\\AudioManager.cs",
@@ -936,7 +953,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "MeleeTracer.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Weapon\\Melee\\MeleeTracer.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Weapon\\Melee\\MeleeTracer.cs",
@@ -948,7 +965,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "PullEntityInRange.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\PullSkill\\PullEntityInRange.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Skills\\PullSkill\\PullEntityInRange.cs",
@@ -960,7 +977,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "BossManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Manager\\BossManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Manager\\BossManager.cs",
@@ -972,7 +989,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "WaterDeadLayer.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Map\\Water\\WaterDeadLayer.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Map\\Water\\WaterDeadLayer.cs",
@@ -984,7 +1001,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "BossStatue.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Statue\\BossStatue.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Statue\\BossStatue.cs",
@@ -996,7 +1013,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "HealthSystem.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameSystems\\HealthSystem\\HealthSystem.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\HealthSystem\\HealthSystem.cs",
@@ -1008,7 +1025,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "InventoryController.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventoryController.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\InventoryController.cs",
@@ -1020,7 +1037,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "NavButton.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\PageNavigation\\NavButton.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\PageNavigation\\NavButton.cs",
@@ -1032,7 +1049,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "MenuPage.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuPage.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\MainMenu\\MenuPage.cs",
@@ -1044,7 +1061,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "EntityStatsManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\EntityStatsManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\EntityStatsManager.cs",
@@ -1056,7 +1073,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "PlayerStatsManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\PlayerStatsManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\PlayerStatsManager.cs",
@@ -1068,7 +1085,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "PlayerEquipmentManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerEquipmentManager.cs",
@@ -1080,7 +1097,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "PlayerSpawnPoint.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameSystems\\SpawnPoint\\PlayerSpawnPoint.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\SpawnPoint\\PlayerSpawnPoint.cs",
@@ -1092,7 +1109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "Stat.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\Stat.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Manager\\StatManager\\Stat.cs",
@@ -1104,7 +1121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "PlayerStatsSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Stats\\PlayerStatsSO.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Stats\\PlayerStatsSO.cs",
@@ -1116,7 +1133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "TeleportCheatButton.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\CheatTab\\TeleportCheatButton.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\CheatTab\\TeleportCheatButton.cs",
@@ -1128,7 +1145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "StatsCheatButton.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\CheatTab\\StatsCheatButton.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\CheatTab\\StatsCheatButton.cs",
@@ -1140,7 +1157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "PoolItemSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Pool\\PoolItemSO.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Pool\\PoolItemSO.cs",
@@ -1152,7 +1169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "PlayerAttack.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Attack\\PlayerAttack.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Attack\\PlayerAttack.cs",
@@ -1164,7 +1181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "EnemyStateManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Manager\\EnemyStateManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Manager\\EnemyStateManager.cs",
@@ -1176,7 +1193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "VFXPool.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Projectile\\VFXPool.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Projectile\\VFXPool.cs",
@@ -1188,7 +1205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "BossStatueSpawner.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Statue\\BossStatueSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Enemies\\Boss\\Statue\\BossStatueSpawner.cs",
@@ -1200,7 +1217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "ObjectiveEventManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameSystems\\ObjectiveEvent\\ObjectiveEventManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\ObjectiveEvent\\ObjectiveEventManager.cs",
@@ -1212,7 +1229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "ProgressWallCheck.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Map\\WorldArea\\ProgressWallCheck.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Map\\WorldArea\\ProgressWallCheck.cs",
@@ -1224,7 +1241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Move\\PlayerMovement.cs",
@@ -1236,7 +1253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "GameEventManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameSystems\\ObjectiveEvent\\GameEventManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\ObjectiveEvent\\GameEventManager.cs",
@@ -1248,7 +1265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "PlayerInteractionManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerInteractionManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Player\\Manager\\PlayerInteractionManager.cs",
@@ -1260,7 +1277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "NPCInteractable.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\NPC\\NPCInteractable.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\NPC\\NPCInteractable.cs",
@@ -1272,7 +1289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "EquipmentSlot.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\EquipmentSlot.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Page\\InventoryPanel\\InventorySlot\\EquipmentSlot.cs",
@@ -1284,7 +1301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "PlayerEquipmentSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Info\\PlayerEquipmentSO.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Player\\Info\\PlayerEquipmentSO.cs",
@@ -1296,7 +1313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "ObjectiveEventNotice.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Map\\ObjectiveEventNotice.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Map\\ObjectiveEventNotice.cs",
@@ -1308,7 +1325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "ArmorDataSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Items\\Equipment\\Armor\\ArmorDataSO.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Items\\Equipment\\Armor\\ArmorDataSO.cs",
@@ -1320,7 +1337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "ObjectiveChainSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\ObjectiveEvent\\ObjectiveChainSO.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\ObjectiveEvent\\ObjectiveChainSO.cs",
@@ -1332,7 +1349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "EntitySpawner.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\Manager\\Spawner\\EntitySpawner.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\Manager\\Spawner\\EntitySpawner.cs",
@@ -1344,7 +1361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "ObjectiveSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\ObjectiveEvent\\ObjectiveSO.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\ObjectiveEvent\\ObjectiveSO.cs",
@@ -1356,7 +1373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 61,
               "Title": "LootItemSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Items\\DropItems\\LootItemSO.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Items\\DropItems\\LootItemSO.cs",
@@ -1368,7 +1385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "WeaponDataSO.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Items\\Equipment\\Weapon\\Melee\\WeaponDataSO.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Items\\Equipment\\Weapon\\Melee\\WeaponDataSO.cs",
@@ -1380,7 +1397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "TooltipManager.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GUI\\Tooltip\\TooltipManager.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GUI\\Tooltip\\TooltipManager.cs",
@@ -1392,7 +1409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "EquipmentInstance.cs",
               "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameData\\Items\\Equipment\\EquipmentInstance.cs",
               "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameData\\Items\\Equipment\\EquipmentInstance.cs",
@@ -1437,18 +1454,6 @@
               "ViewState": "AgIAABUAAAAAAAAAAAAMwB8AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-08T07:31:26.3Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "DialogueManager.cs",
-              "DocumentMoniker": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameSystems\\DialogueSystem\\DialogueManager.cs",
-              "RelativeDocumentMoniker": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\DialogueSystem\\DialogueManager.cs",
-              "ToolTip": "C:\\Users\\PHUC\\3D PJ\\Assets\\_MyProject\\Core\\Scripts\\GameSystems\\DialogueSystem\\DialogueManager.cs",
-              "RelativeToolTip": "Assets\\_MyProject\\Core\\Scripts\\GameSystems\\DialogueSystem\\DialogueManager.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAwB4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-29T10:53:17.595Z"
             },
             {
               "$type": "Document",

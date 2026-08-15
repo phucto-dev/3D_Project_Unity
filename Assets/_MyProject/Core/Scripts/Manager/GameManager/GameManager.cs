@@ -28,9 +28,11 @@ public class GameManager : MonoBehaviour
     [Header("--- DATA REFERENCES ---")]
     [SerializeField] private PlayerInventorySO _playerInventorySO;
     [SerializeField] private GameObject _playerPrefab;
+    [SerializeField] private Transform _freeLookCamBackgroundPosition;
     [SerializeField] private GameObject _freeLookCam;
     [SerializeField] private GameObject _lockOnCam;
     [SerializeField] private GameObject _mainCamera;
+    [SerializeField] private string _mainSceneName;
     [SerializeField] private string _firstMapName;
 
     public static GameManager Instance { get; private set; }
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour
     private GameObject _playerInstance;
     private Transform _currentCheckPoint;
     private PlayerSpawnPoint[] _allSpawns;
+    private float _currentTimeScale;
+    private string _currentGameplaySceneName;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -53,6 +57,7 @@ public class GameManager : MonoBehaviour
 
         _globalInput = new @InputSystem_Actions();
         _globalInput.Global.ToggleInventory.performed += HandleToggleInventory;
+        _globalInput.Global.ToggleMenu.performed += HandleToggleGameMenu;
 
         if (_playerInventorySO != null)
         {
@@ -81,30 +86,43 @@ public class GameManager : MonoBehaviour
     }
     private void HandleToggleGameMenu(InputAction.CallbackContext context)
     {
-        
+        HandleIngameMainMenuToggle();
     }
     private void HandleInvToggle()
     {
         if (CurrentState == GameState.Playing)
         {
-            Debug.Log("Tat");
             ChangeGameState(GameState.InGameMenu);
             ChangeActionInputMap?.Invoke(ActionInputMapType.UI);
         }
         else if (CurrentState == GameState.InGameMenu)
         {
-            Debug.Log("Bat");
             ChangeGameState(GameState.Playing);
             ChangeActionInputMap?.Invoke(ActionInputMapType.Player);
         }
         else if (CurrentState == GameState.MainMenu)
         {
-            Debug.Log("Do nothing");
         }
     }
     private void HandleIngameMainMenuToggle()
     {
-
+        if (CurrentState == GameState.Playing || CurrentState == GameState.InGameMenu)
+        {
+            _currentTimeScale = Time.timeScale;
+            Time.timeScale = 0f;
+            ChangeGameState(GameState.MainMenuIngame);
+            ChangeActionInputMap?.Invoke(ActionInputMapType.UI);
+        }
+        else if (CurrentState == GameState.MainMenuIngame)
+        {
+            ContinueGame();
+        }
+    }
+    public void ContinueGame()
+    {
+        Time.timeScale = _currentTimeScale;
+        ChangeGameState(GameState.Playing);
+        ChangeActionInputMap?.Invoke(ActionInputMapType.Player);
     }
     public void ChangeActionInputInvoke(ActionInputMapType type)
     {
@@ -119,7 +137,7 @@ public class GameManager : MonoBehaviour
 
         MainMenuController.Instance.ChangeUIState(newState);
 
-        if (newState == GameState.InGameMenu || newState == GameState.MainMenu || newState == GameState.Die)
+        if (newState == GameState.InGameMenu || newState == GameState.MainMenu || newState == GameState.Die || newState == GameState.MainMenuIngame)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -141,6 +159,7 @@ public class GameManager : MonoBehaviour
         ChangeGameState(GameState.Loading);
         float startTime = Time.realtimeSinceStartup;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(mapName, LoadSceneMode.Additive);
+        _currentGameplaySceneName = mapName;
 
         while (!asyncLoad.isDone)
         {
@@ -215,6 +234,16 @@ public class GameManager : MonoBehaviour
         HealthSystem playerHealth = _playerInstance.GetComponentInChildren<HealthSystem>();
         if (playerHealth != null) playerHealth.OnDeath += HandlePlayerDeath;
     }
+    private void RemovePlayerEvent()
+    {
+        if (_playerInstance == null) return;
+        HealthSystem playerHealth = _playerInstance.GetComponentInChildren<HealthSystem>();
+        if (playerHealth != null) playerHealth.OnDeath -= HandlePlayerDeath;
+
+        Destroy(_playerInstance);
+
+        _playerInstance = null;
+    }
 
     private void HandlePlayerDeath()
     {
@@ -253,11 +282,9 @@ public class GameManager : MonoBehaviour
         if (_playerInstance == null) return;
         PlayerStatsManager playerStats = _playerInstance.GetComponent<PlayerStatsManager>();
         if (playerStats == null) return;
-        Debug.Log("Vo r neeeee123");
         if (type == StatsCheatType.Attack)
         {
             playerStats.AttackPower.AddModifier(ModifyType.Cheat, value);
-            Debug.Log("Vo r neeee456");
         }
         if (type == StatsCheatType.Health) playerStats.MaxHealth.AddModifier(ModifyType.Cheat, value);
         if (type == StatsCheatType.Mana) playerStats.MaxMana.AddModifier(ModifyType.Cheat, value);
@@ -275,5 +302,20 @@ public class GameManager : MonoBehaviour
                 return;
             }
         }
+    }
+    public void QuitToMenu()
+    {
+        Time.timeScale = 1f;
+
+        RemovePlayerEvent();
+
+        Scene mainScene = SceneManager.GetSceneByName(_mainSceneName);
+        Scene gameplayScene = SceneManager.GetSceneByName(_currentGameplaySceneName);
+        SceneManager.SetActiveScene(mainScene);
+        SceneManager.UnloadSceneAsync(gameplayScene);
+
+        ChangeGameState(GameState.MainMenu);
+        _freeLookCam.transform.position = _freeLookCamBackgroundPosition.position;
+        _freeLookCam.transform.rotation = _freeLookCamBackgroundPosition.rotation;
     }
 }

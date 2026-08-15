@@ -18,6 +18,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject _loadingRoot;
     [SerializeField] private GameObject _globalRoot;
     [SerializeField] private GameObject _interactionUI;
+    [SerializeField] private GameObject _tooltip;
 
     [Header("--- MAIN BACKGROUND MENU ---")]
     public GameObject MenuBackground;
@@ -55,6 +56,9 @@ public class MainMenuController : MonoBehaviour
             }
         }
         HideInteractionUI();
+
+        if (_tooltip == null) return;
+        if (!_tooltip.activeSelf) _tooltip.SetActive(true);
     }
 
     public void ChangeUIState(GameState newState)
@@ -71,6 +75,17 @@ public class MainMenuController : MonoBehaviour
             case GameState.MainMenu:
                 _mainMenuRoot.SetActive(true);
                 if (MenuBackground != null) MenuBackground.SetActive(true);
+                if (_mainMenuRoot.TryGetComponent(out MenuManager menuManager))
+                {
+                    menuManager.OpenMainMenu(false);
+                }
+                break;
+            case GameState.MainMenuIngame:
+                _mainMenuRoot.SetActive(true);
+                if (_mainMenuRoot.TryGetComponent(out MenuManager menuManagerIngame))
+                {
+                    menuManagerIngame.OpenMainMenu(true);
+                }
                 break;
             case GameState.Playing:
                 _hudRoot.SetActive(true);

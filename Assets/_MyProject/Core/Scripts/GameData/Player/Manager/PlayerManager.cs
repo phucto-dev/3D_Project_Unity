@@ -100,8 +100,6 @@ public class PlayerManager : MonoBehaviour
                 _inputSystem.actions.FindActionMap("UI").Enable();
                 break;
             case ActionInputMapType.Interaction:
-                Debug.Log("Doi r ne");
-                //GameManager.Instance.GlobalInput.Interaction.Enable();
                 GameManager.Instance.GlobalInput.Interaction.Enable();
                 break;
         }

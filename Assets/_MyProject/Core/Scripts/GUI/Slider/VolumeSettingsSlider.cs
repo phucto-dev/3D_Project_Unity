@@ -16,11 +16,19 @@ public class VolumeSettingsSlider : MonoBehaviour
     [SerializeField] private TMP_Text _bgmText;
     [SerializeField] private TMP_Text _sfxText;
 
+    private RectTransform _layout;
+
     private const string BGM_KEY = "BGMVolume";
     private const string SFX_KEY = "SFXVolume";
 
+    private void Awake()
+    {
+        _layout = GetComponent<RectTransform>();
+    }
+
     private void Start()
     {
+        if (_layout != null) LayoutRebuilder.ForceRebuildLayoutImmediate(_layout);
         float bgmVolume = PlayerPrefs.GetFloat(BGM_KEY, 0.8f);
         float sfxVolume = PlayerPrefs.GetFloat(SFX_KEY, 1f);
 

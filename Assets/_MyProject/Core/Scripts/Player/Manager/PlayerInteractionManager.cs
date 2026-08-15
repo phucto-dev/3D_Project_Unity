@@ -114,12 +114,9 @@ public class PlayerInteractionManager : MonoBehaviour
         _listDrop.RemoveAt(0);
 
         UpdateCurrentInteraction();
-
-        Debug.Log("Got it");
     }
     private void HandleNextConversation(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Spacceeeeee");
         DialogueManager.Instance.DisplayNextSentence();
     }
     private void UpdateCurrentInteraction()

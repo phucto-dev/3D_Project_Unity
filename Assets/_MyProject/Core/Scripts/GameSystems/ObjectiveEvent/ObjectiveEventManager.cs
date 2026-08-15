@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectiveEventManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ObjectiveEventManager : MonoBehaviour
     public TMP_Text ObjectiveTitle;
     public TMP_Text ObjectiveDesc;
     public TMP_Text ObjectiveProgress;
+    public RectTransform ObjectiveEventLayout;
 
     [Header("--- CURRENT PROGRESS ---")]
     [SerializeField] private ObjectiveChainSO _currentChain;
@@ -25,7 +27,11 @@ public class ObjectiveEventManager : MonoBehaviour
         if (Instance != null && Instance != this) Destroy(gameObject);
         else Instance = this;
     }
-    private void OnEnable() => GameEventManager.OnObjectiveAction += HandleObjectiveProgress;
+    private void OnEnable()
+    {
+        CompleteChain();
+        GameEventManager.OnObjectiveAction += HandleObjectiveProgress;
+    }
     private void OnDisable() => GameEventManager.OnObjectiveAction -= HandleObjectiveProgress;
 
     private void Start()
@@ -41,6 +47,7 @@ public class ObjectiveEventManager : MonoBehaviour
         _currentIndex = 0;
 
         ObjectivePanel.SetActive(true);
+        if (ObjectiveEventLayout != null) LayoutRebuilder.ForceRebuildLayoutImmediate(ObjectiveEventLayout);
         LoadObjectiveFromChain();
     }
     private void LoadObjectiveFromChain()
