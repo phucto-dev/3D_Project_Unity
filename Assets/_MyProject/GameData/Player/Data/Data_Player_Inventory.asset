@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventorySO
   ItemSlotQuantity: 35
   <PlayerInventory>k__BackingField:
-  - ItemDefinition: {fileID: 0}
-    Amount: 0
+  - ItemDefinition: {fileID: 11400000, guid: af27ba0d44a0c3a4e89cf7deb120208b, type: 2}
+    Amount: 1
     DropPrefab: {fileID: 0}
   - ItemDefinition: {fileID: 0}
     Amount: 0
@@ -120,5 +120,4 @@ MonoBehaviour:
     Amount: 0
     DropPrefab: {fileID: 0}
   startingItems:
-  - {fileID: 11400000, guid: 5de856ede925d614c8553d62bafcd42b, type: 2}
   - {fileID: 11400000, guid: af27ba0d44a0c3a4e89cf7deb120208b, type: 2}

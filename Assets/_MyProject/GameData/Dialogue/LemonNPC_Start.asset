@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   NPCName: Lemon
   Sentences:
-  - Hello warrior!
-  - Hello Again
-  - And Again
+  - This forest was peaceful once
+  - Then the dragon came
+  - It took over the forest and drove everything from its home
+  - Now, nothing here lives without fear
+  - The dragon must be defeated if this forest is to be peaceful again
+  - Its lair is at the top of the hill, beyond the forest
+  - <b>Follow the path</b>, climb the hill, and defeat the dragon

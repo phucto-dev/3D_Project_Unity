@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: 4988406988758b843b0f0d89fd78ebfc
-AssetOrigin:
-  serializedVersion: 1
-  productId: 228910
-  packageName: FREE Stylized Bear - Forest Animal
-  packageVersion: 1.0
-  assetPath: Assets/Blink/Art/Animals/Stylized/Bear/Bear_Animations/Bear_Attack1.fbx
-  uploadId: 516499
+guid: 84154a8e3bdf78145b6beeda1d9bed8e
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable:

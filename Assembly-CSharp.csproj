@@ -237,6 +237,7 @@
     <Compile Include="Assets\_MyProject\Core\Scripts\Enemies\Boss\Behaviour\BossEnterSecondPhase.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\PlayerHPBar.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Page\InventoryPanel\InventorySlot\EquipmentSlot.cs" />
+    <Compile Include="Assets\_MyProject\Core\Scripts\Manager\AudioManager\EnemiesAudio\EnemyAudioManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\Player\Manager\PlayerCamManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GameSystems\ObjectiveEvent\GameEventManager.cs" />
     <Compile Include="Assets\_MyProject\Core\Scripts\GUI\Effects\BossHPBar.cs" />

@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5416907216022734153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1940740667153849412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 53755603927435939}
+  m_Layer: 0
+  m_Name: Foot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &53755603927435939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940740667153849412}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875321329864138875}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3386800206804240081
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +130,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   <CurrentHealth>k__BackingField: 0
   <MaxHealth>k__BackingField: 0
+--- !u!1 &4028964381497836001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3875321329864138875}
+  m_Layer: 0
+  m_Name: Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3875321329864138875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4028964381497836001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 53755603927435939}
+  - {fileID: 6727067968309171937}
+  m_Father: {fileID: 5416907216022734153}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4452473576391734993
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +204,7 @@ Transform:
   - {fileID: 7280075039481206850}
   - {fileID: 3947700192480770043}
   - {fileID: 854392924036021047}
+  - {fileID: 3875321329864138875}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -187.845, z: 0}
 --- !u!54 &-1389075689980217641
@@ -252,6 +317,8 @@ MonoBehaviour:
     _baseValue: 0
   WalkSpeed:
     _baseValue: 0
+  SprintSpeed:
+    _baseValue: 0
   AttackPower:
     _baseValue: 0
   AttackRange:
@@ -263,6 +330,12 @@ MonoBehaviour:
   Poise:
     _baseValue: 0
   PoiseDamage:
+    _baseValue: 0
+  Defense:
+    _baseValue: 0
+  CritRate:
+    _baseValue: 0
+  CritDamage:
     _baseValue: 0
   SuperArmor: 0
   QuantityOfAttack:
@@ -317,6 +390,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 686c63bc03448b8429de02c955ed4805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimationManager
+--- !u!1 &6863304028404244615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6727067968309171937}
+  m_Layer: 0
+  m_Name: Mouth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6727067968309171937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6863304028404244615}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.012, y: 0.949, z: 1.751}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875321329864138875}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8460203509773471376
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,6 +1045,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5244654529832497756, guid: 8d346eb85c0d94b47a39afbc99c107fd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2520560480021920015}
+    - targetCorrespondingSourceObject: {fileID: 5244654529832497756, guid: 8d346eb85c0d94b47a39afbc99c107fd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1163937160719525960}
   m_SourcePrefab: {fileID: 100100000, guid: 8d346eb85c0d94b47a39afbc99c107fd, type: 3}
 --- !u!4 &4872508720960573958 stripped
 Transform:
@@ -971,3 +1078,21 @@ MonoBehaviour:
   ProjectilePoolInfo: {fileID: 0}
   Player: {fileID: 0}
   ProjectileSpeed: 20
+--- !u!114 &1163937160719525960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248224572199225532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc20b20869c91945bc763a398060e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAudioManager
+  AttackSound: {fileID: 11400000, guid: b3e8d9ffdfea08b4880f24e58437b3ff, type: 2}
+  FootstepSound: {fileID: 11400000, guid: ce6c58adab79104439ae3e6800f0248f, type: 2}
+  HurtSound: {fileID: 11400000, guid: a515dd5d1f4efe64eb5f9fd96857f0c0, type: 2}
+  DeathSound: {fileID: 11400000, guid: 0bcc11c78f0dea64bb5356690c8e22ba, type: 2}
+  FootPosition: {fileID: 53755603927435939}
+  MouthPosition: {fileID: 6727067968309171937}

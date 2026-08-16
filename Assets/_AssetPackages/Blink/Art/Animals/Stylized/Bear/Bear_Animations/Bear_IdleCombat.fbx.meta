@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aab8b0cfc53d18840993589acb4626fa
+guid: 2b19fd90efb4e834eb8a841671b22693
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -159,10 +159,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 228910
-  packageName: FREE Stylized Bear - Forest Animal
-  packageVersion: 1.0
-  assetPath: Assets/Blink/Art/Animals/Stylized/Bear/Bear_Animations/Bear_IdleCombat.fbx
-  uploadId: 516499

@@ -8,6 +8,7 @@ public class PlayerAudioManager : MonoBehaviour
 
     public AudioClip[] footSteps;
     public AudioClip[] jumpStep;
+    public AudioClip[] hurt;
 
     public void PlayFootstep()
     {
@@ -31,6 +32,18 @@ public class PlayerAudioManager : MonoBehaviour
         MovementAudioSource.PlayOneShot(
             jumpStep[index],
             0.5f
+        );
+    }
+    public void PlayHurtSound()
+    {
+        if (hurt.Length == 0)
+            return;
+
+        int index = Random.Range(0, hurt.Length);
+
+        VoiceAudioSource.PlayOneShot(
+            hurt[index],
+            1f
         );
     }
     public void PlaySkill(SoundConfigSO skillSound)

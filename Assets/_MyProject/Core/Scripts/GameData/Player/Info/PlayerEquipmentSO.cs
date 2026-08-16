@@ -8,6 +8,13 @@ public class PlayerEquipmentSO : ScriptableObject
     public Dictionary<EquipmentSlot, EquipmentInstance> EquippedItems = new Dictionary<EquipmentSlot, EquipmentInstance>();
     public event Action<EquipmentSlot, EquipmentInstance> OnEquipmentChanged;
 
+    public void ClearAllEquippedItem()
+    {
+        foreach (var slot in new List<EquipmentSlot>(EquippedItems.Keys))
+        {
+            UnequipItem(slot);
+        }
+    }
     public void EquipItem(EquipmentInstance newItem)
     {
         EquipmentSlot slot = newItem.GetEquipData().SlotType;

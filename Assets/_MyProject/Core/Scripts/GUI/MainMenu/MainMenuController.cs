@@ -68,6 +68,7 @@ public class MainMenuController : MonoBehaviour
         _inGameMenuRoot.SetActive(false);
         _loadingRoot.SetActive(false);
         _globalRoot.SetActive(false);
+        _tooltip.SetActive(false);
         if (MenuBackground != null) MenuBackground.SetActive(false);
 
         switch (newState)

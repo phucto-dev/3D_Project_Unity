@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("--- DATA REFERENCES ---")]
     [SerializeField] private PlayerInventorySO _playerInventorySO;
+    [SerializeField] private PlayerEquipmentSO _playerEquipmentSO;
     [SerializeField] private GameObject _playerPrefab;
     [SerializeField] private Transform _freeLookCamBackgroundPosition;
     [SerializeField] private GameObject _freeLookCam;
@@ -58,15 +59,6 @@ public class GameManager : MonoBehaviour
         _globalInput = new @InputSystem_Actions();
         _globalInput.Global.ToggleInventory.performed += HandleToggleInventory;
         _globalInput.Global.ToggleMenu.performed += HandleToggleGameMenu;
-
-        if (_playerInventorySO != null)
-        {
-            _playerInventorySO.InitializeData();
-        }
-        else
-        {
-            Debug.LogError("Cannot find playerInventorySO!");
-        }
     }
     private void OnEnable()
     {
@@ -150,8 +142,16 @@ public class GameManager : MonoBehaviour
     }
 
     // NEW GAME PROCESS
+    private void ResetPlayerInventory()
+    {
+        if (_playerInventorySO != null) _playerInventorySO.InitializeData();
+        else Debug.LogError("Cannot find playerInventorySO!");
+        if (_playerEquipmentSO != null) _playerEquipmentSO.ClearAllEquippedItem();
+        else Debug.LogError("Cannot find playerEquipmentSO!");
+    }
     public void StartNewGame()
     {
+        ResetPlayerInventory();
         StartCoroutine(LoadSceneAndInitRoutine(_firstMapName));
     }
     private IEnumerator LoadSceneAndInitRoutine(string mapName)

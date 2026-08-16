@@ -1156,3 +1156,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d263e086eee224e45980fe03dfdaf9f1, type: 3}
   jumpStep:
   - {fileID: 8300000, guid: 5250d9c2742f21d47a598e962c51e2ae, type: 3}
+  hurt:
+  - {fileID: 8300000, guid: aa28e6d61f17b7147babce7974bd8eb3, type: 3}

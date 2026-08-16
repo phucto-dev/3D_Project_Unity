@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -38,6 +37,7 @@ public class InventoryController : MonoBehaviour
             _slot.SelectedItem += GetCurrentSelectedItem;
         }
         RefreshUI(PlayerInventory.PlayerInventory);
+        RefreshEquipmentUI();
     }
     private void OnDisable()
     {
@@ -74,6 +74,25 @@ public class InventoryController : MonoBehaviour
         for (int i = 0; i < _listSlot.Length; i++)
         {
             _listSlot[i].UpdateSlot(inventorySlots[i]);
+        }
+    }
+    private void RefreshEquipmentUI()
+    {
+        if (_listEquipmentSlot == null || _listEquipmentSlot.Length == 0) return;
+        if (PlayerEquipment == null) return;
+
+        foreach (EquipmentSlotUI slotUI in _listEquipmentSlot)
+        {
+            if (PlayerEquipment.EquippedItems.TryGetValue(
+                slotUI.SlotType,
+                out EquipmentInstance equipment))
+            {
+                slotUI.UpdateSlot(equipment);
+            }
+            else
+            {
+                slotUI.UpdateSlot(null);
+            }
         }
     }
     public void ProcessDragAndDrop(int fromIndex, int toIndex)

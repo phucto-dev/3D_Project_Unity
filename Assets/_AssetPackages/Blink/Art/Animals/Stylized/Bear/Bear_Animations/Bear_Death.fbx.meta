@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4e01fbfd601a224e83e1bafb2b0a0b7
+guid: 774c1f0c77a11474f880c9c280880fac
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -101,10 +101,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 228910
-  packageName: FREE Stylized Bear - Forest Animal
-  packageVersion: 1.0
-  assetPath: Assets/Blink/Art/Animals/Stylized/Bear/Bear_Animations/Bear_Death.fbx
-  uploadId: 516499

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ab61e70786ce27449cbb57c2fe646ca
+guid: 0b4d07cf810de7d45b3e4c6b9eeab4ac
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -159,10 +159,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 228910
-  packageName: FREE Stylized Bear - Forest Animal
-  packageVersion: 1.0
-  assetPath: Assets/Blink/Art/Animals/Stylized/Bear/Bear_Animations/Bear_WalkForward.fbx
-  uploadId: 516499

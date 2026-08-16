@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e009b06e60bb7a34ab1c435503be5c01
+guid: d95784bab5476a449b44fdf9bc9e11b2
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -101,10 +101,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 228910
-  packageName: FREE Stylized Bear - Forest Animal
-  packageVersion: 1.0
-  assetPath: Assets/Blink/Art/Animals/Stylized/Bear/Bear_Animations/Bear_GetHitFromFront.fbx
-  uploadId: 516499
