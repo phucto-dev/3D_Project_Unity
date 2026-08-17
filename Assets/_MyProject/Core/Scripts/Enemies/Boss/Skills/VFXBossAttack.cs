@@ -1,7 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class VFXBossAttack : MonoBehaviour
 {
+    public SoundConfigSO SFXSound;
+    public float SoundRange = 33;
+
     private BossCombatInfo _combatInfo;
     private BossStatsManager _stats;
     private bool _activate;
@@ -39,6 +43,8 @@ public class VFXBossAttack : MonoBehaviour
         {
             timer = new CooldownTimer(tick);
         }
+        if (SFXSound == null) return;
+        AudioManager.Instance.PlaySFX(SFXSound, transform.position, SoundRange);
     }
     private void OnTriggerEnter(Collider other)
     {

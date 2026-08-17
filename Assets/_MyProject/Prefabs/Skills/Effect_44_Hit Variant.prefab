@@ -141,3 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f29713cd53cfe48aaf832911b49d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VFXBossAttack
+  SFXSound: {fileID: 11400000, guid: 74164da56a2e250489fe5bdd3f110fa1, type: 2}
+  SoundRange: 150

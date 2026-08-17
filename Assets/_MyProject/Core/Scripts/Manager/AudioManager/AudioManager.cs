@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("--- BGM ---")]
     public SoundConfigSO BGM;
+    public SoundConfigSO RespawnScreenBGM;
 
     private List<AudioSource> _sfxPool;
     private AudioSource _bgmSource;
@@ -28,7 +29,7 @@ public class AudioManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        if (BGM != null) PlayBGM(BGM);
+        PlayDefaultBGM();
     }
     private void InitializeSystem()
     {
@@ -54,7 +55,7 @@ public class AudioManager : MonoBehaviour
             _sfxPool.Add(source);
         }
     }
-    public void PlaySFX(SoundConfigSO soundConfig, Vector3? position = null)
+    public void PlaySFX(SoundConfigSO soundConfig, Vector3? position = null, float maxDistance = 100f)
     {
         if (soundConfig == null) return;
 
@@ -72,6 +73,9 @@ public class AudioManager : MonoBehaviour
         {
             source.spatialBlend = 1f;
             source.transform.position = position.Value;
+
+            source.rolloffMode = AudioRolloffMode.Custom;
+            source.maxDistance = maxDistance;
         }
         else
         {
@@ -158,4 +162,13 @@ public class AudioManager : MonoBehaviour
     {
         AudioListener.pause = isMute;
     }
+    public void PlayDefaultBGM()
+    {
+        if (BGM != null) PlayBGM(BGM);
+    }
+    public void PlayRespawnScreenBGM()
+    {
+        if (RespawnScreenBGM != null) PlayBGM(RespawnScreenBGM);
+    }
+
 }

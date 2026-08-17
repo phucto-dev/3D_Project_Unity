@@ -23,7 +23,7 @@ public class ForestDragonAudioManager : MonoBehaviour
 
         MovementAudioSource.PlayOneShot(
             FootSteps[index],
-            0.5f
+            1f
         );
     }
     public void PlayBreath()

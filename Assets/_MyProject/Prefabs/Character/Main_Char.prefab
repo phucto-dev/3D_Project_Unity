@@ -146,7 +146,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -155,9 +155,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 13
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -733,7 +733,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.777
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -742,9 +742,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 14
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -862,7 +862,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -871,9 +871,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 16
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1152,9 +1152,10 @@ MonoBehaviour:
   VoiceAudioSource: {fileID: 5770132913255676012}
   SkillAudioSource: {fileID: 6515435583135578956}
   footSteps:
-  - {fileID: 8300000, guid: 650bb74fc25ebc740b08b669b0139975, type: 3}
-  - {fileID: 8300000, guid: d263e086eee224e45980fe03dfdaf9f1, type: 3}
+  - {fileID: 8300000, guid: cfa2bed0e96a4d04ca793a97e910492e, type: 3}
   jumpStep:
   - {fileID: 8300000, guid: 5250d9c2742f21d47a598e962c51e2ae, type: 3}
   hurt:
   - {fileID: 8300000, guid: aa28e6d61f17b7147babce7974bd8eb3, type: 3}
+  death:
+  - {fileID: 8300000, guid: f1496ec0889258447885eb8a6856e5bc, type: 3}

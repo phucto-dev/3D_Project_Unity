@@ -81,7 +81,7 @@ public class BossAreaManager : MonoBehaviour
     private void EndBossPhase()
     {
         if (_boss == null) return;
-        if (BGM != null) AudioManager.Instance.StopBGM();
+        AudioManager.Instance.PlayDefaultBGM();
         BossManager bossManager = _boss.GetComponent<BossManager>();
         BossStateManager bossState = _boss.GetComponent<BossStateManager>();
         HealthSystem bossHealth = _boss.GetComponentInChildren<HealthSystem>();

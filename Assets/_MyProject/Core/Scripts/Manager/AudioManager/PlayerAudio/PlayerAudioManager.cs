@@ -9,6 +9,7 @@ public class PlayerAudioManager : MonoBehaviour
     public AudioClip[] footSteps;
     public AudioClip[] jumpStep;
     public AudioClip[] hurt;
+    public AudioClip[] death;
 
     public void PlayFootstep()
     {
@@ -75,5 +76,17 @@ public class PlayerAudioManager : MonoBehaviour
             SkillAudioSource.Stop();
             SkillAudioSource.loop = false;
         }
+    }
+    public void PlayDeathSound()
+    {
+        if (death.Length == 0)
+            return;
+
+        int index = Random.Range(0, death.Length);
+
+        VoiceAudioSource.PlayOneShot(
+            death[index],
+            1f
+        );
     }
 }

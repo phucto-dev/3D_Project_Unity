@@ -152,6 +152,7 @@ public class GameManager : MonoBehaviour
     public void StartNewGame()
     {
         ResetPlayerInventory();
+        _targetSpawnID = SpawnPointID.Default_NewGame;
         StartCoroutine(LoadSceneAndInitRoutine(_firstMapName));
     }
     private IEnumerator LoadSceneAndInitRoutine(string mapName)
@@ -247,6 +248,7 @@ public class GameManager : MonoBehaviour
 
     private void HandlePlayerDeath()
     {
+        AudioManager.Instance.PlayRespawnScreenBGM();
         ChangeGameState(GameState.Die);
         ChangeActionInputMap?.Invoke(ActionInputMapType.UI);
     }
@@ -259,6 +261,7 @@ public class GameManager : MonoBehaviour
         _playerInstance.transform.rotation = _currentCheckPoint.rotation;
         if (timer.Tick())
         {
+            AudioManager.Instance.PlayDefaultBGM();
             ChangeGameState(GameState.Playing);
             RespawnPlayer?.Invoke();
             ChangeActionInputMap?.Invoke(ActionInputMapType.Player);

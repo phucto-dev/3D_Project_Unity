@@ -1,12 +1,21 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class DropInfo : MonoBehaviour, IInteractable
 {
     [field: SerializeField] public int InteractionPriority { get; private set; }
+    public float TimeExist = 60f;
     public InteractType GetInteractType() => InteractType.Loot;
     public string GetInteractText() => "Loot";
     public ItemInstance ItemData { get; private set; }
+
+    private Coroutine SelfDestroyCoroutine;
+    private void OnDisable()
+    {
+        if (SelfDestroyCoroutine != null) StopCoroutine(SelfDestroyCoroutine);
+        SelfDestroyCoroutine = null;
+    }
     public void Interact()
     {
 
@@ -14,6 +23,14 @@ public class DropInfo : MonoBehaviour, IInteractable
     public void Initialize(ItemInstance itemInstance)
     {
         ItemData = BindingItem(itemInstance);
+        SelfDestroyCoroutine = StartCoroutine(SelfDestroyTimer());
+    }
+
+    private IEnumerator SelfDestroyTimer()
+    {
+        yield return new WaitForSeconds(TimeExist);
+
+        Destroy(gameObject);
     }
     private ItemInstance BindingItem(ItemInstance item)
     {

@@ -17,6 +17,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ab5e6a5d8e7ef9b49a3e22104a9ac393, type: 3}
   PlaybackType: 0
   AttachType: 0
-  Volume: 1
+  Volume: 0.7
   PitchMin: 0.9
   PitchMax: 1.1

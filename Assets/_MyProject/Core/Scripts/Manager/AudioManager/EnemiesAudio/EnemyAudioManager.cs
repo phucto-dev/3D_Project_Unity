@@ -17,27 +17,27 @@ public class EnemyAudioManager : MonoBehaviour
         if (FootPosition == null) return;
         if (FootstepSound == null) return;
 
-        AudioManager.Instance.PlaySFX(FootstepSound, FootPosition.position);
+        AudioManager.Instance.PlaySFX(FootstepSound, FootPosition.position, 26);
     }
     public void PlayAttackSound()
     {
         if (AttackSound == null) return;
         if (MouthPosition == null) return;
 
-        AudioManager.Instance.PlaySFX(AttackSound, MouthPosition.position);
+        AudioManager.Instance.PlaySFX(AttackSound, MouthPosition.position, 26);
     }
     public void PlayHurtSound()
     {
         if (HurtSound == null) return;
         if (MouthPosition == null) return;
 
-        AudioManager.Instance.PlaySFX(HurtSound, MouthPosition.position);
+        AudioManager.Instance.PlaySFX(HurtSound, MouthPosition.position, 26);
     }
     public void PlayDeathSound()
     {
         if (DeathSound == null) return;
         if (MouthPosition == null) return;
 
-        AudioManager.Instance.PlaySFX(DeathSound, MouthPosition.position);
+        AudioManager.Instance.PlaySFX(DeathSound, MouthPosition.position, 26);
     }
 }
