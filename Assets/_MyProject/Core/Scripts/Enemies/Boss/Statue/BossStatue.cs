@@ -39,7 +39,7 @@ public class BossStatue : MonoBehaviour
     }
     public void DeActivate()
     {
-        StopCoroutine(_current);
+        if (_current != null) StopCoroutine(_current);
         _current = null;
     }
     private IEnumerator SpawnMeteorRoutine()

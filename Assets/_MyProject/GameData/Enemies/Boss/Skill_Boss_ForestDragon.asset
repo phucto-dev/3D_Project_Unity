@@ -17,12 +17,12 @@ MonoBehaviour:
     PhaseUse: 1
     Weight: 4
     Cooldown: 2
-    StaminaConsume: 30
+    StaminaConsume: 20
     MinDistance: 0
     MaxDistance: 100
     VFXID: 
     FlyHeight: 0
-    DmgHitMultiple: 1
+    DmgHitMultiple: 2
     TimeHitPerNumberSecond: -1
   - AttackType: 1
     PhaseUse: 1
@@ -33,27 +33,27 @@ MonoBehaviour:
     MaxDistance: 100
     VFXID: Projectile_BossBeam
     FlyHeight: 0
-    DmgHitMultiple: 0.5
-    TimeHitPerNumberSecond: 0.1
+    DmgHitMultiple: 2
+    TimeHitPerNumberSecond: 0.05
   - AttackType: 2
     PhaseUse: 2
     Weight: 0
     Cooldown: 10
-    StaminaConsume: 60
+    StaminaConsume: 40
     MinDistance: 0
     MaxDistance: 100
     VFXID: 
     FlyHeight: 12
-    DmgHitMultiple: 5
+    DmgHitMultiple: 3
     TimeHitPerNumberSecond: -1
   - AttackType: 3
     PhaseUse: 2
     Weight: 2
     Cooldown: 10
-    StaminaConsume: 60
+    StaminaConsume: 40
     MinDistance: 0
     MaxDistance: 100
     VFXID: 
     FlyHeight: 12
-    DmgHitMultiple: 10
+    DmgHitMultiple: 5
     TimeHitPerNumberSecond: -1

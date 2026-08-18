@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stats_Boss_ForestDragon
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
   _maxHealth:
-    baseValue: 100
+    baseValue: 1000
     minValue: 0
     maxValue: 9999
   _healthRegen:
@@ -45,7 +45,7 @@ MonoBehaviour:
     minValue: 1
     maxValue: 99
   _poiseDamage:
-    baseValue: 10
+    baseValue: 50
     minValue: 0
     maxValue: 9999
   _defense:
@@ -63,6 +63,10 @@ MonoBehaviour:
     maxValue: 20
   _runSpeed:
     baseValue: 10
+    minValue: 1
+    maxValue: 20
+  _sprintSpeed:
+    baseValue: 8
     minValue: 1
     maxValue: 20
   _numberOfAttack: 2

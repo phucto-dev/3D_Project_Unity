@@ -14897,7 +14897,7 @@ MonoBehaviour:
   TailDestroyTime: 0
   HitObjectDestroyTime: 1
   maxTime: 1
-  MoveSpeed: 5
+  MoveSpeed: 8
   isCheckHitTag: 1
   mtag: Ground
   isShieldActive: 0

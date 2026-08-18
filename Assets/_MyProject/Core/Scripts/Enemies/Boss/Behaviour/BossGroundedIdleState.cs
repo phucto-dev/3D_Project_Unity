@@ -3,9 +3,9 @@ using UnityEngine;
 public class BossGroundedIdleState : IBossState
 {
     private string IdleBreatheAnimName = "IdleBreathe";
-    private float _staminaRecoverPerSec = 20f;
+    private float _staminaRecoverPerSec = 40f;
     private float _timer = 0f;
-    private float _restTime = 1.5f;
+    private float _restTime = 2f;
     public void Enter(BossStateManager boss)
     {
         boss.SetLocomotion(new GroundLocomotion());

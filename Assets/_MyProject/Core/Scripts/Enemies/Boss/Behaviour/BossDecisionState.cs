@@ -43,11 +43,18 @@ public class BossDecisionState : IBossState
         float maxStamina = boss.GetStats().GetMaxStamina();
         float staminaPercent = currentStamina / maxStamina;
         float randomValue = Random.Range(0f, 100f);
-        float lowestStaminaMoveset = Mathf.Infinity+1;
-        foreach (BossCombatInfo moveset in boss.BossCombatDataList.BossCombatStates)
+        float lowestStaminaMoveset = float.MaxValue;
+        if (boss.BossCombatDataList != null && boss.BossCombatDataList.BossCombatStates.Count > 0)
         {
-            float movesetStamina = moveset.StaminaConsume;
-            if (movesetStamina < lowestStaminaMoveset) lowestStaminaMoveset = movesetStamina;
+            foreach (BossCombatInfo moveset in boss.BossCombatDataList.BossCombatStates)
+            {
+                float movesetStamina = moveset.StaminaConsume;
+                if (movesetStamina < lowestStaminaMoveset) lowestStaminaMoveset = movesetStamina;
+            }
+        }
+        else
+        {
+            lowestStaminaMoveset = 0f;
         }
 
         if (currentStamina < lowestStaminaMoveset)

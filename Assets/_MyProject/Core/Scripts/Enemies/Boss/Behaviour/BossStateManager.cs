@@ -57,6 +57,7 @@ public class BossStateManager : MonoBehaviour
 
     private ILocomotionStrategy _currentLocomotion;
     private IBossState _currentState;
+    [SerializeField] private string _currentStateDebug;
     private Coroutine _currentAttackCoroutine;
     private HealthSystem _healthSystem;
     private NavMeshAgent _agent;
@@ -91,6 +92,7 @@ public class BossStateManager : MonoBehaviour
         if (_healthSystem != null) _healthSystem.OnDeath += OnDeath;
         if (_healthSystem != null) _healthSystem.OnTakeDmg += OnTakeDmg;
         if (_healthSystem != null) _healthSystem.OnHealthChanged += OnChangePhase;
+        StartSetup();
     }
     private void OnDisable()
     {
@@ -100,14 +102,18 @@ public class BossStateManager : MonoBehaviour
     }
     private void Start()
     {
-        _isBossDeath = false;
-        if (PlayerInformation != null) Player = PlayerInformation.PlayerTransform;
-        ChangeState(new BossIntro());
+        
     }
     private void Update()
     {
         if (PlayerInformation != null) Player = PlayerInformation.PlayerTransform;
         _currentState?.UpdateState(this);
+    }
+    private void StartSetup()
+    {
+        _isBossDeath = false;
+        if (PlayerInformation != null) Player = PlayerInformation.PlayerTransform;
+        ChangeState(new BossIntro());
     }
     public void SetLocomotion(ILocomotionStrategy newLocomotion)
     {
@@ -124,6 +130,7 @@ public class BossStateManager : MonoBehaviour
         _currentState?.Exit(this);
         _currentState = newState;
         _currentState.Enter(this);
+        _currentStateDebug = newState?.GetType().Name;
     }
     public void MoveToTarget(Vector3 target) => _currentLocomotion?.MoveTo(this, target);
     public void MoveToDir(Vector3 dir) => _currentLocomotion?.MoveBack(this, dir);
@@ -170,6 +177,8 @@ public class BossStateManager : MonoBehaviour
 
     public IEnumerator LandCoroutine(System.Action onComplete = null)
     {
+        yield return new WaitForFixedUpdate();
+
         Vector3 landingTarget;
         Anim.CrossFade(FlyStationAnimName, 0.1f);
 
@@ -185,7 +194,7 @@ public class BossStateManager : MonoBehaviour
         {
             landingTarget = transform.position - new Vector3(0, 10f, 0);
         }
-
+        Debug.Log("Landing pos" + landingTarget);
         float distance = transform.position.y - landingTarget.y;
         float descendSpeed = 5f;
         while (distance > _landingThreshold)

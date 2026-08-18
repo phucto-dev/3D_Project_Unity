@@ -572,7 +572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5197269306121434174
 Transform:
   m_ObjectHideFlags: 0
@@ -680,6 +680,7 @@ MonoBehaviour:
   <PlayerInformation>k__BackingField: {fileID: 11400000, guid: 63df771c184cffe4486430f7a12102d3, type: 2}
   <BossCombatDataList>k__BackingField: {fileID: 11400000, guid: a4bf4568119de874694de443abb19d95, type: 2}
   <SkyFallData>k__BackingField: {fileID: 11400000, guid: d5ed4c87db6ec45488bcc0e948a5f988, type: 2}
+  _currentStateDebug: 
 --- !u!114 &5244896103423107041
 MonoBehaviour:
   m_ObjectHideFlags: 0

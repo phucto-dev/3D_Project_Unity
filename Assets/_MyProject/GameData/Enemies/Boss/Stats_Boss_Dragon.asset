@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stats_Boss_Dragon
   m_EditorClassIdentifier: Assembly-CSharp::BossStatsSO
   _maxHealth:
-    baseValue: 500
+    baseValue: 1000
     minValue: 0
     maxValue: 9999
   _healthRegen:
@@ -21,7 +21,7 @@ MonoBehaviour:
     minValue: 0
     maxValue: 9999
   _attackPower:
-    baseValue: 100
+    baseValue: 50
     minValue: 0
     maxValue: 9999
   _haste:
@@ -45,7 +45,7 @@ MonoBehaviour:
     minValue: 1
     maxValue: 99
   _poiseDamage:
-    baseValue: 10
+    baseValue: 50
     minValue: 0
     maxValue: 9999
   _defense:

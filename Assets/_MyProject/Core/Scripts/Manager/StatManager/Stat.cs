@@ -14,7 +14,7 @@ public class Stat
     [Header("--- DO NOT EDIT ---")]
     [SerializeField] private float _baseValue;
 
-    private Dictionary<ModifyType, float> _modifiers = new();
+    private Dictionary<ModifyType, float> _modifiers = new Dictionary<ModifyType, float>();
 
     private Action _onValueChanged;
 
@@ -27,11 +27,13 @@ public class Stat
     public float GetValue()
     {
         float finalValue = _baseValue;
-        foreach (var mod in _modifiers)
+        if (_modifiers != null && _modifiers.Count > 0)
         {
-            finalValue += mod.Value;
+            foreach (var mod in _modifiers)
+            {
+                finalValue += mod.Value;
+            }
         }
-
         return finalValue;
     }
 

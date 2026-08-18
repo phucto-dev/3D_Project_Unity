@@ -29,7 +29,7 @@ public class ObjectiveEventManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        CompleteChain();
+        //CompleteChain();
         GameEventManager.OnObjectiveAction += HandleObjectiveProgress;
     }
     private void OnDisable() => GameEventManager.OnObjectiveAction -= HandleObjectiveProgress;
